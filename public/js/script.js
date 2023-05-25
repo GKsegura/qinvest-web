@@ -1,9 +1,14 @@
-<button id="meuBotao">Clique Aqui</button>;
+var btnTema = document.getElementById("btnTema");
+btnTema.addEventListener("click", trocarTema);
 
-function trocarClasse() {
-    var elemento = document.getElementById("elementoParaTrocar");
-    elemento.classList.toggle("novaClasse");
+function trocarTema() {
+    var header = document.getElementById("header");
+
+    if (header.classList.contains("header-claro")) {
+        header.classList.remove("header-claro");
+        header.classList.add("header-escuro");
+    } else if (header.classList.contains("header-escuro")) {
+        header.classList.remove("header-escuro");
+        header.classList.add("header-claro");
+    }
 }
-
-var meuBotao = document.getElementById("meuBotao");
-meuBotao.addEventListener("click", trocarClasse);

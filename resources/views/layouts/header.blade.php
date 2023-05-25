@@ -8,7 +8,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
-<body class="body-claro">
+<body id="body" class="body-claro">
     <header id="header" class="header-claro">
         <a href="{{ url('/') }}">Home</a>
         @if (Route::has('login'))
@@ -21,5 +21,5 @@
         @endif
         @endauth
         @endif
-        <button>Tema</button>
+        <a id="btnTema">Troca de tema</a>
     </header>
