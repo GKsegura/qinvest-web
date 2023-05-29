@@ -60,3 +60,16 @@ footer {
     padding: 0;
     background-image: linear-gradient(to top, #3860ec, #6a31e2);
 }
+
+#logo {
+    width: 139px;
+    height: 37px;
+    margin: 0;
+    padding: 0;
+}
+.logo-claro {
+    filter: invert(0);
+}
+.logo-escuro {
+    filter: invert(1);
+}

@@ -10,6 +10,7 @@
 
 <body id="body" class="body-claro">
     <header id="header" class="header-claro">
+        <img id="logo" src="assets/logo.svg" alt="" class="logo-claro">
         <a href="{{ url('/') }}">Home</a>
         @if (Route::has('login'))
         @auth
