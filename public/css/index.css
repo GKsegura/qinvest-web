@@ -1,0 +1,12 @@
+.imagem-escada {
+    height: 737px;
+    width: 100%;
+    background-image: linear-gradient(to top, #db33f6, #3860ec);
+    margin: 0;
+    padding: 0;
+}
+
+.imagem-escada h1 {
+    padding: 0;
+    margin: 0;
+}
