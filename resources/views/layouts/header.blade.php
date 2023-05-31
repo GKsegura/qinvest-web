@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>QInvest</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
 </head>
 
 <body id="body" class="body-claro">
@@ -22,9 +23,9 @@
             <a href="">About us</a>
         </div>
         <div class="header-right">
+            <a id="btnTema"><i id="theme-icon" class="bi bi-sun-fill"></i></a>
         </div>
-
-        <a href="{{ url('/') }}">Home</a>
+        <!-- <a href="{{ url('/') }}">Home</a>
         @if (Route::has('login'))
         @auth
         <a href="{{ url('/home') }}">Home</a>
@@ -34,7 +35,5 @@
         <a href="{{ route('register') }}">Register</a>
         @endif
         @endauth
-        @endif
-
-        <a id="btnTema">Troca de tema</a>
+        @endif -->
     </header>
