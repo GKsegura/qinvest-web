@@ -4,22 +4,57 @@
     background-image: linear-gradient(to top, #db33f6, #3860ec);
     margin: 0;
     padding: 0;
-    padding-top: 10vh;
     text-align: center;
     color: #ffffffff;
 }
 
-.stair-image h1 {
+.text-image-ladder {
+    width: 100%;
+}
+
+.text-image-ladder h1 {
     padding: 0;
     margin: 0;
     font-size: 60px;
+    padding-top: 10vh;
 }
 
-.stair-image p {
+.text-image-ladder p {
     padding: 0;
     margin: 0;
     font-size: 18px;
 }
 
-.text-image-ladder {
+.buttons-home {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    margin-top: 5vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    column-gap: 5vh;
+}
+.buttons-home button {
+    padding: 1% 2%;
+    font-size: 1em;
+}
+
+#login,
+#register:hover {
+    background-color: transparent;
+    color: #ffffffff;
+    border: solid 0.1em;
+    border-color: #ffffffff;
+    transition: 0.5s;
+}
+
+#register,
+#login:hover {
+    background-color: #ffffffff;
+    color: #3563e9;
+    border: solid 0.1em;
+    border-color: #3563e9;
+    transition: 0.5s;
 }
