@@ -1,12 +1,25 @@
-.imagem-escada {
-    height: 737px;
+.stair-image {
+    height: 80vh;
     width: 100%;
     background-image: linear-gradient(to top, #db33f6, #3860ec);
     margin: 0;
     padding: 0;
+    padding-top: 10vh;
+    text-align: center;
+    color: #ffffffff;
 }
 
-.imagem-escada h1 {
+.stair-image h1 {
     padding: 0;
     margin: 0;
+    font-size: 60px;
+}
+
+.stair-image p {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.text-image-ladder {
 }
