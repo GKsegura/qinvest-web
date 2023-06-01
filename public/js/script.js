@@ -2,6 +2,7 @@ var btnTema = document.getElementById("btnTema");
 btnTema.addEventListener("click", trocarTema);
 
 function trocarTema() {
+    var themeIcon = document.getElementById("theme-icon");
     var header = document.getElementById("header");
     var logo = document.getElementById("logo");
 
@@ -19,5 +20,13 @@ function trocarTema() {
     } else if (logo.classList.contains("logo-escuro")) {
         logo.classList.remove("logo-escuro");
         logo.classList.add("logo-claro");
+    }
+
+    if (themeIcon.classList.contains("bi-sun-fill")) {
+        themeIcon.classList.remove("bi-sun-fill");
+        themeIcon.classList.add("bi-moon-fill");
+    } else if (themeIcon.classList.contains("bi-moon-fill")) {
+        themeIcon.classList.remove("bi-moon-fill");
+        themeIcon.classList.add("bi-sun-fill");
     }
 }
