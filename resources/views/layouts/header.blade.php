@@ -23,6 +23,8 @@
             <a href="">About us</a>
         </div>
         <div class="header-right">
+
+            <i class="bi bi-person-circle"></i>
             <a id="btnTema"><i id="theme-icon" class="bi bi-sun-fill"></i></a>
         </div>
         <!-- <a href="{{ url('/') }}">Home</a>
