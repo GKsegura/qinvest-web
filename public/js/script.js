@@ -1,32 +1,26 @@
-var btnTema = document.getElementById("btnTema");
-btnTema.addEventListener("click", trocarTema);
+const toggleIcon = document.getElementById("theme-icon");
+const header = document.querySelector("header");
+const logo = document.getElementById("light-logo");
 
-function trocarTema() {
-    var themeIcon = document.getElementById("theme-icon");
-    var header = document.getElementById("header");
-    var logo = document.getElementById("logo");
+toggleDark = () => {
+    toggleIcon.classList.remove("bi-sun-fill");
+    toggleIcon.classList.add("bi-moon-fill");
 
-    if (header.classList.contains("header-claro")) {
-        header.classList.remove("header-claro");
-        header.classList.add("header-escuro");
-    } else if (header.classList.contains("header-escuro")) {
-        header.classList.remove("header-escuro");
-        header.classList.add("header-claro");
-    }
+    header.style.backgroundColor = "#000000";
+    header.style.color = "#ffffff";
 
-    if (logo.classList.contains("logo-claro")) {
-        logo.classList.remove("logo-claro");
-        logo.classList.add("logo-escuro");
-    } else if (logo.classList.contains("logo-escuro")) {
-        logo.classList.remove("logo-escuro");
-        logo.classList.add("logo-claro");
-    }
+    logo.style.filter = "invert(1)";
+};
 
-    if (themeIcon.classList.contains("bi-sun-fill")) {
-        themeIcon.classList.remove("bi-sun-fill");
-        themeIcon.classList.add("bi-moon-fill");
-    } else if (themeIcon.classList.contains("bi-moon-fill")) {
-        themeIcon.classList.remove("bi-moon-fill");
-        themeIcon.classList.add("bi-sun-fill");
-    }
-}
+toggleLight = () => {
+    toggleIcon.classList.remove("bi-moon-fill");
+    toggleIcon.classList.add("bi-sun-fill");
+    header.style.backgroundColor = "#ffffff";
+    header.style.color = "#000000";
+
+    logo.style.filter = "invert(0)";
+};
+
+toggleIcon.addEventListener("click", () => {
+    toggleIcon.classList.contains("bi-sun-fill") ? toggleDark() : toggleLight();
+});
