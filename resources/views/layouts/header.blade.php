@@ -11,11 +11,12 @@
 </head>
 
 <body id="body" class="body-claro">
-    <header id="theme-bg">
+    <header id="theme-header" class="light-header">
         <div class="container">
             <div class="row text-center align-items-center">
                 <div class="col-3">
-                    <img id="light-logo" src="assets/logo.svg" alt="" class="light-logo">
+                    <img id="theme-logo" alt="" class="dark-logo" src="assets/logo.svg">
+
                 </div>
 
                 <div class="col-6">
@@ -53,21 +54,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="header-left">
-                <img id="logo" src="assets/logo.svg" alt="" class="logo-claro">
-            </div>
-            <div class="header-center">
-                <a href="">Home</a>
-                <a href="">Updates</a>
-                <a href="">Services</a>
-                <a href="">Features</a>
-                <a href="">About us</a>
-            </div>
-            <div class="header-right">
 
-                <i class="bi bi-person-circle"></i>
-                <a id="btnTema"><i id="theme-icon" class="bi bi-sun-fill"></i></a>
-            </div>
             <!-- <a href="{{ url('/') }}">Home</a>
                 @if (Route::has('login'))
                 @auth

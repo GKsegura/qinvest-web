@@ -64,19 +64,28 @@ header i {
     font-weight: bold;
 }
 
-.header-claro {
+.light-header{
     background-color: #ffffff;
     color: #212121;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+}
+
+.dark-header {
+    background-color: #212121;
+    color: #ffffff;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+}
+
+a, i{
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .header-claro a {
     color: #212121;
 }
 
-.header-escuro {
-    background-color: #212121;
-    color: #ffffff;
-}
 .header-escuro a {
     color: #ffffff;
 }
@@ -97,10 +106,13 @@ footer {
     padding: 0;
 }
 .light-logo {
-    filter: invert(0);
+    filter: invert(1);
+    transition: filter 2s ease; 
+      
 }
 .dark-logo {
-    filter: invert(1);
+    filter: invert(0);
+    transition: filter 2s ease; 
 }
 
 
