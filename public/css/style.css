@@ -1,5 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #212121;
+}
+
 /* BODY */
 
 body {
@@ -32,28 +37,21 @@ header i {
     font-weight: bold;
 }
 
-.light-header{
-    background-color: #ffffff;
-    color: #212121;
+.header-color {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     transition: background-color 0.4s ease, color 0.4s ease;
-
 }
 
-.dark-header {
-    background-color: #212121;
-    color: #ffffff;
-    transition: background-color 0.4s ease, color 0.4s ease;
-
-}
-
-a, i{
+a,
+i {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* FOOTER */
 
 footer {
-    background-color: #212121;
+    color: var(--primary-color);
     width: 100%;
     height: 604px;
     margin: 0;
@@ -63,15 +61,6 @@ footer {
 
 /* LOGO */
 
-
-.light-logo {
-    filter: invert(1);
-    transition: filter 2s ease; 
-      
+#theme-logo {
+    transition: filter 2s ease;
 }
-.dark-logo {
-    filter: invert(0);
-    transition: filter 2s ease; 
-}
-
-

@@ -1,7 +1,7 @@
 <footer>
 
 </footer>
-<script src="{{ asset('js/script.js') }}"></script>
+<script defer src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>

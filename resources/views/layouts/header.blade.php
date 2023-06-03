@@ -11,11 +11,11 @@
 </head>
 
 <body id="body" class="body-claro">
-    <header id="theme-header" class="light-header">
+    <header id="theme-header" class="header-color">
         <div class="container">
             <div class="row text-center align-items-center">
                 <div class="col-3">
-                    <img id="theme-logo" alt="" class="dark-logo" src="assets/logo.svg">
+                    <img id="theme-logo" alt="" class="light-logo" src="assets/logo.svg">
 
                 </div>
 
