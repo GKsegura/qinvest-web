@@ -12,15 +12,7 @@ const lightColor = "#ffffff";
 const darkColor = "#212121";
 
 toggleDark = () => {
-    toggle(
-        toggleIcon,
-        "bi-sun-fill",
-        "bi-moon-fill",
-        toggleLogo,
-        1,
-        darkColor,
-        lightColor
-    );
+    toggle(toggleIcon, "bi-sun-fill", "bi-moon-fill", 1, darkColor, lightColor);
 
     // toggleLogo.style.filter = "invert(1)";
     // document.documentElement.style.setProperty("--primary-color", darkColor);
@@ -28,15 +20,7 @@ toggleDark = () => {
 };
 
 toggleLight = () => {
-    toggle(
-        toggleIcon,
-        "bi-moon-fill",
-        "bi-sun-fill",
-        toggleLogo,
-        0,
-        lightColor,
-        darkColor
-    );
+    toggle(toggleIcon, "bi-moon-fill", "bi-sun-fill", 0, lightColor, darkColor);
 
     // toggleLogo.style.filter = "invert(0)";
     // document.documentElement.style.setProperty("--primary-color", lightColor);
@@ -44,18 +28,17 @@ toggleLight = () => {
 };
 
 const toggle = (
-    object,
+    element,
     current,
     next,
-    logo,
-    value,
+    logoValue,
     primaryColor,
     secondaryColor
 ) => {
-    object.classList.remove(current);
-    object.classList.add(next);
+    element.classList.remove(current);
+    element.classList.add(next);
 
-    logo.style.filter = `invert(${value})`;
+    toggleLogo.style.filter = `invert(${logoValue})`;
 
     document.documentElement.style.setProperty("--primary-color", primaryColor);
     document.documentElement.style.setProperty(
