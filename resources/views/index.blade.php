@@ -10,6 +10,11 @@
         <button id="login">Já sou cadastrado</button>
         <button id="register">Criar Conta</button>
     </div>
+    <div class="stair">
+        <img id="world-map" alt="" class="" src="assets/worldMap.png">
+        <img id="stair-svg" alt="" class="" src="assets/stairBlack.svg">
+        <img id="girl-run" alt="" class="" src="assets/girlRun.png">
+    </div>
 </div>
 
 @include('layouts.footer')
