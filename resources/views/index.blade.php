@@ -7,8 +7,8 @@
         <p>Crie sua conta gratuitamente e comece a participar dessa comunidade:</p>
     </div>
     <div class="buttons-home">
-        <button>Já sou cadastrado</button>
-        <button>Criar Conta</button>
+        <button id="login">Já sou cadastrado</button>
+        <button id="register">Criar Conta</button>
     </div>
 </div>
 
