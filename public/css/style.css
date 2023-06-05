@@ -53,14 +53,52 @@ i {
 footer {
     color: var(--primary-color);
     width: 100%;
-    height: 604px;
+    height: 445px;
     margin: 0;
     padding: 0;
     background-image: linear-gradient(to top, #3860ec, #6a31e2);
 }
+
+footer .nav-link, #form-typography {
+    color: #ffffff!important;   
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+footer h5, form label {
+    font-weight: 700;
+}
+footer #footer-form  {
+    background-color: #6428E3;
+    font-size: 18px;
+    border-radius: 5px;
+}
+#footer-form p {
+    font-size: 13px;
+}
+#footer-form button {
+    background-color: #AF35E9;
+}
+
+#form-control input {
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#form-control button {
+    border-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
 
 /* LOGO */
 
 #theme-logo {
     transition: filter 2s ease;
 }
+
+
