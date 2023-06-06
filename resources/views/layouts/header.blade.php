@@ -55,6 +55,10 @@
                 </div>
             </div>
 
+            <!-- TESTE AAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            AAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
             <!-- <a href="{{ url('/') }}">Home</a>
                 @if (Route::has('login'))
                 @auth
