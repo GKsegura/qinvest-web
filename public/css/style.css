@@ -59,17 +59,19 @@ footer {
     background-image: linear-gradient(to top, #3860ec, #6a31e2);
 }
 
-footer .nav-link, #form-typography {
-    color: #ffffff!important;   
+footer .nav-link,
+#form-typography {
+    color: #ffffff !important;
     opacity: 0.75;
     font-weight: 300;
 }
 
-footer h5, form label {
+footer h5,
+form label {
     font-weight: 700;
 }
-footer #footer-form  {
-    background-color: #6428E3;
+footer #footer-form {
+    background-color: #6428e3;
     font-size: 18px;
     border-radius: 5px;
 }
@@ -77,7 +79,7 @@ footer #footer-form  {
     font-size: 13px;
 }
 #footer-form button {
-    background-color: #AF35E9;
+    background-color: #af35e9;
 }
 
 #form-control input {
@@ -92,13 +94,8 @@ footer #footer-form  {
     border-bottom-right-radius: 5px;
 }
 
-
-
-
 /* LOGO */
 
 #theme-logo {
     transition: filter 2s ease;
 }
-
-

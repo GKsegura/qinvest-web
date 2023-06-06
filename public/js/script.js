@@ -9,6 +9,7 @@ const secondaryColor = getComputedStyle(document.documentElement)
     .trim(); //const da váriavel "primary-color" do css "style.css"
 const lightColor = "#ffffff"; //const com o valor padrão da cor clara
 const darkColor = "#212121"; //const com o valor padrão da cor escura
+const header = document.getElementsByClassName("header-color");
 
 //funções
 const toggleDark = () => {
@@ -19,7 +20,7 @@ const toggleDark = () => {
 const toggleLight = () => {
     toggle(toggleIcon, "bi-moon-fill", "bi-sun-fill", 0, lightColor, darkColor);
     setThemeCookie("light");
-}; //função que coloca no modo claro
+}; // função que coloca no modo claro
 
 const toggle = (
     element,
@@ -27,7 +28,8 @@ const toggle = (
     next,
     logoValue,
     primaryColor,
-    secondaryColor
+    secondaryColor,
+    bool
 ) => {
     element.classList.remove(current);
     element.classList.add(next);
@@ -39,7 +41,7 @@ const toggle = (
         "--secondary-color",
         secondaryColor
     );
-}; // função que faz a troca do tema
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     toggleIcon.addEventListener("click", () => {
