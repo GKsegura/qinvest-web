@@ -13,53 +13,29 @@
 <body id="body" class="body-claro">
     <header id="theme-header" class="header-color">
         <div class="container">
-            <div class="row text-center align-items-center">
-                <div class="col-3">
-                    <img id="theme-logo" alt="" class="light-logo" src="assets/logo.svg">
-
-                </div>
-
-                <div class="col-6">
-                    <div class="d-flex flex-row gap-2">
-                        <div class="col">
-                            <a class="nav-link active" href="">Home</a>
-                        </div>
-
-                        <div class="col">
-                            <a class="nav-link active" href="">Updates</a>
-                        </div>
-
-                        <div class="col">
-                            <a class="nav-link active" href="">Services</a>
-                        </div>
-
-                        <div class="col">
-                            <a class="nav-link active" href="">Features</a>
-                        </div>
-
-                        <div class="col">
-                            <a class="nav-link active" href="">About us</a>
-                        </div>
+            <div class="row">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <div class="col-3">
+                        <img id="theme-logo" alt="" class="light-logo" src="assets/logo.svg">
                     </div>
-                </div>
 
-                <div class="col-3">
-                    <div class="d-flex flex-row px-5">
-                        <div class="col">
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="col">
-                            <i id="theme-icon" class="bi bi-sun-fill"></i>
-                        </div>
+                    <ul class="col-6 nav d-flex justify-content-evenly">
+                        <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Updates</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Service</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">Features</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
+                    </ul>
+
+                    <div class="col-3 d-flex flex-row justify-content-evenly">
+                        <i class="bi bi-person-circle"></i>
+                        <i id="theme-icon" class="bi bi-sun-fill"></i>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- TESTE AAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-            AAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
-
-            <!-- <a href="{{ url('/') }}">Home</a>
+        <!-- <a href="{{ url('/') }}">Home</a>
                 @if (Route::has('login'))
                 @auth
                 <a href="{{ url('/home') }}">Home</a>
