@@ -3,6 +3,12 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #212121;
+
+    --transition-properties: background-color, color;
+    --transition-duration: 0.4s;
+    --transition-timing-function: ease;
+    --transition: var(--transition-properties) var(--transition-duration)
+        var(--transition-timing-function);
 }
 
 /* BODY */
@@ -30,6 +36,7 @@ header a {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
+    color: var(--secondary-color) !important;
 }
 
 header i {
@@ -40,12 +47,12 @@ header i {
 .header-color {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: var(--transition);
 }
 
 a,
 i {
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: var(--transition);
 }
 
 /* FOOTER */
@@ -61,7 +68,7 @@ footer {
 
 footer .nav-link,
 #form-typography {
-    color: #ffffff !important;
+    color: var(--primary-color) !important;
     opacity: 0.75;
     font-weight: 300;
 }
@@ -97,5 +104,5 @@ footer #footer-form {
 /* LOGO */
 
 #theme-logo {
-    transition: filter 2s ease;
+    transition: var(--transition);
 }

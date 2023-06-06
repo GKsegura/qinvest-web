@@ -7,18 +7,42 @@ const primaryColor = getComputedStyle(document.documentElement)
 const secondaryColor = getComputedStyle(document.documentElement)
     .getPropertyValue("--secondary-color")
     .trim(); //const da váriavel "primary-color" do css "style.css"
+const transition = getComputedStyle(document.documentElement)
+    .getPropertyValue("--transition")
+    .trim(); //const da variável "--transition" do css "style.css"
 const lightColor = "#ffffff"; //const com o valor padrão da cor clara
 const darkColor = "#212121"; //const com o valor padrão da cor escura
-const header = document.getElementsByClassName("header-color");
+
+const transitionNone = "none";
+const transitionProperties = "background-color, color";
+const transitionDuration = "0.4s";
+const transitionTimingFunction = "ease";
+const defaultTransition = `${transitionProperties} ${transitionDuration} ${transitionTimingFunction}`;
 
 //funções
-const toggleDark = () => {
-    toggle(toggleIcon, "bi-sun-fill", "bi-moon-fill", 1, darkColor, lightColor);
+const toggleDark = (newTransition) => {
+    toggle(
+        toggleIcon,
+        "bi-sun-fill",
+        "bi-moon-fill",
+        1,
+        darkColor,
+        lightColor,
+        newTransition
+    );
     setThemeCookie("dark");
 }; // função que coloca no modo escuro
 
-const toggleLight = () => {
-    toggle(toggleIcon, "bi-moon-fill", "bi-sun-fill", 0, lightColor, darkColor);
+const toggleLight = (newTransition) => {
+    toggle(
+        toggleIcon,
+        "bi-moon-fill",
+        "bi-sun-fill",
+        0,
+        lightColor,
+        darkColor,
+        newTransition
+    );
     setThemeCookie("light");
 }; // função que coloca no modo claro
 
@@ -29,12 +53,14 @@ const toggle = (
     logoValue,
     primaryColor,
     secondaryColor,
-    bool
+    newTransition
 ) => {
     element.classList.remove(current);
     element.classList.add(next);
 
     toggleLogo.style.filter = `invert(${logoValue})`;
+
+    document.documentElement.style.setProperty("--transition", newTransition);
 
     document.documentElement.style.setProperty("--primary-color", primaryColor);
     document.documentElement.style.setProperty(
@@ -46,8 +72,8 @@ const toggle = (
 document.addEventListener("DOMContentLoaded", () => {
     toggleIcon.addEventListener("click", () => {
         toggleIcon.classList.contains("bi-sun-fill")
-            ? toggleDark()
-            : toggleLight();
+            ? toggleDark(defaultTransition)
+            : toggleLight(defaultTransition);
     }); //função que pega o evento click e troca o tema
 }); //função que só carrega o js quando o site é completamente carregado
 
@@ -70,10 +96,10 @@ window.addEventListener("load", function () {
     const theme = getThemeFromCookie();
 
     if (theme === "light") {
-        toggleLight();
+        toggleLight(transitionNone);
     } else if (theme === "dark") {
-        toggleDark();
+        toggleDark(transitionNone);
     } else {
-        toggleLight();
+        toggleLight(transitionNone);
     }
 });
