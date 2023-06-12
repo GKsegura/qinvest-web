@@ -9,15 +9,16 @@ window.addEventListener("scroll", () => {
     // Obtém a posição atual do scroll
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    // Define a propriedade de transição a cada evento de scroll
+    header.style.transition = "top 0.3s ease-in-out";
+
     // Verifica se a posição atual do scroll é maior que a posição anterior
     if (scrollTop > lastScrollTop) {
         // Se a posição atual do scroll for maior, significa que o usuário está rolando para baixo
-        // Nesse caso, adiciona a classe 'sticky' ao header para que ele fique fixo
-        header.classList.add("sticky");
+        header.style.top = "-10vh";
     } else {
         // Se a posição atual do scroll for menor ou igual à posição anterior, significa que o usuário está rolando para cima
-        // Nesse caso, remove a classe 'sticky' do header para que ele não fique fixo
-        header.classList.remove("sticky");
+        header.style.top = "0";
     }
 
     // Atualiza a posição anterior do scroll com a posição atual
