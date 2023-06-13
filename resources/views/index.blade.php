@@ -1,7 +1,6 @@
 @include('layouts.header')
 @include ('layouts.wave')
 
-
 <div class="stair-image">
     <div class="text-image-ladder">
         <h1>Investimento simples e direto:</h1>

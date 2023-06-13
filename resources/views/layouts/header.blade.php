@@ -16,11 +16,13 @@
             <div class="row">
                 <div class="d-flex flex-row justify-content-between align-items-center">
                     <div class="col-3">
-                        <img id="theme-logo" alt="" class="light-logo" src="assets/logo.svg">
+                        <a href="/">
+                            <img id="theme-logo" alt="" class="light-logo" src="assets/logo.svg">
+                        </a>
                     </div>
 
                     <ul class="col-6 nav d-flex justify-content-evenly">
-                        <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Updates</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Service</a></li>
                         <li class="nav-item"><a href="" class="nav-link">Features</a></li>

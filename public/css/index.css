@@ -3,11 +3,12 @@
 .stair-image {
     height: 120vh;
     width: 100%;
-    background-image: #ffff;
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    
 }
 
 .text-image-ladder {
