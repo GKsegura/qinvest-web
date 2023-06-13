@@ -43,6 +43,7 @@ header {
     position: fixed;
     z-index: 1;
     top: 0;
+    box-shadow: 0 0.1vh 0.1vh var(--secondary-color);
 }
 
 header a {
