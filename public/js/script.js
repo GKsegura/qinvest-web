@@ -1,105 +1,26 @@
-//variáveis
-const toggleIcon = document.getElementById("theme-icon"); //const do ícone de tema
-const toggleLogo = document.getElementById("theme-logo"); //const da logo
-const primaryColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--primary-color")
-    .trim(); //const da váriavel "primary-color" do css "style.css"
-const secondaryColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--secondary-color")
-    .trim(); //const da váriavel "primary-color" do css "style.css"
-const transition = getComputedStyle(document.documentElement)
-    .getPropertyValue("--transition")
-    .trim(); //const da variável "--transition" do css "style.css"
-const lightColor = "#ffffff"; //const com o valor padrão da cor clara
-const darkColor = "#212121"; //const com o valor padrão da cor escura
+// Seleciona o elemento do header
+const header = document.querySelector("header");
 
-const transitionNone = "none";
-const transitionProperties = "background-color, color";
-const transitionDuration = "0.4s";
-const transitionTimingFunction = "ease";
-const defaultTransition = `${transitionProperties} ${transitionDuration} ${transitionTimingFunction}`;
+// Variável para armazenar a posição do scroll anterior
+let lastScrollTop = 0;
 
-//funções
-const toggleDark = (newTransition) => {
-    toggle(
-        toggleIcon,
-        "bi-sun-fill",
-        "bi-moon-fill",
-        1,
-        darkColor,
-        lightColor,
-        newTransition
-    );
-    setThemeCookie("dark");
-}; // função que coloca no modo escuro
+// Evento de scroll da janela
+window.addEventListener("scroll", () => {
+    // Obtém a posição atual do scroll
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-const toggleLight = (newTransition) => {
-    toggle(
-        toggleIcon,
-        "bi-moon-fill",
-        "bi-sun-fill",
-        0,
-        lightColor,
-        darkColor,
-        newTransition
-    );
-    setThemeCookie("light");
-}; // função que coloca no modo claro
+    // Define a propriedade de transição a cada evento de scroll
+    header.style.transition = "top 0.3s ease-in-out";
 
-const toggle = (
-    element,
-    current,
-    next,
-    logoValue,
-    primaryColor,
-    secondaryColor,
-    newTransition
-) => {
-    element.classList.remove(current);
-    element.classList.add(next);
-
-    toggleLogo.style.filter = `invert(${logoValue})`;
-
-    document.documentElement.style.setProperty("--transition", newTransition);
-
-    document.documentElement.style.setProperty("--primary-color", primaryColor);
-    document.documentElement.style.setProperty(
-        "--secondary-color",
-        secondaryColor
-    );
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-    toggleIcon.addEventListener("click", () => {
-        toggleIcon.classList.contains("bi-sun-fill")
-            ? toggleDark(defaultTransition)
-            : toggleLight(defaultTransition);
-    }); //função que pega o evento click e troca o tema
-}); //função que só carrega o js quando o site é completamente carregado
-
-const setThemeCookie = (theme) => {
-    document.cookie = "theme=" + theme + ";path=/";
-}; //função que define o cookie com o valor do tema escolhido
-
-const getThemeFromCookie = () => {
-    const cookies = document.cookie.split("; ");
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].split("=");
-        if (cookie[0] === "theme") {
-            return cookie[1];
-        }
-    }
-    return null;
-}; //função que pesquise o cookie "theme" e retorne seu valor
-
-window.addEventListener("load", function () {
-    const theme = getThemeFromCookie();
-
-    if (theme === "light") {
-        toggleLight(transitionNone);
-    } else if (theme === "dark") {
-        toggleDark(transitionNone);
+    // Verifica se a posição atual do scroll é maior que a posição anterior
+    if (scrollTop > lastScrollTop) {
+        // Se a posição atual do scroll for maior, significa que o usuário está rolando para baixo
+        header.style.top = "-10vh";
     } else {
-        toggleLight(transitionNone);
+        // Se a posição atual do scroll for menor ou igual à posição anterior, significa que o usuário está rolando para cima
+        header.style.top = "0";
     }
+
+    // Atualiza a posição anterior do scroll com a posição atual
+    lastScrollTop = scrollTop;
 });

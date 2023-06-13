@@ -20,12 +20,14 @@
     margin: 0;
     font-size: 60px;
     padding-top: 10vh;
+    transition: var(--transition);
 }
 
 .text-image-ladder p {
     padding: 0;
     margin: 0;
     font-size: 18px;
+    transition: var(--transition);
 }
 
 .buttons-home {
@@ -60,12 +62,12 @@
     border-color: transparent;
 }
 
-/* #register,
+#register,
 #login,
 #register:hover,
 #login:hover {
-    transition: 0.5s;
-} */
+    transition: var(--transition);
+}
 
 .stair {
     width: 100%;
