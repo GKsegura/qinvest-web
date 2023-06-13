@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #212121;
+    --secondary-color: #121927;
 
     --transition-properties1: background-color;
     --transition-properties2: color;
@@ -43,7 +43,7 @@ header {
     position: fixed;
     z-index: 1;
     top: 0;
-    box-shadow: 0 0.1vh 0.1vh var(--secondary-color);
+    box-shadow: 0 0.1vh 0.1vh;
 }
 
 header a {

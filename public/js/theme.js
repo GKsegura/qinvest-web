@@ -11,7 +11,7 @@ const transition = getComputedStyle(document.documentElement)
     .getPropertyValue("--transition")
     .trim(); //const da variável "--transition" do css "style.css"
 const lightColor = "#ffffff"; //const com o valor padrão da cor clara
-const darkColor = "#212121"; //const com o valor padrão da cor escura
+const darkColor = "#121927"; //const com o valor padrão da cor escura
 
 const transitionNone = "none"; //sem transição
 const transitionProperties1 = "background-color"; // primeira propriedade da transição
