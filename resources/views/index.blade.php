@@ -1,5 +1,4 @@
 @include('layouts.header')
-@include ('layouts.wave')
 
 <div class="stair-image">
     <div class="text-image-ladder">
@@ -12,9 +11,6 @@
         <button id="register">Criar Conta</button>
     </div>
     <div class="stair">
-        <img id="world-map" alt="" class="" src="assets/worldMap.png">
-        <img id="stair-svg" alt="" class="" src="assets/stair.svg">
-        <img id="girl-run" alt="" class="" src="assets/woman.png">
     </div>
 </div>
 

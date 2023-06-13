@@ -3,13 +3,13 @@
 .stair-image {
     height: 120vh;
     width: 100%;
-   background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    background-image: url(../assets/waveBg.svg);
+    background-size: cover;
     margin: 0;
     padding: 0;
     text-align: center;
-    color: var(--secondary-color);
-    z-index: 3;
-    
 }
 
 .text-image-ladder {
@@ -20,7 +20,7 @@
     padding: 0;
     margin: 0;
     font-size: 60px;
-    padding-top: 10vh;
+    padding-top: 15vh;
     transition: var(--transition);
 }
 
