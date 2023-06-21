@@ -3,6 +3,10 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #121927;
+    --dark-purple: #6932e2;
+    --dark-purple-low-opacity: #6932e233;
+
+
 
     --transition-properties1: background-color;
     --transition-properties2: color;

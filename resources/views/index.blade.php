@@ -1,17 +1,25 @@
 @include('layouts.header')
 
-<div class="stair-image">
-    <div class="text-image-ladder">
-        <h1>Investimento simples e direto:</h1>
-        <p>QINVEST◢ pode ser a solução para você mudar seu destino.</p>
-        <p>Crie sua conta gratuitamente e comece a participar dessa comunidade:</p>
+<div class="page" id="page-home">
+    <div class="container">
+
+        <div class="header-page">
+            <div class="text-image-ladder">
+                <p class="h1">Investimento simples e direto</p>
+                <p class="m-0 p-0phpj">QINVEST◢ pode ser a solução para você mudar seu destino.</p>
+                <p>Crie sua conta gratuitamente e comece a participar dessa comunidade</p>
+            </div>
+            <div class="buttons-home">
+                <button id="login">Já sou cadastrado</button>
+                <button id="register">Criar Conta</button>
+            </div>
+            <div class="stair">
+            </div>
+        </div>
+
     </div>
-    <div class="buttons-home">
-        <button id="login">Já sou cadastrado</button>
-        <button id="register">Criar Conta</button>
-    </div>
-    <div class="stair">
-    </div>
+
 </div>
+
 
 @include('layouts.footer')

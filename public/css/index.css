@@ -1,18 +1,27 @@
 @import url(style.css);
 
-.stair-image {
+.page {
     height: 120vh;
     width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    background-image: url(../assets/waveBg.svg);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     background-size: cover;
     margin: 0;
     padding: 0;
     text-align: center;
 }
+#page-home {
+        background-image: url(../assets/waveBg.svg);
+        color: var(--primary-color);
 
-.text-image-ladder {
+}
+
+.header-page{
+    padding-top: 15vh;
+    transition: var(--transition);
+}
+
+/* .text-image-ladder {
     width: 100%;
 }
 
@@ -29,7 +38,7 @@
     margin: 0;
     font-size: 18px;
     transition: var(--transition);
-}
+} */
 
 .buttons-home {
     width: 100%;
