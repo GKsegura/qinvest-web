@@ -6,8 +6,6 @@
     --dark-purple: #6932e2;
     --dark-purple-low-opacity: #6932e233;
 
-
-
     --transition-properties1: background-color;
     --transition-properties2: color;
     --transition-duration: 0.4s;
@@ -45,7 +43,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     box-shadow: 0 0.1vh 0.1vh;
 }

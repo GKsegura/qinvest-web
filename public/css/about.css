@@ -1,8 +1,9 @@
 @import url(style.css);
+@import url(https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css);
 
 /* SLIDE */
 
-.swiper-wrapper{
+.swiper-wrapper {
     width: 100%;
     height: 35em;
     display: flex;
@@ -10,8 +11,8 @@
     justify-content: center;
 }
 
-.card{
-    width: 20em;
+.card {
+    width: 15em;
     height: 90%;
     background-color: var(--primary-color) !important;
     color: var(--secondary-color) !important;
@@ -21,29 +22,36 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0;
 }
 
-.card-image{
+.card-image {
     width: 10em;
     height: 10em;
-    border-radius: 0.5em;
-    border: 2px solid var(--dark-purple);
-    
 }
 
-.card-image img{
+.card-image img {
     width: 100%;
     height: 100%;
     border-radius: 0.5em;
+    border: 2px solid var(--dark-purple);
 }
 
-.card-content{
+.card-content {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.card-name{
-font-size: 1.5em;
-font-weight: 500;
+.card-name {
+    margin: 0.5em;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.card-occupation {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 0;
+    color: var(--dark-purple);
 }

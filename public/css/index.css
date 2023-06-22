@@ -3,43 +3,22 @@
 .page {
     height: 120vh;
     width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    background-image: url(../assets/waveBg.svg);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     background-size: cover;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 #page-home {
-        background-image: url(../assets/waveBg.svg);
-        color: var(--primary-color);
-
+    background-image: url(../assets/waveBg.svg);
+    color: var(--primary-color);
 }
 
-.header-page{
+.header-page {
     padding-top: 15vh;
     transition: var(--transition);
 }
-
-/* .text-image-ladder {
-    width: 100%;
-}
-
-.text-image-ladder h1 {
-    padding: 0;
-    margin: 0;
-    font-size: 3.75em;
-    padding-top: 15vh;
-    transition: var(--transition);
-}
-
-.text-image-ladder p {
-    padding: 0;
-    margin: 0;
-    font-size: 1.125em;
-    transition: var(--transition);
-} */
 
 .buttons-home {
     width: 100%;
