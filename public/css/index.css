@@ -3,8 +3,9 @@
 .page {
     height: 120vh;
     width: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    background-image: url(../assets/waveBg.svg);
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -28,7 +29,7 @@
 .text-image-ladder h1 {
     padding: 0;
     margin: 0;
-    font-size: 60px;
+    font-size: 3.75em;
     padding-top: 15vh;
     transition: var(--transition);
 }
@@ -36,7 +37,7 @@
 .text-image-ladder p {
     padding: 0;
     margin: 0;
-    font-size: 18px;
+    font-size: 1.125em;
     transition: var(--transition);
 } */
 
