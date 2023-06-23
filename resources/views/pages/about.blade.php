@@ -21,145 +21,95 @@
                 lorem lorem lorem lorem lorem lorem lorem
             </p>
         </div>
-        <div class="body-page mySwiper">
-
-            <div class="swiper-wrapper">
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+    </div>
+    <section class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+                <div class="card-content">
+                    <p class="card-name">Davi Saito</p>
+                    <p class="card-occupation">Desenvolvedor</p>
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+                <div class="card-content">
+                    <p class="card-name">Deolindo Neto</p>
+                    <p class="card-occupation">Desenvolvedor</p>
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+                <div class="card-content">
+                    <p class="card-name">Eduarda Garbullio</p>
+                    <p class="card-occupation">Líder de Projeto & Desenvolvedor</p>
                 </div>
-                <div class="card swiper-slide">
-                    <div class="card-image">
-                        <img src="assets/dio.png" alt="">
-                    </div>
-
-                    <div class="card-content">
-                        <p class="card-name">Diolindo Scandinava</p>
-                        <p class="card-occupation">Stripper</p>
-                    </div>
-
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
+                </div>
+                <div class="card-content">
+                    <p class="card-name">Enrico Grossi</p>
+                    <p class="card-occupation">Desenvolvedor</p>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
+                </div>
+                <div class="card-content">
+                    <p class="card-name">Guilherme Diorio</p>
+                    <p class="card-occupation">Desenvolvedor</p>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
+                </div>
+                <div class="card-content">
+                    <p class="card-name">Isaac Levi</p>
+                    <p class="card-occupation">Desenvolvedor</p>
+                </div>
+            </div>
+            <div class="card swiper-slide">
+                <div class="card-image">
+                    <img src="assets/dio.png" alt="">
+                </div>
+                <div class="card-content">
+                    <p class="card-name">José Segura</p>
+                    <p class="card-occupation">Líder Técnico & Desenvolvedor</p>
                 </div>
             </div>
         </div>
-
-    </div>
+    </section>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
+            effect: "coverflow",
+            grabCursor: true,
             centeredSlides: true,
-            spaceBetween: 30,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: false,
+            },
             pagination: {
                 el: ".swiper-pagination",
-                type: "fraction",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
             },
         });
-
-        var appendNumber = 4;
-        var prependNumber = 1;
-        document
-            .querySelector(".prepend-2-slides")
-            .addEventListener("click", function(e) {
-                e.preventDefault();
-                swiper.prependSlide([
-                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-                ]);
-            });
-        document
-            .querySelector(".prepend-slide")
-            .addEventListener("click", function(e) {
-                e.preventDefault();
-                swiper.prependSlide(
-                    '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
-                );
-            });
-        document
-            .querySelector(".append-slide")
-            .addEventListener("click", function(e) {
-                e.preventDefault();
-                swiper.appendSlide(
-                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
-                );
-            });
-        document
-            .querySelector(".append-2-slides")
-            .addEventListener("click", function(e) {
-                e.preventDefault();
-                swiper.appendSlide([
-                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-                    '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-                ]);
-            });
     </script>
 </div>
 @include('layouts.footer')

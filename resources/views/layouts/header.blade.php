@@ -7,11 +7,11 @@
     <title>QInvest</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link href="{{ asset('css/about.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script defer src="{{ asset('js/theme.js') }}"></script>
 </head>
 
@@ -46,10 +46,10 @@
         <!-- <a href="{{ url('/') }}">Home</a>
                 @if (Route::has('login'))
                 @auth
-                                                        <a href="{{ url('/home') }}">Home</a>
+                                                            <a href="{{ url('/home') }}">Home</a>
 @else
     <a href=" {{ route('login') }}">Login</a>
-                                                        @if (Route::has('register'))
+                                                            @if (Route::has('register'))
     <a href="{{ route('register') }}">Register</a>
     @endif
                 @endauth
