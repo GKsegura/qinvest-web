@@ -1,5 +1,10 @@
 @include('layouts.header')
 <div class="page">
+    <!--
+        Essa página ainda precisa dos textos.
+        Além disso, os cards precisam ser finalizados. Eles precisam da foto de cada membro, das funções corretas,
+        e de uma mini descrição. Finalmente, todos os itens do card precisam ser redimensionados corretamente.
+    -->
     <div class="container">
         <div class="header-page text-start">
 
