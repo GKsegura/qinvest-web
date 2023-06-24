@@ -34,8 +34,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Davi Saito</p>
-                    <p class="card-occupation">Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -43,8 +45,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Deolindo Neto</p>
-                    <p class="card-occupation">Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -52,8 +56,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Eduarda Garbullio</p>
-                    <p class="card-occupation">Líder de Projeto & Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -61,8 +67,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Enrico Grossi</p>
-                    <p class="card-occupation">Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -70,8 +78,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Guilherme Diorio</p>
-                    <p class="card-occupation">Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -79,8 +89,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">Isaac Levi</p>
-                    <p class="card-occupation">Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
             <div class="card swiper-slide">
@@ -88,8 +100,10 @@
                     <img src="assets/dio.png" alt="">
                 </div>
                 <div class="card-content">
-                    <p class="card-name">José Segura</p>
-                    <p class="card-occupation">Líder Técnico & Desenvolvedor</p>
+                    <p class="card-name">Diolindo Scandinava</p>
+                    <p class="card-occupation">Stripper</p>
+                    <p class="card-description">Roda bolsinhas vários dias a noite para que possamos comprar nosso pau
+                        de cada dia.</p>
                 </div>
             </div>
         </div>
