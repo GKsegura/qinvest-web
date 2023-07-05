@@ -77,7 +77,7 @@ const setThemeCookie = (theme) => {
 }; //função que define o cookie com o valor do tema escolhido
 
 const getThemeFromCookie = () => {
-    const cookies = document.cookie.split("; ");
+    const cookies = document.cookie.split(";");
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].split("=");
         if (cookie[0] === "theme") {
@@ -106,7 +106,7 @@ toggleIcon.addEventListener("click", () => {
 }); //função que pega o evento click e troca o tema
 
 const updateTransition = () => {
-    setTimeout(function () {
+    setTimeout(() => {
         document.documentElement.style.setProperty(
             "--transition",
             defaultTransition
