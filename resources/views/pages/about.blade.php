@@ -36,7 +36,7 @@
         <div class="swiper-wrapper">
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/davi.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Davi Saito</p>
@@ -48,7 +48,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/deola.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Deolindo Neto</p>
@@ -60,7 +60,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/duda.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Eduarda Garbullio</p>
@@ -72,7 +72,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/enrico.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Enrico Grossi</p>
@@ -84,7 +84,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/gui.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Guilherme Diorio</p>
@@ -95,7 +95,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/isaac.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Isaac Levi</p>
@@ -106,7 +106,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/dio.png" alt="">
+                    <img src="assets/jose.jpg" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">José Segura</p>
