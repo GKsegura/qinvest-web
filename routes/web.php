@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Auth::routes();
-
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
+
+// Rotas do LOGIN
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
