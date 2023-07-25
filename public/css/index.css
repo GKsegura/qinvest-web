@@ -74,36 +74,9 @@
     margin-bottom: 5vh;
     padding: 0;
     position: absolute;
-    width: 35%;
+    width: 25%;
 }
 
-.svg-container {
-    width: 100%; /* Ajuste o tamanho conforme necessário */
-    height: auto;
-    margin: 0;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-
-.feather {
-    fill: #ffcc00; /* Cor do contorno */
-    stroke: none; /* Desativa o traço */
-    filter: url(#glow); /* Aplica o filtro de brilho ao contorno */
-}
-
-@keyframes pulsate {
-    0% {
-        filter: brightness(100%);
-    }
-    50% {
-        filter: brightness(200%);
-    }
-    100% {
-        filter: brightness(100%);
-    }
-}
-
-.feather {
-    animation: pulsate 1s infinite;
+#world {
+    width: 45%;
 }
