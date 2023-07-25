@@ -1,5 +1,9 @@
+import { getThemeFromCookie, setThemeCookie } from "../utils/cookies";
+
 //variáveis
+
 const toggleIcon = document.getElementById("theme-icon"); //const do ícone de tema
+
 const toggleLogo = document.getElementById("theme-logo"); //const da logo
 const primaryColor = getComputedStyle(document.documentElement)
     .getPropertyValue("--primary-color")
@@ -21,6 +25,11 @@ const transitionTimingFunction = "ease"; // função de tempo da transição
 const defaultTransition = `${transitionProperties1} ${transitionDuration} ${transitionTimingFunction}, ${transitionProperties2} ${transitionDuration} ${transitionTimingFunction}`;
 
 //funções
+
+/**
+ * função que coloca no modo escuro
+ * @param {String} newTransition
+ */
 const toggleDark = (newTransition) => {
     toggle(
         toggleIcon,
@@ -33,8 +42,12 @@ const toggleDark = (newTransition) => {
     );
     setThemeCookie("dark");
     updateTransition();
-}; // função que coloca no modo escuro
+};
 
+/**
+ * função que coloca no modo claro
+ * @param {String} newTransition
+ */
 const toggleLight = (newTransition) => {
     toggle(
         toggleIcon,
@@ -47,7 +60,7 @@ const toggleLight = (newTransition) => {
     );
     setThemeCookie("light");
     updateTransition();
-}; // função que coloca no modo claro
+};
 
 const toggle = (
     element,
@@ -71,21 +84,6 @@ const toggle = (
         secondaryColor
     );
 };
-
-const setThemeCookie = (theme) => {
-    document.cookie = "theme=" + theme + ";path=/";
-}; //função que define o cookie com o valor do tema escolhido
-
-const getThemeFromCookie = () => {
-    const cookies = document.cookie.split(";");
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].split("=");
-        if (cookie[0] === "theme") {
-            return cookie[1];
-        }
-    }
-    return null;
-}; //função que pesquise o cookie "theme" e retorne seu valor
 
 document.addEventListener("DOMContentLoaded", function () {
     const theme = getThemeFromCookie();
