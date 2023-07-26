@@ -1,0 +1,27 @@
+@import url(style.css);
+.form-page {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.side-left {
+    border-radius: 20px 0px 0px 20px;
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        #3378ff 0deg,
+        #6caeeb 67.5deg,
+        #3a36ff 181.87499284744263deg,
+        #eac1de 292.5deg,
+        #b02fff 324.3750071525574deg
+    );
+    height: 70vh;
+}
