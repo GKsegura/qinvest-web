@@ -81,6 +81,26 @@ span.highlighted {
 .side-right {
     border-radius: 0 1vh 1vh 0;
     background-color: var(--secondary-color);
+    color: var(--primary-color);
     height: 70vh;
     padding: 0 !important;
+}
+
+.into-side-right {
+    height: 70vh;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.text-right-form {
+    font-size: 400%;
+    text-align: left;
+    width: 100%;
+    height: 20vh;
+    padding: 2.5% 0 0 5%;
+}
+
+.form {
+    width: 100%;
+    height: 50vh;
 }
