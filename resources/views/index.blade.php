@@ -14,6 +14,9 @@
                 <button id="register">Criar Conta</button>
             </div>
             <div class="stair">
+                <img src="assets/world.svg" alt="" id="world">
+                <img src="assets/ladder.svg" alt="">
+                <img src="assets/girl.svg" alt="">
             </div>
         </div>
 

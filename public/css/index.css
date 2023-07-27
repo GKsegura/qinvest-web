@@ -74,7 +74,13 @@
 
 .stair img {
     margin: 0;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
     padding: 0;
     position: absolute;
-    width: 50%;
+    width: 25%;
+}
+
+#world {
+    width: 45%;
 }
