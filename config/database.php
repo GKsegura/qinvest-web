@@ -65,7 +65,6 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'pgsql.projetoscti.com.br'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'projetoscti12'),
