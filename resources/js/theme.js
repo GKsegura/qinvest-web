@@ -2,26 +2,27 @@ import { getThemeFromCookie, setThemeCookie } from "../utils/cookies";
 
 //variáveis
 
-const toggleIcon = document.getElementById("theme-icon"); //const do ícone de tema
+/* const do ícone de tema */
+const toggleIcon = document.getElementById("theme-icon");
+/* const da logo */
+const toggleLogo = document.getElementById("theme-logo");
 
-const toggleLogo = document.getElementById("theme-logo"); //const da logo
-const primaryColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--primary-color")
-    .trim(); //const da váriavel "primary-color" do css "style.css"
-const secondaryColor = getComputedStyle(document.documentElement)
-    .getPropertyValue("--secondary-color")
-    .trim(); //const da váriavel "primary-color" do css "style.css"
-const transition = getComputedStyle(document.documentElement)
-    .getPropertyValue("--transition")
-    .trim(); //const da variável "--transition" do css "style.css"
-const lightColor = "#ffffff"; //const com o valor padrão da cor clara
-const darkColor = "#121927"; //const com o valor padrão da cor escura
+/*  const com o valor padrão da cor clara*/
+const lightColor = "#ffffff";
 
-const transitionNone = "none"; //sem transição
-const transitionProperties1 = "background-color"; // primeira propriedade da transição
-const transitionProperties2 = "color"; // segunda propriedade de transição
-const transitionDuration = "0.4s"; // duração da transição
-const transitionTimingFunction = "ease"; // função de tempo da transição
+/* const com o valor padrão da cor escura */
+const darkColor = "#121927";
+/* sem transição */
+const transitionNone = "none";
+/*  primeira propriedade da transição */
+const transitionProperties1 = "background-color";
+/* segunda propriedade de transição */
+const transitionProperties2 = "color";
+/* duração da transição */
+const transitionDuration = "0.4s";
+/* função de tempo da transição */
+const transitionTimingFunction = "ease";
+/* transição padrão do css */
 const defaultTransition = `${transitionProperties1} ${transitionDuration} ${transitionTimingFunction}, ${transitionProperties2} ${transitionDuration} ${transitionTimingFunction}`;
 
 //funções
@@ -62,6 +63,16 @@ const toggleLight = (newTransition) => {
     updateTransition();
 };
 
+/**
+ *
+ * @param {Element} element
+ * @param {String} current
+ * @param {String} next
+ * @param {Number} logoValue
+ * @param {String} primaryColor
+ * @param {String} secondaryColor
+ * @param {Element} newTransition
+ */
 const toggle = (
     element,
     current,
@@ -85,24 +96,26 @@ const toggle = (
     );
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+/**
+ *
+ */
+document.addEventListener("DOMContentLoaded", () => {
     const theme = getThemeFromCookie();
-
-    if (theme === "light") {
-        toggleLight(transitionNone);
-    } else if (theme === "dark") {
-        toggleDark(transitionNone);
-    } else {
-        toggleLight(transitionNone);
-    }
+    theme == "light" ? toggleLight(transitionNone) : toggleDark(transitionNone);
 });
 
+/**
+ *  Evento click que troca o tema
+ */
 toggleIcon.addEventListener("click", () => {
     toggleIcon.classList.contains("bi-sun-fill")
         ? toggleDark(defaultTransition)
         : toggleLight(defaultTransition);
-}); //função que pega o evento click e troca o tema
+});
 
+/**
+ *
+ */
 const updateTransition = () => {
     setTimeout(() => {
         document.documentElement.style.setProperty(
