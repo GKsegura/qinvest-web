@@ -27,5 +27,6 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO
-Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
+Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'createForm'])->name('cadastro');
+Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'store'])->name('cadastro');
 

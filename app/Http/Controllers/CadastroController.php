@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class CadastroController extends Controller
 {
     public function createForm()
     {
-        return view('cadastro');
+        return view('auth.cadastro');
     }
 
     public function store(Request $request)
@@ -16,18 +17,19 @@ class RegisterController extends Controller
         // Valide os dados recebidos
         $request->validate([
             'nome' => 'required|string|max:150',
-            'email' => 'required|email|max:150|unique:usuarios,email',
-            'senha' => 'required|senha|max:200|unique:usuarios,senha',
-]);
+            'email' => 'required|string|max:150',
+            'senha' => 'required|string|max:200',
+        ]);
 
         // Execute o INSERT na tabela de usuários
-        DB::table('usuarios')->insert([
+        DB::table('usuario')->insert([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),
             'senha' => $request->input('senha'),
+            'excluido' => false,
         ]);
 
         // Redirecione para uma página de sucesso ou exiba uma mensagem
-        return redirect()->route('sucesso');
+        //return redirect()->route('sucesso');
     }
 }
