@@ -17,10 +17,6 @@
 
 .header-page {
     padding-top: 15vh;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
     transition: var(--transition);
 }
 
