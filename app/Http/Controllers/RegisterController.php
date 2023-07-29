@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class CadastroController extends Controller
+class RegisterController extends Controller
 {
+
     public function createForm()
     {
-        return view('auth.cadastro');
+        return view('auth.register');
     }
 
-    public function store(Request $request)
+    public function auth(Request $request)
     {
         // Valide os dados recebidos
         $request->validate([
@@ -25,7 +27,7 @@ class CadastroController extends Controller
         DB::table('usuario')->insert([
             'nome' => $request->input('nome'),
             'email' => $request->input('email'),
-            'senha' => $request->input('senha'),
+            'senha' => Hash::make($request->input('senha')), // Criptografa a senha
             'excluido' => false,
         ]);
 

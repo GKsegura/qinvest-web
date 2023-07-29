@@ -28,6 +28,6 @@ Route::get('/login', [App\Http\Controllers\PageController::class, 'login'])->nam
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO
-Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'createForm'])->name('cadastro');
-Route::post('/cadastro', [App\Http\Controllers\CadastroController::class, 'store'])->name('cadastro');
+Route::post('/register', [App\Http\Controllers\RegisterController::class, 'auth'])->name('register');
+Route::get('/register', [App\Http\Controllers\RegisterController::class, 'createForm'])->name('register');
 
