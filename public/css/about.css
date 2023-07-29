@@ -1,7 +1,15 @@
 @import url(style.css);
 
-/* SLIDE */
+.about-page {
+    width: 100%;
+}
 
+.about-page h1,
+p {
+    text-align: justify;
+}
+
+/* SLIDE */
 
 .swiper {
     width: 100%;

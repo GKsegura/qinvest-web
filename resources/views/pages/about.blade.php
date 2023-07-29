@@ -5,8 +5,8 @@
         Além disso, os cards precisam ser finalizados. Eles precisam da foto de cada membro, das funções corretas,
         e de uma mini descrição. Finalmente, todos os itens do card precisam ser redimensionados corretamente.
     -->
-    <div class="container">
-        <div class="header-page text-start">
+    <div class="container about-page">
+        <div class="header-page">
 
             <p class="h1">
                 Sobre nós
