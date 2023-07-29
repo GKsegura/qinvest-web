@@ -31,7 +31,7 @@
                     </ul>
 
                     <div class="col-3 d-flex flex-row justify-content-evenly">
-                        <a href="/login"><i class="bi bi-person-circle"></i></a>
+                        <a href="/register"><i class="bi bi-person-circle"></i></a>
                         <i id="theme-icon" class="bi bi-sun-fill"></i>
                     </div>
                 </div>

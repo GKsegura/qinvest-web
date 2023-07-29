@@ -2,7 +2,7 @@
 
 
 <x-auth.auth-card>
-    @include('auth.cadastro')
+    @include('auth.form.register')
 </x-auth.auth-card>
 
 @include('layouts.footer-form')

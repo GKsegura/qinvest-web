@@ -20,7 +20,7 @@ Route::get('/', function () {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
-Route::get('/login', [App\Http\Controllers\PageController::class, 'login'])->name('login');
+Route::get('/register', [App\Http\Controllers\PageController::class, 'register'])->name('register');
 
 // Rotas do LOGIN
 // Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -30,4 +30,3 @@ Route::get('/login', [App\Http\Controllers\PageController::class, 'login'])->nam
 // Rotas do CADASTRO
 Route::post('/register', [App\Http\Controllers\RegisterController::class, 'auth'])->name('register');
 Route::get('/register', [App\Http\Controllers\RegisterController::class, 'createForm'])->name('register');
-

@@ -15,8 +15,8 @@ class PageController extends Controller
     {
         return view('pages.about');
     }
-    function login()
+    function register()
     {
-        return view('auth.login');
+        return view('auth.page.register');
     }
 }
