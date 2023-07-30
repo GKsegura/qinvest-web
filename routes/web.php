@@ -23,7 +23,13 @@ Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->nam
 Route::get('/register', [App\Http\Controllers\PageController::class, 'register'])->name('register');
 
 // Rotas do LOGIN
-// Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'home')->name('login.home');
+    Route::get('/login', 'store')->name('login.store');
+    Route::get('/login', 'destroy')->name('login.destroy');
+});
+
+//Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 // Route::post('/login', [AuthController::class, 'login']);
 // Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
