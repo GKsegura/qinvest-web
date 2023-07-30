@@ -1,15 +1,34 @@
 <!-- resources/views/auth/form/login.blade.php -->
-<form action="{{ route('login') }}" method="POST">
+
+@extends('layouts.app')
+
+@section('content')
+    <h2>Login</h2>
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    <form action="{{ url('/login') }}" method="POST">
     @csrf
 
-    <div class="input-group">
-        <input type="email" placeholder="Email" name="email" required>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required autofocus>
     </div>
 
-
-    <div class="input-group">
-        <input type="password" name="senha" placeholder="Senha" required>
+    <div>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
     </div>
 
-    <button type="submit">Login</button>
+    <div>
+        <button type="submit">Login</button>
+    </div>
 </form>
+@endsection
+
+
+
