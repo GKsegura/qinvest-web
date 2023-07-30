@@ -1,0 +1,27 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.label-form{
+    text-align: left;
+
+}
+
+.button-submit {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: linear-gradient(220deg, #EC78FF 0%, #809BF9 100%);
+    font-weight: 700;
+    color: white;
+
+}
