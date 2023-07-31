@@ -22,3 +22,70 @@ form {
     font-weight: 700;
     color: white;
 }
+
+#eye-icon-password,
+#eye-icon-confirm-password {
+    display: inline-block;
+}
+form .password-strength-bar {
+    height: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1vh 0;
+    display: none;
+}
+
+form .password-strength-bar span {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    border-radius: 2vh;
+    position: relative;
+}
+
+.average {
+    margin: 0 1vh;
+}
+
+.password-strength-bar span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2vh;
+    background: var(--dark-purple);
+}
+
+span.weak::before {
+    background-color: #ff4757;
+}
+
+span.average::before {
+    background-color: #ffa500;
+}
+
+span.strong::before {
+    background-color: #23ad5c;
+}
+
+form .text-password {
+    font-size: 20px;
+    font-weight: 500px;
+    margin-bottom: -10px;
+    display: none;
+}
+
+form .text-password.weak {
+    color: #ff4757;
+}
+
+form .text-password.average {
+    color: #ffa500;
+}
+
+form .text-password.strong {
+    color: #23ad5c;
+}
