@@ -97,7 +97,10 @@ span.highlighted {
 .text-right-form {
     font-size: 400%;
     text-align: left;
-   
+}
+
+.text-right-form svg path {
+    fill: var(--primary-color);
 }
 
 .form {
