@@ -2,6 +2,8 @@
 
 @extends('layouts.app')
 
+@include('layouts.header')
+
 @section('content')
     <h2>Login</h2>
 
@@ -28,6 +30,9 @@
         <button type="submit">Login</button>
     </div>
 </form>
+
+@include('layouts.footer-form')
+
 @endsection
 
 
