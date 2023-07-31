@@ -15,14 +15,12 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', function () {return view('index');}); // ROTA QUE ATUALMENTE CHAMA A HOME
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
-Route::post('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
-Route::get('/register', [App\Http\Controllers\PageController::class, 'register'])->name('register');
+//Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home'); TEM QUE ARRUMAR ESTA ROTA
+Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
+Route::post('/register', [App\Http\Controllers\RegisterController::class, 'register'])->name('register');
 
 // Rotas do LOGIN
 <<<<<<< HEAD
