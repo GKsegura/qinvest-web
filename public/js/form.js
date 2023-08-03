@@ -29,9 +29,9 @@ eyeIconConfirmPassword.addEventListener("click", () => {
 // força de senha
 const passwordStrengthBar = document.querySelector(".password-strength-bar");
 //password já está declarado para a outra função
-const weak = document.querySelector(".weak");
-const average = document.querySelector(".average");
-const strong = document.querySelector(".strong");
+const one = document.querySelector(".one");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
 const textPassword = document.querySelector(".text-password ");
 
 const capitalLetters = /[A-Z]/;
@@ -47,57 +47,39 @@ const passwordValidator = () => {
         eyeIconPassword.style.display = "inline-block";
         eyeIconConfirmPassword.style.display = "inline-block";
 
-        // Verificar o comprimento da senha
-        if (password.value.length >= 8) {
-            validation += 1;
-            // Verificar a presença de letras maiúsculas, letras minúsculas, números e símbolos
-            if (password.value.match(capitalLetters)) {
-                validation += 1;
+        if (password.value.length < 8) {
+            validation = 1;
+        } else if (password.value.length >= 8) {
+            validation = 2;
+            if (
+                password.value.match(capitalLetters) &&
+                password.value.match(smallLetters)
+            ) {
+                validation = 3;
+                if (
+                    password.value.match(numbers) &&
+                    password.value.match(symbols)
+                ) {
+                    validation = 4;
+                }
             }
-            if (password.value.match(numbers)) {
-                validation += 1;
-            }
-            if (password.value.match(symbols)) {
-                validation += 1;
-            }
         }
 
-        if (validation == 1) {
-            weak.classList.add("active");
-            textPassword.style.display = "block";
-            textPassword.textContent = "Senha fraca";
-            textPassword.classList.add("weak");
-        }
+        console.log(validation, password.value.length);
 
-        if (validation == 2) {
-            average.classList.add("active");
-            textPassword.style.display = "block";
-            textPassword.textContent = "Senha média";
-            textPassword.classList.add("average");
-        } else {
-            average.classList.remove("active");
-            textPassword.classList.remove("average");
-        }
-
-        if (validation == 3) {
-            strong.classList.add("active");
-            textPassword.style.display = "block";
-            textPassword.textContent = "Senha forte";
-            textPassword.classList.add("strong");
-        } else {
-            strong.classList.remove("active");
-            textPassword.classList.remove("strong");
-        }
-
-        if (validation == 4) {
-        }
+        // if (validation == 2) {
+        //     average.classList.add("active");
+        //     textPassword.style.display = "block";
+        //     textPassword.textContent = "Senha média";
+        //     textPassword.classList.add("average");
+        // } else {
+        //     average.classList.remove("active");
+        //     textPassword.classList.remove("average");
+        // }
     } else {
         passwordStrengthBar.style.display = "none";
-        textPassword.style.display = "none";
         eyeIconPassword.style.display = "none";
         eyeIconConfirmPassword.style.display = "none";
-        validation = 0;
+        textPassword.style.display = "none";
     }
-
-    console.log(validation);
 };

@@ -59,15 +59,15 @@ form .password-strength-bar span {
     background: var(--dark-purple);
 }
 
-span.weak::before {
+span.one::before {
     background-color: #ff4757;
 }
 
-span.average::before {
+span.two::before {
     background-color: #ffa500;
 }
 
-span.strong::before {
+span.three:before {
     background-color: #23ad5c;
 }
 
