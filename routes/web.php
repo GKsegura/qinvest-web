@@ -21,10 +21,17 @@ Route::get('/', function () {return view('index');});
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 // Rotas do LOGIN
-Route::get('/login', [AuthController::class, 'createLogin'])->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+
+=======
+=======
+>>>>>>> parent of 6b2bb82 (WIP: login)
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
+>>>>>>> parent of 6b2bb82 (WIP: login)
 
 // Rotas do CADASTRO
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
