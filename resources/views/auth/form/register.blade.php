@@ -14,20 +14,18 @@
 
     <div class="field">
         <label for="password" class="label-form">Senha</label>
-        <input for="password" class="form-control" type="password" name="senha" id="password"
-            onkeyup="passwordValidator()" required>
+        <input for="password" class="form-control" type="password" name="senha" id="password" onkeyup="passwordValidator()" required>
         <i id="eye-icon-password" class="bi bi-eye"></i>
         <div class="password-strength-bar">
             <span class="one"></span>
             <span class="two"></span>
             <span class="three"></span>
         </div>
-        <div class="text-password">Fraca</div>
+        <div class="text-password"></div>
     </div>
     <div class="field">
         <label for="confirm-password" class="label-form">Confirme a senha</label>
-        <input for="confirm-password" class="form-control" type="password" name="confirmacao_senha"
-            id="confirm-password" required>
+        <input for="confirm-password" class="form-control" type="password" name="confirmacao_senha" id="confirm-password" required>
         <i id="eye-icon-confirm-password" class="bi bi-eye"></i>
     </div>
 

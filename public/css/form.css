@@ -13,7 +13,6 @@ form {
 .label-form {
     text-align: left;
 }
-
 .button-submit {
     padding: 5px;
     border-radius: 10px;
@@ -44,7 +43,7 @@ form .password-strength-bar span {
     position: relative;
 }
 
-.average {
+.two {
     margin: 0 1vh;
 }
 
@@ -59,18 +58,23 @@ form .password-strength-bar span {
     background: var(--dark-purple);
 }
 
-span.one::before {
+span.active.one::before {
     background-color: #ff4757;
 }
 
-span.two::before {
+span.active.two::before {
     background-color: #ffa500;
 }
 
-span.three:before {
+span.active.three::before {
     background-color: #23ad5c;
 }
 
+span.very-strong.one::before,
+span.very-strong.two::before,
+span.very-strong.three::before {
+    background-color: #00692c;
+}
 form .text-password {
     font-size: 20px;
     font-weight: 500px;
@@ -88,4 +92,8 @@ form .text-password.average {
 
 form .text-password.strong {
     color: #23ad5c;
+}
+
+form .text-password.very-strong {
+    color: #00692c;
 }

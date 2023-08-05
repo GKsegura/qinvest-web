@@ -67,19 +67,66 @@ const passwordValidator = () => {
 
         console.log(validation, password.value.length);
 
-        // if (validation == 2) {
-        //     average.classList.add("active");
-        //     textPassword.style.display = "block";
-        //     textPassword.textContent = "Senha média";
-        //     textPassword.classList.add("average");
-        // } else {
-        //     average.classList.remove("active");
-        //     textPassword.classList.remove("average");
-        // }
+        if (validation == 1) {
+            activeClass(one, "active");
+            disableClass(two, "active");
+            disableClass(three, "active");
+            disableClass(one, "very-strong");
+            disableClass(two, "very-strong");
+            disableClass(three, "very-strong");
+            textPassword.style.display = "block";
+            textPassword.textContent = "Senha fraca";
+            textPassword.classList.add("weak");
+        }
+        if (validation == 2) {
+            activeClass(one, "active");
+            activeClass(two, "active");
+            disableClass(three, "active");
+            disableClass(one, "very-strong");
+            disableClass(two, "very-strong");
+            disableClass(three, "very-strong");
+            textPassword.style.display = "block";
+            textPassword.textContent = "Senha média";
+            textPassword.classList.add("average");
+        }
+
+        if (validation == 3) {
+            activeClass(one, "active");
+            activeClass(two, "active");
+            activeClass(three, "active");
+            disableClass(one, "very-strong");
+            disableClass(two, "very-strong");
+            disableClass(three, "very-strong");
+            textPassword.style.display = "block";
+            textPassword.textContent = "Senha forte";
+            textPassword.classList.add("strong");
+        }
+        if (validation == 4) {
+            disableClass(one, "active");
+            disableClass(two, "active");
+            disableClass(three, "active");
+            activeClass(one, "very-strong");
+            activeClass(two, "very-strong");
+            activeClass(three, "very-strong");
+            textPassword.style.display = "block";
+            textPassword.textContent = "Senha muito forte";
+            textPassword.classList.add("very-strong");
+        }
     } else {
         passwordStrengthBar.style.display = "none";
         eyeIconPassword.style.display = "none";
         eyeIconConfirmPassword.style.display = "none";
         textPassword.style.display = "none";
+        disableClass(one);
+        disableClass(two);
+        disableClass(three);
     }
+};
+
+const disableClass = (element, input_class) => {
+    element.classList.remove(input_class);
+};
+
+const activeClass = (element, input_class) => {
+    element.classList.add(input_class);
 };
