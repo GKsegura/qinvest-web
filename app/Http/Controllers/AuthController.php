@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     // Mostra o formulário de login
-    public function createLogin()
+    public function showLoginForm()
     {
         return view('auth.form.login');
     }
@@ -16,10 +16,19 @@ class AuthController extends Controller
     // Processa o login
     public function login(Request $request)
     {
+        /* $credentials = $request->validate([
+            'email' => 'required|email|max:150',
+            'senha' => 'required|string|max:200',
+        ]); */
+
+        
         $credentials = $request->only('email', 'senha');
 
-        if (Auth::attempt($credentials)) {
+        /* dd($request); */
+
+        if (Auth::attempt(['email' => $request->email, 'senha' => $request->senha])) {
             // Autenticação bem-sucedida
+
             return redirect()->intended('/'); // Redireciona para a página inicial após o login
         } else {
             // Autenticação falhou

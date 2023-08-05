@@ -25,13 +25,10 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm']
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
-=======
-=======
->>>>>>> parent of 6b2bb82 (WIP: login)
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
->>>>>>> parent of 6b2bb82 (WIP: login)
 
 // Rotas do CADASTRO
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
