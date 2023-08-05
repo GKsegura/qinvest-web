@@ -4,26 +4,29 @@
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
-    <div class="input-group">
-        <input type="text" name="nome" placeholder="Nome" required>
+
+    <div class="field">
+        <label for="nome" class="label-form">Nome</label>
+        <input for="nome" class="form-control" type="text" name="nome" required>
     </div>
 
-    <div class="input-group">
-        <input type="email" placeholder="Email" name="email" required>
+    <div class="field">
+        <label for="email" class="label-form">Email</label>
+        <input for="email" class="form-control" type="email" name="email" required>
     </div>
 
-
-
-    <div class="input-group">
-        <input type="password" name="senha" placeholder="Senha" required>
+    <div class="field">
+        <label for="password" class="label-form">Senha</label>
+        <input for="password" class="form-control" type="password" name="senha" required>
     </div>
 
-    <div class="input-group">
-        <input type="password" name="senha" placeholder="Confirmar senha" required>
-    </div>
+    <!-- <div class="field">
+        <label for="confirm-password" class="label-form">Confirme a senha</label>
+        <input for="confirm-password" class="form-control" type="password" name="senha" senha" required>
+    </div> -->
 
     <!-- Adicione outros campos do cadastro, se houver -->
-    <button type="submit">Cadastrar</button>
+    <button type="submit" class="button-submit">Cadastrar</button>
 </form>
 
 @include('layouts.footer-form')
