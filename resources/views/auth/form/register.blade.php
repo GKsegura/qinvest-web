@@ -1,4 +1,7 @@
 <!-- resources/views/auth/form/register.blade.php -->
+
+@include('layouts.header')
+
 <form action="{{ route('register') }}" method="POST">
     @csrf
 
@@ -25,3 +28,5 @@
     <!-- Adicione outros campos do cadastro, se houver -->
     <button type="submit" class="button-submit">Cadastrar</button>
 </form>
+
+@include('layouts.footer-form')

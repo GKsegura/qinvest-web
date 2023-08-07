@@ -1,6 +1,10 @@
 <?php
 
+/* use Illuminate\Support\Facades\App; */
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,26 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
-Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
-Route::get('/register', [App\Http\Controllers\PageController::class, 'register'])->name('register');
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/about', [PageController::class, 'about'])->name('about');
 
 // Rotas do LOGIN
-Route::controller(LoginController::class)->group(function () {
-    Route::get('/login', 'home')->name('login.home');
-    Route::get('/login', 'store')->name('login.store');
-    Route::get('/login', 'destroy')->name('login.destroy');
-});
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm'])->name('login');
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
-//Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-// Route::post('/login', [AuthController::class, 'login']);
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO
-Route::post('/register', [App\Http\Controllers\RegisterController::class, 'auth'])->name('register');
-Route::get('/register', [App\Http\Controllers\RegisterController::class, 'createForm'])->name('register');
+Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'auth'])->name('register');
