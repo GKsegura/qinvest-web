@@ -2,7 +2,7 @@
 
 
 
-<form action="{{ url('/login') }}" method="POST">
+<form action="{{ route('login') }}" method="POST">
     @csrf
 
     <div class="field">

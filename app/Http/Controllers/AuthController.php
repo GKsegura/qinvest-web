@@ -22,7 +22,6 @@ class AuthController extends Controller
         ]); 
 
         
-        //   dd($credentials); 
 
         if (Auth::attempt($credentials)) {
             //Autenticação bem-sucedida
