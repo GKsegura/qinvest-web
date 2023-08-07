@@ -5,15 +5,15 @@
 @include('layouts.header')
 
 @section('content')
-    <h2>Login</h2>
+<h2>Login</h2>
 
-    @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-    @endif
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
 
-    <form action="{{ url('/login') }}" method="POST">
+<form action="{{ url('/login') }}" method="POST">
     @csrf
 
     <div>
@@ -23,7 +23,7 @@
 
     <div>
         <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" required>
+        <input type="password" name="password" id="senha" required>
     </div>
 
     <div>
@@ -31,9 +31,8 @@
     </div>
 </form>
 
+
+
 @include('layouts.footer-form')
 
 @endsection
-
-
-

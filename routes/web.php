@@ -17,7 +17,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {return view('index');});
+Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 // Rotas do LOGIN

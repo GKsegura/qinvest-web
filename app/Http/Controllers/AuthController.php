@@ -16,24 +16,22 @@ class AuthController extends Controller
     // Processa o login
     public function login(Request $request)
     {
-        /* $credentials = $request->validate([
+        $credentials = $request->validate([
             'email' => 'required|email|max:150',
-            'senha' => 'required|string|max:200',
-        ]); */
+            'password' => 'required|string|max:200',
+        ]); 
 
         
-        $credentials = $request->only('email', 'senha');
+        //   dd($credentials); 
 
-        /* dd($request); */
+        if (Auth::attempt($credentials)) {
+            //Autenticação bem-sucedida
 
-        if (Auth::attempt(['email' => $request->email, 'senha' => $request->senha])) {
-            // Autenticação bem-sucedida
-
-            return redirect()->intended('/'); // Redireciona para a página inicial após o login
+            return redirect()->route('home'); // Redireciona para a página inicial após o login
         } else {
-            // Autenticação falhou
-            return redirect()->route('login')->with('error', 'Credenciais inválidas.');
-        }
+            //Autenticação falhou
+            return redirect()->back()->withErrors('invalid_credentials', 'Credenciais inválidas.');
+        } 
     }
     // Processa o logout
     public function logout()
