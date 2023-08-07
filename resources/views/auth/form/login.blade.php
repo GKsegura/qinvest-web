@@ -1,38 +1,19 @@
 <!-- resources/views/auth/form/login.blade.php -->
 
-@extends('layouts.app')
 
-@include('layouts.header')
-
-@section('content')
-<h2>Login</h2>
-
-@if (session('error'))
-<div class="alert alert-danger">
-    {{ session('error') }}
-</div>
-@endif
 
 <form action="{{ url('/login') }}" method="POST">
     @csrf
 
-    <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required autofocus>
+    <div class="field">
+        <label for="email" class="label-form">Email:</label>
+        <input type=" email" class="form-control" name="email" id="email" required autofocus>
     </div>
 
-    <div>
-        <label for="senha">Senha:</label>
-        <input type="password" name="password" id="senha" required>
+    <div class="field">
+        <label for="senha" class="label-form">Senha:</label>
+        <input type="password" class="form-control" name="password" id="senha" required>
     </div>
 
-    <div>
-        <button type="submit">Login</button>
-    </div>
+    <button type="submit" class="button-submit">Login</button>
 </form>
-
-
-
-@include('layouts.footer-form')
-
-@endsection

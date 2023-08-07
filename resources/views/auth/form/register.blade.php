@@ -1,6 +1,5 @@
 <!-- resources/views/auth/form/register.blade.php -->
 
-@include('layouts.header')
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
@@ -17,7 +16,8 @@
 
     <div class="field">
         <label for="password" class="label-form">Senha</label>
-        <input for="password" class="form-control" type="password" name="senha" id="password" onkeyup="passwordValidator()" required>
+        <input for="password" class="form-control" type="password" name="senha" id="password"
+            onkeyup="passwordValidator()" required>
         <i id="eye-icon-password" class="bi bi-eye"></i>
         <div class="password-strength-bar">
             <span class="one"></span>
@@ -28,12 +28,11 @@
     </div>
     <div class="field">
         <label for="confirm-password" class="label-form">Confirme a senha</label>
-        <input for="confirm-password" class="form-control" type="password" name="confirmacao_senha" id="confirm-password" required>
+        <input for="confirm-password" class="form-control" type="password" name="confirmacao_senha"
+            id="confirm-password" required>
         <i id="eye-icon-confirm-password" class="bi bi-eye"></i>
     </div>
 
     <!-- Adicione outros campos do cadastro, se houver -->
     <button type="submit" class="button-submit">Cadastrar</button>
 </form>
-
-@include('layouts.footer-form')
