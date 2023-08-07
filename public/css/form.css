@@ -81,19 +81,3 @@ form .text-password {
     margin-bottom: -10px;
     display: none;
 }
-
-form .text-password.weak {
-    color: #ff4757;
-}
-
-form .text-password.average {
-    color: #ffa500;
-}
-
-form .text-password.strong {
-    color: #23ad5c;
-}
-
-form .text-password.very-strong {
-    color: #00692c;
-}
