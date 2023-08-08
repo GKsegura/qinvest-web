@@ -1,3 +1,5 @@
+@import url(style.css);
+
 form {
     display: flex;
     flex-direction: column;
@@ -10,6 +12,12 @@ form {
     flex-direction: column;
     gap: 5px;
 }
+.field input {
+    box-shadow: 0px 0px 8px 0px #000000;
+}
+.field input:focus {
+    box-shadow: 0px 0px 15px 0px #6f00ff;
+}
 .label-form {
     text-align: left;
 }
@@ -19,12 +27,12 @@ form {
     border: 1px solid #000;
     background: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
     font-weight: 700;
-    color: white;
+    color: #ffffff;
 }
 
 #eye-icon-password,
 #eye-icon-confirm-password {
-    display: inline-block;
+    display: none;
 }
 form .password-strength-bar {
     height: 1vh;

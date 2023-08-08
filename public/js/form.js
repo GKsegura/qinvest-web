@@ -98,6 +98,7 @@ const passwordValidator = () => {
             disableClass(two, "very-strong");
             disableClass(three, "very-strong");
             textPassword.style.display = "block";
+            textPassword.textContent = "Senha forte";
             textPassword.style.color = "#23ad5c";
         }
         if (validation == 4) {
