@@ -1,8 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 :root {
-    --primary-color: #ffffff;
+    /* --primary-color: #ffffff; */
+    --primary-color: lightgray;
     --secondary-color: #121927;
+
     --dark-purple: #6932e2;
     --dark-purple-low-opacity: #6932e233;
 
