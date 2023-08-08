@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Form', function (Blueprint $table) {
-            $table->bigIncrements('id_form');
-            $table->string('form_name');
-            $table->string('obs')->nullable();
+        Schema::create('Investor', function (Blueprint $table) {
+            $table->bigIncrements('id_investor');
+            $table->string('profile');
+            $table->string('description');
+            $table->timestamps();
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('investors');
     }
 };
