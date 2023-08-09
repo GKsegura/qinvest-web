@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Investment', function (Blueprint $table) {
+        Schema::create('investments', function (Blueprint $table) {
             $table->string('cod_investment')->primary();
-            $table->unsignedBigInteger('fk_investor');
             $table->string('name_investment');
             $table->string('description');
             $table->decimal('profitability', 10, 2);
-            $table->foreign('fk_investor')->references('id_investor')->on('investor');
+            $table->foreignId('investor_id')->constrained();
         });
     }
 

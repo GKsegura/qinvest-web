@@ -26,7 +26,7 @@ class AuthController extends Controller
             return redirect()->route('home'); // Redireciona para a página inicial após o login
         } else {
             return back()->withErrors([
-                'invalid_credentials' => 'As credênciais são invalidas',
+               'invalid_credentials' => 'As credênciais são invalidas',
             ])->withInput();
             //Autenticação falhou
         } 

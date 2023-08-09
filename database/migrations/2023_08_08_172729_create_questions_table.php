@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Question', function (Blueprint $table) {
-            $table->bigIncrements('id_question');
-            $table->unsignedBigInteger('fk_form');
+        Schema::create('questions', function (Blueprint $table) {
+            $table->id();
             $table->integer('number_question');
             $table->string('text_question');
+            $table->foreignId('form_id')->constrained();
             $table->timestamps();
-            $table->foreign('fk_form')->references('id_form')->on('Forms');
         });
     }
 

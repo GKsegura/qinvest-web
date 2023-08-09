@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Answer', function (Blueprint $table) {
-            $table->bigIncrements('id_answer');
-            $table->unsignedBigInteger('fk_question');
+        Schema::create('answers', function (Blueprint $table) {
+            $table->id();
             $table->string('text_answer');
             $table->char('letter', 1);
             $table->integer('rating');
+            $table->foreignId('question_id')->constrained();
             $table->timestamps();
-            $table->foreign('fk_question')->references('id_question')->on('Question');
         });
     }
 

@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Test', function (Blueprint $table) {
-            $table->bigIncrements('id_test');
+        Schema::create('tests', function (Blueprint $table) {
+            $table->id();
             $table->timestamp('date_test');
-            $table->unsignedBigInteger('fk_form');
-            $table->unsignedBigInteger('fk_user');
-            $table->unsignedBigInteger('fk_investor');
             $table->boolean('deleted');
             $table->integer('grade');
+            $table->foreignId('form_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('investor_id')->constrained();
             $table->timestamps();
-            $table->foreign('fk_form')->references('id_form')->on('Form');
-            $table->foreign('fk_user')->references('id_user')->on('User');
-            $table->foreign('fk_investor')->references('id_investor')->on('Investor');
         });
     }
 

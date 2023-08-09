@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Form', function (Blueprint $table) {
-            $table->bigIncrements('id_form');
+        Schema::create('forms', function (Blueprint $table) {
+            $table->id();
             $table->string('form_name');
             $table->string('obs')->nullable();
         });
