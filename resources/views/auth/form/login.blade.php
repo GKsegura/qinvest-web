@@ -1,6 +1,9 @@
 <!-- resources/views/auth/form/login.blade.php -->
 
 
+@error('invalid_credentials')
+<p class="text-red-500"> {{$message}} </p>
+@enderror
 
 <form action="{{ route('login') }}" method="POST">
     @csrf
