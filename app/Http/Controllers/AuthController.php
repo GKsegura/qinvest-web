@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
 {
@@ -14,23 +15,20 @@ class AuthController extends Controller
     }
 
     // Processa o login
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => 'required|email|max:150',
-            'password' => 'required|string|max:200',
-        ]); 
+        $credentials = $request->validated(); 
 
-        
-        //   dd($credentials); 
 
         if (Auth::attempt($credentials)) {
             //Autenticação bem-sucedida
 
             return redirect()->route('home'); // Redireciona para a página inicial após o login
         } else {
+            return back()->withErrors([
+               'invalid_credentials' => 'As credênciais são invalidas',
+            ])->withInput();
             //Autenticação falhou
-            return redirect()->back()->withErrors('invalid_credentials', 'Credenciais inválidas.');
         } 
     }
     // Processa o logout
@@ -40,5 +38,3 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
     }
-
-?>
