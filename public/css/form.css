@@ -1,6 +1,6 @@
 @import url(style.css);
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -21,7 +21,7 @@ form {
 .label-form {
     text-align: left;
 }
-.button-submit {
+.btn {
     padding: 5px;
     border-radius: 10px;
     border: 1px solid #000;
