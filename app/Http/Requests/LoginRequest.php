@@ -26,4 +26,13 @@ class LoginRequest extends FormRequest
             'password' => 'required|string|min:5|max:200',        
         ];
     }
+
+    public function messages(): array{
+        return [
+            'email.required' => 'Email é de preenchimento obrigatório',
+            'email.email' => 'Insira um email válido',
+            'password.required' => 'Senha é de preenchimento obrigatório',
+            'password.min' => 'A senha deve possuir no mínimo 5 caracteres',
+        ];
+    }
 }
