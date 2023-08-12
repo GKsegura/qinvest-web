@@ -64,7 +64,7 @@ header a {
     width: 0;
     height: 2px;
     border-radius: 50px;
-    background-color: var(--dark-purple);
+    background-color: var(--secondary-color);
     margin: auto;
     display: block;
     transition: width 0.3s linear;
@@ -81,6 +81,11 @@ header a {
 header i {
     font-size: 1.25em;
     font-weight: bold;
+    transition: var(--transition);
+}
+header i:hover {
+    color: var(--dark-purple);
+    transition: var(--transition);
 }
 
 .header-color {
@@ -97,7 +102,7 @@ i {
 /* FOOTER */
 
 footer {
-    color: var(--primary-color);
+    color: #d3d3d3;
     width: 100%;
     height: auto;
     padding-top: 2%;
@@ -107,7 +112,7 @@ footer {
 
 footer .nav-link,
 #form-typography {
-    color: var(--primary-color) !important;
+    color: #d3d3d3 !important;
     opacity: 0.75;
     font-weight: 300;
 }
@@ -157,6 +162,37 @@ footer .col-12 {
     align-items: center;
     justify-content: center;
 }
+
+footer ul {
+    display: flex;
+    align-items: center;
+}
+footer li {
+    width: max-content;
+}
+.footer-link {
+    transition: width 0.3s linear;
+}
+.footer-link::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 50px;
+    background-color: #d3d3d3;
+    margin: auto;
+    display: block;
+    transition: width 0.3s linear;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+    transition: width 0.3s linear;
+}
+
+.footer-link:hover {
+    transition: width 0.3s linear;
+}
+
 /* LOGO */
 
 #theme-logo {
@@ -164,5 +200,5 @@ footer .col-12 {
 }
 
 footer svg path {
-    fill: var(--primary-color);
+    fill: #d3d3d3;
 }

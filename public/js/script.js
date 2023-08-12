@@ -24,3 +24,11 @@ window.addEventListener("scroll", () => {
     // Atualiza a posição anterior do scroll com a posição atual
     lastScrollTop = scrollTop;
 });
+
+document.getElementById("login").addEventListener("click", () => {
+    window.location.href = "/login";
+});
+
+document.getElementById("register").addEventListener("click", () => {
+    window.location.href = "/register";
+});
