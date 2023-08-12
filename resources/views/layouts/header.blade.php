@@ -22,11 +22,11 @@
                     </div>
 
                     <ul class="col-6 nav d-flex justify-content-evenly">
-                        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Updates</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Service</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Features</a></li>
-                        <li class="nav-item"><a href="/about" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="/" class="header-link nav-link">Home</a></li>
+                        <li class="nav-item"><a href="" class="header-link nav-link">Updates</a></li>
+                        <li class="nav-item"><a href="" class="header-link nav-link">Service</a></li>
+                        <li class="nav-item"><a href="" class="header-link nav-link">Features</a></li>
+                        <li class="nav-item"><a href="/about" class="header-link nav-link">About Us</a></li>
 
                     </ul>
 
