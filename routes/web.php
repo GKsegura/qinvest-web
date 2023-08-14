@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,11 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Rotas do CADASTRO
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
+
+// Rotas do CADASTRO DE FORMULÁRIO
+Route::get('/formulary', [FormController::class, 'showRegisterFormulary'])->name('formulary');
+Route::post('/formulary', [FormController::class, 'form'])->name('formulary');
+
+// Rotas da EXIBIÇÃO DO FORMULÁRIO
+Route::get('/viewformulary', [FormController::class, 'showViewFormulary'])->name('viewformulary');
+Route::post('/editformulary', [FormController::class, 'editformulary'])->name('editformulary');
