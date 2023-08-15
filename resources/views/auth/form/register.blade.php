@@ -10,11 +10,10 @@
 
     <div x-data="{ step: 1 }">
 
-        <div x-show="step === 1" class="form">
-            <div class="field">
-                <label for="email" class="label-form">Email</label>
-                <input id="email" class="form-control" type="email" name="email">
-            </div>
+        <div x-show="step === 1" class="form" x-transition="transition-enter">
+
+            <label for="email" class="label-form">Email</label>
+            <input id="email" class="form-control" type="email" name="email">
 
 
             <div class="field">
@@ -37,11 +36,11 @@
                 <i id="eye-icon-confirm-password" class="bi bi-eye"></i>
             </div>
 
-            <button class="btn" @click.prevent="step = 2">-></button>
+            <button class="btn" @click.prevent="step = 2 ">-></button>
 
         </div>
 
-        <div x-show="step === 2" class="form">
+        <div x-show="step === 2" class="form" x-transition="transition-enter">
 
             <div class="field">
                 <label for="genero" class="label-form">Gênero</label>

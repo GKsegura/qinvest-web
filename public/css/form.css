@@ -4,7 +4,13 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content: center;
+
+}
+
+.transition-enter {
+  transition-property: all;
+  transition-timing-function: ease-out;
+  transition-duration: 300ms;
 }
 
 .field {
