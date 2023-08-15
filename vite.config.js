@@ -12,4 +12,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            "chart.js/auto": "chart.js/dist/chart.esm.js",
+        },
+    },
 });

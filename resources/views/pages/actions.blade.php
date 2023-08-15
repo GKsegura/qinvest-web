@@ -1,4 +1,6 @@
 @include('layouts.header')
+@vite(['resources/js/api.js'])
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -51,6 +53,7 @@
     <div id="stockData">
         <ul id="stockList"></ul>
     </div>
-    <canvas id="stockChart"></canvas>
+    <canvas id="stockChart" width="400" height="200"></canvas>
+
 </div>
 @include('layouts.footer')

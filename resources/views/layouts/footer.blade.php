@@ -71,8 +71,6 @@
 </footer>
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="{{asset('js/script.js')}}"></script>
-<script src="{{asset('js/api.js')}}"></script>
 </body>
 
 </html>
