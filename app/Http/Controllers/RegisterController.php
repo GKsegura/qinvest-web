@@ -27,7 +27,7 @@ class RegisterController extends Controller
                 'email' => 'required|string|max:255',
                 'password' => 'required|string|max:255',
                 'gender' => 'required|string|max:50',
-                'birth_time' => 'required|date|',
+                'birth_time' => 'required|date',
             ]);
         } catch (\Exception $v) {
             echo "<script type = 'text/javascript'>alert ('Erro na validação')</script>";

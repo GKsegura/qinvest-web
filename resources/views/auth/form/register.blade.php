@@ -5,9 +5,6 @@
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
-
-
-
     <div x-data="{ step: 1 }">
 
         <div x-show="step === 1" class="form" x-transition="transition-enter">
@@ -75,8 +72,6 @@
         </div>
 
     </div>
-
-
     <!-- Adicione outros campos do cadastro, se houver -->
     <!-- <!-- <button type="submit" class="button-submit">Cadastrar</button> -->
 </form>
