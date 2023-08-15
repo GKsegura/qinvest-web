@@ -20,6 +20,7 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/actions', [PageController::class, 'actions'])->name('actions');
 
 // Rotas do LOGIN
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm'])->name('login');

@@ -16,6 +16,10 @@ class PageController extends Controller
     {
         return view('pages.about');
     }
+    function actions()
+    {
+        return view('pages.actions');
+    }
     /*function register()
     {
         return view('auth.page.register');
