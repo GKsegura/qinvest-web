@@ -9,7 +9,7 @@ class StockController extends Controller
 {
     public function getStockQuotes(Request $request, $tickers)
     {
-        $range = $request->input('range', '1mo');
+        $range = $request->input('range', '3mo');
         $interval = $request->input('interval', '1d');
         $fundamental = $request->input('fundamental', false);
         $dividends = $request->input('dividends', false);

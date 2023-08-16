@@ -8,7 +8,7 @@ const toggleIcon = document.getElementById("theme-icon");
 const toggleLogo = document.getElementById("theme-logo");
 
 /*  const com o valor padrão da cor clara*/
-const lightColor = "#d3d3d3";
+const lightColor = "#ffffff";
 
 /* const com o valor padrão da cor escura */
 const darkColor = "#121927";
