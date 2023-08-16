@@ -1,10 +1,10 @@
 @import url(style.css);
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
+.active {
+    display: block;
+}
+.disable {
+    display: hidden;
 }
 
 .transition-enter {
@@ -19,26 +19,60 @@
     gap: 5px;
 }
 .field input {
-    box-shadow: 0px 0px 8px 0px #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
 }
 .field input:focus {
     box-shadow: 0px 0px 15px 0px #6f00ff;
 }
+.input-group-text {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
+
+}
+
+.field select {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.field select:focus {
+    box-shadow: 0px 0px 15px 0px #6f00ff;
+}
+
+
+.form-check-input[type=checkbox] {
+    border-radius: 0!important;
+}
+
 .label-form {
     text-align: left;
 }
-.btn {
+.submit-button {
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid #000;
+    border: 1px solid #dee2e6;
     background: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
     font-weight: 700;
     color: #ffffff;
+    width: 400px;
+    height: 40px;}
+
+.step-button {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 1px solid #dee2e6;
+    background-color: transparent;
+    border-radius: 5px;
+}
+.form-actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 #eye-icon-password,
 #eye-icon-confirm-password {
-    display: none;
+    display: block;
 }
 form .password-strength-bar {
     height: 1vh;
