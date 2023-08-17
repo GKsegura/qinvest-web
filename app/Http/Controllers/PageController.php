@@ -16,9 +16,9 @@ class PageController extends Controller
     {
         return view('pages.about');
     }
-    function actions()
+    function stock()
     {
-        return view('pages.actions');
+        return view('pages.stock');
     }
     /*function register()
     {

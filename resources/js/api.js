@@ -22,33 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function displayStockData(data) {
-        const historicalData = data.results[0].historicalDataPrice;
-        const stockList = document.getElementById("stockList");
-        stockList.innerHTML = "";
-
-        let previousClose = null;
-
-        historicalData.forEach((stock) => {
-            const listItem = document.createElement("li");
-            const date = new Date(stock.date * 1000).toLocaleDateString();
-            const close = `R$ ${stock.close.toFixed(2)}`;
-
-            if (previousClose !== null) {
-                const profitPercentage = calculateProfitPercentage(
-                    previousClose,
-                    stock.close
-                );
-                listItem.textContent = `Date: ${date}, Close: ${close}, Profit: ${profitPercentage.toFixed(
-                    2
-                )}%`;
-            } else {
-                listItem.textContent = `Date: ${date}, Close: ${close}`;
-            }
-
-            stockList.appendChild(listItem);
-            previousClose = stock.close;
-        });
-
         createCharts(data);
     }
 });
@@ -87,6 +60,10 @@ function createCharts(data) {
             ],
         },
         options: {
+            animation: {
+                duration: 1500,
+                easing: "linear",
+            },
             scales: {
                 x: {
                     type: "time",
@@ -95,16 +72,26 @@ function createCharts(data) {
                         displayFormats: {
                             day: "DD/MM/YYYY",
                         },
+                        unit: "day",
+                        stepSize: 1,
                     },
                     title: {
                         display: true,
                         text: "Date",
+                        color: "#ffffff", // Cor do título do eixo x
+                    },
+                    ticks: {
+                        color: "#ffffff", // Cor dos rótulos do eixo x
                     },
                 },
                 y: {
                     title: {
                         display: true,
-                        text: "Value",
+                        text: "Price",
+                        color: "#ffffff", // Cor do título do eixo y
+                    },
+                    ticks: {
+                        color: "#ffffff", // Cor dos rótulos do eixo y
                     },
                 },
             },
@@ -119,13 +106,18 @@ function createCharts(data) {
                 {
                     label: "Profit Percentage",
                     data: profitPercentages,
-                    borderColor: "rgba(255, 99, 132, 1)",
+                    backgroundColor: "rgba(255,99,132, 0.2)",
+                    borderColor: "rgba(255, 0, 0, 1)",
                     borderWidth: 1,
                     fill: false,
                 },
             ],
         },
         options: {
+            animation: {
+                duration: 1500,
+                easing: "linear",
+            },
             scales: {
                 x: {
                     type: "time",
@@ -151,8 +143,6 @@ function createCharts(data) {
     });
 }
 
-// Restante do código permanece o mesmo
-
 function calculateProfitPercentage(previousClose, currentClose) {
     return ((currentClose - previousClose) / previousClose) * 100;
 }
@@ -171,6 +161,5 @@ function calculateProfitPercentages(closePrices) {
             profitPercentages.push(profitPercentage);
         }
     }
-
     return profitPercentages;
 }

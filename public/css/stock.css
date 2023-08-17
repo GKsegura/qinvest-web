@@ -1,1 +1,47 @@
 @import url(style.css);
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color) !important;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.chart-canvas {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color) !important;
+}
