@@ -5,7 +5,7 @@
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
-    <div x-data="{ step: 1 }">
+    <div x-data="{ step: 2 }">
 
         <div x-show="step === 1" class="row justify-content-center gap-4" x-transition:enter.opacity.duration.600ms>
 
@@ -79,9 +79,10 @@
                 </div>
             </div>
 
-            <div class="col-10">
+            <div class="col-10 text-start">
                 <input id="newsletter" class="form-check-input" type="checkbox" name="newsletter">
-                <label for="newsletter" class="form-check-label">Assinatura de Newsletter</label>
+                <label for="newsletter" class="form-check-label">Desejo receber newsletter e outras
+                    notificações.</label>
             </div>
 
             <div class="col-10 form-actions">

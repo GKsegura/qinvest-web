@@ -39,6 +39,17 @@
 
 .form-check-input[type=checkbox] {
     border-radius: 0!important;
+    box-shadow: none!important;
+
+}
+.form-check-input:checked[type=checkbox] {
+    background-color: #DB33F6!important
+
+}
+.form-check-label{
+    font-weight: 400;
+    font-size: 14px!important;
+
 }
 
 .label-form {
