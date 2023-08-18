@@ -1,7 +1,15 @@
 <!-- resources/views/auth/form/register.blade.php -->
 @vite(['resources/utils/alpine.js'])
 
-
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
@@ -11,14 +19,14 @@
 
             <div class="field col-10">
                 <label for="email" class="label-form">Email</label>
-                <input id="email" class="form-control" type="email" name="email">
+                <input id="email" class="form-control" type="email" name="email" required>
             </div>
 
             <div class="field col-10">
                 <label for="password" class="label-form">Senha</label>
                 <div class="input-group">
                     <input for="password" class="form-control" type="password" name="password" id="password"
-                        onkeyup="passwordValidator()" />
+                        onkeyup="passwordValidator()" required />
                     <i id="eye-icon-password" class="input-group-text bi bi-eye"></i>
                 </div>
                 <div class="password-strength-bar">
@@ -30,10 +38,10 @@
             </div>
 
             <div class="field col-10">
-                <label for="confirm-password" class="label-form">Confirme a senha</label>
+                <label for="password_confirmation" class="label-form" required>Confirme a senha</label>
                 <div class="input-group">
-                    <input for="confirm-password" class="form-control" type="password" name="confirm-password"
-                        id="confirm-password">
+                    <input class="form-control" type="password" name="password_confirmation"
+                        id="confirm-password" required>
                     <i id="eye-icon-confirm-password" class="input-group-text bi bi-eye"></i>
                 </div>
             </div>
@@ -51,12 +59,12 @@
                 <div class="row">
                     <div class="field col-6">
                         <label for="nome" class="label-form">Nome</label>
-                        <input id="nome" class="form-control" type="text" name="username">
+                        <input id="nome" class="form-control" type="text" name="firstname" required>
                     </div>
 
                     <div class="field col-6">
                         <label for="sobrenome" class="label-form">Sobrenome</label>
-                        <input id="sobrenome" class="form-control" type="text" name="surname">
+                        <input id="sobrenome" class="form-control" type="text" name="surname" required>
                     </div>
                 </div>
             </div>
@@ -65,7 +73,7 @@
                 <div class="row">
                     <div class="field col-6">
                         <label for="gender" class="label-form">Gênero</label>
-                        <select name="gender" class="form-control" id="gender">
+                        <select name="gender" class="form-control" id="gender" required>
                             <option value="male">Masculino</option>
                             <option value="female">Feminino</option>
                             <option value="other">Outro</option>
@@ -74,7 +82,7 @@
 
                     <div class="field col-6">
                         <label for="birth_time" class="label-form">Data de Nascimento</label>
-                        <input id="birth_time" class="form-control" type="date" name="birth_time">
+                        <input id="birth_time" class="form-control" type="date" name="birth_time" required>
                     </div>
                 </div>
             </div>
