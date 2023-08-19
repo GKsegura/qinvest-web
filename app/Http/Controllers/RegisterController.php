@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Carbon;
 use App\Notifications\RegistrationSuccessNotification;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 
-$timestamp = Carbon::now();
+// $timestamp = Carbon::now();
 
 class RegisterController extends Controller
 {
