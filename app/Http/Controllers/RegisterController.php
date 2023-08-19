@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Carbon;
+use App\Notifications\RegistrationSuccessNotification;
+use Illuminate\Http\Request;
+
+
+// $timestamp = Carbon::now();
 
 class RegisterController extends Controller
 {
@@ -15,23 +23,44 @@ class RegisterController extends Controller
     }
 
     public function auth(Request $request)
-    {
-        // Valide os dados recebidos
-        $request->validate([
-            'nome' => 'required|string|max:150',
-            'email' => 'required|string|max:150',
-            'senha' => 'required|string|max:200',
-        ]);
+{
+    // Valide os dados recebidos
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|string|max:255',
+        'firstname' => 'required|string|max:255',
+        'surname' => 'required|string|max:255',
+        'password' => 'required_with:password_confirmation|string|min:5|max:255',
+        'password_confirmation' => 'same:password',
+        'gender' => 'required|string|max:50',
+        'birth_time' => 'required|date'
+    ], [
+        'password_confirmation.same' => 'As senhas fornecidas não coincidem.'
+    ]);
 
+    if ($validator->fails()) {
+        return Redirect::back()->withErrors($validator)->withInput();
+    }
+
+        $fullname = $request->input('firstname') . ' ' . $request->input('surname');
         // Execute o INSERT na tabela de usuários
-        DB::table('usuario')->insert([
-            'nome' => $request->input('nome'),
-            'email' => $request->input('email'),
-            'senha' => Hash::make($request->input('senha')), // Criptografa a senha
-            'excluido' => false,
-        ]);
-
+        try {
+            DB::table('users')->insert([
+                'email' => $request->input('email'),
+                'username' => $fullname,
+                'password' => Hash::make($request->input('password')),
+                'gender' => $request->input('gender'),
+                'newsletter' => $request->input('newsletter'),
+                'terms_user' => true,
+                'birth_time' => $request->input('birth_time'),
+                'deleted' => false,
+                'created_at' => Carbon::now('America/Sao_Paulo'),
+                'updated_at' => null
+            ]);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+            echo "<script type = 'text/javascript'>alert ('Erro no SQL')</script>";
+        }
         // Redirecione para uma página de sucesso ou exiba uma mensagem
-        //return redirect()->route('sucesso');
+        return redirect()->route('home', 'Registro concluído com sucesso!');
     }
 }

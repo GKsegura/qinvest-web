@@ -75,7 +75,6 @@ const passwordValidator = () => {
             disableClass(two, "very-strong");
             disableClass(three, "very-strong");
             textPassword.style.display = "block";
-            textPassword.textContent = "Senha fraca";
             textPassword.style.color = "#ff4757";
         }
         if (validation == 2) {
@@ -86,7 +85,6 @@ const passwordValidator = () => {
             disableClass(two, "very-strong");
             disableClass(three, "very-strong");
             textPassword.style.display = "block";
-            textPassword.textContent = "Senha média";
             textPassword.style.color = "#ffa500";
         }
 
@@ -98,7 +96,6 @@ const passwordValidator = () => {
             disableClass(two, "very-strong");
             disableClass(three, "very-strong");
             textPassword.style.display = "block";
-            textPassword.textContent = "Senha forte";
             textPassword.style.color = "#23ad5c";
         }
         if (validation == 4) {
@@ -109,13 +106,10 @@ const passwordValidator = () => {
             activeClass(two, "very-strong");
             activeClass(three, "very-strong");
             textPassword.style.display = "block";
-            textPassword.textContent = "Senha muito forte";
             textPassword.style.color = "#00692c";
         }
     } else {
         passwordStrengthBar.style.display = "none";
-        eyeIconPassword.style.display = "none";
-        eyeIconConfirmPassword.style.display = "none";
         textPassword.style.display = "none";
         disableClass(one);
         disableClass(two);
