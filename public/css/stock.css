@@ -3,8 +3,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 10vh!important;
     padding: 0;
     background-color: var(--primary-color) !important;
+    color: var(--secondary-color)!important;
 }
 
 h1 {
@@ -12,24 +14,24 @@ h1 {
     margin-top: 20px;
 }
 
-form {
+ .form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-}
+} 
 
-label {
+.label {
     font-weight: bold;
 }
 
-input[type="text"] {
+.input[type="text"] {
     padding: 5px;
     margin-right: 10px;
     width: 200px;
 }
 
-button {
+.button {
     padding: 5px 10px;
     background-color: #007bff;
     color: var(--primary-color);
@@ -37,11 +39,15 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background-color: #0056b3;
 }
 
 .chart-canvas {
     border: 1px solid var(--secondary-color);
     color: var(--secondary-color) !important;
+}
+
+#stockChart, #profitChart{
+    display: none;
 }
