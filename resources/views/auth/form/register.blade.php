@@ -13,7 +13,7 @@
 
 <form action="{{ route('register') }}" method="POST">
     @csrf
-    <div x-data="{ step: 2 }">
+    <div x-data="{ step: 1 }">
 
         <div x-show="step === 1" class="row justify-content-center gap-4" x-transition:enter.opacity.duration.600ms>
 
