@@ -2,9 +2,6 @@ import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
-const gridStockPrice = document.getElementById("stockChart");
-const gridStockProfit = document.getElementById("profitChart");
-
 document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
 
