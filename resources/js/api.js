@@ -2,6 +2,9 @@ import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
+const gridStockPrice = document.getElementById("stockChart");
+const gridStockProfit = document.getElementById("profitChart");
+
 document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
 
@@ -130,12 +133,20 @@ function createCharts(data) {
                     title: {
                         display: true,
                         text: "Date",
+                        color: "#ffffff"
+                    },
+                    ticks:{
+                        color: "#ffffff",
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Profit Percentage (%)",
+                        color: "#ffffff",
+                    },
+                    ticks:{
+                        color: "#ffffff",
                     },
                 },
             },
