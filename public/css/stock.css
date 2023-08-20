@@ -3,10 +3,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 10vh!important;
     padding: 0;
     background-color: var(--primary-color) !important;
-    color: var(--secondary-color)!important;
+    color: var(--secondary-color) !important;
 }
 
 h1 {
@@ -14,12 +13,13 @@ h1 {
     margin-top: 20px;
 }
 
- .form {
+.form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-} 
+    padding-top: 10vh !important;
+}
 
 .label {
     font-weight: bold;
@@ -48,6 +48,7 @@ h1 {
     color: var(--secondary-color) !important;
 }
 
-#stockChart, #profitChart{
+#stockChart,
+#profitChart {
     display: none;
 }
