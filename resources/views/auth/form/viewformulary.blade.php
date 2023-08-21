@@ -1,5 +1,5 @@
 @vite(['resources/utils/alpine.js'])
-<form action="{{ route('viewformulary') }}" method="POST">
+<form action="{{ route('viewformulary') }}" method="GET">
     @csrf
     
     <tr> <!-- CABECALHO -->
@@ -7,13 +7,9 @@
     </tr>
     @foreach($rows as $row) <!-- LOOP PRA LER A TABELA -->
         <tr>
-            <td>{{ $row->form_name }}</td><td>{{ $row->obs }}</td>
+            <td>{{ $row->questions }}</td><td>{{ $row->answers }}</td>
             <td> <!-- COLUNA COM ALTERAR E EXCLUIR -->
-            <a class='btn deep-orange' href="{{ route('auth.form.editar',$row->id) }}">Alterar</a>
-            <!--<a class='btn rede' href="{{ route('admin.cursos.excluir',$row->id) }}">Excluir</a>-->
             </td>
         </tr>
     @endforeach
-
-    <button type="submit" class="btn">Cadastrar</button>
 </form>
