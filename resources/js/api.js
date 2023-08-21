@@ -1,6 +1,7 @@
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
+import { getThemeFromCookie } from "../utils/cookies";
 
 document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
@@ -26,7 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-function createCharts(data) {
+const createCharts = (data) => {
+    const theme = getThemeFromCookie();
+    let chartFontColor;
+    theme == "light"
+        ? (chartFontColor = "#121927")
+        : (chartFontColor = "#ffffff");
+
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => stock.date * 1000);
     const closePrices = historicalData.map((stock) => stock.close);
@@ -78,20 +85,20 @@ function createCharts(data) {
                     title: {
                         display: true,
                         text: "Date",
-                        color: "#ffffff", // Cor do título do eixo x
+                        color: chartFontColor,
                     },
                     ticks: {
-                        color: "#ffffff", // Cor dos rótulos do eixo x
+                        color: chartFontColor,
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: "#ffffff", // Cor do título do eixo y
+                        color: chartFontColor,
                     },
                     ticks: {
-                        color: "#ffffff", // Cor dos rótulos do eixo y
+                        color: chartFontColor,
                     },
                 },
             },
@@ -130,26 +137,26 @@ function createCharts(data) {
                     title: {
                         display: true,
                         text: "Date",
-                        color: "#ffffff"
+                        color: chartFontColor,
                     },
-                    ticks:{
-                        color: "#ffffff",
+                    ticks: {
+                        color: chartFontColor,
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Profit Percentage (%)",
-                        color: "#ffffff",
+                        color: chartFontColor,
                     },
-                    ticks:{
-                        color: "#ffffff",
+                    ticks: {
+                        color: chartFontColor,
                     },
                 },
             },
         },
     });
-}
+};
 
 function calculateProfitPercentage(previousClose, currentClose) {
     return ((currentClose - previousClose) / previousClose) * 100;

@@ -1,5 +1,5 @@
 import { getThemeFromCookie, setThemeCookie } from "../utils/cookies";
-
+import createCharts from "./api";
 //variáveis
 
 /* const do ícone de tema */
