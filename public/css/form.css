@@ -86,8 +86,7 @@
     display: block;
 }
 form .password-strength-bar {
-    height: 1vh;
-    display: flex;
+    height: 5px;
     align-items: center;
     justify-content: space-between;
     margin: 1vh 0;
@@ -98,7 +97,7 @@ form .password-strength-bar span {
     width: 100%;
     height: 100%;
     background-color: lightgray;
-    border-radius: 2vh;
+    
     position: relative;
 }
 
@@ -113,7 +112,7 @@ form .password-strength-bar span {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 2vh;
+    
     background: var(--dark-purple);
 }
 
@@ -139,4 +138,10 @@ form .text-password {
     font-weight: 500px;
     margin-bottom: -10px;
     display: none;
+}
+
+.invalid-input {
+    font-size: 14px;
+    color: red;
+    text-align: start;
 }
