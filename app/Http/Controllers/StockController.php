@@ -9,10 +9,10 @@ class StockController extends Controller
 {
     public function getStockQuotes(Request $request, $tickers)
     {
-        $range = $request->input('range', '3mo');
+        $range = $request->input('range', '5y');
         $interval = $request->input('interval', '1d');
-        $fundamental = $request->input('fundamental', false);
-        $dividends = $request->input('dividends', false);
+        $fundamental = $request->input('fundamental', true);
+        $dividends = $request->input('dividends', true);
 
         $response = Http::get("https://brapi.dev/api/quote/$tickers", [
             'range' => $range,

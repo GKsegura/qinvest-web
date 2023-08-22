@@ -7,7 +7,6 @@
     <title>QInvest</title>
     @include('layouts.css')
     @vite(['resources/js/theme.js'])
-
 </head>
 
 <body id="body" class="body-claro">

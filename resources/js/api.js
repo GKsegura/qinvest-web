@@ -3,30 +3,37 @@ import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 import { getThemeFromCookie } from "../utils/cookies";
 
-document.addEventListener("DOMContentLoaded", () => {
-    const stockForm = document.getElementById("stockForm");
+// Função para calcular a média dos preços nos últimos 6 meses
+function calculateAveragePrice(historicalData) {
+    const closePrices = historicalData.map((stock) => stock.close);
+    const sum = closePrices.reduce((total, price) => total + price, 0);
+    return sum / closePrices.length;
+}
 
-    stockForm.addEventListener("submit", handleFormSubmit);
+// Função para calcular a porcentagem de lucro entre dois preços
+function calculateProfitPercentage(previousClose, currentClose) {
+    return ((currentClose - previousClose) / previousClose) * 100;
+}
 
-    async function handleFormSubmit(event) {
-        event.preventDefault();
+// Função para calcular as porcentagens de lucro para cada período
+function calculateProfitPercentages(closePrices) {
+    const profitPercentages = [];
 
-        const tickers = document.getElementById("tickers").value;
-        const data = await fetchStockData(tickers);
-
-        displayStockData(data);
+    for (let i = 0; i < closePrices.length; i++) {
+        if (i === 0) {
+            profitPercentages.push(null);
+        } else {
+            const profitPercentage = calculateProfitPercentage(
+                closePrices[i - 1],
+                closePrices[i]
+            );
+            profitPercentages.push(profitPercentage);
+        }
     }
+    return profitPercentages;
+}
 
-    async function fetchStockData(tickers) {
-        const response = await fetch(`/api/stock/${tickers}`);
-        return await response.json();
-    }
-
-    function displayStockData(data) {
-        createCharts(data);
-    }
-});
-
+// Função para criar os gráficos
 const createCharts = (data) => {
     const theme = getThemeFromCookie();
     let chartFontColor;
@@ -35,8 +42,33 @@ const createCharts = (data) => {
         : (chartFontColor = "#ffffff");
 
     const historicalData = data.results[0].historicalDataPrice;
-    const dates = historicalData.map((stock) => stock.date * 1000);
-    const closePrices = historicalData.map((stock) => stock.close);
+
+    // Filtra os dados para os últimos 6 meses
+    const currentDate = new Date();
+    const sixMonthsAgo = new Date(
+        currentDate.getTime() - 180 * 24 * 60 * 60 * 1000
+    ); // 180 dias (aproximadamente 6 meses)
+    const filteredHistoricalData6Months = historicalData.filter(
+        (stock) => new Date(stock.date * 1000) >= sixMonthsAgo
+    );
+
+    // Calcula a média dos preços nos últimos 6 meses
+    const averagePrice6Months = calculateAveragePrice(
+        filteredHistoricalData6Months
+    );
+
+    console.log(
+        `Média dos Preços nos últimos 6 meses: ${averagePrice6Months.toFixed(
+            2
+        )}`
+    );
+
+    const dates = filteredHistoricalData6Months.map(
+        (stock) => new Date(stock.date * 1000)
+    );
+    const closePrices = filteredHistoricalData6Months.map(
+        (stock) => stock.close
+    );
     const profitPercentages = calculateProfitPercentages(closePrices);
 
     const ctxStock = document.getElementById("stockChart").getContext("2d");
@@ -51,7 +83,6 @@ const createCharts = (data) => {
     if (existingChartProfit) {
         existingChartProfit.destroy();
     }
-
     new Chart(ctxStock, {
         type: "line",
         data: {
@@ -158,23 +189,26 @@ const createCharts = (data) => {
     });
 };
 
-function calculateProfitPercentage(previousClose, currentClose) {
-    return ((currentClose - previousClose) / previousClose) * 100;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const stockForm = document.getElementById("stockForm");
 
-function calculateProfitPercentages(closePrices) {
-    const profitPercentages = [];
+    stockForm.addEventListener("submit", handleFormSubmit);
 
-    for (let i = 0; i < closePrices.length; i++) {
-        if (i === 0) {
-            profitPercentages.push(null);
-        } else {
-            const profitPercentage = calculateProfitPercentage(
-                closePrices[i - 1],
-                closePrices[i]
-            );
-            profitPercentages.push(profitPercentage);
-        }
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const tickers = document.getElementById("tickers").value;
+        const data = await fetchStockData(tickers);
+
+        displayStockData(data);
     }
-    return profitPercentages;
-}
+
+    async function fetchStockData(tickers) {
+        const response = await fetch(`/api/stock/${tickers}`);
+        return await response.json();
+    }
+
+    function displayStockData(data) {
+        createCharts(data);
+    }
+});
