@@ -20,6 +20,10 @@ class PageController extends Controller
     {
         return view('pages.stock');
     }
+    function education()
+    {
+        return view('pages.education');
+    }
     /*function register()
     {
         return view('auth.page.register');
