@@ -2,13 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Carbon\Carbon;
 use App\Models\Answer;
 use App\Models\Question;
-
 
 class FormController extends Controller
 {
@@ -17,6 +12,6 @@ class FormController extends Controller
         $questions = Question::all();
         $answers = Answer::all();
 
-        return view('viewformulary', compact('questions', 'answers'));
+        return view('auth.page.viewformulary', compact('questions', 'answers'));
     }
 }

@@ -2,14 +2,26 @@
 <form action="{{ route('viewformulary') }}" method="GET">
     @csrf
     
-    <tr> <!-- CABECALHO -->
-        <td>Nome</td><td>Observação</td>
-    </tr>
-    @foreach($rows as $row) <!-- LOOP PRA LER A TABELA -->
-        <tr>
-            <td>{{ $row->questions }}</td><td>{{ $row->answers }}</td>
-            <td> <!-- COLUNA COM ALTERAR E EXCLUIR -->
-            </td>
-        </tr>
-    @endforeach
+    <fieldset>
+        <legend>Perguntas</legend>
+        @foreach($questions->where('id', 1) as $question )
+            <div>
+                <label>{{ $question->text_question }}</label><br>
+                {{ $question->observation }}
+            </div>
+        @endforeach
+    </fieldset>
+    <br>
+    <fieldset>
+        @foreach($answers->where('question_id', 1) as $answer)
+            <div>
+                <label>
+                    <input type="radio" name="selected_answer" value="{{ $answer->id }}">
+                    {{ $answer->text_answer }}
+                </label><br>
+            </div>
+        @endforeach
+    </fieldset>
+    <br>
+    <button type="submit" class="submit-button">Enviar</button>
 </form>
