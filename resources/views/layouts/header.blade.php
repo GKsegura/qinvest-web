@@ -9,7 +9,7 @@
     @vite(['resources/js/theme.js'])
 </head>
 
-<body id="body" class="body-claro">
+<body id="body">
     <header id="theme-header" class="header-color">
         <div class="container">
             <div class="row">
