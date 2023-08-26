@@ -25,3 +25,8 @@
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
 @endif
+
+<!-- education -->
+@if (Route::currentRouteName() === 'education')
+<link href="{{ asset('css/education.css') }}" rel="stylesheet">
+@endif
