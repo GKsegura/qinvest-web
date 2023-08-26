@@ -4,19 +4,23 @@
 
 <!-- home -->
 @if(Route::currentRouteName() === 'home')
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
-@endif    
+<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+@endif
 
 <!-- about us -->
 @if(Route::currentRouteName() === 'about')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link href="{{ asset('css/about.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-@endif    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link href="{{ asset('css/about.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+@endif
 
 <!-- form -->
 @if(Route::currentRouteName() === 'register')
-    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/form-page.css') }}" rel="stylesheet">
-@endif    
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form-page.css') }}" rel="stylesheet">
+@endif
+
+@if (Route::currentRouteName() === 'stock')
+<link href="{{ asset('css/stock.css') }}" rel="stylesheet">
+@endif
