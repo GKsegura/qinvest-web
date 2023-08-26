@@ -70,7 +70,6 @@ const createCharts = (data) => {
 
     const datesArray = generateDateArray(threeMonthsAgo, today);
 
-    console.log(datesArray);
     // Calculate the average of the received price data
     const averagePrice =
         closePrices.reduce((total, price) => total + price, 0) /
