@@ -3,13 +3,6 @@ import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 import { getThemeFromCookie } from "../utils/cookies";
 
-// Função para calcular a média dos preços nos últimos 6 meses
-function calculateAveragePrice(historicalData) {
-    const closePrices = historicalData.map((stock) => stock.close);
-    const sum = closePrices.reduce((total, price) => total + price, 0);
-    return sum / closePrices.length;
-}
-
 // Função para calcular a porcentagem de lucro entre dois preços
 function calculateProfitPercentage(previousClose, currentClose) {
     return ((currentClose - previousClose) / previousClose) * 100;
@@ -42,33 +35,8 @@ const createCharts = (data) => {
         : (chartFontColor = "#ffffff");
 
     const historicalData = data.results[0].historicalDataPrice;
-
-    // Filtra os dados para os últimos 6 meses
-    const currentDate = new Date();
-    const sixMonthsAgo = new Date(
-        currentDate.getTime() - 180 * 24 * 60 * 60 * 1000
-    ); // 180 dias (aproximadamente 6 meses)
-    const filteredHistoricalData6Months = historicalData.filter(
-        (stock) => new Date(stock.date * 1000) >= sixMonthsAgo
-    );
-
-    // Calcula a média dos preços nos últimos 6 meses
-    const averagePrice6Months = calculateAveragePrice(
-        filteredHistoricalData6Months
-    );
-
-    console.log(
-        `Média dos Preços nos últimos 6 meses: ${averagePrice6Months.toFixed(
-            2
-        )}`
-    );
-
-    const dates = filteredHistoricalData6Months.map(
-        (stock) => new Date(stock.date * 1000)
-    );
-    const closePrices = filteredHistoricalData6Months.map(
-        (stock) => stock.close
-    );
+    const dates = historicalData.map((stock) => new Date(stock.date * 1000));
+    const closePrices = historicalData.map((stock) => stock.close);
     const profitPercentages = calculateProfitPercentages(closePrices);
 
     const ctxStock = document.getElementById("stockChart").getContext("2d");
@@ -83,18 +51,125 @@ const createCharts = (data) => {
     if (existingChartProfit) {
         existingChartProfit.destroy();
     }
+    // Filtra os dados para os últimos 6 meses
+    function generateDateArray(startDate, endDate) {
+        const dateArray = [];
+        let currentDate = new Date(startDate);
+
+        while (currentDate <= endDate) {
+            dateArray.push(new Date(currentDate));
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        return dateArray;
+    }
+
+    const today = new Date();
+    const threeMonthsAgo = new Date(today);
+    threeMonthsAgo.setMonth(today.getMonth() - 3);
+
+    const datesArray = generateDateArray(threeMonthsAgo, today);
+
+    console.log(datesArray);
+    // Calculate the average of the received price data
+    const averagePrice =
+        closePrices.reduce((total, price) => total + price, 0) /
+        closePrices.length;
+    // Create a dataset for the average price line
+    const averagePriceDataset = {
+        label: "Average Price",
+        data: Array(dates.length).fill(averagePrice),
+        borderColor: "rgba(0, 0, 0, 1)", // Choose your desired color
+        borderWidth: 1,
+        borderDash: [5, 5], // Dashed line style
+        fill: false,
+        labels: dates,
+    };
+
+    function findMinMaxClosePrice(closePrices, start, end) {
+        let maxPrice = closePrices[start];
+        let minPrice = closePrices[start];
+
+        for (let i = start; i <= end; i++) {
+            const currentPrice = closePrices[i];
+
+            if (currentPrice > maxPrice) {
+                maxPrice = currentPrice;
+            } else if (currentPrice < minPrice) {
+                minPrice = currentPrice;
+            }
+        }
+
+        return { max: maxPrice, min: minPrice };
+    }
+
+    const datasetRanges = [
+        { label: "20", range: [0, 20] },
+        { label: "40", range: [20, 40] },
+        { label: "60", range: [40, 60] },
+    ];
+
+    const donchianDatasets = datasetRanges.map((range) => {
+        const { max, min } = findMinMaxClosePrice(
+            closePrices,
+            range.range[0],
+            range.range[1]
+        );
+
+        const upper = Array(range.range[1] - range.range[0] + 1).fill(null);
+        const lower = Array(range.range[1] - range.range[0] + 1).fill(null);
+
+        for (let i = range.range[0]; i <= range.range[1]; i++) {
+            upper[i - range.range[0]] = max;
+            lower[i - range.range[0]] = min;
+        }
+
+        return {
+            upper,
+            lower,
+            label: `Donchian Bound (${range.label})`,
+        };
+    });
+
+    donchianDatasets.forEach((dataset) => {
+        dataset.backgroundColor = "rgba(200, 0, 0, 0.3)"; // Adjust color as needed
+        dataset.borderColor = "transparent";
+        dataset.borderWidth = 0;
+        dataset.fill = true;
+        dataset.labels = datesArray;
+    });
+
+    const donchianUpperBoundDatasets = donchianDatasets.map((dataset) => ({
+        ...dataset,
+        data: dataset.upper,
+    }));
+
+    const donchianLowerBoundDatasets = donchianDatasets.map((dataset) => ({
+        ...dataset,
+        data: dataset.lower,
+    }));
+    const allDonchianDatasets = donchianLowerBoundDatasets.concat(
+        donchianUpperBoundDatasets
+    );
+
+    // Create the "Price" dataset using the filtered array
+    const priceDataset = {
+        label: "Price",
+        data: closePrices,
+        backgroundColor: "rgba(144,0,255, 0.2)",
+        borderColor: "rgba(188, 102, 255, 1)",
+        borderWidth: 1,
+        labels: dates,
+    };
+
     new Chart(ctxStock, {
         type: "line",
         data: {
             labels: dates,
             datasets: [
-                {
-                    label: "Price",
-                    data: closePrices,
-                    backgroundColor: "rgba(144,0,255, 0.2)",
-                    borderColor: "rgba(188, 102, 255, 1)",
-                    borderWidth: 1,
-                },
+                ...allDonchianDatasets,
+                priceDataset,
+                averagePriceDataset,
             ],
         },
         options: {
