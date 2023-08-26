@@ -29,7 +29,6 @@ Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm']
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
-
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -38,10 +37,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
-// Rotas do CADASTRO DE FORMULÁRIO
-Route::get('/formulary', [FormController::class, 'showRegisterFormulary'])->name('formulary');
-Route::post('/formulary', [FormController::class, 'form'])->name('formulary');
-
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
-Route::get('/viewformulary', [FormController::class, 'showViewFormulary'])->name('viewformulary');
+Route::get('/viewformulary', [FormController::class, 'index'])->name('viewformulary');
 Route::post('/editformulary', [FormController::class, 'editformulary'])->name('editformulary');

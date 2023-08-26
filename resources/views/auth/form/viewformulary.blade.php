@@ -1,19 +1,27 @@
 @vite(['resources/utils/alpine.js'])
-<form action="{{ route('viewformulary') }}" method="POST">
+<form action="{{ route('viewformulary') }}" method="GET">
     @csrf
     
-    <tr> <!-- CABECALHO -->
-        <td>Nome</td><td>Observação</td>
-    </tr>
-    @foreach($rows as $row) <!-- LOOP PRA LER A TABELA -->
-        <tr>
-            <td>{{ $row->form_name }}</td><td>{{ $row->obs }}</td>
-            <td> <!-- COLUNA COM ALTERAR E EXCLUIR -->
-            <a class='btn deep-orange' href="{{ route('auth.form.editar',$row->id) }}">Alterar</a>
-            <!--<a class='btn rede' href="{{ route('admin.cursos.excluir',$row->id) }}">Excluir</a>-->
-            </td>
-        </tr>
-    @endforeach
-
-    <button type="submit" class="btn">Cadastrar</button>
+    <fieldset>
+        <legend>Perguntas</legend>
+        @foreach($questions->where('id', 1) as $question )
+            <div>
+                <label>{{ $question->text_question }}</label><br>
+                {{ $question->observation }}
+            </div>
+        @endforeach
+    </fieldset>
+    <br>
+    <fieldset>
+        @foreach($answers->where('question_id', 1) as $answer)
+            <div>
+                <label>
+                    <input type="radio" name="selected_answer" value="{{ $answer->id }}">
+                    {{ $answer->text_answer }}
+                </label><br>
+            </div>
+        @endforeach
+    </fieldset>
+    <br>
+    <button type="submit" class="submit-button">Enviar</button>
 </form>
