@@ -16,11 +16,12 @@
 @endif
 
 <!-- form -->
-@if(Route::currentRouteName() === 'register')
+@if(Route::currentRouteName() === 'register' or Route::currentRouteName() === 'login')
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 <link href="{{ asset('css/form-page.css') }}" rel="stylesheet">
 @endif
 
+<!-- stock -->
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
 @endif
