@@ -12,6 +12,7 @@
         "chart.js": "^4.3.3",
         "chartjs-adapter-date-fns": "^3.0.0",
         "chartjs-adapter-moment": "^1.0.1",
+        "chartjs-plugin-datalabels": "^2.2.0",
         "js-cookie": "^3.0.5"
     },
     "devDependencies": {
