@@ -1,5 +1,21 @@
 @import url(style.css);
 
+.page {
+    height: 120vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header-page {
+    padding-top: 15vh;
+    transition: var(--transition);
+}
+
 .about-page {
     width: 100%;
     padding: 0 10% 0 10% !important;

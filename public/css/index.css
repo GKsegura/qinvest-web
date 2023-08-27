@@ -36,6 +36,11 @@
     font-size: 1em;
 }
 
+.buttons-home button a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 #login,
 #register:hover {
     background-color: transparent;
