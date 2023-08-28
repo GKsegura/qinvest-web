@@ -18,22 +18,18 @@
     flex-direction: column;
     gap: 5px;
 }
-.field input {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
+.field-input {
+    border-radius: 10px;
+    border: 1px solid #B8B8B8!important;
 }
-.field input:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+
+.field-input:focus {
+    box-shadow: 0px 0px 5px 0px #6f00ff!important;
 }
+
 .input-group-text {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
-
-}
-
-.field select {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.field select:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+    border: 1px solid #B8B8B8!important;
+    background-color: transparent!important;
 }
 
 
@@ -69,8 +65,7 @@
     width: 50px;
     height: 50px;
     flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border: 1px solid #dee2e6;
+    border: 1px solid #B8B8B8;
     background-color: transparent;
     border-radius: 5px;
 }
@@ -142,6 +137,17 @@ form .text-password {
 
 .invalid-input {
     font-size: 14px;
+    font-weight: 200;
     color: red;
     text-align: start;
+}
+
+.form-redirect p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-redirect a {
+    color:  #8C46FF;
+    text-decoration: none;
 }

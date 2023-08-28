@@ -1,33 +1,37 @@
 <!-- resources/views/auth/form/login.blade.php -->
 
 
-<!-- @error('invalid_credentials')
-<p class="text-red-500"> {{$message}} </p>
-@enderror -->
-
-
-<!-- @if($errors->any())
-@foreach($errors->all() as $error)
-<li>{{$error}}</li>
-@endforeach
-@endif -->
-
-
 <form action="{{ route('login') }}" method="POST">
     @csrf
 
-    <div class="field">
-        <label for="email" class="label-form">Email:</label>
-        <input type=" email" class="form-control" name="email" id="email" autofocus>
-        <p> @error('email'){{$message}}@enderror</p>
+    <div class="row justify-content-center gap-4">
+        <div class="field col-12">
+            <label for="email" class="label-form">Email:</label>
+            <input type=" email" class="field-input form-control" name="email" id="email" autofocus>
+            <div class="invalid-input"> @error('email'){{$message}}@enderror</div>
+        </div>
+
+        <div class="field col-12">
+            <label for="senha" class="label-form">Senha:</label>
+            <input type="password" class="field-input form-control" name="password" id="senha">
+            <div class="invalid-input"> @error('password'){{$message}}@enderror</div>
+
+        </div>
+
+        <div class="col-12 text-start">
+            <input id="newsletter" class="form-check-input" type="checkbox" name="newsletter">
+            <label for="newsletter" class="form-check-label">Lembrar minha senha
+                notificações.</label>
+
+        </div>
+
+        <div class="col-12 form-actions">
+            <button type="submit" class="submit-button">Login</button>
+
+            <div class="form-redirect d-inline-flex justify-content-center w-100">
+                <p class="mb-0">Não possui conta? <a href="/register"> Crie uma aqui!</a></p>
+            </div>
+        </div>
     </div>
 
-    <div class="field">
-        <label for="senha" class="label-form">Senha:</label>
-        <input type="password" class="form-control" name="password" id="senha">
-        <p> @error('password'){{$message}}@enderror</p>
-
-    </div>
-
-    <button type="submit" class="button-submit">Login</button>
 </form>
