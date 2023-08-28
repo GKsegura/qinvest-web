@@ -1,8 +1,8 @@
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
+// import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(...registerables);
 import { getThemeFromCookie } from "../utils/cookies";
-
 // Função para calcular a porcentagem de lucro entre dois preços
 function calculateProfitPercentage(previousClose, currentClose) {
     return ((currentClose - previousClose) / previousClose) * 100;
@@ -51,105 +51,121 @@ const createCharts = (data) => {
     if (existingChartProfit) {
         existingChartProfit.destroy();
     }
-    // Filtra os dados para os últimos 6 meses
-    function generateDateArray(startDate, endDate) {
-        const dateArray = [];
-        let currentDate = new Date(startDate);
-
-        while (currentDate <= endDate) {
-            dateArray.push(new Date(currentDate));
-            currentDate.setDate(currentDate.getDate() + 1);
-        }
-
-        return dateArray;
-    }
-
-    const today = new Date();
-    const threeMonthsAgo = new Date(today);
-    threeMonthsAgo.setMonth(today.getMonth() - 3);
-
-    const datesArray = generateDateArray(threeMonthsAgo, today);
-
-    // Calculate the average of the received price data
-    const averagePrice =
-        closePrices.reduce((total, price) => total + price, 0) /
-        closePrices.length;
     // Create a dataset for the average price line
-    const averagePriceDataset = {
-        label: "Average Price",
-        data: Array(dates.length).fill(averagePrice),
-        borderColor: "rgba(0, 0, 0, 1)", // Choose your desired color
+    function findMovingAverage(closePrices, start, end, period) {
+        let sum = 0;
+        const actualPeriod = Math.min(period, end - start + 1); // Calculate actual period based on available data
+        for (let i = end; i > end - actualPeriod; i--) {
+            sum += closePrices[i];
+        }
+        const average = sum / actualPeriod;
+    
+        return { avg: average };
+    }
+    
+    const movingAveragePeriod = 5; // You can adjust the moving average period as needed
+    
+    const movingAverageDatasets = [];
+    for (let i = movingAveragePeriod - 1; i < closePrices.length; i++) {
+        const { avg } = findMovingAverage(closePrices, i - movingAveragePeriod + 1, i, movingAveragePeriod);
+        movingAverageDatasets.push(avg);
+    }
+    
+    const movingAveragePriceDataset = {
+        label: "Moving Average Price",
+        data: movingAverageDatasets,
+        borderColor: "rgba(255, 165, 0, 1)", // Choose your desired color for the moving average line
         borderWidth: 1,
-        borderDash: [5, 5], // Dashed line style
         fill: false,
-        labels: dates,
+        pointRadius: 0,
+        hidden: true,
     };
-
+    const inter = 10;
+    const intervals = Math.floor(dates.length / inter); // Divisão inteira
+    function findIntervals() {
+        const datasetRanges = [];
+        let number = 0;
+    
+        for (let i = 0; i < intervals + 1; i++) {
+            const range = [number, number + inter];
+            datasetRanges.push({ label: `${number}-${number + inter}`, range });
+            number += inter;
+        }
+    
+        return datasetRanges;
+    }
+    
     function findMinMaxClosePrice(closePrices, start, end) {
         let maxPrice = closePrices[start];
         let minPrice = closePrices[start];
-
+    
         for (let i = start; i <= end; i++) {
             const currentPrice = closePrices[i];
-
+    
             if (currentPrice > maxPrice) {
                 maxPrice = currentPrice;
             } else if (currentPrice < minPrice) {
                 minPrice = currentPrice;
             }
         }
-
+    
         return { max: maxPrice, min: minPrice };
     }
+    
+    const datasetRanges = findIntervals();
 
-    const datasetRanges = [
-        { label: "20", range: [0, 20] },
-        { label: "40", range: [20, 40] },
-        { label: "60", range: [40, 60] },
-    ];
-
+    let additionalLength = 0; // Initial additional length
+    const upper = [];
+    const lower = [];
     const donchianDatasets = datasetRanges.map((range) => {
         const { max, min } = findMinMaxClosePrice(
             closePrices,
             range.range[0],
             range.range[1]
         );
-
-        const upper = Array(range.range[1] - range.range[0] + 1).fill(null);
-        const lower = Array(range.range[1] - range.range[0] + 1).fill(null);
-
-        for (let i = range.range[0]; i <= range.range[1]; i++) {
-            upper[i - range.range[0]] = max;
-            lower[i - range.range[0]] = min;
-        }
-
+      for(let i = additionalLength; i < additionalLength + inter; i++)
+      {
+        upper[i] = max;
+        lower[i] = min;
+      }
+        additionalLength += inter; // Increase additional length for the next iteration
+    
         return {
             upper,
             lower,
-            label: `Donchian Bound (${range.label})`,
+            range: range,
         };
     });
-
-    donchianDatasets.forEach((dataset) => {
-        dataset.backgroundColor = "rgba(200, 0, 0, 0.3)"; // Adjust color as needed
-        dataset.borderColor = "transparent";
-        dataset.borderWidth = 0;
-        dataset.fill = true;
-        dataset.labels = datesArray;
-    });
-
     const donchianUpperBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.upper,
+        label: '',
     }));
-
+    
     const donchianLowerBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.lower,
+        label: `Donchian Channel`,
     }));
-    const allDonchianDatasets = donchianLowerBoundDatasets.concat(
-        donchianUpperBoundDatasets
-    );
+    const inter2 = inter+inter;
+    let rangL = `${inter}-${inter2}`;
+    const allDonchianDatasets = [...donchianLowerBoundDatasets, ...donchianUpperBoundDatasets];
+    allDonchianDatasets.forEach((dataset) => {
+        if(dataset.range.label == rangL)
+         {
+            dataset.backgroundColor = "rgba(153, 51, 100, 0.2)";
+            dataset.borderColor = "transparent";
+            dataset.borderWidth = 0;
+            dataset.fill = 1;
+            dataset.hidden = false; 
+            dataset.pointRadius = 0; 
+         }
+         else{
+             dataset.pointRadius = 0; // Set pointRadius to 0 to hide points
+             dataset.borderWidth = 0;
+             dataset.label = '';
+          }
+    });
 
     // Create the "Price" dataset using the filtered array
     const priceDataset = {
@@ -161,6 +177,9 @@ const createCharts = (data) => {
         labels: dates,
     };
 
+    var currentDate = new Date();
+
+
     new Chart(ctxStock, {
         type: "line",
         data: {
@@ -168,7 +187,7 @@ const createCharts = (data) => {
             datasets: [
                 ...allDonchianDatasets,
                 priceDataset,
-                averagePriceDataset,
+                movingAveragePriceDataset,
             ],
         },
         options: {
@@ -206,6 +225,29 @@ const createCharts = (data) => {
                         color: chartFontColor,
                     },
                 },
+            },
+            plugins: {
+                // zoom: {
+                //     zoom: {
+                //         wheel: {
+                //             enabled: true,
+                //         },
+                //         pinch: {
+                //             enabled: true,
+                //         },
+                //         mode: 'x',
+                //         },
+                    
+                //     pan: {
+                //        enabled: true,
+                //        mode: 'xy', // Enable panning in both directions
+                //     },
+                // },
+                legend: {
+                    labels:{
+                        filter: item => item.text !== ''
+                    }
+                }
             },
         },
     });
@@ -259,6 +301,23 @@ const createCharts = (data) => {
                     },
                 },
             },
+            // plugins: {
+            //     zoom: {
+            //         zoom: {
+            //             wheel: {
+            //                 enabled: true,
+            //             },
+            //             pinch: {
+            //                 enabled: true,
+            //             },
+            //             mode: 'xy',
+            //         },
+            //         pan: {
+            //             enabled: true,
+            //             mode: 'xy', // Enable panning in both directions
+            //         }
+            //     },
+            // }
         },
     });
 };
