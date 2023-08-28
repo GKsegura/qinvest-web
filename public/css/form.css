@@ -18,22 +18,18 @@
     flex-direction: column;
     gap: 5px;
 }
-.field input {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
+.field-input {
+    border-radius: 10px;
+    border: 1px solid #B8B8B8!important;
 }
-.field input:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+
+.field-input:focus {
+    box-shadow: 0px 0px 5px 0px #6f00ff!important;
 }
+
 .input-group-text {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
-
-}
-
-.field select {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.field select:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+    border: 1px solid #B8B8B8!important;
+    background-color: transparent!important;
 }
 
 
@@ -69,8 +65,7 @@
     width: 50px;
     height: 50px;
     flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border: 1px solid #dee2e6;
+    border: 1px solid #B8B8B8;
     background-color: transparent;
     border-radius: 5px;
 }
@@ -86,8 +81,7 @@
     display: block;
 }
 form .password-strength-bar {
-    height: 1vh;
-    display: flex;
+    height: 5px;
     align-items: center;
     justify-content: space-between;
     margin: 1vh 0;
@@ -98,7 +92,7 @@ form .password-strength-bar span {
     width: 100%;
     height: 100%;
     background-color: lightgray;
-    border-radius: 2vh;
+    
     position: relative;
 }
 
@@ -113,7 +107,7 @@ form .password-strength-bar span {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 2vh;
+    
     background: var(--dark-purple);
 }
 
@@ -139,4 +133,21 @@ form .text-password {
     font-weight: 500px;
     margin-bottom: -10px;
     display: none;
+}
+
+.invalid-input {
+    font-size: 14px;
+    font-weight: 200;
+    color: red;
+    text-align: start;
+}
+
+.form-redirect p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-redirect a {
+    color:  #8C46FF;
+    text-decoration: none;
 }
