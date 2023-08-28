@@ -39,4 +39,4 @@ Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
 Route::get('/viewformulary', [FormController::class, 'index'])->name('viewformulary');
-Route::post('/editformulary', [FormController::class, 'editformulary'])->name('editformulary');
+Route::post('/test', [FormController::class, 'test'])->name('test');

@@ -1,5 +1,5 @@
 @vite(['resources/utils/alpine.js'])
-<form action="{{ route('viewformulary') }}" method="GET">
+<form action="{{ route('test') }}" method="POST">
     @csrf
     
     <fieldset>
