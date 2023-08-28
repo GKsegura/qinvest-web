@@ -33,8 +33,8 @@
 
 .education-summary div {
     margin-top: 5vh;
-    width: 50vh;
-    height: 50vh;
+    width: 485px;
+    height: 485px;
     background-color: #ffffff;
 }
 
@@ -50,4 +50,62 @@
 
 .right-summary {
     border-radius: 0 10px 10px 0;
+}
+
+.right-summary h2,
+.right-summary h1 {
+    color: #8f47f1;
+    text-align: center;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 47px; /* 146.875% */
+    letter-spacing: -2.3px;
+}
+
+.right-summary h2 {
+    font-size: 32px;
+}
+
+.right-summary h1 {
+    font-size: 53px;
+}
+
+.right-summary p {
+    color: #586d98;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.right-summary button {
+    position: relative;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    background: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 3% 5%;
+    border: none;
+}
+
+.right-summary button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-image: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
+    border-image-slice: 1;
 }
