@@ -6,7 +6,13 @@
         <input type="text" id="tickers" name="tickers" class="input" required>
 
         <label class="label" for="period">Period:</label>
-        <input type="text" id="period" name="period" class="input" required>
+        <select id="period">
+        <option value="3mo">3 meses</option>
+        <option value="6mo">6 meses</option>
+        <option value="1mo">1 mês</option>
+        <option value="1y">1 ano</option>
+        <option value="5y">5 anos</option>
+    </select>
 
         <button type="submit" class="button">Fetch Data</button>
     </form>
