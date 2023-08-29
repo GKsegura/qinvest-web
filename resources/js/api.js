@@ -1,6 +1,6 @@
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
-import zoomPlugin from 'chartjs-plugin-zoom';
+import zoomPlugin from "chartjs-plugin-zoom";
 Chart.register(...registerables, zoomPlugin);
 import { getThemeFromCookie } from "../utils/cookies";
 
@@ -239,86 +239,14 @@ const createCharts = (data) => {
                         pinch: {
                             enabled: true,
                         },
-                        mode: 'x',
-                        },
-                   
+                        mode: "x",
+                    },
+
                     pan: {
-                       enabled: true,
-                       mode: 'xy', // Enable panning in both directions
+                        enabled: true,
+                        mode: "x", // Enable panning in both directions
                     },
                 },
-
-            },
-        },
-    });
-
-    new Chart(ctxProfit, {
-        type: "line",
-        data: {
-            labels: dates,
-            datasets: [
-                {
-                    label: "Profit Percentage",
-                    data: profitPercentages,
-                    backgroundColor: "rgba(255,99,132, 0.2)",
-                    borderColor: "rgba(255, 0, 0, 1)",
-                    borderWidth: 1,
-                    fill: false,
-                },
-            ],
-        },
-        options: {
-            animation: {
-                duration: 1500,
-                easing: "linear",
-            },
-            scales: {
-                x: {
-                    type: "time",
-                    time: {
-                        tooltipFormat: "DD/MM/YYYY",
-                        displayFormats: {
-                            day: "DD/MM/YYYY",
-                        },
-                    },
-                    title: {
-                        display: true,
-                        text: "Date",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
-                    },
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: "Profit Percentage (%)",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
-                    },
-                },
-                plugins: {
-                    zoom: {
-                        zoom: {
-                            wheel: {
-                                enabled: true,
-                            },
-                            pinch: {
-                                enabled: true,
-                            },
-                            mode: 'x',
-                            },
-                       
-                        pan: {
-                           enabled: true,
-                           mode: 'xy', // Enable panning in both directions
-                        },
-                    },   
-
-                }
             },
         },
     });
