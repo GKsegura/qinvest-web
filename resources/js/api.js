@@ -1,6 +1,7 @@
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
-Chart.register(...registerables);
+import zoomPlugin from 'chartjs-plugin-zoom';
+Chart.register(...registerables, zoomPlugin);
 import { getThemeFromCookie } from "../utils/cookies";
 
 function calculateProfitPercentage(previousClose, currentClose) {
@@ -230,6 +231,23 @@ const createCharts = (data) => {
                         filter: (item) => item.text !== "",
                     },
                 },
+                zoom: {
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true,
+                        },
+                        mode: 'x',
+                        },
+                   
+                    pan: {
+                       enabled: true,
+                       mode: 'xy', // Enable panning in both directions
+                    },
+                },
+
             },
         },
     });
@@ -282,6 +300,25 @@ const createCharts = (data) => {
                         color: chartFontColor,
                     },
                 },
+                plugins: {
+                    zoom: {
+                        zoom: {
+                            wheel: {
+                                enabled: true,
+                            },
+                            pinch: {
+                                enabled: true,
+                            },
+                            mode: 'x',
+                            },
+                       
+                        pan: {
+                           enabled: true,
+                           mode: 'xy', // Enable panning in both directions
+                        },
+                    },   
+
+                }
             },
         },
     });
