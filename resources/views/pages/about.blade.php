@@ -1,4 +1,3 @@
-@include('layouts.header')
 <div class="page">
     <!--
         Essa página ainda precisa dos textos.
@@ -141,4 +140,3 @@
     });
     </script>
 </div>
-@include('layouts.footer')

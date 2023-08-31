@@ -1,4 +1,3 @@
-@include('layouts.header')
 @vite(['resources/js/api.js'])
 
 <div class="container">
@@ -19,4 +18,3 @@
     </div>
 
 </div>
-@include('layouts.footer')
