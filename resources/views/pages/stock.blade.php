@@ -18,18 +18,20 @@
             <option value="1y">1 ano</option>
             <option value="5y">5 anos</option>
         </select>
-        <br>
-        <!-- <button type="submit" class="button">Fetch Data</button> -->
     </form>
     <div id="stockDiv">
         <div id="stockInfo">
-            <img src="assets/logo.svg" alt="Logo" class="stockLogo">
+            <img src="assets/deola.jpg" alt="Logo" id="theme-logo" class="stockLogo">
+        <div id="stockInfotxt">
         <h3 id="stockTitle"></h3>
-        <p id="stockDay" class="stockText"></p>
         <p id="stockPriceProfit" class="stockText"></p>
+        <p id="stockDay" class="stockText"></p>
+        </div>
         </div>
         <canvas id="stockChart" class="chart-canvas"></canvas>
         <a class="stockLearn" href="./education">Aprenda mais sobre o gráfico</a>
+        <br>
+        <img src="assets/deola.jpg" alt="Logo" id="stockLogoSm">
     </div>
 </div>
 @include('layouts.footer')

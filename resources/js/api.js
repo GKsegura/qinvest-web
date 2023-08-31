@@ -7,9 +7,15 @@ const stockDiv = document.getElementById("stockDiv");
 
 document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
-
+    const periodSelect = document.getElementById("period"); // Seleciona o elemento <select>
+    
     stockForm.addEventListener("submit", handleFormSubmit);
-
+    periodSelect.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            stockForm.dispatchEvent(new Event("submit")); // Dispatch a submit event on the form
+        }
+    });
     async function handleFormSubmit(event) {
         stockDiv.style.visibility = "visible";
         event.preventDefault();
@@ -33,10 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 function setCurrentDate() {
     const currentDate = new Date();
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours().toString().padStart(2, '0');
+    const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+    const formattedDate = `Atualizado em: ${day}/${month}/${year} ${hours}:${minutes}`;
+    
     const stockDayElement = document.getElementById("stockDay");
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    stockDayElement.textContent = currentDate.toLocaleDateString(undefined, options);
+    stockDayElement.textContent = formattedDate;
 }
+
 
 function calculateCurrentPriceAndProfit(data) {
     const historicalData = data.results[0].historicalDataPrice;
@@ -74,7 +88,7 @@ function calculateCurrentPriceAndProfit(data) {
 // Call these functions in your displayStockData function
 function displayStockData(data, tickers) {
     const stockTitle = document.getElementById("stockTitle");
-    stockTitle.textContent = `${tickers}`;
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
 
     setCurrentDate();
     calculateCurrentPriceAndProfit(data);
@@ -84,13 +98,16 @@ function displayStockData(data, tickers) {
 
 const createCharts = (data, tickers) => {
     const theme = getThemeFromCookie();
-    let chartFontColor;
-    theme == "light"
-        ? (chartFontColor = "#121927")
-        : (chartFontColor = "#ffffff");
+    let chartFontColor = "#d7d7d7";
+    if(theme == "light"){
+    chartFontColor = "#121927";
+    }
+    else{
+        chartFontColor = "#ffffff";
+    }
 
     const stockTitle = document.getElementById("stockTitle");
-    stockTitle.textContent = `${tickers}`;
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
     
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
@@ -260,20 +277,20 @@ const createCharts = (data, tickers) => {
                     title: {
                         display: true,
                         text: "Date",
-                        color: chartFontColor + ' !important',
+                        color: '#EC78FF',
                     },
                     ticks: {
-                        color: chartFontColor + ' !important',
+                        color: '#EC78FF',
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: chartFontColor + ' !important',
+                        color: '#EC78FF',
                     },
                     ticks: {
-                        color: chartFontColor + ' !important',
+                        color: '#EC78FF',
                     },
                 },
             },
@@ -284,13 +301,13 @@ const createCharts = (data, tickers) => {
                     font: {
                         size: 25,
                         weight: 'bold',
-                      
-                    }
+                    },
+                    color: 'purple',
                 },
                 legend: {
                     labels: {
                         filter: (item) => item.text !== "",
-                        
+                        color: 'purple',
                     },
                 },
             },

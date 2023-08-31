@@ -79,12 +79,12 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 .button {
     padding: 7px 14px;
     background-color: var(--primary-color) !important;
-    ;
     color: var(--secondary-color);
     border-color: var(--secondary-color) !important;
     cursor: pointer;
     border-radius: 10px;
     margin-left: -11px;
+    margin-top: 1px;
 }
 
 .chart-canvas {
@@ -101,9 +101,28 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     border: 1px solid var(--secondary-color);
     border-radius: 20px;
     background-color: var(--primary-color) !important;
-    display: block;
+    display: flex;
     margin-left: 17%;
     margin-bottom: 20px;
+}
+
+#stockInfotxt {
+    display: block;
+    margin: 5%;
+}
+
+#theme-logo {
+    transition: var(--transition);
+}
+
+.stockLogo {
+    width: 170px;
+    height: 169px;
+    flex-shrink: 0;
+    margin: 3%;
+    margin-left: 10%;
+    margin-right: 7%;
+    border-radius: 10px;
 }
 
 #stockDiv {
@@ -120,7 +139,7 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 #stockTitle {
     color: var(--secondary-color) !important;
     font-family: Helvetica;
-    font-size: 64px;
+    font-size: 54px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -131,8 +150,15 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    padding-left: 15px;
 
+}
+
+#stockLogoSm{
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-left: 50.5%;
 }
 
 .stockText {
