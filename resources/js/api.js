@@ -3,30 +3,34 @@ import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 import { getThemeFromCookie } from "../utils/cookies";
 
-// Função para calcular a porcentagem de lucro entre dois preços
-function calculateProfitPercentage(previousClose, currentClose) {
-    return ((currentClose - previousClose) / previousClose) * 100;
-}
+const stockDiv = document.getElementById("stockDiv");
 
-// Função para calcular as porcentagens de lucro para cada período
-function calculateProfitPercentages(closePrices) {
-    const profitPercentages = [];
+document.addEventListener("DOMContentLoaded", () => {
+    const stockForm = document.getElementById("stockForm");
 
-    for (let i = 0; i < closePrices.length; i++) {
-        if (i === 0) {
-            profitPercentages.push(null);
-        } else {
-            const profitPercentage = calculateProfitPercentage(
-                closePrices[i - 1],
-                closePrices[i]
-            );
-            profitPercentages.push(profitPercentage);
-        }
+    stockForm.addEventListener("submit", handleFormSubmit);
+
+    async function handleFormSubmit(event) {
+        stockDiv.style.visibility = "visible";
+        event.preventDefault();
+
+        const tickers = document.getElementById("tickers").value;
+        const period = document.getElementById("period").value;
+
+        const data = await fetchStockData(tickers, period);
+        displayStockData(data);
     }
-    return profitPercentages;
-}
 
-// Função para criar os gráficos
+    async function fetchStockData(tickers, period) {
+        const response = await fetch(`/api/stock/${tickers}/${period}`);
+        return await response.json();
+    }
+
+    function displayStockData(data) {
+        createCharts(data);
+    }
+});
+
 const createCharts = (data) => {
     const theme = getThemeFromCookie();
     let chartFontColor;
@@ -37,53 +41,59 @@ const createCharts = (data) => {
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
     const closePrices = historicalData.map((stock) => stock.close);
-    const profitPercentages = calculateProfitPercentages(closePrices);
 
     const ctxStock = document.getElementById("stockChart").getContext("2d");
-    const ctxProfit = document.getElementById("profitChart").getContext("2d");
 
     const existingChartStock = Chart.getChart(ctxStock);
     if (existingChartStock) {
         existingChartStock.destroy();
     }
 
-    const existingChartProfit = Chart.getChart(ctxProfit);
-    if (existingChartProfit) {
-        existingChartProfit.destroy();
-    }
-    // Filtra os dados para os últimos 6 meses
-    function generateDateArray(startDate, endDate) {
-        const dateArray = [];
-        let currentDate = new Date(startDate);
+    function findMovingAverage(closePrices, start, end, period) {
+        let sum = 0;
+        const actualPeriod = Math.min(period, end - start + 1);
+        for (let i = end; i > end - actualPeriod; i--) {
+            sum += closePrices[i];
+        }
+        const average = sum / actualPeriod;
 
-        while (currentDate <= endDate) {
-            dateArray.push(new Date(currentDate));
-            currentDate.setDate(currentDate.getDate() + 1);
+        return { avg: average };
+    }
+
+    const movingAveragePeriod = 5;
+    const movingAverageDatasets = [];
+    for (let i = movingAveragePeriod - 1; i < closePrices.length; i++) {
+        const { avg } = findMovingAverage(
+            closePrices,
+            i - movingAveragePeriod + 1,
+            i,
+            movingAveragePeriod
+        );
+        movingAverageDatasets.push(avg);
+    }
+
+    const movingAveragePriceDataset = {
+        label: "Moving Average Price",
+        data: movingAverageDatasets,
+        borderColor: "rgba(73, 255, 0, 1)",
+        borderWidth: 1,
+        fill: false,
+        pointRadius: 0,
+    };
+    const inter = 10;
+    const intervals = Math.floor(dates.length / inter);
+    function findIntervals() {
+        const datasetRanges = [];
+        let number = 0;
+
+        for (let i = 0; i < intervals + 1; i++) {
+            const range = [number, number + inter];
+            datasetRanges.push({ label: `${number}-${number + inter}`, range });
+            number += inter;
         }
 
-        return dateArray;
+        return datasetRanges;
     }
-
-    const today = new Date();
-    const threeMonthsAgo = new Date(today);
-    threeMonthsAgo.setMonth(today.getMonth() - 3);
-
-    const datesArray = generateDateArray(threeMonthsAgo, today);
-
-    // Calculate the average of the received price data
-    const averagePrice =
-        closePrices.reduce((total, price) => total + price, 0) /
-        closePrices.length;
-    // Create a dataset for the average price line
-    const averagePriceDataset = {
-        label: "Average Price",
-        data: Array(dates.length).fill(averagePrice),
-        borderColor: "rgba(0, 0, 0, 1)", // Choose your desired color
-        borderWidth: 1,
-        borderDash: [5, 5], // Dashed line style
-        fill: false,
-        labels: dates,
-    };
 
     function findMinMaxClosePrice(closePrices, start, end) {
         let maxPrice = closePrices[start];
@@ -102,64 +112,71 @@ const createCharts = (data) => {
         return { max: maxPrice, min: minPrice };
     }
 
-    const datasetRanges = [
-        { label: "20", range: [0, 20] },
-        { label: "40", range: [20, 40] },
-        { label: "60", range: [40, 60] },
-    ];
+    const datasetRanges = findIntervals();
 
+    let additionalLength = 0;
+    const upper = [];
+    const lower = [];
     const donchianDatasets = datasetRanges.map((range) => {
         const { max, min } = findMinMaxClosePrice(
             closePrices,
             range.range[0],
             range.range[1]
         );
-
-        const upper = Array(range.range[1] - range.range[0] + 1).fill(null);
-        const lower = Array(range.range[1] - range.range[0] + 1).fill(null);
-
-        for (let i = range.range[0]; i <= range.range[1]; i++) {
-            upper[i - range.range[0]] = max;
-            lower[i - range.range[0]] = min;
+        for (let i = additionalLength; i < additionalLength + inter; i++) {
+            upper[i] = max;
+            lower[i] = min;
         }
+        additionalLength += inter;
 
         return {
             upper,
             lower,
-            label: `Donchian Bound (${range.label})`,
+            range: range,
         };
     });
-
-    donchianDatasets.forEach((dataset) => {
-        dataset.backgroundColor = "rgba(200, 0, 0, 0.3)"; // Adjust color as needed
-        dataset.borderColor = "transparent";
-        dataset.borderWidth = 0;
-        dataset.fill = true;
-        dataset.labels = datesArray;
-    });
-
     const donchianUpperBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.upper,
+        label: "",
     }));
 
     const donchianLowerBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.lower,
+        label: `Donchian Channel`,
     }));
-    const allDonchianDatasets = donchianLowerBoundDatasets.concat(
-        donchianUpperBoundDatasets
-    );
+    const inter2 = inter + inter;
+    let rangL = `${inter}-${inter2}`;
+    const allDonchianDatasets = [
+        ...donchianLowerBoundDatasets,
+        ...donchianUpperBoundDatasets,
+    ];
+    allDonchianDatasets.forEach((dataset) => {
+        if (dataset.range.label == rangL) {
+            dataset.backgroundColor = "rgba(121, 0, 255, 0.2)";
+            dataset.borderColor = "rgba(121, 0, 255, 1)";
+            dataset.borderWidth = 0.5;
+            dataset.fill = 1;
+            dataset.hidden = false;
+            dataset.pointRadius = 0;
+        } else {
+            dataset.pointRadius = 0;
+            dataset.borderWidth = 0;
+            dataset.label = "";
+        }
+    });
 
-    // Create the "Price" dataset using the filtered array
     const priceDataset = {
         label: "Price",
         data: closePrices,
-        backgroundColor: "rgba(144,0,255, 0.2)",
+        backgroundColor: "rgba(121, 0, 255, 0.2)",
         borderColor: "rgba(188, 102, 255, 1)",
         borderWidth: 1,
         labels: dates,
     };
+
+    var currentDate = new Date();
 
     new Chart(ctxStock, {
         type: "line",
@@ -168,7 +185,7 @@ const createCharts = (data) => {
             datasets: [
                 ...allDonchianDatasets,
                 priceDataset,
-                averagePriceDataset,
+                movingAveragePriceDataset,
             ],
         },
         options: {
@@ -207,82 +224,13 @@ const createCharts = (data) => {
                     },
                 },
             },
-        },
-    });
-
-    new Chart(ctxProfit, {
-        type: "line",
-        data: {
-            labels: dates,
-            datasets: [
-                {
-                    label: "Profit Percentage",
-                    data: profitPercentages,
-                    backgroundColor: "rgba(255,99,132, 0.2)",
-                    borderColor: "rgba(255, 0, 0, 1)",
-                    borderWidth: 1,
-                    fill: false,
-                },
-            ],
-        },
-        options: {
-            animation: {
-                duration: 1500,
-                easing: "linear",
-            },
-            scales: {
-                x: {
-                    type: "time",
-                    time: {
-                        tooltipFormat: "DD/MM/YYYY",
-                        displayFormats: {
-                            day: "DD/MM/YYYY",
-                        },
-                    },
-                    title: {
-                        display: true,
-                        text: "Date",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
-                    },
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: "Profit Percentage (%)",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
+            plugins: {
+                legend: {
+                    labels: {
+                        filter: (item) => item.text !== "",
                     },
                 },
             },
         },
     });
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-    const stockForm = document.getElementById("stockForm");
-
-    stockForm.addEventListener("submit", handleFormSubmit);
-
-    async function handleFormSubmit(event) {
-        event.preventDefault();
-
-        const tickers = document.getElementById("tickers").value;
-        const data = await fetchStockData(tickers);
-
-        displayStockData(data);
-    }
-
-    async function fetchStockData(tickers) {
-        const response = await fetch(`/api/stock/${tickers}`);
-        return await response.json();
-    }
-
-    function displayStockData(data) {
-        createCharts(data);
-    }
-});

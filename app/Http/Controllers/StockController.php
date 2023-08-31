@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Http;
 
 class StockController extends Controller
 {
-    public function getStockQuotes(Request $request, $tickers)
+    public function getStockQuotes(Request $request, $tickers, $period)
     {
-        $range = $request->input('range', '3mo');
+        $range = $request->input('range', $period);
         $interval = $request->input('interval', '1d');
         $fundamental = $request->input('fundamental', true);
         $dividends = $request->input('dividends', true);
