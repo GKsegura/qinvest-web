@@ -80,7 +80,7 @@ const createCharts = (data) => {
         fill: false,
         pointRadius: 0,
     };
-    const inter = 10;
+    const inter = 20;
     const intervals = Math.floor(dates.length / inter);
     function findIntervals() {
         const datasetRanges = [];

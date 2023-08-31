@@ -23,7 +23,6 @@
                     <ul class="col-6 nav d-flex justify-content-evenly">
                         <li class="nav-item"><a href="/" class="header-link nav-link">Home</a></li>
                         <li class="nav-item"><a href="/education" class="header-link nav-link">Education</a></li>
-                        <li class="nav-item"><a href="" class="header-link nav-link">Service</a></li>
                         <li class="nav-item"><a href="/stock" class="header-link nav-link">Stocks</a></li>
                         <li class="nav-item"><a href="/about" class="header-link nav-link">About Us</a></li>
 
