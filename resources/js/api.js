@@ -13,31 +13,85 @@ document.addEventListener("DOMContentLoaded", () => {
     async function handleFormSubmit(event) {
         stockDiv.style.visibility = "visible";
         event.preventDefault();
-
-        const tickers = document.getElementById("tickers").value;
+    
+        const tickersInput = document.getElementById("tickers"); // Obter o elemento input
+        const tickers = tickersInput.value; // Extrair o valor do campo de input
         const period = document.getElementById("period").value;
-
+    
         const data = await fetchStockData(tickers, period);
-        displayStockData(data);
+        displayStockData(data, tickers);
     }
+    
 
     async function fetchStockData(tickers, period) {
         const response = await fetch(`/api/stock/${tickers}/${period}`);
         return await response.json();
     }
 
-    function displayStockData(data) {
-        createCharts(data);
-    }
+   
+    
 });
+function setCurrentDate() {
+    const currentDate = new Date();
+    const stockDayElement = document.getElementById("stockDay");
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    stockDayElement.textContent = currentDate.toLocaleDateString(undefined, options);
+}
 
-const createCharts = (data) => {
+function calculateCurrentPriceAndProfit(data) {
+    const historicalData = data.results[0].historicalDataPrice;
+    const currentClosePrice = historicalData[historicalData.length - 1].close;
+    const previousClosePrice = historicalData[historicalData.length - 2].close;
+
+    const profit = currentClosePrice - previousClosePrice;
+    const profitPercentage = ((profit / previousClosePrice) * 100).toFixed(2);
+
+    const stockPriceProfitElement = document.getElementById("stockPriceProfit");
+
+    const currentPriceText = `${currentClosePrice.toFixed(2)} BRL`;
+
+    let profitText;
+    let profitClass;
+
+    if (profit > 0) {
+        profitText = `+${profit.toFixed(2)}`;
+        profitClass = "positive";
+    } else if (profit < 0) {
+        profitText = `${profit.toFixed(2)}`;
+        profitClass = "negative";
+    } else {
+        profitText = "0.00";
+        profitClass = ""; // No class needed for zero profit
+    }
+
+    const profitPercentageText = `(${profitPercentage}%)`;
+    const profitPercentageClass = profit >= 0 ? "positive" : "negative";
+
+    stockPriceProfitElement.innerHTML = `${currentPriceText} <span class="${profitClass}">${profitText}</span> <span class="${profitPercentageClass}">${profitPercentageText}</span>`;
+}
+
+
+// Call these functions in your displayStockData function
+function displayStockData(data, tickers) {
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers}`;
+
+    setCurrentDate();
+    calculateCurrentPriceAndProfit(data);
+
+    createCharts(data, tickers);
+}
+
+const createCharts = (data, tickers) => {
     const theme = getThemeFromCookie();
     let chartFontColor;
     theme == "light"
         ? (chartFontColor = "#121927")
         : (chartFontColor = "#ffffff");
 
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers}`;
+    
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
     const closePrices = historicalData.map((stock) => stock.close);
@@ -48,7 +102,6 @@ const createCharts = (data) => {
     if (existingChartStock) {
         existingChartStock.destroy();
     }
-
     function findMovingAverage(closePrices, start, end, period) {
         let sum = 0;
         const actualPeriod = Math.min(period, end - start + 1);
@@ -80,7 +133,7 @@ const createCharts = (data) => {
         fill: false,
         pointRadius: 0,
     };
-    const inter = 10;
+    const inter = 20;
     const intervals = Math.floor(dates.length / inter);
     function findIntervals() {
         const datasetRanges = [];
@@ -207,27 +260,37 @@ const createCharts = (data) => {
                     title: {
                         display: true,
                         text: "Date",
-                        color: chartFontColor,
+                        color: chartFontColor + ' !important',
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: chartFontColor + ' !important',
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: chartFontColor,
+                        color: chartFontColor + ' !important',
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: chartFontColor + ' !important',
                     },
                 },
             },
             plugins: {
+                title: {
+                    display: true,
+                    text: "Gráfico de Preços", // Adicione o título desejado aqui
+                    font: {
+                        size: 25,
+                        weight: 'bold',
+                      
+                    }
+                },
                 legend: {
                     labels: {
                         filter: (item) => item.text !== "",
+                        
                     },
                 },
             },
