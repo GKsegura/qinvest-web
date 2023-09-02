@@ -140,6 +140,13 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     width: 65%;
 }
 
+#selicInfotxt {
+    display: block;
+    margin: 5%;
+}
+.stockInfoPrice {
+    display: flex;
+}
 
 #stockDiv {
     width: 100%;
@@ -308,4 +315,24 @@ svg {
     height: 100%;
     margin-left: -68%;
     margin-top: 35%;
+}
+
+.smooth {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+
+    border-top: 8px solid rgba(100, 26, 157, 1);
+    border-left: 8px solid rgba(100, 26, 157, 1);
+    border-right: 8px solid rgb(100, 26, 157, 0);
+
+    margin-top: 71px;
+    animation: spin 0.8s infinite linear;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
