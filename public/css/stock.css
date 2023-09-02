@@ -21,14 +21,14 @@ h1 {
     justify-content: center;
 }
 
-.body{
+.body {
     max-width: 1320px;
     padding-top: 10vh !important;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
     margin-right: auto;
     margin-left: auto;
 }
@@ -36,7 +36,7 @@ h1 {
     font-weight: bold;
     margin-left: 69px;
 }
-.sTitle{
+.sTitle {
     font-weight: bold;
     color: var(--secondary-color) !important;
     font-size: 36px;
@@ -139,14 +139,13 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     margin: 5%;
 }
 
-
 #stockDiv {
     width: 100%;
     height: auto;
     padding: 5% 0;
     visibility: hidden;
 }
-#stockRecomendation{
+#stockRecomendation {
     width: 100%;
     height: auto;
     padding: 5% 0;
@@ -155,7 +154,7 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     display: block;
 }
 /* Seus estilos existentes... */
-#stockSearch{
+#stockSearch {
     margin-left: 42%;
 }
 .recommendation-section {
@@ -189,7 +188,7 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     box-shadow: 0 0 0.45em var(--dark-purple);
 }
 
-#recommendationLabel{
+#recommendationLabel {
     margin-left: 39.5%;
     margin-top: 23px;
 }
@@ -207,7 +206,6 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-
 }
 #selicTitle {
     color: var(--secondary-color) !important;
@@ -223,10 +221,9 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-
 }
 
-#stockLogoSm{
+#stockLogoSm {
     width: 152px;
     height: 34px;
     flex-shrink: 0;
@@ -247,11 +244,11 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 /* Estilização para o link âncora .stockLearn */
 .stockLearn {
     border-radius: 10px;
-    background: linear-gradient(222deg, #EC78FF 5.75%, #809BF9 98.04%);
+    background: linear-gradient(222deg, #ec78ff 5.75%, #809bf9 98.04%);
     width: 408px;
     height: 44px;
     flex-shrink: 0;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Helvetica;
     font-size: 16px;
@@ -268,7 +265,6 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     /* Removendo a decoração de link */
 }
 
-
 /* Add these styles at the end of your existing CSS */
 .positive {
     color: green;
@@ -278,11 +274,11 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     color: red;
 }
 
-svg{
+svg {
     fill: var(--secondary-color);
 }
 
-#stockImg{
+#stockImg {
     width: 170px;
     height: 169px;
     display: flex;
@@ -299,8 +295,8 @@ svg{
 .stockPath {
     transform-box: fill-box;
     transform: scale(0.7);
-    }
-#stockSearchAc{
+}
+#stockSearchAc {
     margin-left: 4%;
 }
 
@@ -310,5 +306,4 @@ svg{
     height: 100%;
     margin-left: -68%;
     margin-top: 35%;
-
 }

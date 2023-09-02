@@ -12,7 +12,8 @@
         </svg>
         <div id="stockInfotxt">
             <h3 id="selicTitle">Taxa SELIC</h3>
-            <p id="selicPrice" class="stockText"></p>
+            <p id="selicPrice" class="stockText">
+            </p>
             <p id="selicDay" class="stockText">Atualizado em: <span id="currentDateTime"></span></p>
         </div>
     </div>
@@ -81,26 +82,3 @@
     </div>
 </div>
 @include('layouts.footer')
-
-<script>
-    // Function to update the current date and time
-    function updateDateTime() {
-        const currentDate = new Date();
-        const day = String(currentDate.getDate()).padStart(2, '0'); // Add leading zero if necessary
-        const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Add leading zero if necessary
-        const year = currentDate.getFullYear();
-        const hours = currentDate.getHours();
-        const minutes = String(currentDate.getMinutes()).padStart(2, '0'); // Add leading zero if necessary
-
-        // Format the date and time as desired
-        const formattedDateTime = `${day}/${month}/${year}`;
-        // Update the content of the element with id "currentDateTime"
-        document.getElementById("currentDateTime").textContent = formattedDateTime;
-    }
-
-    // Call the function when the page loads to set the initial content
-    updateDateTime();
-
-    // You can also update the date and time periodically if needed, for example, every minute
-    // setInterval(updateDateTime, 60000); // Update every minute
-</script>

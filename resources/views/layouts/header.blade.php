@@ -8,6 +8,7 @@
     <title>QInvest</title>
     @include('layouts.css')
     @vite(['resources/js/theme.js'])
+    @vite(['resources/js/selic.js'])
 </head>
 
 <body id="body">

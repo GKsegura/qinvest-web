@@ -10,6 +10,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/stock/{tickers}/{period}', [StockController::class, 'getStockQuotes']);
-
-
-Route::get('/selic/{tickers}/{period}', [SelicController::class, 'getSelicQuotes']);
