@@ -38,5 +38,11 @@ Route::get('/register', [RegisterController::class, 'createForm'])->name('regist
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
-Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
-Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
+//Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
+//Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
+
+Route::middleware(['auth'])->group(function () {
+    // Define your form route here
+    Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
+    Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
+});

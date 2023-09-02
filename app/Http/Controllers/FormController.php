@@ -7,7 +7,6 @@ use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
@@ -27,31 +26,53 @@ class FormController extends Controller
 
     public function auth(Request $request)
     {
-        // Valide os dados recebidos
-        $validator = Validator::make($request->all(), [
-            'question_id' => 'required|integer',
-            'answer_id' => 'required|integer'
-        ], [
-            'question_id.required' => 'A pergunta não foi informada.',
-            'answer_id.required' => 'A resposta não foi informada.'
-        ]);
+        $userId = $request->input('user_id');
 
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }   
-        // Execute o INSERT na tabela de usuários
         try {
+            // Insert the data into the 'tests' table
             DB::table('tests')->insert([
-                'question_id' => $request->input('question_id'),
-                'answer_id' => $request->input('answer_id'),
+                'deleted' => false,
+                'grade' => 0,
+                'form_id' => 8,
+                'user_id' => $userId,
+                'investor_id' => null,
                 'created_at' => Carbon::now('America/Sao_Paulo'),
-                'updated_at' => null
+                'updated_at' => null,
+            ]);
+            // Flash a success message to the session
+            session()->flash('home', 'Cadastrado com sucesso');
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+            echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
+        }
+
+        try {
+            DB::table('tests_questions_answers')->insert([
+                'test_id' => DB::table('tests')->max('id'),
+                'question_id' => 1,
+                'answer_id' => $request->input('selected_answer1'),
+                'created_at' => Carbon::now('America/Sao_Paulo'),
+                'updated_at' => null,
             ]);
         } catch (\Exception $e) {
             dd($e->getMessage());
-            echo "<script type = 'text/javascript'>alert ('Erro no SQL')</script>";
+            echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
         }
-        // Redirecione para uma página de sucesso ou exiba uma mensagem
-        return redirect()->route('home', "<script type = 'text/javascript'>alert ('Cadastrado com sucesso')</script>");
+
+        // Redirect to the appropriate page after successful submission
+        return redirect()->route('home');
     }
 }
+
+// $userId = $request->input('user_id');
+            // // Validate the input data
+            // $validator = Validator::make($request->all(), [
+            //     'question_id' => 'required|integer',
+            //     'answer_id' => 'required|integer',
+            // ], [
+            //     'question_id.required' => 'A pergunta não foi informada.',
+            //     'answer_id.required' => 'A resposta não foi informada.',
+            // ]);
+            // if ($validator->fails()) {
+            //     return redirect()->back()->withErrors($validator)->withInput();
+            // }

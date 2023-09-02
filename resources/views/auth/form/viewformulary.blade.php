@@ -1,4 +1,17 @@
     @vite(['resources/utils/alpine.js'])
+
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <form action="{{ route('formulary') }}" method="POST">
         @csrf
         <fieldset>
@@ -9,10 +22,10 @@
         <fieldset>
             @foreach($answers->where('question_id', 1) as $answer)
             <div>
-            <label>
-                <input type="radio" name="selected_answer1" value="{{ $answer->id }}">
-                {{ $answer->text_answer }}
-            </label><br>
+                <label>
+                    <input type="radio" name="selected_answer1" value="{{ $answer->id }}">
+                    {{ $answer->text_answer }}
+                </label><br>
             </div>
             @endforeach
         </fieldset>
@@ -77,5 +90,6 @@
             @endforeach
         </fieldset>
         <br>
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
         <button type="submit">Enviar</button>
     </form>
