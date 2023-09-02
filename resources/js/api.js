@@ -9,6 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
     const periodSelect = document.getElementById("period"); // Seleciona o elemento <select>
     
+    const tickersInput = document.getElementById("tickers");
+    const submitButton = document.querySelector(".button");
+
+    // Adicione um evento de escuta à entrada de tickers
+    tickersInput.addEventListener("input", () => {
+        if (tickersInput.value.trim() !== "") {
+            // Habilitar o botão de envio se houver algo escrito em tickers
+            submitButton.removeAttribute("disabled");
+        } else {
+            // Desabilitar o botão de envio se tickers estiver vazio
+            submitButton.setAttribute("disabled", "true");
+        }
+    });
+    const recommendationButtons = document.querySelectorAll(".recommendation-card");
+    recommendationButtons.forEach(button => {
+        button.addEventListener("click", handleRecommendationButtonClick);
+    });
+    recommendationButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Limpe o valor do campo de entrada ("tickers")
+            tickersInput.value = "";
+        });
+    });
     stockForm.addEventListener("submit", handleFormSubmit);
     periodSelect.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
@@ -18,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     async function handleFormSubmit(event) {
         stockDiv.style.visibility = "visible";
+      
         event.preventDefault();
     
         const tickersInput = document.getElementById("tickers"); // Obter o elemento input
@@ -35,8 +59,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
    
+    async function handleRecommendationButtonClick(event) {
+        const clickedButton = event.currentTarget;
+        const tickerFromButton = clickedButton.getAttribute("data-ticker");
+        const period = document.getElementById("period").value;
     
+        // Se o ticker do botão estiver presente, usá-lo; caso contrário, usar o valor do input
+        const tickerInput = document.getElementById("tickers");
+        const ticker = tickerFromButton || (tickerInput ? tickerInput.value : "");
+    
+        // Chamar a função fetchStockData com o ticker e o período e aguardar a resposta
+        const data = await fetchStockData(ticker, period);
+    
+        // Depois que os dados forem obtidos, chamar a função createCharts
+        displayStockData(data, ticker);
+    }    
 });
+
+
 function setCurrentDate() {
     const currentDate = new Date();
     const day = currentDate.getDate().toString().padStart(2, '0');
@@ -143,10 +183,10 @@ const createCharts = (data, tickers) => {
     }
 
     const movingAveragePriceDataset = {
-        label: "Moving Average Price",
+        label: "Média Móvel",
         data: movingAverageDatasets,
         borderColor: "rgba(73, 255, 0, 1)",
-        borderWidth: 1,
+        borderWidth: 2,
         fill: false,
         pointRadius: 0,
     };
@@ -238,7 +278,7 @@ const createCharts = (data, tickers) => {
     });
 
     const priceDataset = {
-        label: "Price",
+        label: "Preço",
         data: closePrices,
         backgroundColor: "rgba(121, 0, 255, 0.2)",
         borderColor: "rgba(188, 102, 255, 1)",
@@ -277,20 +317,20 @@ const createCharts = (data, tickers) => {
                     title: {
                         display: true,
                         text: "Date",
-                        color: '#EC78FF',
+                        color: '#a600ff',
                     },
                     ticks: {
-                        color: '#EC78FF',
+                        color: '#a600ff',
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: '#EC78FF',
+                        color: '#a600ff',
                     },
                     ticks: {
-                        color: '#EC78FF',
+                        color: '#a600ff',
                     },
                 },
             },
@@ -302,12 +342,12 @@ const createCharts = (data, tickers) => {
                         size: 25,
                         weight: 'bold',
                     },
-                    color: 'purple',
+                    color: '#a600ff',
                 },
                 legend: {
                     labels: {
                         filter: (item) => item.text !== "",
-                        color: 'purple',
+                        color: '#a600ff',
                     },
                 },
             },
