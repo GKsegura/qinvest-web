@@ -2,11 +2,13 @@
 <link href="{{ asset('css/layout/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/layout/header.css') }}" rel="stylesheet">
 <link href="{{ asset('css/layout/footer.css') }}" rel="stylesheet">
+<link href="{{ asset('css/page/index.css') }}" rel="stylesheet">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- home -->
 @if(Route::currentRouteName() === 'home')
-<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+<link href="{{ asset('css/page/home.css') }}" rel="stylesheet">
 @endif
 
 <!-- about us -->

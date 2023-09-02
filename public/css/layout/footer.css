@@ -5,12 +5,12 @@
 footer {
     color: #ffffff;
     width: 100%;
-    height: auto;
+    height: 40vh;
     background: linear-gradient(to top, #3860ec, #6a31e2);
 }
 
 .footer-content {
-    padding: 100px;
+    padding: 50px;
     gap: 50px;
     display: grid;
     grid-template-rows: (2,1fr);

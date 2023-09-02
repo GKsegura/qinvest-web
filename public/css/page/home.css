@@ -1,25 +1,12 @@
-@import url(style.css);
+@import url(layout/app.css);
 
-.page {
-    height: 120vh;
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+ 
+.page-home {
+    background-image: url(../../assets/waveBg.svg);
+    color: var(--primary-color);
     text-align: center;
 }
-#page-home {
-    background-image: url(../assets/waveBg.svg);
-    color: var(--primary-color);
-}
-
-.header-page {
-    padding-top: 15vh;
-    transition: var(--transition);
-}
-
+/*  */
 .buttons-home {
     width: 100%;
     height: auto;
@@ -35,6 +22,7 @@
     padding: 1% 2%;
     font-size: 1em;
 }
+
 
 #login,
 #register:hover {
