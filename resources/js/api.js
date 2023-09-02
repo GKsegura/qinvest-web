@@ -7,37 +7,148 @@ const stockDiv = document.getElementById("stockDiv");
 
 document.addEventListener("DOMContentLoaded", () => {
     const stockForm = document.getElementById("stockForm");
+    const periodSelect = document.getElementById("period"); // Seleciona o elemento <select>
+    
+    const tickersInput = document.getElementById("tickers");
+    const submitButton = document.querySelector(".button");
 
+    // Adicione um evento de escuta à entrada de tickers
+    tickersInput.addEventListener("input", () => {
+        if (tickersInput.value.trim() !== "") {
+            // Habilitar o botão de envio se houver algo escrito em tickers
+            submitButton.removeAttribute("disabled");
+        } else {
+            // Desabilitar o botão de envio se tickers estiver vazio
+            submitButton.setAttribute("disabled", "true");
+        }
+    });
+    const recommendationButtons = document.querySelectorAll(".recommendation-card");
+    recommendationButtons.forEach(button => {
+        button.addEventListener("click", handleRecommendationButtonClick);
+    });
+    recommendationButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Limpe o valor do campo de entrada ("tickers")
+            tickersInput.value = "";
+        });
+    });
     stockForm.addEventListener("submit", handleFormSubmit);
-
+    periodSelect.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            stockForm.dispatchEvent(new Event("submit")); // Dispatch a submit event on the form
+        }
+    });
     async function handleFormSubmit(event) {
         stockDiv.style.visibility = "visible";
+      
         event.preventDefault();
-
-        const tickers = document.getElementById("tickers").value;
+    
+        const tickersInput = document.getElementById("tickers"); // Obter o elemento input
+        const tickers = tickersInput.value; // Extrair o valor do campo de input
         const period = document.getElementById("period").value;
-
+    
         const data = await fetchStockData(tickers, period);
-        displayStockData(data);
+        displayStockData(data, tickers);
     }
+    
 
     async function fetchStockData(tickers, period) {
         const response = await fetch(`/api/stock/${tickers}/${period}`);
         return await response.json();
     }
 
-    function displayStockData(data) {
-        createCharts(data);
-    }
+   
+    async function handleRecommendationButtonClick(event) {
+        const clickedButton = event.currentTarget;
+        const tickerFromButton = clickedButton.getAttribute("data-ticker");
+        const period = document.getElementById("period").value;
+    
+        // Se o ticker do botão estiver presente, usá-lo; caso contrário, usar o valor do input
+        const tickerInput = document.getElementById("tickers");
+        const ticker = tickerFromButton || (tickerInput ? tickerInput.value : "");
+    
+        // Chamar a função fetchStockData com o ticker e o período e aguardar a resposta
+        const data = await fetchStockData(ticker, period);
+    
+        // Depois que os dados forem obtidos, chamar a função createCharts
+        displayStockData(data, ticker);
+    }    
 });
 
-const createCharts = (data) => {
-    const theme = getThemeFromCookie();
-    let chartFontColor;
-    theme == "light"
-        ? (chartFontColor = "#121927")
-        : (chartFontColor = "#ffffff");
 
+function setCurrentDate() {
+    const currentDate = new Date();
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours().toString().padStart(2, '0');
+    const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+    const formattedDate = `Atualizado em: ${day}/${month}/${year} ${hours}:${minutes}`;
+    
+    const stockDayElement = document.getElementById("stockDay");
+    stockDayElement.textContent = formattedDate;
+}
+
+
+function calculateCurrentPriceAndProfit(data) {
+    const historicalData = data.results[0].historicalDataPrice;
+    const currentClosePrice = historicalData[historicalData.length - 1].close;
+    const previousClosePrice = historicalData[historicalData.length - 2].close;
+
+    const profit = currentClosePrice - previousClosePrice;
+    const profitPercentage = ((profit / previousClosePrice) * 100).toFixed(2);
+
+    const stockPriceProfitElement = document.getElementById("stockPriceProfit");
+
+    const currentPriceText = `${currentClosePrice.toFixed(2)} BRL`;
+
+    let profitText;
+    let profitClass;
+
+    if (profit > 0) {
+        profitText = `+${profit.toFixed(2)}`;
+        profitClass = "positive";
+    } else if (profit < 0) {
+        profitText = `${profit.toFixed(2)}`;
+        profitClass = "negative";
+    } else {
+        profitText = "0.00";
+        profitClass = ""; // No class needed for zero profit
+    }
+
+    const profitPercentageText = `(${profitPercentage}%)`;
+    const profitPercentageClass = profit >= 0 ? "positive" : "negative";
+
+    stockPriceProfitElement.innerHTML = `${currentPriceText} <span class="${profitClass}">${profitText}</span> <span class="${profitPercentageClass}">${profitPercentageText}</span>`;
+}
+
+
+// Call these functions in your displayStockData function
+function displayStockData(data, tickers) {
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
+
+    setCurrentDate();
+    calculateCurrentPriceAndProfit(data);
+
+    createCharts(data, tickers);
+}
+
+const createCharts = (data, tickers) => {
+    const theme = getThemeFromCookie();
+    let chartFontColor = "#d7d7d7";
+    if(theme == "light"){
+    chartFontColor = "#121927";
+    }
+    else{
+        chartFontColor = "#ffffff";
+    }
+
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
+    
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
     const closePrices = historicalData.map((stock) => stock.close);
@@ -48,7 +159,6 @@ const createCharts = (data) => {
     if (existingChartStock) {
         existingChartStock.destroy();
     }
-
     function findMovingAverage(closePrices, start, end, period) {
         let sum = 0;
         const actualPeriod = Math.min(period, end - start + 1);
@@ -73,10 +183,10 @@ const createCharts = (data) => {
     }
 
     const movingAveragePriceDataset = {
-        label: "Moving Average Price",
+        label: "Média Móvel",
         data: movingAverageDatasets,
         borderColor: "rgba(73, 255, 0, 1)",
-        borderWidth: 1,
+        borderWidth: 2,
         fill: false,
         pointRadius: 0,
     };
@@ -168,7 +278,7 @@ const createCharts = (data) => {
     });
 
     const priceDataset = {
-        label: "Price",
+        label: "Preço",
         data: closePrices,
         backgroundColor: "rgba(121, 0, 255, 0.2)",
         borderColor: "rgba(188, 102, 255, 1)",
@@ -207,27 +317,37 @@ const createCharts = (data) => {
                     title: {
                         display: true,
                         text: "Date",
-                        color: chartFontColor,
+                        color: '#a600ff',
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: '#a600ff',
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: chartFontColor,
+                        color: '#a600ff',
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: '#a600ff',
                     },
                 },
             },
             plugins: {
+                title: {
+                    display: true,
+                    text: "Gráfico de Preços", // Adicione o título desejado aqui
+                    font: {
+                        size: 25,
+                        weight: 'bold',
+                    },
+                    color: '#a600ff',
+                },
                 legend: {
                     labels: {
                         filter: (item) => item.text !== "",
+                        color: '#a600ff',
                     },
                 },
             },
