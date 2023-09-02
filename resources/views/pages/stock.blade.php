@@ -10,7 +10,7 @@
                 </g>
             </g>
         </svg>
-        <div id="stockInfotxt">
+        <div id="selicInfotxt">
             <h3 id="selicTitle">Taxa SELIC</h3>
             <p id="selicPrice" class="stockText">
             </p>
@@ -66,10 +66,13 @@
                     </g>
                 </g>
             </svg>
-            <div id="stockInfotxt">
-                <h3 id="stockTitle"></h3>
-                <p id="stockPriceProfit" class="stockText"></p>
-                <p id="stockDay" class="stockText"></p>
+            <div class="stockInfoPrice">
+                <div id="stockInfotxt">
+                    <h3 id="stockTitle"></h3>
+                    <p id="stockPriceProfit" class="stockText"></p>
+                    <p id="stockDay" class="stockText"></p>
+                </div>
+                <div class="smooth"></div>
             </div>
         </div>
         <canvas id="stockChart" class="chart-canvas"></canvas>

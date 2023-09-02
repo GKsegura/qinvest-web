@@ -41,16 +41,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     async function handleFormSubmit(event) {
         stockDiv.style.visibility = "visible";
-      
+        
+        // Exibe o cursor de carregamento
+        const smoothLoader = document.querySelector('.smooth');
+        smoothLoader.style.visibility = 'visible';
+    
         event.preventDefault();
     
-        const tickersInput = document.getElementById("tickers"); // Obter o elemento input
-        const tickers = tickersInput.value; // Extrair o valor do campo de input
+        const tickersInput = document.getElementById("tickers");
+        const tickers = tickersInput.value;
         const period = document.getElementById("period").value;
     
-        const data = await fetchStockData(tickers, period);
-        displayStockData(data, tickers);
+        try {
+            const data = await fetchStockData(tickers, period);
+            displayStockData(data, tickers);
+        } finally {
+            // Após a conclusão do carregamento (bem-sucedido ou com erro), oculta o cursor de carregamento
+            smoothLoader.style.visibility = 'hidden';
+        }
     }
+    
     
 
     async function fetchStockData(tickers, period) {

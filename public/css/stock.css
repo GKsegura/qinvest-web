@@ -137,7 +137,9 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 #stockInfotxt {
     display: block;
     margin: 5%;
+    width: 65%;
 }
+
 
 #stockDiv {
     width: 100%;
