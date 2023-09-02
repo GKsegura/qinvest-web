@@ -1,6 +1,7 @@
-<div class="body-education-page" id="education-page">
+<x-layout.app>
     <div class="container">
-        <h1 id="title-education-page" class="text-education-page">Aprenda a Investir, porra</h1>
+        <!-- body-education-page" id="" -->
+        <p class="h1 title-education-page">Aprenda a Investir porra!</p>
 
         <div class="education-summary">
             <div class="left-summary">
@@ -16,4 +17,4 @@
         </div>
     </div>
 
-</div>
+</x-layout.app>

@@ -1,0 +1,41 @@
+@import url(style.css);
+
+.education-page {
+    background-image: url(../../assets/waveBg.svg);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+.title-education-page {
+    color: var(--secondary-color) !important;
+    letter-spacing: 1.2px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.education-summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+
+}
+
+.education-summary div {
+    width: 50vh;
+    height: 50vh;
+    background-color: #ffffff;
+}
+
+.left-summary img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+

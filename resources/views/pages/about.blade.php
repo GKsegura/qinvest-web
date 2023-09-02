@@ -1,9 +1,5 @@
-<div class="page">
-    <!--
-        Essa página ainda precisa dos textos.
-        Além disso, os cards precisam ser finalizados. Eles precisam da foto de cada membro, das funções corretas,
-        e de uma mini descrição. Finalmente, todos os itens do card precisam ser redimensionados corretamente.
-    -->
+<x-layout.app>
+
     <div class="container about-page">
         <div class="header-page">
 
@@ -139,4 +135,4 @@
         },
     });
     </script>
-</div>
+</x-layout.app>

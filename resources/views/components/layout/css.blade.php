@@ -6,6 +6,11 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- education -->
+@if (Route::currentRouteName() === 'education')
+<link href="{{ asset('css/page/education.css') }}" rel="stylesheet">
+@endif
+
 <!-- home -->
 @if(Route::currentRouteName() === 'home')
 <link href="{{ asset('css/page/home.css') }}" rel="stylesheet">
@@ -14,7 +19,7 @@
 <!-- about us -->
 @if(Route::currentRouteName() === 'about')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<link href="{{ asset('css/about.css') }}" rel="stylesheet">
+<link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 @endif
@@ -28,9 +33,4 @@
 <!-- stock -->
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
-@endif
-
-<!-- education -->
-@if (Route::currentRouteName() === 'education')
-<link href="{{ asset('css/education.css') }}" rel="stylesheet">
 @endif
