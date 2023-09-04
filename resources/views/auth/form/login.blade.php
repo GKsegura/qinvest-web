@@ -4,28 +4,28 @@
 <form action="{{ route('login') }}" method="POST">
     @csrf
 
-    <div class="row justify-content-center gap-4">
-        <div class="field col-12">
+    <div class="form-group justify-content-center gap-4">
+        <div class="field">
             <label for="email" class="label-form">Email:</label>
             <input type=" email" class="field-input form-control" name="email" id="email" autofocus>
             <div class="invalid-input"> @error('email'){{$message}}@enderror</div>
         </div>
 
-        <div class="field col-12">
+        <div class="field">
             <label for="senha" class="label-form">Senha:</label>
             <input type="password" class="field-input form-control" name="password" id="senha">
             <div class="invalid-input"> @error('password'){{$message}}@enderror</div>
 
         </div>
 
-        <div class="col-12 text-start">
+        <div class="text-start">
             <input id="newsletter" class="form-check-input" type="checkbox" name="newsletter">
             <label for="newsletter" class="form-check-label">Lembrar minha senha
                 notificações.</label>
 
         </div>
 
-        <div class="col-12 form-actions">
+        <div class="form-actions">
             <button type="submit" class="submit-button">Login</button>
 
             <div class="form-redirect d-inline-flex justify-content-center w-100">

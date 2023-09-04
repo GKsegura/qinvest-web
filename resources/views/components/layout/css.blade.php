@@ -27,7 +27,7 @@
 <!-- form -->
 @if(Route::currentRouteName() === 'register' or Route::currentRouteName() === 'login')
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
-<link href="{{ asset('css/form-page.css') }}" rel="stylesheet">
+<link href="{{ asset('css/layout/auth.css') }}" rel="stylesheet">
 @endif
 
 <!-- stock -->
