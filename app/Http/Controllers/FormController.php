@@ -45,7 +45,7 @@ class FormController extends Controller
             dd($e->getMessage());
             echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
         }
-
+        
         try {
             DB::table('tests_questions_answers')->insert([
                 'test_id' => DB::table('tests')->max('id'),
