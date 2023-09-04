@@ -1,7 +1,7 @@
 @import url(style.css);
 
 .body-education-page {
-    height: 300vh;
+    height: 112vh;
     width: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -119,17 +119,25 @@
     margin-top: 30px;
     margin-right: 27%;
 }
-
+#qinvestLogoSmall {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    fill: var(--secondary-color);
+    margin-left: 32.5%;
+}
 .curso {
     display: block;
-    margin-top: 20px;
     align-items: center;
     justify-content: center;
+    background-color: var(--primary-color);
+    padding-left: 12%;
+    padding-bottom: 60px;
 }
 
 .cursoCard {
     width: 100%;
-    margin-bottom: 30px;
 }
 
 .cursoTitleVariable {
@@ -174,7 +182,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-right: 78%;
+    margin-left: 3%;
 }
 
 .cursoContentFixed {
@@ -195,7 +203,7 @@
 
 .cursoContentVariable {
     display: flex;
-    width: 1142px;
+    width: 1160px;
     padding: 25px 30px;
     flex-direction: column;
     justify-content: center;

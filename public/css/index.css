@@ -75,7 +75,7 @@
 
 .stair img {
     margin: 0;
-    margin-top: 10vh;
+    margin-top: 6vh;
     margin-bottom: 5vh;
     padding: 0;
     position: absolute;
@@ -84,4 +84,13 @@
 
 #world {
     width: 45%;
+}
+
+#qinvestLogoSm {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-left: 39%;
+    margin-bottom: 30px;
 }

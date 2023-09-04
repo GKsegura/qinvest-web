@@ -1,7 +1,6 @@
 @import url(style.css);
 
 .page {
-    height: 120vh;
     width: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -9,6 +8,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    
 }
 
 .header-page {
@@ -91,4 +91,13 @@
     font-size: 0.9em;
     margin-top: 0.5em;
     text-align: justify;
+}
+#qinvestLogoSmall {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    fill: var(--secondary-color);
+    margin-right: 9%;
+    margin-bottom: 40px;
 }
