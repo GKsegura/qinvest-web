@@ -1,7 +1,7 @@
 @import url(style.css);
 
 .body-education-page {
-    height: 120vh;
+    height: 300vh;
     width: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -10,6 +10,7 @@
     padding: 17.5vh 0 0 0;
     text-align: center;
 }
+
 #education-page {
     background-image: url(../assets/waveBg.svg);
     color: var(--primary-color);
@@ -59,7 +60,8 @@
     font-family: Helvetica;
     font-style: normal;
     font-weight: 700;
-    line-height: 47px; /* 146.875% */
+    line-height: 47px;
+    /* 146.875% */
     letter-spacing: -2.3px;
 }
 
@@ -108,4 +110,148 @@
     border: 2px solid transparent;
     border-image: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
     border-image-slice: 1;
+}
+
+#qinvestLogoSm {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-right: 27%;
+}
+
+.curso {
+    display: block;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursoCard {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.cursoTitleVariable {
+    color: var(--secondary-color);
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    margin-right: 62%;
+}
+
+.cursoTitleFixed {
+    color: var(--secondary-color);
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    margin-right: 66%;
+    text-transform: capitalize;
+}
+
+#cursoSubtitleFixed {
+    color: #586D98;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 78%;
+}
+
+#cursoSubtitleVariable {
+    color: var(--TextoSecundarioSecundario, #FF9F5A);
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 78%;
+}
+
+.cursoContentFixed {
+    display: flex;
+    width: 1160px;
+    max-height: 234px;
+    padding: 25px 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 22px;
+    border-radius: 10px;
+    border: 1px solid var(--TextoSecundarioClaro, #BF98FF);
+    background-color: transparent;
+    margin-bottom: 30px;
+}
+
+
+.cursoContentVariable {
+    display: flex;
+    width: 1142px;
+    padding: 25px 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 22px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--TextoSecundarioSecundario, #FF9F5A);
+    background-color: transparent;
+}
+
+.contentTitle {
+
+    color: var(--secondary-color);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    /* 160% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+
+#contentSubtitleVariable {
+    color: var(--TextoSecundarioSecundario, #FF9F5A);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+
+}
+
+#contentSubtitleFixed {
+    color: var(--TextoSecundarioClaro, #BF98FF);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+
+}
+
+.contentText {
+    color: var(--secondary-color);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
 }
