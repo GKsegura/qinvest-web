@@ -8,8 +8,8 @@
                 <img src="assets/education.svg" alt="">
             </div>
             <div class="right-summary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="25" viewBox="0 0 45 25" fill="none">
-                    <path d="M24.9649 0.76001V7.41115H12.4827V14.0623H0V20.7134L7.02982 24.4385H19.5125H31.9947H45V4.48508L37.9702 0.76001H24.9649ZM27.5417 1.46437H37.0842L41.9015 4.01559H32.359L27.5417 1.46437ZM26.2869 2.12246L31.114 4.67917V9.774L26.2869 7.2173V2.12246ZM32.8759 4.95435H43.1564V23.4559H7.91095V18.2566H20.3936V11.6055H32.8759V4.95435ZM15.059 8.11529H25.0419L29.8596 10.6667H19.8767L15.059 8.11529ZM13.8042 8.7736L18.6318 11.3301V16.4251L13.8042 13.8684V8.7736ZM2.57636 14.7664H12.5592L17.3769 17.3179H7.39406L2.57636 14.7664ZM1.3215 15.4247L6.1491 17.9812V22.8414L1.3215 20.2849V15.4247Z" fill="#8F47F1" />
+                <svg id="qinvestLogoSm" viewBox="0 0 199 38" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z" />
                 </svg>
                 <h2>Curso: </h2>
                 <h1>Começando do zero</h1>
@@ -17,8 +17,28 @@
                     A coletânea desde o início.</p>
                 <button>Vamos lá!</button>
             </div>
-        </div>
-    </div>
 
-</div>
-@include('layouts.footer')
+        </div>
+        <div class="curso">
+            <div class="cursoCard">
+                <h2 class="cursoTitleFixed">Curso: Renda Fixa</h2>
+                <h4 id="cursoSubtitleFixed">Invista de maneira segura</h4>
+                <button class="cursoContentFixed">
+                    <h4 class="contentTitle">O que é Investir?</h4>
+                    <h5 id="contentSubtitleFixed">1° Aula - conceitos básicos</h5>
+                    <p class="contentText">hjahdjahdaahdahdajdhj</p>
+                </button>
+                <div class="cursoCard">
+                    <h2 class="cursoTitleVariable">Guia: Renda Variável</h2>
+                    <h4 id="cursoSubtitleVariable">Entre no mercado de ações.</h4>
+                    <button class="cursoContentVariable">
+                        <h4 class="contentTitle">O que é renda variável?</h4>
+                        <h5 id="contentSubtitleVariable">Parte 1 - saiba por onde começar.</h5>
+                        <p class="contentText">hjahdjahdaahdahdajdhj</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @include('layouts.footer')
