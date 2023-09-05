@@ -19,6 +19,7 @@
                 <img src="assets/girl.svg" alt="">
             </div>
         </div>
+
     </div>
 
 </div>
