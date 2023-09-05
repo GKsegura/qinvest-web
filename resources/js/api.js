@@ -1,3 +1,5 @@
+// fazer verificação dos dados e aviso se os dados não forem retornado, de forma a mostrar que ocorreu algum erro, para que não impossibilite no dia da apresentação
+
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
@@ -30,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     recommendationButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            // Limpe o valor do campo de entrada ("tickers")
             tickersInput.value = "";
         });
     });
@@ -101,7 +102,27 @@ function setCurrentDate() {
 }
 
 function calculateCurrentPriceAndProfit(data) {
+    if (
+        !data ||
+        !data.results ||
+        !Array.isArray(data.results) ||
+        data.results.length === 0
+    ) {
+        console.error(
+            "Dados ausentes ou em formato incorreto na resposta da API."
+        );
+        return;
+    }
+
     const historicalData = data.results[0].historicalDataPrice;
+
+    if (!Array.isArray(historicalData) || historicalData.length < 2) {
+        console.error(
+            "Dados históricos ausentes ou em formato incorreto na resposta da API."
+        );
+        return;
+    }
+
     const currentClosePrice = historicalData[historicalData.length - 1].close;
     const previousClosePrice = historicalData[historicalData.length - 2].close;
 
