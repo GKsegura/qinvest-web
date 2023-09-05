@@ -1,6 +1,5 @@
 @import url(layout/app.css);
 
- 
 .page-home {
     background-image: url(../../assets/waveBg.svg);
     color: var(--primary-color);
@@ -22,7 +21,6 @@
     padding: 1% 2%;
     font-size: 1em;
 }
-
 
 #login,
 #register:hover {

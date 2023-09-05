@@ -9,6 +9,8 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/theme.js",
                 "resources/utils/alpine.js",
+                "resources/js/selic.js",
+                "resources/js/api.js",
             ],
             refresh: true,
         }),

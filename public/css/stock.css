@@ -14,41 +14,329 @@ h1 {
 }
 
 .form {
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    padding-top: 10vh !important;
+    align-items: center;
+    justify-content: center;
 }
 
+.body {
+    max-width: 1320px;
+    padding-top: 10vh !important;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
 .label {
     font-weight: bold;
-}
+    margin-left: 69px;
+    margin-bottom: 7px;
 
-.input[type="text"] {
+}
+.sTitle {
+    font-weight: bold;
+    color: var(--secondary-color) !important;
+    font-size: 36px;
+    margin-left: 14%;
+    margin-top: 20px;
+}
+.input[type="text"],
+select {
     padding: 5px;
     margin-right: 10px;
     width: 200px;
+    height: 40px;
+    background-color: var(--primary-color) !important;
+    border-radius: 10px;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+.input[type="text"],
+select:hover {
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
+.input[type="text"],
+select option {
+    color: var(--secondary-color) !important;
+}
+.input[type="text"],
+select option:hover {
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
+.input[type="text"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--primary-color) inset;
+    -webkit-text-fill-color: var(--secondary-color) !important;
 }
 
+/* Exemplo de sobrepor as sugestões de preenchimento automático */
+.input[type="text"]:-webkit-autofill::first-line {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+/* Exemplo de ajustar o posicionamento das sugestões */
+.input[type="text"]:-webkit-autofill::-ms-clear {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+/* Exemplo de ajustar o posicionamento das sugestões */
+input[type="text"]:-webkit-autofill::-ms-fill {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.input {
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    background-color: var(--primary-color) !important;
+    border-radius: 10px;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+.input:focus {
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
+.input:hover {
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
 .button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: var(--primary-color);
-    border: none;
+    padding: 7px 14px;
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color) !important;
     cursor: pointer;
-}
-
-.button:hover {
-    background-color: #0056b3;
+    border-radius: 10px;
+    margin-left: -11px;
+    margin-top: 1px;
 }
 
 .chart-canvas {
     border: 1px solid var(--secondary-color);
     color: var(--secondary-color) !important;
+    margin: auto;
+    width: 1116px;
 }
 
-#stockChart,
-#profitChart {
-    display: none;
+#stockInfo {
+    width: 846px;
+    height: 227px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    background-color: var(--primary-color) !important;
+    display: flex;
+    margin-left: 17%;
+    margin-bottom: 20px;
+}
+
+#stockInfotxt {
+    display: block;
+    margin: 5%;
+    width: 65%;
+}
+
+#selicInfotxt {
+    display: block;
+    margin: 5%;
+}
+.stockInfoPrice {
+    display: flex;
+}
+
+#stockDiv {
+    width: 100%;
+    height: auto;
+    padding: 5% 0;
+    padding-bottom: 10px;
+    visibility: hidden;
+}
+#stockRecomendation {
+    width: 100%;
+    height: auto;
+    padding: 5% 0;
+}
+#stockChart {
+    display: block;
+}
+/* Seus estilos existentes... */
+#stockSearch {
+    margin-left: 42%;
+}
+.recommendation-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 75%;
+    margin-left: 12%;
+}
+
+.recommendation-card {
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    width: 19%;
+    padding: 3px;
+    padding-top: 7px;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.recommendation-card:hover {
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
+
+/* Estilização semelhante ao select */
+.recommendation-card:focus {
+    outline: none;
+    box-shadow: 0 0 0.45em var(--dark-purple);
+}
+
+#recommendationLabel {
+    margin-left: 39.5%;
+    margin-top: 23px;
+}
+#stockTitle {
+    color: var(--secondary-color) !important;
+    font-family: Helvetica;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    display: flex;
+    width: 516px;
+    height: 66px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+#selicTitle {
+    color: var(--secondary-color) !important;
+    font-family: Helvetica;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    display: flex;
+    width: 516px;
+    height: 66px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#stockLogoSm {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-left: 39%;
+    margin-bottom: 30px;
+}
+
+.stockText {
+    color: var(--secondary-color) !important;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+
+/* Estilização para o link âncora .stockLearn */
+.stockLearn {
+    border-radius: 10px;
+    background: linear-gradient(222deg, #ec78ff 5.75%, #809bf9 98.04%);
+    width: 408px;
+    height: 44px;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    margin-top: 20px;
+    margin-left: 34%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* Removendo a decoração de link */
+}
+
+/* Add these styles at the end of your existing CSS */
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+svg {
+    fill: var(--secondary-color);
+}
+
+#stockImg {
+    width: 170px;
+    height: 169px;
+    display: flex;
+    flex-shrink: 0;
+    margin: 3%;
+    padding-top: 4px;
+    padding-left: 4px;
+    margin-left: 65px;
+    /* margin-left: 10%; */
+    /* border-radius: 10px;
+    border: 1px solid var(--secondary-color); */
+}
+/* CSS para centralizar o path no svg */
+.stockPath {
+    transform-box: fill-box;
+    transform: scale(0.7);
+}
+#stockSearchAc {
+    margin-left: 4%;
+}
+
+/* CSS para fazer o svg ocupar todo o espaço da div */
+.stockLogo {
+    width: 100%;
+    height: 100%;
+    margin-left: -68%;
+    margin-top: 35%;
+}
+
+.smooth {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+
+    border-top: 8px solid rgba(100, 26, 157, 1);
+    border-left: 8px solid rgba(100, 26, 157, 1);
+    border-right: 8px solid rgb(100, 26, 157, 0);
+
+    margin-top: 71px;
+    animation: spin 0.8s infinite linear;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
