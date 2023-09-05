@@ -7,7 +7,7 @@
         "build": "vite build"
     },
     "dependencies": {
-        "alpinejs": "^3.12.3",
+        "alpinejs": "^3.13.0",
         "bootstrap-icons": "^1.10.5",
         "chart.js": "^4.4.0",
         "chartjs-adapter-date-fns": "^3.0.0",

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
 {
@@ -28,9 +28,12 @@ class FormController extends Controller
     {
         $userId = $request->input('user_id');
 
+        $id1 = Rating::find('conservador');
+        $id2 = Rating::find('moderado');
+        $id3 = Rating::find('agressivo');
         try {
             // Insert the data into the 'tests' table
-            DB::table('tests')->insert([
+            DB::table('tests')->insertGetId([
                 'deleted' => false,
                 'grade' => 0,
                 'form_id' => 8,
@@ -39,36 +42,27 @@ class FormController extends Controller
                 'created_at' => Carbon::now('America/Sao_Paulo'),
                 'updated_at' => null,
             ]);
-            // Flash a success message to the session
-            session()->flash('home', 'Cadastrado com sucesso');
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-            echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
-        }
 
-        $selectedAnswers = $request->input('selected_answers');
-
-        if ($selectedAnswers) {
-            foreach ($selectedAnswers as $answerId) {
-                try {
-                    DB::table('tests_answers')->insert([
-                        'test_id' => DB::table('tests')->max('id'),
-                        'answer_id' => $answerId,
-                        'created_at' => Carbon::now('America/Sao_Paulo'),
-                        'updated_at' => null,
-                    ]);
-                } catch (\Exception $e) {
-                    dd($e->getMessage());
-                    echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
+                for($i = 1; $i <= 6; $i++)
+                {
+                        // Insert into 'tests_answers' table
+                        DB::table('tests_answers')->insert([
+                            'test_id' =>  DB::table('tests')->max('id'),
+                            'answer_id' => $request->input('selected_answer'.$i),
+                            'created_at' => Carbon::now('America/Sao_Paulo'),
+                            'updated_at' => null,
+                        ]);
                 }
-            }
+            // Redirect to the appropriate page after successful submission
+            return redirect()->route('home')->with('success', 'Cadastrado com sucesso');
+        } catch (\Exception $e) {
+            // Handle any exceptions
+            dd($e->getMessage());
+            return redirect()->back()->withErrors(['error' => 'Erro no SQL']);
         }
-
-
-        // Redirect to the appropriate page after successful submission
-        return redirect()->route('home');
     }
 }
+?>
 
 // $userId = $request->input('user_id');
             // // Validate the input data
