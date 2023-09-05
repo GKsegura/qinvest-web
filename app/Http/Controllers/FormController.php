@@ -45,19 +45,25 @@ class FormController extends Controller
             dd($e->getMessage());
             echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
         }
-        
-        try {
-            DB::table('tests_questions_answers')->insert([
-                'test_id' => DB::table('tests')->max('id'),
-                'question_id' => 1,
-                'answer_id' => $request->input('selected_answer1'),
-                'created_at' => Carbon::now('America/Sao_Paulo'),
-                'updated_at' => null,
-            ]);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-            echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
+
+        $selectedAnswers = $request->input('selected_answers');
+
+        if ($selectedAnswers) {
+            foreach ($selectedAnswers as $answerId) {
+                try {
+                    DB::table('tests_answers')->insert([
+                        'test_id' => DB::table('tests')->max('id'),
+                        'answer_id' => $answerId,
+                        'created_at' => Carbon::now('America/Sao_Paulo'),
+                        'updated_at' => null,
+                    ]);
+                } catch (\Exception $e) {
+                    dd($e->getMessage());
+                    echo "<script type='text/javascript'>alert('Erro no SQL')</script>";
+                }
+            }
         }
+
 
         // Redirect to the appropriate page after successful submission
         return redirect()->route('home');
