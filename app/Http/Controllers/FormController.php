@@ -23,14 +23,15 @@ class FormController extends Controller
 
         return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'answers'));
     }
+    
 
     public function auth(Request $request)
     {
+        Answer::find('rating')->where::$request->input('selected_answer'); 
         $userId = $request->input('user_id');
-
-        $id1 = Rating::find('conservador');
-        $id2 = Rating::find('moderado');
-        $id3 = Rating::find('agressivo');
+        $conservador = Rating::find('conservador');
+        $agressivo = Rating::find('agressivo');
+        $moderado = Rating::find('moderado');
         try {
             // Insert the data into the 'tests' table
             DB::table('tests')->insertGetId([
