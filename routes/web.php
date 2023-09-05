@@ -19,7 +19,7 @@ use App\Http\Controllers\FormController;
 |
 */
 
-Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/stock', [PageController::class, 'stock'])->name('stock');
 Route::get('/education', [PageController::class, 'education'])->name('education');

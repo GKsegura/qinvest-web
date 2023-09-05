@@ -1,0 +1,17 @@
+@import url(../layout/app.css);
+
+.page {
+    height: 120vh;
+    width: 100%;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    padding-top: 15vh;
+}
+
+/* .header-page {
+    padding-top: 15vh;
+    transition: var(--transition);
+} */

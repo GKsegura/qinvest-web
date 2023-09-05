@@ -1,89 +1,236 @@
+// fazer verificação dos dados e aviso se os dados não forem retornado, de forma a mostrar que ocorreu algum erro, para que não impossibilite no dia da apresentação
+
 import "chartjs-adapter-moment";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 import { getThemeFromCookie } from "../utils/cookies";
 
-// Função para calcular a porcentagem de lucro entre dois preços
-function calculateProfitPercentage(previousClose, currentClose) {
-    return ((currentClose - previousClose) / previousClose) * 100;
-}
+const stockDiv = document.getElementById("stockDiv");
 
-// Função para calcular as porcentagens de lucro para cada período
-function calculateProfitPercentages(closePrices) {
-    const profitPercentages = [];
+document.addEventListener("DOMContentLoaded", () => {
+    const stockForm = document.getElementById("stockForm");
+    const periodSelect = document.getElementById("period"); // Seleciona o elemento <select>
 
-    for (let i = 0; i < closePrices.length; i++) {
-        if (i === 0) {
-            profitPercentages.push(null);
+    const tickersInput = document.getElementById("tickers");
+    const submitButton = document.querySelector(".button");
+
+    // Adicione um evento de escuta à entrada de tickers
+    tickersInput.addEventListener("input", () => {
+        if (tickersInput.value.trim() !== "") {
+            // Habilitar o botão de envio se houver algo escrito em tickers
+            submitButton.removeAttribute("disabled");
         } else {
-            const profitPercentage = calculateProfitPercentage(
-                closePrices[i - 1],
-                closePrices[i]
-            );
-            profitPercentages.push(profitPercentage);
+            // Desabilitar o botão de envio se tickers estiver vazio
+            submitButton.setAttribute("disabled", "true");
+        }
+    });
+    const recommendationButtons = document.querySelectorAll(
+        ".recommendation-card"
+    );
+    recommendationButtons.forEach((button) => {
+        button.addEventListener("click", handleRecommendationButtonClick);
+    });
+    recommendationButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            tickersInput.value = "";
+        });
+    });
+    stockForm.addEventListener("submit", handleFormSubmit);
+    periodSelect.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            stockForm.dispatchEvent(new Event("submit")); // Dispatch a submit event on the form
+        }
+    });
+    async function handleFormSubmit(event) {
+        stockDiv.style.visibility = "visible";
+
+        // Exibe o cursor de carregamento
+        const smoothLoader = document.querySelector(".smooth");
+        smoothLoader.style.visibility = "visible";
+
+        event.preventDefault();
+
+        const tickersInput = document.getElementById("tickers");
+        const tickers = tickersInput.value;
+        const period = document.getElementById("period").value;
+
+        try {
+            const data = await fetchStockData(tickers, period);
+            displayStockData(data, tickers);
+        } finally {
+            // Após a conclusão do carregamento (bem-sucedido ou com erro), oculta o cursor de carregamento
+            smoothLoader.style.visibility = "hidden";
         }
     }
-    return profitPercentages;
+
+    async function fetchStockData(tickers, period) {
+        const response = await fetch(`/api/stock/${tickers}/${period}`);
+        return await response.json();
+    }
+
+    async function handleRecommendationButtonClick(event) {
+        const clickedButton = event.currentTarget;
+        const tickerFromButton = clickedButton.getAttribute("data-ticker");
+        const period = document.getElementById("period").value;
+
+        // Se o ticker do botão estiver presente, usá-lo; caso contrário, usar o valor do input
+        const tickerInput = document.getElementById("tickers");
+        const ticker =
+            tickerFromButton || (tickerInput ? tickerInput.value : "");
+
+        // Chamar a função fetchStockData com o ticker e o período e aguardar a resposta
+        const data = await fetchStockData(ticker, period);
+
+        // Depois que os dados forem obtidos, chamar a função createCharts
+        displayStockData(data, ticker);
+    }
+});
+
+function setCurrentDate() {
+    const currentDate = new Date();
+    const day = currentDate.getDate().toString().padStart(2, "0");
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    const year = currentDate.getFullYear();
+    const hours = currentDate.getHours().toString().padStart(2, "0");
+    const minutes = currentDate.getMinutes().toString().padStart(2, "0");
+
+    const formattedDate = `Atualizado em: ${day}/${month}/${year} ${hours}:${minutes}`;
+
+    const stockDayElement = document.getElementById("stockDay");
+    stockDayElement.textContent = formattedDate;
 }
 
-// Função para criar os gráficos
-const createCharts = (data) => {
+function calculateCurrentPriceAndProfit(data) {
+    if (
+        !data ||
+        !data.results ||
+        !Array.isArray(data.results) ||
+        data.results.length === 0
+    ) {
+        console.error(
+            "Dados ausentes ou em formato incorreto na resposta da API."
+        );
+        return;
+    }
+
+    const historicalData = data.results[0].historicalDataPrice;
+
+    if (!Array.isArray(historicalData) || historicalData.length < 2) {
+        console.error(
+            "Dados históricos ausentes ou em formato incorreto na resposta da API."
+        );
+        return;
+    }
+
+    const currentClosePrice = historicalData[historicalData.length - 1].close;
+    const previousClosePrice = historicalData[historicalData.length - 2].close;
+
+    const profit = currentClosePrice - previousClosePrice;
+    const profitPercentage = ((profit / previousClosePrice) * 100).toFixed(2);
+
+    const stockPriceProfitElement = document.getElementById("stockPriceProfit");
+
+    const currentPriceText = `${currentClosePrice.toFixed(2)} BRL`;
+
+    let profitText;
+    let profitClass;
+
+    if (profit > 0) {
+        profitText = `+${profit.toFixed(2)}`;
+        profitClass = "positive";
+    } else if (profit < 0) {
+        profitText = `${profit.toFixed(2)}`;
+        profitClass = "negative";
+    } else {
+        profitText = "0.00";
+        profitClass = ""; // No class needed for zero profit
+    }
+
+    const profitPercentageText = `(${profitPercentage}%)`;
+    const profitPercentageClass = profit >= 0 ? "positive" : "negative";
+
+    stockPriceProfitElement.innerHTML = `${currentPriceText} <span class="${profitClass}">${profitText}</span> <span class="${profitPercentageClass}">${profitPercentageText}</span>`;
+}
+
+// Call these functions in your displayStockData function
+function displayStockData(data, tickers) {
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
+
+    setCurrentDate();
+    calculateCurrentPriceAndProfit(data);
+
+    createCharts(data, tickers);
+}
+
+const createCharts = (data, tickers) => {
     const theme = getThemeFromCookie();
-    let chartFontColor;
-    theme == "light"
-        ? (chartFontColor = "#121927")
-        : (chartFontColor = "#ffffff");
+    let chartFontColor = "#d7d7d7";
+    if (theme == "light") {
+        chartFontColor = "#121927";
+    } else {
+        chartFontColor = "#ffffff";
+    }
+
+    const stockTitle = document.getElementById("stockTitle");
+    stockTitle.textContent = `${tickers.toUpperCase()}`;
 
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
     const closePrices = historicalData.map((stock) => stock.close);
-    const profitPercentages = calculateProfitPercentages(closePrices);
 
     const ctxStock = document.getElementById("stockChart").getContext("2d");
-    const ctxProfit = document.getElementById("profitChart").getContext("2d");
 
     const existingChartStock = Chart.getChart(ctxStock);
     if (existingChartStock) {
         existingChartStock.destroy();
     }
+    function findMovingAverage(closePrices, start, end, period) {
+        let sum = 0;
+        const actualPeriod = Math.min(period, end - start + 1);
+        for (let i = end; i > end - actualPeriod; i--) {
+            sum += closePrices[i];
+        }
+        const average = sum / actualPeriod;
 
-    const existingChartProfit = Chart.getChart(ctxProfit);
-    if (existingChartProfit) {
-        existingChartProfit.destroy();
+        return { avg: average };
     }
-    // Filtra os dados para os últimos 6 meses
-    function generateDateArray(startDate, endDate) {
-        const dateArray = [];
-        let currentDate = new Date(startDate);
 
-        while (currentDate <= endDate) {
-            dateArray.push(new Date(currentDate));
-            currentDate.setDate(currentDate.getDate() + 1);
+    const movingAveragePeriod = 5;
+    const movingAverageDatasets = [];
+    for (let i = movingAveragePeriod - 1; i < closePrices.length; i++) {
+        const { avg } = findMovingAverage(
+            closePrices,
+            i - movingAveragePeriod + 1,
+            i,
+            movingAveragePeriod
+        );
+        movingAverageDatasets.push(avg);
+    }
+
+    const movingAveragePriceDataset = {
+        label: "Média Móvel",
+        data: movingAverageDatasets,
+        borderColor: "rgba(73, 255, 0, 1)",
+        borderWidth: 2,
+        fill: false,
+        pointRadius: 0,
+    };
+    const inter = 20;
+    const intervals = Math.floor(dates.length / inter);
+    function findIntervals() {
+        const datasetRanges = [];
+        let number = 0;
+
+        for (let i = 0; i < intervals + 1; i++) {
+            const range = [number, number + inter];
+            datasetRanges.push({ label: `${number}-${number + inter}`, range });
+            number += inter;
         }
 
-        return dateArray;
+        return datasetRanges;
     }
-
-    const today = new Date();
-    const threeMonthsAgo = new Date(today);
-    threeMonthsAgo.setMonth(today.getMonth() - 3);
-
-    const datesArray = generateDateArray(threeMonthsAgo, today);
-
-    // Calculate the average of the received price data
-    const averagePrice =
-        closePrices.reduce((total, price) => total + price, 0) /
-        closePrices.length;
-    // Create a dataset for the average price line
-    const averagePriceDataset = {
-        label: "Average Price",
-        data: Array(dates.length).fill(averagePrice),
-        borderColor: "rgba(0, 0, 0, 1)", // Choose your desired color
-        borderWidth: 1,
-        borderDash: [5, 5], // Dashed line style
-        fill: false,
-        labels: dates,
-    };
 
     function findMinMaxClosePrice(closePrices, start, end) {
         let maxPrice = closePrices[start];
@@ -102,64 +249,71 @@ const createCharts = (data) => {
         return { max: maxPrice, min: minPrice };
     }
 
-    const datasetRanges = [
-        { label: "20", range: [0, 20] },
-        { label: "40", range: [20, 40] },
-        { label: "60", range: [40, 60] },
-    ];
+    const datasetRanges = findIntervals();
 
+    let additionalLength = 0;
+    const upper = [];
+    const lower = [];
     const donchianDatasets = datasetRanges.map((range) => {
         const { max, min } = findMinMaxClosePrice(
             closePrices,
             range.range[0],
             range.range[1]
         );
-
-        const upper = Array(range.range[1] - range.range[0] + 1).fill(null);
-        const lower = Array(range.range[1] - range.range[0] + 1).fill(null);
-
-        for (let i = range.range[0]; i <= range.range[1]; i++) {
-            upper[i - range.range[0]] = max;
-            lower[i - range.range[0]] = min;
+        for (let i = additionalLength; i < additionalLength + inter; i++) {
+            upper[i] = max;
+            lower[i] = min;
         }
+        additionalLength += inter;
 
         return {
             upper,
             lower,
-            label: `Donchian Bound (${range.label})`,
+            range: range,
         };
     });
-
-    donchianDatasets.forEach((dataset) => {
-        dataset.backgroundColor = "rgba(200, 0, 0, 0.3)"; // Adjust color as needed
-        dataset.borderColor = "transparent";
-        dataset.borderWidth = 0;
-        dataset.fill = true;
-        dataset.labels = datesArray;
-    });
-
     const donchianUpperBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.upper,
+        label: "",
     }));
 
     const donchianLowerBoundDatasets = donchianDatasets.map((dataset) => ({
         ...dataset,
         data: dataset.lower,
+        label: `Canal Donchian`,
     }));
-    const allDonchianDatasets = donchianLowerBoundDatasets.concat(
-        donchianUpperBoundDatasets
-    );
+    const inter2 = inter + inter;
+    let rangL = `${inter}-${inter2}`;
+    const allDonchianDatasets = [
+        ...donchianLowerBoundDatasets,
+        ...donchianUpperBoundDatasets,
+    ];
+    allDonchianDatasets.forEach((dataset) => {
+        if (dataset.range.label == rangL) {
+            dataset.backgroundColor = "rgba(121, 0, 255, 0.2)";
+            dataset.borderColor = "rgba(121, 0, 255, 1)";
+            dataset.borderWidth = 0.5;
+            dataset.fill = 1;
+            dataset.hidden = false;
+            dataset.pointRadius = 0;
+        } else {
+            dataset.pointRadius = 0;
+            dataset.borderWidth = 0;
+            dataset.label = "";
+        }
+    });
 
-    // Create the "Price" dataset using the filtered array
     const priceDataset = {
-        label: "Price",
+        label: "Preço",
         data: closePrices,
-        backgroundColor: "rgba(144,0,255, 0.2)",
+        backgroundColor: "rgba(121, 0, 255, 0.2)",
         borderColor: "rgba(188, 102, 255, 1)",
         borderWidth: 1,
         labels: dates,
     };
+
+    var currentDate = new Date();
 
     new Chart(ctxStock, {
         type: "line",
@@ -168,7 +322,7 @@ const createCharts = (data) => {
             datasets: [
                 ...allDonchianDatasets,
                 priceDataset,
-                averagePriceDataset,
+                movingAveragePriceDataset,
             ],
         },
         options: {
@@ -190,99 +344,40 @@ const createCharts = (data) => {
                     title: {
                         display: true,
                         text: "Date",
-                        color: chartFontColor,
+                        color: "#a600ff",
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: "#a600ff",
                     },
                 },
                 y: {
                     title: {
                         display: true,
                         text: "Price",
-                        color: chartFontColor,
+                        color: "#a600ff",
                     },
                     ticks: {
-                        color: chartFontColor,
+                        color: "#a600ff",
                     },
                 },
             },
-        },
-    });
-
-    new Chart(ctxProfit, {
-        type: "line",
-        data: {
-            labels: dates,
-            datasets: [
-                {
-                    label: "Profit Percentage",
-                    data: profitPercentages,
-                    backgroundColor: "rgba(255,99,132, 0.2)",
-                    borderColor: "rgba(255, 0, 0, 1)",
-                    borderWidth: 1,
-                    fill: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Gráfico de Preços", // Adicione o título desejado aqui
+                    font: {
+                        size: 25,
+                        weight: "bold",
+                    },
+                    color: "#a600ff",
                 },
-            ],
-        },
-        options: {
-            animation: {
-                duration: 1500,
-                easing: "linear",
-            },
-            scales: {
-                x: {
-                    type: "time",
-                    time: {
-                        tooltipFormat: "DD/MM/YYYY",
-                        displayFormats: {
-                            day: "DD/MM/YYYY",
-                        },
-                    },
-                    title: {
-                        display: true,
-                        text: "Date",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
-                    },
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: "Profit Percentage (%)",
-                        color: chartFontColor,
-                    },
-                    ticks: {
-                        color: chartFontColor,
+                legend: {
+                    labels: {
+                        filter: (item) => item.text !== "",
+                        color: "#a600ff",
                     },
                 },
             },
         },
     });
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-    const stockForm = document.getElementById("stockForm");
-
-    stockForm.addEventListener("submit", handleFormSubmit);
-
-    async function handleFormSubmit(event) {
-        event.preventDefault();
-
-        const tickers = document.getElementById("tickers").value;
-        const data = await fetchStockData(tickers);
-
-        displayStockData(data);
-    }
-
-    async function fetchStockData(tickers) {
-        const response = await fetch(`/api/stock/${tickers}`);
-        return await response.json();
-    }
-
-    function displayStockData(data) {
-        createCharts(data);
-    }
-});

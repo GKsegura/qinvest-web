@@ -1,7 +1,3 @@
-@include('layouts.header')
-
-<x-auth.auth-card>
+<x-layout.auth>
     @include('auth.form.register')
-</x-auth.auth-card>
-
-@include('layouts.footer-form')
+</x-layout.auth>

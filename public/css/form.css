@@ -1,4 +1,4 @@
-@import url(style.css);
+@import url(../css/layout/app.css);
 
 .active {
     display: block;
@@ -8,48 +8,46 @@
 }
 
 .transition-enter {
-  transition-property: all;
-  transition-timing-function: ease-out;
-  transition-duration: 300ms;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .field {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.field input {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
+.field-input {
+    border-radius: 10px;
+    border: 1px solid #b8b8b8 !important;
 }
-.field input:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+
+.field-input:focus {
+    box-shadow: 0px 0px 5px 0px #6f00ff !important;
 }
+
 .input-group-text {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))!important;
-
+    border: 1px solid #b8b8b8 !important;
+    background-color: transparent !important;
 }
 
-.field select {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.form-check-input[type="checkbox"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
-.field select:focus {
-    box-shadow: 0px 0px 15px 0px #6f00ff;
+.form-check-input:checked[type="checkbox"] {
+    background-color: #db33f6 !important;
 }
-
-
-.form-check-input[type=checkbox] {
-    border-radius: 0!important;
-    box-shadow: none!important;
-
-}
-.form-check-input:checked[type=checkbox] {
-    background-color: #DB33F6!important
-
-}
-.form-check-label{
+.form-check-label {
     font-weight: 400;
-    font-size: 14px!important;
-
+    font-size: 14px !important;
 }
 
 .label-form {
@@ -63,14 +61,14 @@
     font-weight: 700;
     color: #ffffff;
     width: 400px;
-    height: 40px;}
+    height: 40px;
+}
 
 .step-button {
     width: 50px;
     height: 50px;
     flex-shrink: 0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border: 1px solid #dee2e6;
+    border: 1px solid #b8b8b8;
     background-color: transparent;
     border-radius: 5px;
 }
@@ -86,8 +84,7 @@
     display: block;
 }
 form .password-strength-bar {
-    height: 1vh;
-    display: flex;
+    height: 5px;
     align-items: center;
     justify-content: space-between;
     margin: 1vh 0;
@@ -98,7 +95,7 @@ form .password-strength-bar span {
     width: 100%;
     height: 100%;
     background-color: lightgray;
-    border-radius: 2vh;
+
     position: relative;
 }
 
@@ -113,7 +110,7 @@ form .password-strength-bar span {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 2vh;
+
     background: var(--dark-purple);
 }
 
@@ -139,4 +136,27 @@ form .text-password {
     font-weight: 500px;
     margin-bottom: -10px;
     display: none;
+}
+
+.invalid-input {
+    font-size: 14px;
+    font-weight: 200;
+    color: red;
+    text-align: start;
+}
+
+.form-redirect p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-redirect a {
+    color: #8c46ff;
+    text-decoration: none;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
