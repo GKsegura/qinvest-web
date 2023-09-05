@@ -1,4 +1,4 @@
-@import url(style.css);
+@import url(../css/layout/app.css);
 
 body {
     font-family: Arial, sans-serif;
@@ -36,7 +36,6 @@ h1 {
     font-weight: bold;
     margin-left: 69px;
     margin-bottom: 7px;
-
 }
 .sTitle {
     font-weight: bold;

@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
 
-    function home()
+    function index()
     {
-        return view('pages.home');
+        return view('pages.index');
     }
     function about()
     {
