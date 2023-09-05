@@ -14,7 +14,7 @@
 @endif
 
 <!-- home -->
-@if(Route::currentRouteName() === 'home')
+@if(Route::currentRouteName() === 'index')
 <link href="{{ asset('css/page/home.css') }}" rel="stylesheet">
 @endif
 

@@ -14,7 +14,7 @@
 
     @include('components.layout.header')
 
-    @if(Route::currentRouteName() === 'home')
+    @if(Route::currentRouteName() === 'index')
     <div class="page page-home">
         {{ $slot }}
 

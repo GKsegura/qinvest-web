@@ -1,4 +1,4 @@
-@import url(../css/layout/app.css);
+@import url(layout/app.css);
 
 .page-home {
     background-image: url(../../assets/waveBg.svg);
