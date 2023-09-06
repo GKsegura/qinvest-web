@@ -4,6 +4,7 @@
     background-image: url(../../assets/waveBg.svg);
     color: var(--primary-color);
     text-align: center;
+    height: 124vh;
 }
 /*  */
 .buttons-home {

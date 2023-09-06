@@ -1,7 +1,7 @@
 @import url(../layout/app.css);
 
 .page {
-    height: 120vh;
+    /* height: 120vh; */
     width: 100%;
     color: var(--secondary-color);
     background-color: var(--primary-color);

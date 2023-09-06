@@ -24,6 +24,10 @@ class PageController extends Controller
     {
         return view('pages.education');
     }
+
+    function variable(){
+        return view('pages.variable');
+    }
     /*function register()
     {
         return view('auth.page.register');
