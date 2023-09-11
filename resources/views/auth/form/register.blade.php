@@ -18,8 +18,7 @@
             <div class="field">
                 <label for="password" class="label-form">Senha</label>
                 <div class="input-group">
-                    <input for="password" class="field-input form-control" type="password" name="password" id="password"
-                        onkeyup="passwordValidator()" />
+                    <input for="password" class="field-input form-control" type="password" name="password" id="password" onkeyup="passwordValidator()" />
                     <i id="eye-icon-password" class="input-group-text bi bi-eye"></i>
                 </div>
                 <div class="invalid-input"> @error('password'){{$message}}@enderror</div>
@@ -34,8 +33,7 @@
             <div class="field">
                 <label for="password_confirmation" class="label-form">Confirme a senha</label>
                 <div class="input-group">
-                    <input class="field-input form-control" type="password" name="password_confirmation"
-                        id="confirm-password">
+                    <input class="field-input form-control" type="password" name="password_confirmation" id="confirm-password">
                     <i id="eye-icon-confirm-password" class="input-group-text bi bi-eye"></i>
                 </div>
                 <div class="invalid-input"> @error('password_confirmation'){{$message}}@enderror</div>
@@ -50,6 +48,8 @@
                 <div class="form-redirect d-inline-flex justify-content-center w-100">
                     <p class="mb-0">Já possui conta? <a href="/login"> Entre aqui!</a></p>
                 </div>
+                <a href="{{ url('/auth/google') }}" class="btn btn-primary">Conectar com o Google</a>
+
             </div>
 
 
