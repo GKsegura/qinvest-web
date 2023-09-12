@@ -48,5 +48,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
 });
 
-Route::get('/auth/google', 'AuthController@redirectToGoogle');
-Route::get('/auth/google/callback', 'AuthController@handleGoogleCallback');
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);

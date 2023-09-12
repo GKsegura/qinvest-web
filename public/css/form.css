@@ -160,3 +160,11 @@ form .text-password {
     flex-direction: row;
     gap: 10px;
 }
+
+.google-input {
+    border-radius: 10px;
+    border: 1px solid #000000 !important;
+    background-color: #ffffff;
+    color: #000000;
+    height: 40px;
+}

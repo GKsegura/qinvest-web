@@ -23,15 +23,15 @@ class RegisterController extends Controller
         return view('auth.page.register');
     }
 
-public function auth(RegisterRequest $request)
-{
-    // Valide os dados recebidos
-    $validated = $request->validated();
-    $fullname = $validated['firstname'] . ' ' . $validated['surname'];
+    public function auth(RegisterRequest $request)
+    {
+        // Valide os dados recebidos
+        $validated = $request->validated();
+        $fullname = $validated['firstname'] . ' ' . $validated['surname'];
 
-    // if ($request->fails()) {
-    //     return Redirect::back()->withErrors($validated)->withInput();
-    // }        // Execute o INSERT na tabela de usuários
+        // if ($request->fails()) {
+        //     return Redirect::back()->withErrors($validated)->withInput();
+        // }        // Execute o INSERT na tabela de usuários
         try {
             DB::table('users')->insert([
                 'email' => $validated['email'],
@@ -50,6 +50,6 @@ public function auth(RegisterRequest $request)
             echo "<script type = 'text/javascript'>alert ('Erro no SQL')</script>";
         }
         // Redirecione para uma página de sucesso ou exiba uma mensagem
-        return redirect()->route('home', 'Registro concluído com sucesso!');
+        return redirect()->route('index', 'Registro concluído com sucesso!');
     }
 }

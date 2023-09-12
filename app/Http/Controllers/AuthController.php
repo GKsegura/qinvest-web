@@ -24,7 +24,7 @@ class AuthController extends Controller
 
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home'); // Redireciona para a página inicial após o login
+            return redirect()->route('index', 'Logado com sucesso');
         } else {
             return back()->withErrors([
                 'invalid_credentials' => 'As credênciais são invalidas',
@@ -50,6 +50,6 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/index'); // Redirecione para a página após o login
+        return redirect()->route('index', 'Logado com sucesso');
     }
 }
