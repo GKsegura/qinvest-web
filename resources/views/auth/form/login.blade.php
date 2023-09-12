@@ -1,6 +1,4 @@
 <!-- resources/views/auth/form/login.blade.php -->
-
-
 <form action="{{ route('login') }}" method="POST">
     @csrf
 

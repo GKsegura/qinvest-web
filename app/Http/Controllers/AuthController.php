@@ -13,10 +13,6 @@ class AuthController extends Controller
     {
         return view('auth.page.login');
     }
-
-/**
- * 
- */
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated(); 

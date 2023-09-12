@@ -23,6 +23,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/stock', [PageController::class, 'stock'])->name('stock');
 Route::get('/education', [PageController::class, 'education'])->name('education');
+Route::get('/education/variable', [PageController::class, 'variable'])->name('variable');
 
 // Rotas do LOGIN
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'createForm'])->name('login');

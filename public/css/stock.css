@@ -23,7 +23,6 @@ h1 {
 
 .body {
     max-width: 1320px;
-    padding-top: 10vh !important;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
