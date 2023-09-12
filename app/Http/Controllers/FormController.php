@@ -8,6 +8,8 @@ use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Psy\Command\WhereamiCommand;
+use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
 
 class FormController extends Controller
 {
@@ -27,11 +29,10 @@ class FormController extends Controller
 
     public function auth(Request $request)
     {
-        Answer::find('rating')->where::$request->input('selected_answer'); 
         $userId = $request->input('user_id');
-        $conservador = Rating::find('conservador');
-        $agressivo = Rating::find('agressivo');
-        $moderado = Rating::find('moderado');
+        $conservador = "conservador";
+        $agressivo = "agressivo";
+        $moderado = "moderado";
         try {
             // Insert the data into the 'tests' table
             DB::table('tests')->insertGetId([
@@ -53,7 +54,36 @@ class FormController extends Controller
                             'created_at' => Carbon::now('America/Sao_Paulo'),
                             'updated_at' => null,
                         ]);
+
+                    $rating1 = $request->find('rating')->where('id', $request->input('selected_answer'.$i));
+                    $rating2 = $request->find('rating')->where('id', $request->input('selected_answer'.$i));
+                    $rating3 = 0;
+                    $rating4 = $request->find('rating')->where('id', $request->input('selected_answer'.$i));
+                    $rating5 = $request->find('rating')->where('id', $request->input('selected_answer'.$i));
+                    $rating6 = $request->find('rating')->where('id', $request->input('selected_answer'.$i));
+                    
+                    $total_rating = $rating1 + $rating2 + $rating3 + $rating4 + $rating5 + $rating6;
+
+                    if($total_rating <= 90 && $total_rating >= 0  )
+                    {
+                        $investor_id = $conservador;
+                    }
+
+                    if($total_rating <= 150 && $total_rating >= 91)
+                    {
+                        $investor_id = $moderado;
+                    }
+
+                    if($total_rating >= 151)
+                    {
+                        $investor_id = $agressivo;
+                    }
+                    
                 }
+                DB::table('tests')->insertGetId([
+                    'grade' => $total_rating,
+                ]);
+
             // Redirect to the appropriate page after successful submission
             return redirect()->route('home')->with('success', 'Cadastrado com sucesso');
         } catch (\Exception $e) {
@@ -63,7 +93,7 @@ class FormController extends Controller
         }
     }
 }
-?>
+
 
 // $userId = $request->input('user_id');
             // // Validate the input data
@@ -77,3 +107,5 @@ class FormController extends Controller
             // if ($validator->fails()) {
             //     return redirect()->back()->withErrors($validator)->withInput();
             // }
+
+?>

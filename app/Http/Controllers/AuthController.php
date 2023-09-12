@@ -13,17 +13,13 @@ class AuthController extends Controller
     {
         return view('auth.page.login');
     }
-
-/**
- * 
- */
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated(); 
         
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home'); // Redireciona para a página inicial após o login
+            return redirect()->route('index'); // Redireciona para a página inicial após o login
         } else {
             return back()->withErrors([
                'invalid_credentials' => 'As credênciais são invalidas',
