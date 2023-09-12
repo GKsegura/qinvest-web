@@ -23,7 +23,7 @@ class AuthController extends Controller
         
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home'); // Redireciona para a página inicial após o login
+            return redirect()->route('index'); // Redireciona para a página inicial após o login
         } else {
             return back()->withErrors([
                'invalid_credentials' => 'As credênciais são invalidas',

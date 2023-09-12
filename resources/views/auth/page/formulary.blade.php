@@ -1,3 +1,3 @@
-<x-auth.auth-card>
+<x-layout.auth>
     @include('auth.form.formulary')
-</x-auth.auth-card>
+</x-layout.auth>
