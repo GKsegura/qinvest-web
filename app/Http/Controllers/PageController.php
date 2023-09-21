@@ -28,6 +28,9 @@ class PageController extends Controller
     function variable(){
         return view('pages.variable');
     }
+    function fixed(){
+        return view('pages.fixed');
+    }
     /*function register()
     {
         return view('auth.page.register');

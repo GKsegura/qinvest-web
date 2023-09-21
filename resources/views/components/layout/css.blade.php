@@ -36,3 +36,11 @@
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
 @endif
+
+@if (Route::currentRouteName() === 'variable')
+<link href="{{ asset('css/page/variable.css') }}" rel="stylesheet">
+@endif
+
+@if (Route::currentRouteName() === 'fixed')
+<link href="{{ asset('css/page/fixed.css') }}" rel="stylesheet">
+@endif

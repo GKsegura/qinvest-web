@@ -1,18 +1,5 @@
 @import url(../css/layout/app.css);
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color) !important;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 20px;
-}
-
 .form {
     justify-content: center;
     align-items: center;

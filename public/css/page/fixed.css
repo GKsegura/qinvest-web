@@ -1,0 +1,117 @@
+@import url(../layout/app.css);
+
+
+.page-variable {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;  
+    height: 107vh;
+}
+
+#qinvestLogoSmall {
+    width: 152px;
+    height: 34px;
+    margin-right: 9%;
+    fill: var(--secondary-color);
+}
+.svg-container{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top: 4%;
+
+}
+
+/* Estilo do conteúdo central */
+/* Estilos para a estrutura principal */
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    /* Alinha o índice à esquerda */
+    padding-left: 10px;
+    width: 100%;
+}
+
+.index {
+    color: var(--secondary-color);
+    width: 250px;
+    margin-left: 22%;
+    height: 100%;
+    margin-top: 8px; 
+    text-align: left;
+    
+    transition: transform 0.3s ease-in-out;
+}
+
+.button {
+    padding: 7px 14px;
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color) !important;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 4px;
+    height: 5vh;
+}
+.button-bars{
+    text-align: left;
+}
+.menu{
+    display: block;
+    margin-top: -4vh;
+}
+.button-container {
+    justify-content: center;
+    display: flex;
+    bottom: 0;/* Define a distância a partir da parte inferior da página */ 
+    z-index: 999; 
+    width: 100%;
+}
+
+.content {
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 70%;
+    align-self: flex-start;
+    flex: 1;
+    /* Faz com que o conteúdo principal ocupe 2 vezes mais espaço */
+}
+
+/* Estilos para o índice */
+.index h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.index li{
+    list-style: auto;
+    margin-bottom: 7px;
+}
+.index a {
+    list-style: none;
+    padding: 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.index a:hover {
+    color: #586d98;
+}
+
+/* Estilos para o conteúdo principal */
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+}
