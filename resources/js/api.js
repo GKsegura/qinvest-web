@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchStockData(tickers, period) {
         const response = await fetch(`/api/stock/${tickers}/${period}`);
-        return await response.json();
+        const data = await response.json;
+        console.log(data);
+        return data;
     }
 
     async function handleRecommendationButtonClick(event) {
