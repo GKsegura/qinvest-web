@@ -10,7 +10,7 @@ export default defineConfig({
                 "resources/js/theme.js",
                 "resources/utils/alpine.js",
                 "resources/js/selic.js",
-                "resources/js/api.js",
+                "resources/js/stock.js",
             ],
             refresh: true,
         }),
