@@ -168,3 +168,19 @@ form .text-password {
     color: #000000;
     height: 40px;
 }
+
+#home {
+    border: 1px solid #8c46ff;
+    border-radius: 10px;
+    background-color: #8c46ff;
+    color: #ffffff;
+    height: 40px;
+    text-decoration: none;
+    padding: 2% 3%;
+}
+
+#home:hover {
+    border: 1px solid #8c46ff;
+    background-color: #ffffff;
+    color: #8c46ff;
+}
