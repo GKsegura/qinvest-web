@@ -16,11 +16,15 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated(); 
-        
-
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials)) 
+        {
+            $user = Auth::user();
+            $userId = $user->id;
+            return redirect()->route('view_user', ['userId' => $userId]);
             return redirect()->route('index'); // Redireciona para a página inicial após o login
-        } else {
+        } 
+        else 
+        {
             return back()->withErrors([
                'invalid_credentials' => 'As credênciais são invalidas',
             ])->withInput();

@@ -8,16 +8,17 @@ use App\Models\Test;
 
 class UserController extends Controller
 {
-    public function viewProfile(Request $request)
+    public function viewUser(Request $request, $userId)
     {
-        $userId = 3;
+        $user = User::find($userId);
         $name = User::find($userId);
         $email = User::where('id', $userId)->value('email');
         $birthtime = User::where('id', $userId)->value('birth_time');
         $gender = User::where('id', $userId)->value('gender');
-        $investor = Test::where('user_id', $userId)->value('investor_id');
-        $user = User::find(3);
-        $tests = Test::find(3);
+        $perfil_investidor = '';
+
+        $tests = Test::find($userId);
+        $investor = Test::where('id', $userId)->value('investor_id');
 
         if ($investor == 2) {
             $perfil_investidor = 'Conservador';
@@ -26,8 +27,11 @@ class UserController extends Controller
         } elseif ($investor == 4) {
             $perfil_investidor = 'Agressivo';
         }
+        else{
+            $perfil_investidor = 'Não possui perfil de investidor';
+        }
 
-        return view('pages.userprofile', compact('user', 'tests'));
+        return view('pages.userprofile', compact('user', 'tests', 'perfil_investidor'));
     }
 }
 ?>

@@ -7,6 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -33,6 +34,7 @@ Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/view_user', [UserController::class, 'viewUser'])->name('userId');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO
@@ -46,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
 
 });
-// Rotad do PERFIL DO USUÁRIO
-Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile');
+// Rotas do PERFIL DO USUÁRIO
+Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
+
 ?>

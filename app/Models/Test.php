@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Test extends Model
 {
     protected $table = 'tests';
+
+    //protected $fillable = ['id', 'user_id', 'investor_id', 'grade'];
 }

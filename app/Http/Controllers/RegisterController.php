@@ -50,6 +50,6 @@ public function auth(RegisterRequest $request)
             echo "<script type = 'text/javascript'>alert ('Erro no SQL')</script>";
         }
         // Redirecione para uma página de sucesso ou exiba uma mensagem
-        return redirect()->route('home', 'Registro concluído com sucesso!');
+        return redirect()->route('index', 'Registro concluído com sucesso!');
     }
 }
