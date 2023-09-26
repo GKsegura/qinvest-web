@@ -1,6 +1,10 @@
 import { getThemeFromCookie } from "./cookies";
+import "chartjs-adapter-moment";
+import { Chart, registerables } from "chart.js";
+Chart.register(...registerables);
 
 const createCharts = (data, tickers) => {
+    console.log(data);
     const findMovingAverage = (closePrices, start, end, period) => {
         let sum = 0;
         const actualPeriod = Math.min(period, end - start + 1);
