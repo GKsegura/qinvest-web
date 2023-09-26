@@ -177,10 +177,14 @@ form .text-password {
     height: 40px;
     text-decoration: none;
     padding: 2% 3%;
+    transition: (--transition);
 }
 
 #home:hover {
     border: 1px solid #8c46ff;
     background-color: #ffffff;
     color: #8c46ff;
+    letter-spacing: 0.5px;
+    transition: (--transition);
+    top: -10px;
 }
