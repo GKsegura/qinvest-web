@@ -1,0 +1,16 @@
+@import url(../css/layout/app.css);
+
+.page {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header-page {
+    padding-top: 15vh;
+    transition: var(--transition);
+}

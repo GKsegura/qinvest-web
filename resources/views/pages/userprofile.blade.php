@@ -2,15 +2,15 @@
 <x-layout.app>
 
     @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     @endif
 
     @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
     @endif
 
     <label>{{ $user->id }}</label><br>
@@ -23,7 +23,6 @@
     <br>
     <label> Gênero: {{ $user->gender }}</label><br>
     <br>
-    <label> Perfil Investidor: {{ $tests->investor_id</label><br>
+    <label> Perfil Investidor: {{ $tests->investor_id}}</label><br>
 
 </x-layout.app>
-

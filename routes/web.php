@@ -33,7 +33,7 @@ Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
@@ -44,10 +44,10 @@ Route::middleware(['auth'])->group(function () {
     // Define your form route here
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
+    Route::get('/typeinvestor', [UserController::class, 'viewProfileType']);
 });
 // Rotad do PERFIL DO USUÁRIO
 Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile');
-?>
 
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);

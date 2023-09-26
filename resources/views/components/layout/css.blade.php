@@ -36,3 +36,8 @@
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
 @endif
+
+<!-- typeinvestor -->
+@if (Route::currentRouteName() === 'typeinvestor')
+<link href="{{ asset('css/page/typeinvestor.css') }}" rel="stylesheet">
+@endif

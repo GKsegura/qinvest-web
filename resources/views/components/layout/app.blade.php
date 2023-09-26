@@ -24,7 +24,6 @@
         {{ $slot }}
     </div>
     @else
-
     <div class="page">
         {{ $slot }}
     </div>

@@ -92,5 +92,3 @@ class FormController extends Controller
         }
     }
 }
-?>
-```
