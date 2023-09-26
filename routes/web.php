@@ -7,6 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,16 +40,14 @@ Route::get('/register', [RegisterController::class, 'createForm'])->name('regist
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
-//Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
-//Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
-
 Route::middleware(['auth'])->group(function () {
     // Define your form route here
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
-    /*Route::get('/investor', [FormController::class, 'showInvestor'])->name('investor');*/
-
 });
+// Rotad do PERFIL DO USUÁRIO
+Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile');
+?>
 
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
