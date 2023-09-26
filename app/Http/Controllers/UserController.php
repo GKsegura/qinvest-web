@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Test;
 
+
 class UserController extends Controller
 {
-    public function viewUser(Request $request, $userId)
+    public function viewUser(Request $request)
     {
-        $user = User::find($userId);
-        $name = User::find($userId);
+        $user = Auth::user();
+        $userId = $user->id;
+        $name = User::where('id', $userId)->value('username');
         $email = User::where('id', $userId)->value('email');
         $birthtime = User::where('id', $userId)->value('birth_time');
         $gender = User::where('id', $userId)->value('gender');
@@ -28,7 +31,7 @@ class UserController extends Controller
             $perfil_investidor = 'Agressivo';
         }
         else{
-            $perfil_investidor = 'Não possui perfil de investidor';
+            $perfil_investidor = 'Não possui perfil investidor';
         }
 
         return view('pages.userprofile', compact('user', 'tests', 'perfil_investidor'));

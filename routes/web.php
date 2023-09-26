@@ -34,7 +34,6 @@ Route::post('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/view_user', [UserController::class, 'viewUser'])->name('userId');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO

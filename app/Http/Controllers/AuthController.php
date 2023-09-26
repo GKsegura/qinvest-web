@@ -8,7 +8,6 @@ use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
 {
-  
     public function showLoginForm()
     {
         return view('auth.page.login');
@@ -18,9 +17,6 @@ class AuthController extends Controller
         $credentials = $request->validated(); 
         if (Auth::attempt($credentials)) 
         {
-            $user = Auth::user();
-            $userId = $user->id;
-            return redirect()->route('view_user', ['userId' => $userId]);
             return redirect()->route('index'); // Redireciona para a página inicial após o login
         } 
         else 
