@@ -1,4 +1,4 @@
-import { getThemeFromCookie, setThemeCookie } from "../utils/cookies";
+import { getThemeFromCookie, setThemeCookie } from "../lib/cookies";
 // import {}
 
 //variáveis
