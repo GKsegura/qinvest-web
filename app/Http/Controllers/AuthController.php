@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -17,6 +18,10 @@ class AuthController extends Controller
         $credentials = $request->validated(); 
         if (Auth::attempt($credentials)) 
         {
+            $user = Auth::user();
+            $userId = $user->id;
+            $name = User::where('id', $userId)->value('username');
+            echo "<script type='text/javascript'>alert('Bem-vindo de volta, $name')</script>";
             return redirect()->route('index'); // Redireciona para a página inicial após o login
         } 
         else 

@@ -20,8 +20,12 @@ class UserController extends Controller
         $gender = User::where('id', $userId)->value('gender');
         $perfil_investidor = '';
 
-        $tests = Test::find($userId);
-        $investor = Test::where('id', $userId)->value('investor_id');
+        $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
+        $investor = null;
+
+        if ($latestTest) {
+            $investor = $latestTest -> investor_id;
+        }
 
         if ($investor == 2) {
             $perfil_investidor = 'Conservador';
@@ -34,7 +38,7 @@ class UserController extends Controller
             $perfil_investidor = 'Não possui perfil investidor';
         }
 
-        return view('pages.userprofile', compact('user', 'tests', 'perfil_investidor'));
+        return view('pages.userprofile', compact('user', 'latestTest', 'perfil_investidor'));
     }
 }
 ?>
