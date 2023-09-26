@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const handleRecommendationButtonClick = async (event) => {
-        console.log("mano caraloh");
         const clickedButton = event.currentTarget;
         const tickerFromButton = clickedButton.getAttribute("data-ticker");
         const period = document.getElementById("period").value;
