@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     const topics = document.querySelectorAll(".topic");
     const indexLinks = document.querySelectorAll(".index a");
+    const contentLinks = document.querySelectorAll(".content a");
     let currentTopicIndex = 0;
     const prevButton = document.getElementById("prevButton");
     const nextButton = document.getElementById("nextButton");
     const buttonContainer = document.querySelector(".button-container"); // Atualizado: Seleciona o contêiner das setas
     const buttonBars = document.querySelector(".button-bars");
     const index = document.querySelector(".index");
+    index.classList.add("open");
     const content = document.querySelector(".content");  
     // Function to update the content based on the selected topic index
     function updateContent(index) {
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetIndex !== -1) {
         updateContent(targetIndex);
       }
+      scrollToTop();
     }
   
     function scrollToTop() {
@@ -62,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Define o posicionamento vertical das setas
       if (index.style.display === "none") {
-          if (contentHeight + 288 > windowHeight) {
+          if (contentHeight + 150 > windowHeight) {
             buttonContainer.style.position = "relative";
         } else {
             buttonContainer.style.position = "absolute"; 
       } 
     }
       else{
-        if (contentHeight + 288 > windowHeight) {
+        if (contentHeight + 150 > windowHeight) {
             buttonContainer.style.position = "relative";
   
         } else {
@@ -103,13 +106,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle the "bars" button click
     function handleBarsButtonClick() {
+      const index = document.querySelector(".index");
+      index.classList.toggle("open");
       if (index.style.display === "none") {
         index.style.display = "block";
-        content.style.width = "70%"; // Aumenta a largura do conteúdo para 70%
+        content.style.width = "70%";
+        const icon = buttonBars.querySelector("i"); // Seleciona o elemento <i> dentro de button-bars
+        icon.classList.remove("fa-bars"); // Remove a classe "fa-bars" do ícone
+        icon.classList.add("fa-xmark");
       } else {
         index.style.display = "none";
-        content.style.width = "100%"; // Restaura a largura do conteúdo para 100%
+        content.style.width = "100%"; 
+        const icon = buttonBars.querySelector("i"); // Seleciona o elemento <i> dentro de button-bars
+        icon.classList.remove("fa-xmark"); // Remove a classe "fa-xmark" do ícone
+        icon.classList.add("fa-bars");// Restaura a largura do conteúdo para 100%
       }
+          scrollToTop();
             updateButtonVisibility();
     }
   // Add click event listener to the "bars" button

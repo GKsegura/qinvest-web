@@ -8,8 +8,7 @@
     background-size: cover;
     margin: 0;
     padding: 0;
-    text-align: center;  
-    height: 107vh;
+    text-align: center;
 }
 
 #qinvestLogoSmall {
@@ -22,10 +21,13 @@
     width: 100%;
     text-align: center;
     padding-bottom: 1%;
-    padding-top: 4%;
-
+    padding-top: 6%;
+    min-height: 76px;
+    height: 152px;
 }
-
+.p-space{
+    text-indent: 60px;
+}
 /* Estilo do conteúdo central */
 /* Estilos para a estrutura principal */
 .wrapper {
@@ -39,12 +41,11 @@
 .index {
     color: var(--secondary-color);
     width: 250px;
-    margin-left: 22%;
+    margin-left: 16%;
     height: 100%;
-    margin-top: 8px; 
     text-align: left;
-    
-    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+    position: relative;
 }
 
 .button {
@@ -57,23 +58,28 @@
     margin: 4px;
     height: 5vh;
 }
+
 .button-bars{
     text-align: left;
+    color: var(--secondary-color);
+    font-size: 26px;
 }
+
 .menu{
     display: block;
     margin-top: -4vh;
+    margin-left: 1%;
 }
 .button-container {
     justify-content: center;
     display: flex;
     bottom: 0;/* Define a distância a partir da parte inferior da página */ 
-    z-index: 999; 
+    z-index: 1;
     width: 100%;
 }
 
 .content {
-    margin-left: 6%;
+    margin-left: 3%;
     margin-right: 6%;
     width: 70%;
     align-self: flex-start;
