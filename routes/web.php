@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     // Define your form route here
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
-    Route::get('/typeinvestor', [UserController::class, 'viewProfileType']);
+    Route::get('/typeinvestor', [UserController::class, 'viewProfileType'])->name('typeinvestor');
 });
 // Rotad do PERFIL DO USUÁRIO
 Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile');
