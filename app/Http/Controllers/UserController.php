@@ -42,6 +42,24 @@ class UserController extends Controller
         $userId = $user->id;
         $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
         $investor = $latestTest->investor_id;
-        return view('pages.typeinvestor', compact('investor'));
+
+        // if ($investor == 2)
+        $typeCamps = [
+            "id" => "2",
+            "type" => "conservador",
+            "description" => "Você é uma pessoa que valoriza a segurança e pretende preservar seu patrimônio.
+                Talvez não seja do seu interesse viver pelo risco e prefira opções que minimizem
+                ao máximo suas chances de perda.",
+            "info" => "O perfil conservador é representado pelo urso. Quando os preços estão em queda,
+                muitos optam por diminuir seus riscos e procuram investimentos que ofereçam menores
+                variações, como os títulos de renda fixa.
+                
+                Assim como o urso, você aproveita o máximo da estabilidade no mercado e colhe os
+                frutos do longo prazo. A sua paciência é a sua melhor qualidade, por isso o retorno deve
+                ser calculado desde o início."
+        ];
+        //arrumar os ifs
+        //fazer os outros arrays
+        return view('pages.typeinvestor', compact('typeCamps'));
     }
 }

@@ -25,10 +25,14 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    background: radial-gradient(
-        91.31% 91.31% at 50% 8.69%,
-        #121927 0%,
-        #132548 100%
+    background: rgb(5, 74, 153);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 74, 153, 0.5) 0%,
+        rgba(5, 74, 153, 0.25) 15%,
+        rgba(5, 74, 153, 0) 50%,
+        rgba(5, 74, 153, 0.25) 85%,
+        rgba(5, 74, 153, 0.5) 100%
     );
 }
 
