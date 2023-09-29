@@ -1,9 +1,9 @@
 @import url(../css/layout/app.css);
 
 :root {
-    --conservador: #7dc1ff;
-    --agressivo: #f62e2e;
-    --moderado: #9e63ff;
+    --conservador: rgb(125, 193, 255);
+    --agressivo: rgb(246, 46, 46);
+    --moderado: rgb(158, 99, 255);
 }
 
 .page {
@@ -25,6 +25,9 @@
     align-items: center;
     text-align: center;
     justify-content: center;
+}
+
+.background-conservador {
     background: rgb(5, 74, 153);
     background: linear-gradient(
         90deg,
@@ -33,6 +36,30 @@
         rgba(5, 74, 153, 0) 50%,
         rgba(5, 74, 153, 0.25) 85%,
         rgba(5, 74, 153, 0.5) 100%
+    );
+}
+
+.background-moderado {
+    background: rgb(5, 74, 153);
+    background: linear-gradient(
+        90deg,
+        rgba(5, 74, 153, 0.5) 0%,
+        rgba(5, 74, 153, 0.25) 15%,
+        rgba(5, 74, 153, 0) 50%,
+        rgba(5, 74, 153, 0.25) 85%,
+        rgba(5, 74, 153, 0.5) 100%
+    );
+}
+
+.background-agressivo {
+    background: rgb(246, 46, 46);
+    background: linear-gradient(
+        90deg,
+        rgba(246, 46, 46, 0.5) 0%,
+        rgba(246, 46, 46, 0.25) 15%,
+        rgba(246, 46, 46, 0) 50%,
+        rgba(246, 46, 46, 0.25) 85%,
+        rgba(246, 46, 46, 0.5) 100%
     );
 }
 
@@ -51,10 +78,24 @@ h1 span {
     font-weight: 400;
     line-height: 104%;
     letter-spacing: 0.2px;
+    text-align: center;
 }
 
-.type h1 span {
+.text {
+    height: 100%;
+    width: 40%;
+}
+
+.type h1 span.conservador {
     color: var(--conservador);
+}
+
+.type h1 span.moderado {
+    color: var(--moderado);
+}
+
+.type h1 span.agressivo {
+    color: var(--agressivo);
 }
 
 .type h2 {
