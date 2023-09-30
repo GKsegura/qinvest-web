@@ -85,7 +85,8 @@ class FormController extends Controller
                 'investor_id' => $investor_id,
             ]);
 
-            echo "<script type='text/javascript'>alert('SEU PERFIL INVESTIDOR: $perfil_investidor')</script>";
+            echo "<script type='text/javascript'>alert('Seu perfil investidor é $perfil_investidor')</script>";
+            
         } catch (\Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->withErrors(['error' => 'Erro no SQL']);

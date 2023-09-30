@@ -16,20 +16,22 @@
 
         </div>
 
-        <div class="text-start">
-            <input id="newsletter" class="form-check-input" type="checkbox" name="newsletter">
-            <label for="newsletter" class="form-check-label">Lembrar minha senha
-                notificações.</label>
-
-        </div>
-
         <div class="form-actions">
             <button type="submit" class="submit-button">Login</button>
 
             <div class="form-redirect d-inline-flex justify-content-center w-100">
                 <p class="mb-0">Não possui conta? <a href="/register"> Crie uma aqui!</a></p>
             </div>
+            <div class="form-redirect d-inline-flex justify-content-center w-100">
+                <p><a href="/"> Voltar ao início</a></p>
+            </div>
         </div>
+
+        @if(session('error'))
+            <script type="text/javascript">
+            alert('{{ session('error') }}');
+            </script>
+        @endif
     </div>
 
 </form>

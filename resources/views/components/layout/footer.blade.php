@@ -6,7 +6,7 @@
 
             <div class="footer-link">
                 <h5>Página inicial</h5>
-                <p><a class="" href="/register">Cadastrar-se</a></p>
+                <p><a class="/register" href="/register">Cadastrar-se</a></p>
                 <p><a href="/login">Entrar</a></p>
             </div>
 
@@ -17,11 +17,13 @@
 
             </div>
 
-            <div class="footer-link">
-                <h5>Minha conta</h5>
-                <p><a href="">Área do usuário</a></p>
-                <p><a href="">Sair</a></p>
-            </div>
+            @auth
+                <div class="footer-link">
+                    <h5>Minha conta</h5>
+                    <p><a href="/profile">Área do usuário</a></p>
+                    <p><a href="/logout">Sair</a></p>
+                </div>
+            @endauth    
         </div>
 
         <div class="footer-logo">

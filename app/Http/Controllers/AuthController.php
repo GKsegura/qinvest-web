@@ -21,21 +21,17 @@ class AuthController extends Controller
             $user = Auth::user();
             $userId = $user->id;
             $name = User::where('id', $userId)->value('username');
-            echo "<script type='text/javascript'>alert('Bem-vindo de volta, $name')</script>";
-            return redirect()->route('index'); // Redireciona para a página inicial após o login
+            return redirect()->route('index');
         } 
         else 
         {
-            return back()->withErrors([
-               'invalid_credentials' => 'As credênciais são invalidas',
-            ])->withInput();
-            //Autenticação falhou
+            return redirect()->route('login')->with('error', 'Ocorreu um erro. Verifique suas credenciais!');
         } 
     }
     // Processa o logout
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('index');
     }
     }

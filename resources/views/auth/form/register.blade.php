@@ -93,9 +93,9 @@
             </div>
 
             <div class=" text-start">
-                <input id="newsletter" class="field-input form-check-input" type="checkbox" name="newsletter">
-                <label for="newsletter" class="form-check-label">Desejo receber newsletter e outras
-                    notificações.</label>
+                <input id="newsletter" class="field-input form-check-input" type="checkbox" name="newsletter" checked>
+                <label for="newsletter" class="form-check-label"> Desejo receber newsletter e outras
+                    notificações</label>
             </div>
 
             <div class=" form-actions">

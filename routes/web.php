@@ -7,7 +7,6 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -45,7 +44,6 @@ Route::middleware(['auth'])->group(function () {
     // Define your form route here
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
-
 });
 // Rotas do PERFIL DO USUÁRIO
 Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
