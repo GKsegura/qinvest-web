@@ -42,17 +42,7 @@ class UserController extends Controller
         $userId = $user->id;
         $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
         $investor = $latestTest->investor_id;
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
-        //colocar os <br> no lugar certo do texto!!!!!!
+
         if ($investor == 2) {
             $typeCamps = [
                 "id" => "2",
@@ -60,14 +50,14 @@ class UserController extends Controller
                 "description" => "Você é uma pessoa que valoriza a segurança e pretende preservar seu patrimônio.
                 Talvez não seja do seu interesse viver pelo risco e prefira opções que minimizem
                 ao máximo suas chances de perda.",
-                "info" => "O perfil conservador é representado pelo urso. Quando os preços estão em queda,
+                "info-paragraph-1" => "O perfil conservador é representado pelo urso. Quando os preços estão em queda,
                 muitos optam por diminuir seus riscos e procuram investimentos que ofereçam menores
-                variações, como os títulos de renda fixa.
-                
-                Assim como o urso, você aproveita o máximo da estabilidade no mercado e colhe os
+                variações, como os títulos de renda fixa.",
+                "info-paragraph-2" => "Assim como o urso, você aproveita o máximo da estabilidade no mercado e colhe os
                 frutos do longo prazo. A sua paciência é a sua melhor qualidade, por isso o retorno deve
                 ser calculado desde o início.",
-                "background" => "background-conservador"
+                "background" => "background-conservador",
+                "paragraph" => "paragraph-conservador"
             ];
         } elseif ($investor == 3) {
             $typeCamps = [
@@ -76,12 +66,13 @@ class UserController extends Controller
                 "description" => "Você é uma pessoa equilibrada, que sabe de suas forças e fragilidades. Talvez, seus
                 investimentos sejam diversos, contemplando todas as cores e possibilidades do
                 mercado.",
-                "info" => "O perfil moderado é representado pela borboleta. Independente de como o mercado 
+                "info-paragraph-1" => "O perfil moderado é representado pela borboleta. Independente de como o mercado 
                 está, o investidor moderado sabe o que deve fazer e, de forma fugaz, sabe arriscar 
-                quando o momento permite.
-                Assim como a borboleta, você aproveita as correntes e variações, analisando o melhor 
+                quando o momento permite.",
+                "info-paragraph-2" => "Assim como a borboleta, você aproveita as correntes e variações, analisando o melhor 
                 caminho para se suceder no mercado financeiro, seja ele de longo ou curto prazo.",
-                "background" => "background-moderado"
+                "background" => "background-moderado",
+                "paragraph" => "paragraph-moderado"
             ];
         } elseif ($investor == 4) {
             $typeCamps = [
@@ -90,17 +81,16 @@ class UserController extends Controller
                 "description" => "Você é uma pessoa corajosa, que está disposta a avançar sem olhar para trás. Seus
                 investimentos, assim como você, confrontam o que muitos chamam de risco, pois a
                 busca pelo triunfo sobre os números do mercado financeiro é o seu objetivo.",
-                "info" => "O perfil agressivo é representado pelo touro, pois sua força está na alavancagem.
-                Talvez, a melhor estratégia para você seja pôr a prova os seus conhecimentos e ousar-
-                se a investir em carteiras complexas e tirar o máximo do potencial delas.
-                
-                Assim como o touro, o investidor agressivo tende a concentrar seus fundos em carteiras
+                "info-paragraph-1" => "O perfil agressivo é representado pelo touro, pois sua força está na alavancagem.
+                Talvez, a melhor estratégia para você seja pôr a prova os seus conhecimentos e ousar-se a investir em carteiras complexas e tirar o máximo do potencial delas.",
+                "info-paragraph-2" => "Assim como o touro, o investidor agressivo tende a concentrar seus fundos em carteiras
                 variáveis, focando seu escopo principalmente em empresas privadas, ações destas que
                 muitos consideram indomáveis.",
-                "background" => "background-agressivo"
+                "background" => "background-agressivo",
+                "paragraph" => "paragraph-agressivo"
             ];
         }
-        //fazer os outros arrays
+
         return view('pages.typeinvestor', compact('typeCamps'));
     }
 }

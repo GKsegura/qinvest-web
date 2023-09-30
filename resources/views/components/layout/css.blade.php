@@ -40,4 +40,5 @@
 <!-- typeinvestor -->
 @if (Route::currentRouteName() === 'typeinvestor')
 <link href="{{ asset('css/page/typeinvestor.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
 @endif
