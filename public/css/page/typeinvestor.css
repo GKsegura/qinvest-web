@@ -26,7 +26,7 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    padding: 10vh 0;
+    padding: 10vh 0 0 0;
 }
 
 .background-conservador {
@@ -68,8 +68,12 @@
 .svg-type {
     width: 100%;
     height: auto;
-    padding: 5vh 0 5vh 0;
+    padding: 2.5% 0 0 0;
     margin: 0;
+}
+
+svg {
+    height: 30vh;
 }
 
 .type h1 {
@@ -89,13 +93,14 @@ h1 span {
 }
 
 .text {
-    height: 100%;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     line-height: 27.5px !important;
+    padding: 2.5% 0 0 0;
 }
 
 .type h1 span.conservador {

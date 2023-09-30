@@ -1,5 +1,5 @@
 <x-layout.head>
-    @vite(['resources/utils/alpine.js'])
+    @vite(['resources/lib/alpine.js'])
     <div class="type {{$typeCamps['background']}}">
         <div x-data="{ step: 1 }">
             <div x-show="step === 1">
