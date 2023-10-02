@@ -9,9 +9,10 @@
 
         <div class="header-nav">
             <a href="/" class="header-link nav-link">Home</a>
-            <a href="/education" class="header-link nav-link">Educacional</a>
-            <a href="/stock" class="header-link nav-link">Ações</a>
-            <a href="/about" class="header-link nav-link">Sobre nós</a>
+            <a href="/education" class="header-link nav-link">Education</a>
+            <a href="/" class="header-link nav-link">Perfil</a>
+            <a href="/stock" class="header-link nav-link">Stocks</a>
+            <a href="/about" class="header-link nav-link">About Us</a>
 
         </div>
 

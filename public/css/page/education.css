@@ -5,15 +5,29 @@
     --purple: #586d98;
 }
 
-.body-education-page {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+
+#education-page {
+    background-image: url(../../assets/waveBgshort.svg);
+    color: var(--primary-color);
+    text-align: center;
+    padding-top: 15vh;
+    background-size: cover;
+    height: 111vh;
+    display: block;
+}
+.page-education {
+        width: 100%;
+        display: block;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
-.body {
-    background-color: var(--primary-color);
-    height: 200vh;
-}
 .text-education-page {
     color: #f5f5f5;
     font-family: Helvetica;
@@ -33,6 +47,9 @@
     font-size: 70px;
 }
 
+.education-guide{
+    display: block;
+}
 .education-summary {
     display: flex;
     width: 100%;
@@ -147,6 +164,8 @@
     justify-content: center;
     background-color: var(--primary-color);
     padding-bottom: 60px;
+    padding-left: 10%;
+    padding-right: 5%;
 }
 
 .cursoCard {
@@ -160,7 +179,7 @@
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.2px;
-    text-transform: capitalize;
+
 }
 
 .cursoTitleFixed {
@@ -170,7 +189,6 @@
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.2px;
-    text-transform: capitalize;
 }
 
 #cursoSubtitleFixed {
@@ -231,7 +249,6 @@
     line-height: 32px;
     /* 160% */
     letter-spacing: 0.2px;
-    text-transform: capitalize;
 }
 
 #contentSubtitleVariable {
@@ -241,7 +258,6 @@
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.2px;
-    text-transform: capitalize;
 }
 
 #contentSubtitleFixed {
@@ -251,7 +267,6 @@
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0.2px;
-    text-transform: capitalize;
 }
 
 .contentText {
@@ -262,5 +277,5 @@
     line-height: 24px;
     /* 150% */
     letter-spacing: 0.2px;
-    text-transform: capitalize;
+    text-align: justify;
 }

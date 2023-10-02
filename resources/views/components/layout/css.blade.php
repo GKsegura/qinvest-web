@@ -53,3 +53,11 @@
 <link href="{{ asset('css/page/typeinvestor.css') }}" rel="stylesheet">
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 @endif
+
+@if (Route::currentRouteName() === 'variable')
+<link href="{{ asset('css/page/variable.css') }}" rel="stylesheet">
+@endif
+
+@if (Route::currentRouteName() === 'fixed')
+<link href="{{ asset('css/page/fixed.css') }}" rel="stylesheet">
+@endif
