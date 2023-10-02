@@ -1,7 +1,6 @@
-@vite(['resources/utils/alpine.js'])
-
-    @if (session('success'))
-    <div class="alert alert-success">
+<x-layout.head>
+    @vite(['resources/utils/alpine.js'])
+    @if (session('success')) <div class="alert alert-success">
         {{ session('success') }}
     </div>
     @endif
@@ -26,5 +25,4 @@
     <br>
     <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
 
-</x-layout.app>
-
+</x-layout.head>
