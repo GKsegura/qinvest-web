@@ -37,6 +37,17 @@
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
 @endif
 
+<!-- profile -->
+@auth
+    <!-- Additional CSS for authenticated users -->
+    <link href="{{ asset('css/authenticated.css') }}" rel="stylesheet">
+@endauth
+
+@guest
+    <!-- Additional CSS for guests/unauthenticated users -->
+    <link href="{{ asset('css/guest.css') }}" rel="stylesheet">
+@endguest
+
 <!-- typeinvestor -->
 @if (Route::currentRouteName() === 'typeinvestor')
 <link href="{{ asset('css/page/typeinvestor.css') }}" rel="stylesheet">

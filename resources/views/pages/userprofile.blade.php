@@ -1,5 +1,4 @@
 @vite(['resources/utils/alpine.js'])
-<x-layout.app>
 
     @if (session('success'))
     <div class="alert alert-success">
@@ -19,10 +18,13 @@
     <br>
     <label> Email: {{ $user->email }}</label><br>
     <br>
-    <label> Aniversário: {{ $user->birth_time }}</label><br>
+    <label> Data de Nascimento: {{ $user->birth_time }}</label><br>
     <br>
     <label> Gênero: {{ $user->gender }}</label><br>
     <br>
-    <label> Perfil Investidor: {{ $tests->investor_id}}</label><br>
+    <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
+    <br>
+    <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
 
 </x-layout.app>
+

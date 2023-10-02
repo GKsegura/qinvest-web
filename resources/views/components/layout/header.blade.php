@@ -1,3 +1,4 @@
+
 <header class="header-color">
     <div class="container header-content h-100">
         <div class="header-logo">
@@ -15,7 +16,12 @@
         </div>
 
         <div class="header-icons">
-            <a href="/register" class="header-icon"><i class="bi bi-person-circle"></i></a>
+            @auth
+                <a href="/logout" class="header-icon"><i class="bi bi-box-arrow-right"></i></a>
+                <a href="/profile" class="header-link nav-link">{{ Auth::user()->username }}</a></span>
+            @else
+                <a href="/register" class="header-icon"><i class="bi bi-person-circle"></i></a>
+            @endauth
             <i id="theme-icon" class="bi bi-sun-fill header-icon"></i>
         </div>
     </div>

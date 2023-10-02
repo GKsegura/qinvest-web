@@ -21,7 +21,11 @@ class UserController extends Controller
         $perfil_investidor = '';
 
         $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
-        $investor = $latestTest->investor_id;
+        $investor = null;
+
+        if ($latestTest) {
+            $investor = $latestTest -> investor_id;
+        }
 
         if ($investor == 2) {
             $perfil_investidor = 'Conservador';
@@ -30,6 +34,9 @@ class UserController extends Controller
         } elseif ($investor == 4) {
             $perfil_investidor = 'Agressivo';
         } else {
+            $perfil_investidor = 'Não possui perfil investidor';
+        }
+        else{
             $perfil_investidor = 'Não possui perfil investidor';
         }
 
