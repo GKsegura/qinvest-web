@@ -39,13 +39,13 @@
 
 <!-- profile -->
 @auth
-    <!-- Additional CSS for authenticated users -->
-    <link href="{{ asset('css/authenticated.css') }}" rel="stylesheet">
+<!-- Additional CSS for authenticated users -->
+<link href="{{ asset('css/authenticated.css') }}" rel="stylesheet">
 @endauth
 
 @guest
-    <!-- Additional CSS for guests/unauthenticated users -->
-    <link href="{{ asset('css/guest.css') }}" rel="stylesheet">
+<!-- Additional CSS for guests/unauthenticated users -->
+<link href="{{ asset('css/guest.css') }}" rel="stylesheet">
 @endguest
 
 <!-- typeinvestor -->
@@ -54,10 +54,17 @@
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 @endif
 
+<!-- variable -->
 @if (Route::currentRouteName() === 'variable')
 <link href="{{ asset('css/page/variable.css') }}" rel="stylesheet">
 @endif
 
+<!-- fixed -->
 @if (Route::currentRouteName() === 'fixed')
 <link href="{{ asset('css/page/fixed.css') }}" rel="stylesheet">
+@endif
+
+<!-- userprofile -->
+@if (Route::currentRouteName() === 'profile')
+<link href="{{ asset('css/page/userprofile.css') }}" rel="stylesheet">
 @endif
