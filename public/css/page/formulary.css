@@ -1,19 +1,131 @@
-question-box{
-    width: 70%;
-}
+@import url(../layout/app.css);
+
 .option
 {
     width: 100%;
     height: 100%;
 }
-.form
+form
 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    height: 100%;
     
 }
 .fieldgroup
 {
     width: 70%;
 }
+.formulary-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulary-card {
+    display: flex;
+    padding: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);   
+    width: 1028px;
+}
+
+ .bi-arrow-right, .bi-arrow-left {
+    color: var(--secondary-color);
+ }
+
+ .question-answers{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+ }
+
+.label-question{
+    width: 100%;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.label-option {
+    font-weight: 400;
+    width: 100%;
+}
+
+.question-controller {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* <!-- <label>{{ $question2->text_question }}</label><br>
+<div class="fieldgroup">
+    @foreach($answers->where('question_id', 2) as $answer)
+    <div class="option">
+        <label>
+            <input type="radio" name="selected_answer2" value="{{ $answer->id }}">
+            {{ $answer->text_answer }}
+        </label><br>
+    </div class="option">
+    @endforeach
+</div class="fieldgroup">
+<br>
+<label>{{ $question3->text_question }}</label><br>
+<div class="fieldgroup">
+    @foreach($answers->where('question_id', 3) as $answer)
+    <div class="option">
+        <label>
+            <input type="radio" name="selected_answer3" value="{{ $answer->id }}">
+            {{ $answer->text_answer }}
+        </label><br>
+    </div class="option">
+    @endforeach
+</div class="fieldgroup">
+<br>
+<label>{{ $question4->text_question }}</label><br>
+<div class="fieldgroup">
+    @foreach($answers->where('question_id', 5) as $answer)
+    <div class="option">
+        <label>
+            <input type="radio" name="selected_answer5" value="{{ $answer->id }}">
+            {{ $answer->text_answer }}
+        </label><br>
+    </div class="option">
+    @endforeach
+</div class="fieldgroup">
+<br>
+<label>{{ $question5->text_question }}</label><br>
+<div class="fieldgroup">
+    @foreach($answers->where('question_id', 4) as $answer)
+    <div class="option">
+        <label>
+            <input type="radio" name="selected_answer4" value="{{ $answer->id }}">
+            {{ $answer->text_answer }}
+        </label><br>
+    </div class="option">
+    @endforeach
+</div class="fieldgroup">
+<br>
+<label>{{ $question6->text_question }}</label><br>
+<div class="fieldgroup">
+    @foreach($answers->where('question_id', 6) as $answer)
+    <div class="option">
+        <label>
+            <input type="radio" name="selected_answer6" value="{{ $answer->id }}">
+            {{ $answer->text_answer }}
+        </label><br>
+    </div class="option">
+    @endforeach
+</div class="fieldgroup">
+<br>
+<input type="hidden" name="user_id" value="{{ Auth::id() }}"> --> */

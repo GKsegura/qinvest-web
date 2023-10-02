@@ -23,8 +23,12 @@
     <div class="page body-education-page">
         {{ $slot }}
     </div>
-    @else
 
+    @elseif(Route::currentRouteName() === 'formulary')
+    <div class="page  formulary-page">
+        {{ $slot }}
+    </div>
+    @else
     <div class="page">
         {{ $slot }}
     </div>

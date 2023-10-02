@@ -24,6 +24,8 @@ class AuthController extends Controller
 
 
         if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $user_id = $user->id;
             return redirect()->route('index', 'Logado com sucesso');
         } else {
             return back()->withErrors([

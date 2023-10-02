@@ -39,6 +39,6 @@
 
 <!-- stock -->
 @if (Route::currentRouteName() === 'formulary')
-<link href="{{ asset('css/formulary.css') }}" rel="stylesheet">
+<link href="{{ asset('css/page/formulary.css') }}" rel="stylesheet">
 <link href="{{ asset('css/form.css') }}" rel="stylesheet">
 @endif
