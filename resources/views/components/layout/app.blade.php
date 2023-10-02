@@ -23,6 +23,11 @@
     <div class="page page-education">
         {{ $slot }}
     </div>
+
+    @elseif(Route::currentRouteName() === 'formulary')
+    <div class="page  formulary-page">
+        {{ $slot }}
+    </div>
     @else
     <div class="page">
         {{ $slot }}

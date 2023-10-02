@@ -22,7 +22,8 @@ class FormController extends Controller
         $answers = Answer::all();
         $rating = Rating::all();
 
-        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'answers'));
+        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6','answers'));
+       
     }
 
     public function auth(Request $request)

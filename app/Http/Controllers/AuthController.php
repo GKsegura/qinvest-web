@@ -21,18 +21,19 @@ class AuthController extends Controller
      */
     public function login(LoginRequest $request)
     {
-        $credentials = $request->validated(); 
-        if (Auth::attempt($credentials)) 
-        {
+        $credentials = $request->validated();
+
+
+        if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $userId = $user->id;
-            $name = User::where('id', $userId)->value('username');
-            return redirect()->route('index');
-        } 
-        else 
-        {
-            return redirect()->route('login')->with('error', 'Ocorreu um erro. Verifique suas credenciais!');
-        } 
+            $user_id = $user->id;
+            return redirect()->route('index', 'Logado com sucesso');
+        } else {
+            return back()->withErrors([
+                'invalid_credentials' => 'As credênciais são invalidas',
+            ])->withInput();
+            //Autenticação falhou
+        }
     }
     // Processa o logout
     public function logout()

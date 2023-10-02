@@ -1,6 +1,6 @@
 import { createFetchError } from "./createFetchError";
 
-const API_URL = "/api/stock/";
+const API_URL = "https://brapi.dev/api/quote/";
 
 /**
  *
@@ -8,8 +8,7 @@ const API_URL = "/api/stock/";
  * @param {RequestInit} init
  */
 export const fetchAPI = async (input, init = undefined) => {
-    const requestURL = `${API_URL}${input}`;
-
+    const requestURL = new URL(`${API_URL}${input}`);
     console.log(requestURL.toString());
 
     const response = await fetch(requestURL.toString(), {
