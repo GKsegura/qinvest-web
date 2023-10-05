@@ -14,17 +14,25 @@
     <!-- <label>{{ $user->id }}</label><br> -->
 
     <div class="page">
+        <div class="user-data">
+            <label> Email: {{ $user->email }}</label><br>
 
-        <label> Nome: {{ $user->username }}</label><br>
+            <label> Nome: {{ $user->username }}</label><br>
 
-        <label> Email: {{ $user->email }}</label><br>
+            <label> Data de Nascimento: {{ $user->birth_time }}</label><br>
 
-        <label> Data de Nascimento: {{ $user->birth_time }}</label><br>
+            <label> Gênero:
+                @if ($user->gender=="male")
+                {{"Masculino"}}
+                @elseif($user->gender==="female")
+                {{"Feminino"}}
+                @else
+                {{"Outro"}}
+                @endif
+            </label><br>
 
-        <label> Gênero: {{ $user->gender }}</label><br>
-
-        <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
-
-        <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
+            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
+            <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
+        </div>
     </div>
 </x-layout.head>
