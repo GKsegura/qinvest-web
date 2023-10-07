@@ -1,12 +1,32 @@
 @import url(layout/app.css);
 
 .page-home {
-    background-image: url(../../assets/waveBg.svg);
+    /*background-image: url(../../assets/waveBg.svg);*/
     color: var(--primary-color);
-    text-align: center;
-    height: 124vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 /*  */
+.homebox
+{
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.wave-svg
+{
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    z-index: 1;
+    object-fit: cover;
+    height: inherit;
+}
 .buttons-home {
     width: 100%;
     height: auto;
@@ -21,6 +41,8 @@
 .buttons-home button {
     padding: 1% 2%;
     font-size: 1em;
+    height: 6vh;
+    width: 22vh;
 }
 
 #login,
@@ -47,23 +69,60 @@
 }
 
 .stair {
-    width: 100%;
-    height: 100%;
-    margin: 0;
     display: flex;
-    text-align: center;
     justify-content: center;
 }
 
-.stair img {
-    margin: 0;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-    padding: 0;
-    position: absolute;
-    width: 25%;
+.stair img 
+{
+
+    width: 100%;
+    height: auto;
+    max-width: 70vh;
+    max-height: 70vh;
+}
+p 
+{
+    text-align: center;;
+}
+.h1
+{
+ font-weight: bold;
+}
+.h3
+{
+    font-size: 1.5vh;
 }
 
-#world {
-    width: 45%;
+.text-image-ladder
+{
+    margin:2.5vh 0 2.5vh 0  ;
 }
+.buttons-home
+{
+    margin: 2.5vh 0 2.5vh 0;
+}
+#alter
+{
+    color: var(--secondary-color);
+}
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15vh 0 15vh 0;
+    width: 70%;
+}
+
+.h1#alter
+{
+    width:"";
+}
+
+@media only screen and (max-width: 600px) {
+    .h1#alter
+    {
+        width: 100% !important;
+    }
+  }
+
