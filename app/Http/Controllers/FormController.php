@@ -33,10 +33,15 @@ class FormController extends Controller
         $perfil_investidor = '';
 
         try {
+
+            DB::table('tests')->where('user_id', $userId)->update([
+                'deleted' => true,
+            ]);
+            
             $testId = DB::table('tests')->insertGetId([
                 'deleted' => false,
                 'grade' => 0,
-                'form_id' => 8,
+                'form_id' => 1,
                 'user_id' => $userId,
                 'investor_id' => null,
                 'created_at' => Carbon::now('America/Sao_Paulo'),
@@ -86,7 +91,7 @@ class FormController extends Controller
                 'investor_id' => $investor_id,
             ]);
 
-            echo "<script type='text/javascript'>alert('Seu perfil investidor é $perfil_investidor')</script>";
+            return redirect()->route('typeinvestor');
             
         } catch (\Exception $e) {
             dd($e->getMessage());

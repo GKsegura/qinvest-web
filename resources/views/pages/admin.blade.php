@@ -11,11 +11,9 @@
     </div>
     @endif
 
-    <!-- <label>{{ $user->id }}</label><br> -->
-
     <div class="page">
         <div class="user-data">
-            <label> Email: {{ $user->email }}</label><br>
+            <label> Estatísticas Perfil Investidor: {{ $user->email }}</label><br>
 
             <label> Nome: {{ $user->username }}</label><br>
 
