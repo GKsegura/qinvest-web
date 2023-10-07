@@ -15,11 +15,23 @@
 
     <div class="page">
         <div class="user-data">
-            <label> Email: {{ $user->email }}</label><br>
+            <h1>Seu perfil:</h1>
 
-            <label> Nome: {{ $user->username }}</label><br>
+            <p>Perfil Investidor:</p>
+            <p>{{ $perfil_investidor }}</p>
 
-            <label> Data de Nascimento: {{ $user->birth_time }}</label><br>
+            @if ($perfil_investidor === "Não possui perfil investidor")
+            <p>Para ter um perfil investidor, é necessário responder o <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>
+
+            @else
+            <p>Acha que mudou? <a href="/formulary" class="header-link nav-link"><i>Refazer teste</i></a></p>
+            @endif
+
+            <p> Email: <br>{{ $user->email }}</p>
+
+            <p>Nome: <br> {{ $user->username }}</p>
+
+            <label> Data de Nascimento: <br> {{ \Carbon\Carbon::parse($user->birth_time)->format('d/m/Y') }}</label><br>
 
             <label> Gênero:
                 @if ($user->gender=="male")
@@ -31,8 +43,7 @@
                 @endif
             </label><br>
 
-            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
-            <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
+
         </div>
     </div>
 </x-layout.head>
