@@ -8,7 +8,7 @@
                 <p>Crie sua conta gratuitamente e comece a participar dessa comunidade</p>
             </div>
             <div class="buttons-home">
-                <button id="login">Já sou cadastrado</button>
+                <button id="login">ENTRAR</button>
                 <button id="register"> Criar Conta</button>
             </div>
             <div class="stair">
@@ -16,30 +16,30 @@
             </div>
             <div class="feature">
                 <p class="h3" id="alter">
-                    Do básico ao avançado: 
+                    Do básico ao avançado:
                 </p>
-                <p class="h1" id="alter" >
+                <p class="h1" id="alter">
                     Conseguir uma renda extra ou mudar completamente sua vida. </p>
                 </p>
-                <p class="h3"id="alter">
+                <p class="h3" id="alter">
                     Aprenda a investir com a QINVEST◢
                 </p>
-                    <div class="icon-home">
-
-                    </div>
-                    <div class="icon-home">
-
-                    </div>
-                    <div class="icon-home">
-
-                    </div>
-                    <div class="icon-home">
-
-                    </div>  
+                <div class="icon-home">
 
                 </div>
-                
+                <div class="icon-home">
+
+                </div>
+                <div class="icon-home">
+
+                </div>
+                <div class="icon-home">
+
+                </div>
+
             </div>
+
         </div>
+    </div>
     </div>
 </x-layout.app>
