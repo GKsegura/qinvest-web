@@ -1,8 +1,8 @@
 @import url(../layout/app.css);
 
 :root {
-    --orange: #bc5f1c;
-    --purple: #586d98;
+    --orange: #FF9F5A;
+    --purple: #BF98FF;
 }
 
 
@@ -12,7 +12,7 @@
     text-align: center;
     padding-top: 15vh;
     background-size: cover;
-    height: 111vh;
+    height: 90vh;
     display: block;
 }
 .page-education {
@@ -61,7 +61,6 @@
     margin-top: 5vh;
     width: 485px;
     height: 485px;
-    box-shadow: 0 0 0.45em var(--dark-purple);
     background-color: #ffffff;
     margin-bottom: 15vh;
 }
@@ -86,7 +85,7 @@
 
 .right-summary h2,
 .right-summary h1 {
-    color: #8f47f1;
+    color: var(--purple);
     text-align: center;
     font-family: Helvetica;
     font-style: normal;
@@ -105,7 +104,7 @@
 }
 
 .right-summary p {
-    color: #586d98;
+    color: var(--purple);
     text-align: center;
     font-family: Helvetica;
     font-size: 20px;
@@ -192,7 +191,7 @@
 }
 
 #cursoSubtitleFixed {
-    color: #44378b;
+    color: var(--purple);
     text-align: center;
     font-family: Helvetica;
     font-size: 20px;
@@ -203,7 +202,7 @@
 }
 
 #cursoSubtitleVariable {
-    color: var(--TextoSecundarioSecundario, #bc5f1c);
+    color: var(--TextoSecundarioSecundario, #FF9F5A);
     font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
@@ -222,7 +221,7 @@
     align-items: flex-start;
     gap: 22px;
     border-radius: 10px;
-    border: 1px solid var(--TextoSecundarioClaro, #586d98);
+    border: 1px solid var(--TextoSecundarioClaro, var(--purple));
     background-color: transparent;
     margin-bottom: 30px;
 }
@@ -237,7 +236,7 @@
     gap: 22px;
     flex-shrink: 0;
     border-radius: 10px;
-    border: 1px solid var(--TextoSecundarioSecundario, #c3631e);
+    border: 1px solid var(--TextoSecundarioSecundario,#FF9F5A);
     background-color: transparent;
 }
 
@@ -252,7 +251,7 @@
 }
 
 #contentSubtitleVariable {
-    color: var(--TextoSecundarioSecundario, #c3631e);
+    color: var(--TextoSecundarioSecundario,#FF9F5A);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -261,7 +260,7 @@
 }
 
 #contentSubtitleFixed {
-    color: var(--TextoSecundarioClaro, #586d98);
+    color: var(--TextoSecundarioClaro, var(--purple));
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
