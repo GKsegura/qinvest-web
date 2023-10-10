@@ -11,13 +11,13 @@
     </div>
     @endif
 
-    <!-- <label>{{ $user->id }}</label><br> -->
-
     <div class="page">
         <div class="user-data">
             <h1>Seu perfil:</h1>
 
             <p>Perfil Investidor:</p>
+            <p>
+            <p>Acha que mudou? <a href="/typeinvestor" class="header-link nav-link"><i>Refazer teste</i></a></p>
             <p>{{ $perfil_investidor }}</p>
 
             @if ($perfil_investidor === "Não possui perfil investidor")

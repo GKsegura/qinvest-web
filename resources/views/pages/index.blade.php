@@ -8,8 +8,8 @@
                 <p>Crie sua conta gratuitamente e comece a participar dessa comunidade</p>
             </div>
             <div class="buttons-home">
-                <button id="login">ENTRAR</button>
-                <button id="register"> Criar Conta</button>
+                <button id="login">Entrar</button>
+                <button id="register">Criar Conta</button>
             </div>
             <div class="stair">
                 <img class="home-art" src="assets/home_art.svg" alt="">

@@ -1,14 +1,13 @@
 @import url(layout/app.css);
 
 .page-home {
-    /*background-image: url(../../assets/waveBg.svg);*/
     color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
 }
-/*  */
+
 .homebox {
     margin: 0;
     padding: 0;
@@ -39,7 +38,6 @@
 .buttons-home button {
     font-size: 1em;
     padding: 1% 2%;
-    text-transform: uppercase;
 }
 
 #login,

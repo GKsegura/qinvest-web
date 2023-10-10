@@ -4,11 +4,11 @@
         <div x-data="{ step: 1 }">
             <div x-show="step === 1">
                 <div class="svg-type">
-                    @if ($typeCamps["id"] == 2)
+                    @if ($typeCamps["id"] == 1)
                     @include('pages.typeinvestor.conservador')
-                    @elseif ($typeCamps["id"] == 3)
+                    @elseif ($typeCamps["id"] == 2)
                     @include('pages.typeinvestor.moderado')
-                    @elseif ($typeCamps["id"] == 4)
+                    @elseif ($typeCamps["id"] == 3)
                     @include('pages.typeinvestor.agressivo')
                     @endif
                 </div>

@@ -10,6 +10,11 @@
             <a href="/education" class="header-link nav-link">Education</a>
             <a href="/stock" class="header-link nav-link">Stocks</a>
             <a href="/about" class="header-link nav-link">About Us</a>
+            @auth
+            @if (Auth::user()->email=="admin@qinvest.com")
+            <a href="" class="header-link nav-link">Admin</a>
+            @endif
+            @endauth
         </div>
 
         <div class="header-icons">
