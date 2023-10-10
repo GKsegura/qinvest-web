@@ -46,4 +46,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
+
+
 Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');

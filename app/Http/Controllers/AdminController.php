@@ -18,45 +18,85 @@ class AdminController extends Controller
 {
     public function Statistics()
     {
-        $testC = Test::where('deleted', false)->where('investor_id', 1);
-        $testM = Test::where('deleted', false)->where('investor_id', 2);
-        $testA = Test::where('deleted', false)->where('investor_id', 3);
+        if (Auth::check() && Auth::user()-> email == 'admin@qinvest.com')
+        {
+            $testC = Test::where('deleted', false)->where('investor_id', 1);
+            $testM = Test::where('deleted', false)->where('investor_id', 2);
+            $testA = Test::where('deleted', false)->where('investor_id', 3);
 
-        $activeTestIds = Test::where('deleted', false)->pluck('id')->toArray();
+            $activeTestIds = Test::where('deleted', false)->pluck('id')->toArray();
+            
+            $female = User::where('gender', 'female')->where('deleted', false);
+            $male = User::where('gender', 'male')->where('deleted', false);
+            $other = User::where('gender', 'other')->where('deleted', false);
+
+            $answersCounts = TestAnswer::selectRaw('answer_id, COUNT(*) as count')
+            ->whereIn('test_id', $activeTestIds)
+            ->whereIn('answer_id', [7, 8, 9, 10, 11])
+            ->groupBy('answer_id')
+            ->get();
+
+            $answerA = 0;
+            $answerB = 0;
+            $answerC = 0;
+            $answerD = 0;
+            $answerE = 0;
         
-        $female = User::where('gender', 'female')->where('deleted', false);
-        $male = User::where('gender', 'male')->where('deleted', false);
-        $other = User::where('gender', 'other')->where('deleted', false);
+            foreach ($answersCounts as $answerCount) 
+            {
+                if ($answerCount->answer_id == 7) 
+                {
+                    $answerA += $answerCount->count;
+                }
+                else if ($answerCount->answer_id == 8)
+                {
+                    $answerB += $answerCount->count;
+                }
+                else if ($answerCount->answer_id == 9)
+                {
+                    $answerC += $answerCount->count;
+                }
+                else if ($answerCount->answer_id == 10)
+                {
+                    $answerD += $answerCount->count;
+                }
+                else if ($answerCount->answer_id == 11)
+                {
+                    $answerE += $answerCount->count;
+                }
+            }    
 
-        $answerA = TestAnswer::where('answer_id', 7)->whereIn('test_id', $activeTestIds);
-        $answerB = TestAnswer::where('answer_id', 8)->whereIn('test_id', $activeTestIds);
-        $answerC = TestAnswer::where('answer_id', 9)->whereIn('test_id', $activeTestIds);
-        $answerD = TestAnswer::where('answer_id', 10)->whereIn('test_id', $activeTestIds);
-        $answerE = TestAnswer::where('answer_id', 11)->whereIn('test_id', $activeTestIds);
+            $answersTotal = $answerA + $answerB + $answerC + $answerD + $answerE;
 
-        $answersTotal = $answerA + $answerB + $answerC + $answerD + $answerE;
+            $range1 = ($answerA/$answersTotal)*100; 
+            $range2 = ($answerB/$answersTotal)*100; 
+            $range3 = ($answerC/$answersTotal)*100; 
+            $range4 = ($answerD/$answersTotal)*100; 
+            $range5 = ($answerE/$answersTotal)*100; 
 
-        $countC = $testC->count();
-        $countM = $testM->count();
-        $countA = $testA->count();
-        $test = $countA + $countC + $countM;
-        
-        $countFem = $female->count();
-        $countMale = $male->count();
-        $countOther = $other->count();
-        $users = $countFem + $countMale + $countOther;
+            $countC = $testC->count();
+            $countM = $testM->count();
+            $countA = $testA->count();
+            $test = $countA + $countC + $countM;
+            
+            $countFem = $female->count();
+            $countMale = $male->count();
+            $countOther = $other->count();
+            $users = $countFem + $countMale + $countOther;
 
-        $moderado = ($countM/$test)*100;
-        $conservador = ($countC/$test)*100;
-        $agressivo = ($countA/$test)*100;
+            $moderado = ($countM/$test)*100;
+            $conservador = ($countC/$test)*100;
+            $agressivo = ($countA/$test)*100;
 
-        $women = round(($countFem/$users)*100);
-        $men = round(($countMale/$users)*100);
-        $NI = round(($countOther/$users)*100);
+            $women = round(($countFem/$users)*100);
+            $men = round(($countMale/$users)*100);
+            $NI = round(($countOther/$users)*100);
 
-        return view('pages.admin', compact('conservador', 'moderado', 'agressivo', 'test', 'women', 'men', 'NI', 'answerA'));
-
-
-        
+            return view('pages.admin', compact('conservador', 'moderado', 'agressivo', 'test', 'women', 'men', 'NI', 'range1', 'range2', 'range3', 'range4', 'range5'));   
+        } 
+        else 
+        {
+            return redirect()->route('index');
+        }   
     }
 }

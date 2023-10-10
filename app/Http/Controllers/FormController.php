@@ -74,13 +74,13 @@ class FormController extends Controller
 
             if ($total_rating >= 0 && $total_rating <= 50) {
                 $perfil_investidor = 'CONSERVADOR';
-                $investor_id = 2;
+                $investor_id = 1;
             } elseif ($total_rating >= 51 && $total_rating <= 100) {
                 $perfil_investidor = 'MODERADO';
-                $investor_id = 3;
+                $investor_id = 2;
             } elseif ($total_rating >= 101) {
                 $perfil_investidor = 'AGRESSIVO';
-                $investor_id = 4;
+                $investor_id = 3;
             }
 
             DB::table('tests')->where('id', $testId)->update([
