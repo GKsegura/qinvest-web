@@ -34,9 +34,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
-// Rota do ADM
-Route::get('/admin', [AdminController::class, 'checkUser'])->name('admin');
-
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
 Route::middleware(['auth'])->group(function () {
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
@@ -49,3 +46,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
+Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');

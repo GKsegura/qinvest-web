@@ -13,29 +13,19 @@
 
     <div class="page">
         <div class="user-data">
-            <label> Estatísticas Perfil Investidor: {{ $user->email }}</label><br>
+            <label> Usuários Conservadores: {{ $conservador }}%</label><br>
 
-            <label> Nome: {{ $user->username }}</label><br>
+            <label> Usuários Moderados: {{ $moderado }}%</label><br>
 
-            <label> Data de Nascimento: {{ $user->birth_time }}</label><br>
+            <label> Usuários Agressivos: {{ $agressivo }}%</label><br>
 
-            <label> Gênero:
-                @if ($user->gender=="male")
-                {{"Masculino"}}
-                @elseif($user->gender==="female")
-                {{"Feminino"}}
-                @else
-                {{"Outro"}}
-                @endif
-            </label><br>
+            <label> Total de perfis ativos: {{ $test }}</label><br>
 
-            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
+            <label> Proporção de usuárias: {{ $women }}%</label><br>
 
-            @if ($perfil_investidor == 'Não possui perfil investidor')
-                 <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
-            @else
-                 <a href="/formulary" class="header-link nav-link">Recalcule seu perfil investidor!</a>
-            @endif     
+            <label> Proporção de usuários: {{ $men }}%</label><br>
+
+            <label> Proporção de não-identificados: {{ $NI }}%</label><br>
         </div>
     </div>
 </x-layout.head>
