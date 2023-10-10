@@ -16,9 +16,9 @@
             <h1>Seu perfil:</h1>
 
             <p>Perfil Investidor:</p>
-            <p>
-            <p>Acha que mudou? <a href="/typeinvestor" class="header-link nav-link"><i>Refazer teste</i></a></p>
-            <p>{{ $perfil_investidor }}</p>
+
+            <a href="/typeinvestor" class="header-link nav-link"><i>{{ $perfil_investidor }}</i></a>
+
 
             @if ($perfil_investidor === "Não possui perfil investidor")
             <p>Para ter um perfil investidor, é necessário responder o <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>

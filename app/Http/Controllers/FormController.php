@@ -22,8 +22,7 @@ class FormController extends Controller
         $answers = Answer::all();
         $rating = Rating::all();
 
-        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6','answers'));
-       
+        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'answers'));
     }
 
     public function auth(Request $request)
@@ -36,7 +35,7 @@ class FormController extends Controller
             $testId = DB::table('tests')->insertGetId([
                 'deleted' => false,
                 'grade' => 0,
-                'form_id' => 8,
+                'form_id' => 1,
                 'user_id' => $userId,
                 'investor_id' => null,
                 'created_at' => Carbon::now('America/Sao_Paulo'),
@@ -87,7 +86,6 @@ class FormController extends Controller
             ]);
 
             echo "<script type='text/javascript'>alert('Seu perfil investidor é $perfil_investidor')</script>";
-            
         } catch (\Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->withErrors(['error' => 'Erro no SQL']);
