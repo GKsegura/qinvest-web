@@ -1,25 +1,5 @@
     @vite(['resources/lib/alpine.js'])
     <div class="formulary-page">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-        <script>
-        toastr.options = {
-            closeButton: true, // Mostrar botão de fechar
-            progressBar: true, // Mostrar barra de progresso
-            timeOut: 5000, // Tempo em milissegundos que a notificação ficará visível (5 segundos neste caso)
-            extendedTimeOut: 2000, // Tempo adicional para a notificação ficar visível quando o mouse estiver sobre ela (2 segundos neste caso)
-        };
-
-        function validarFormulario() {
-            console.log("Validando formulário...");
-            for (let i = 1; i <= 6; i++) {
-                if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
-                    toastr.error(`Por favor, responda à pergunta ${i}.`, 'Erro'); // Exibe o Toastr de erro
-                    return false; // Cancela o envio do formulário
-                }
-            }
-            return true; // Permite o envio do formulário se todas as perguntas forem respondidas
-        }
-        </script>
         @if (session('success'))
         <div class="option" class="alert alert-success">
             {{ session('success') }}
@@ -30,9 +10,9 @@
             {{ session('error') }}
         </div class="option">
         @endif
-        <form action="{{ route('formulary') }}" method="POST">
+        <form action="{{ route('formulary') }}" method="POST" onsubmit="return validarFormulario();">
             @csrf
-            <div x-data="{ question: 1 }">
+            <div x-data="{ question: 7 }"> <!-- mudar para 1-->
                 <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms>
                     <div class="formulary-card">
                         <div class="label-question">
@@ -46,8 +26,7 @@
                             </label>
                             @endforeach
                         </div>
-                        <button class="step-button" @click.prevent="question = 2 "><i
-                                class="bi bi-arrow-right"></i></button>
+                        <button class="step-button" @click.prevent="question = 2 "><i class="bi bi-arrow-right"></i></button>
                     </div>
                 </div>
                 <div x-show=" question === 2" x-transition:enter.opacity.duration.600ms>
@@ -63,8 +42,7 @@
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 1"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 3 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 3 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -81,8 +59,7 @@
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 2"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 4 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 4 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                         <!-- <button type="submit">Enviar</button> -->
                     </div>
@@ -100,8 +77,7 @@
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 3"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 5 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 5 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -118,8 +94,7 @@
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 4"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 6"><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 6"><i class="bi bi-arrow-right"></i></button>
                         </div>
                         <!-- <button type="submit">Enviar</button> -->
                     </div>
@@ -136,12 +111,9 @@
                             @endforeach
                         </div>
                         <div class="question-controller">
-                            <button class="step-button" @click.prevent="question = 5"><i
-                                    class="bi bi-arrow-left"></i></button>
-                            <button class="step-button" @click.prevent="question = 7"><i
-                                    class="bi bi-arrow-right"></i></button>
+                            <button class="step-button" @click.prevent="question = 5"><i class="bi bi-arrow-left"></i></button>
+                            <button class="step-button" @click.prevent="question = 7"><i class="bi bi-arrow-right"></i></button>
                         </div>
-                        <!-- <button type="submit">Enviar</button> -->
                     </div>
                 </div>
                 <div x-show=" question === 7" x-transition:enter.opacity.duration.600ms>
@@ -151,17 +123,10 @@
                         <div class="question-controller">
                             <input type="hidden" name="user_id" value="{{ Auth::id() }}">
 
-                            <button class="step-button" type="submit" onclick="enviarFormulario();">Enviar</button>
+                            <button class="step-button" type="submit">Enviar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
-    <script>
-function enviarFormulario() {
-    if (validarFormulario()) {
-        toastr.success('Formulário enviado com sucesso!', 'Sucesso');
-    }
-}
-    </script>

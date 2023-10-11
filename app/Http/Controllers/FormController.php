@@ -84,8 +84,6 @@ class FormController extends Controller
             DB::table('tests')->where('id', $testId)->update([
                 'investor_id' => $investor_id,
             ]);
-
-            echo "<script type='text/javascript'>alert('Seu perfil investidor é $perfil_investidor')</script>";
         } catch (\Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->withErrors(['error' => 'Erro no SQL']);
