@@ -6,6 +6,11 @@
 }
 
 
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
 #education-page {
     /* 
     background-image: url(../../assets/waveBgshort.svg);
@@ -90,13 +95,8 @@
 }
 
 .education-summary div {
-
 margin: 5%;
-    
-
 }
-
-
 
 .left-summary img {
     margin-left: 3%;
@@ -212,9 +212,8 @@ margin: 5%;
     flex-shrink: 0;
     margin-top: 30px;
     fill: var(--secondary-color);
-    margin-left: 36%;
 }
-.curso {
+.course {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -222,115 +221,106 @@ margin: 5%;
     position: relative;
     z-index: 1;
 }
-
-.cursoCard {
+.container-course-cards
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10vh;
+}
+.courseCard {
 width: 80%;
 }
 
-.cursoTitleVariable {
-    color: var(--secondary-color);
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.2px;
-
-}
-
-.cursoTitleFixed {
-    color: var(--secondary-color);
+.courseTitle {
     font-size: 48px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.2px;
 }
+.courseTitle#course-fixed
+{
+    color: #ff9245;
+}
+.courseTitle#course-variable
+{
+    color: #a065ff;
+}
+.courseSubtitle {
 
-#cursoSubtitleFixed {
-    color: var(--purple);
-    text-align: center;
     font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-right: 78%;
+    margin: 1% 0 2% 1%;
 }
 
-#cursoSubtitleVariable {
-    color: var(--TextoSecundarioSecundario, #FF9F5A);
-    font-family: Helvetica;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 3%;
-}
-
-.cursoContentFixed {
+.courseContent {
     display: flex;
     width: 100%;
     max-height: 234px;
-    padding: 25px 30px;
+    padding: 2%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 22px;
     border-radius: 10px;
-    border: 1px solid var(--TextoSecundarioClaro, var(--purple));
-    background-color: transparent;
+    color: var(--orange);
     margin-bottom: 30px;
 }
-
-.cursoContentVariable {
-    display: flex;
-    width: 100%;
-    padding: 25px 30px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 22px;
-    flex-shrink: 0;
+.courseContent#course-variable {
+    background: rgba(191, 152, 255, 0.041);
+    box-shadow: 0 8px 20px 0 rgba(121, 22, 160, 0.185);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid var(--TextoSecundarioSecundario,#FF9F5A);
-    background-color: transparent;
+    border: 1px solid rgba(149, 11, 204, 0.363);
+}
+.courseContent#course-fixed {
+    background: rgba(255, 162, 0, 0.027);
+    box-shadow: 0 8px 20px 0 rgba(135, 99, 31, 0.356);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 145, 0, 0.301);
+}
+
+.contentsubtitle
+{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+.contentSubtitle#course-variable {
+    color: var(--orange);
+}
+.contentSubtitle#course-variable {
+    font-weight: 600;
+    color: var(--purple);
+}
+
+.course-content#course-variable
+{
+    border: 1px solid var(--orange);
+}
+.course-content#course-fixed
+{
+    border: 1px solid var(--purple);
 }
 
 .contentTitle {
     color: var(--secondary-color);
     font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 32px;
-    /* 160% */
-    letter-spacing: 0.2px;
-}
-
-#contentSubtitleVariable {
-    color: var(--TextoSecundarioSecundario,#FF9F5A);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0.2px;
-}
-
-#contentSubtitleFixed {
-    color: var(--TextoSecundarioClaro, var(--purple));
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
     letter-spacing: 0.2px;
 }
 
 .contentText {
     color: var(--secondary-color);
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    /* 150% */
-    letter-spacing: 0.2px;
     text-align: justify;
 }
