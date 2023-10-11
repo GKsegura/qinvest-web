@@ -23,7 +23,6 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/stock', [PageController::class, 'stock'])->name('stock');
 
 // Rotas do LOGIN
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -42,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/education', [PageController::class, 'education'])->name('education');
     Route::get('/education/variable', [PageController::class, 'variable'])->name('variable');
     Route::get('/education/fixed', [PageController::class, 'fixed'])->name('fixed');
+    Route::get('/stock', [PageController::class, 'stock'])->name('stock');
 });
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);

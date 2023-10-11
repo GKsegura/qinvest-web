@@ -27,6 +27,8 @@
 
             <label> Proporção de não-identificados: {{ $NI }}%</label><br>
 
+            <label> Número total de usuários: {{ $users }}</label><br>
+
             <label> Usuários que ganham 1 a 3 salários mínimos: {{ $range1 }}%</label><br>
 
             <label> Usuários que ganham 4 a 7 salários mínimos: {{ $range2 }}%</label><br>

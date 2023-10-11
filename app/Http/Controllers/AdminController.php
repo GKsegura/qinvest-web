@@ -30,6 +30,8 @@ class AdminController extends Controller
             $male = User::where('gender', 'male')->where('deleted', false);
             $other = User::where('gender', 'other')->where('deleted', false);
 
+            $users = User::where('deleted', false);
+
             $answersCounts = TestAnswer::selectRaw('answer_id, COUNT(*) as count')
             ->whereIn('test_id', $activeTestIds)
             ->whereIn('answer_id', [7, 8, 9, 10, 11])
@@ -68,11 +70,11 @@ class AdminController extends Controller
 
             $answersTotal = $answerA + $answerB + $answerC + $answerD + $answerE;
 
-            $range1 = ($answerA/$answersTotal)*100; 
-            $range2 = ($answerB/$answersTotal)*100; 
-            $range3 = ($answerC/$answersTotal)*100; 
-            $range4 = ($answerD/$answersTotal)*100; 
-            $range5 = ($answerE/$answersTotal)*100; 
+            $range1 = round(($answerA/$answersTotal)*100); 
+            $range2 = round(($answerB/$answersTotal)*100); 
+            $range3 = round(($answerC/$answersTotal)*100); 
+            $range4 = round(($answerD/$answersTotal)*100); 
+            $range5 = round(($answerE/$answersTotal)*100); 
 
             $countC = $testC->count();
             $countM = $testM->count();
@@ -84,15 +86,15 @@ class AdminController extends Controller
             $countOther = $other->count();
             $users = $countFem + $countMale + $countOther;
 
-            $moderado = ($countM/$test)*100;
-            $conservador = ($countC/$test)*100;
-            $agressivo = ($countA/$test)*100;
+            $moderado = round(($countM/$test)*100);
+            $conservador = round(($countC/$test)*100);
+            $agressivo = round(($countA/$test)*100);
 
             $women = round(($countFem/$users)*100);
             $men = round(($countMale/$users)*100);
             $NI = round(($countOther/$users)*100);
 
-            return view('pages.admin', compact('conservador', 'moderado', 'agressivo', 'test', 'women', 'men', 'NI', 'range1', 'range2', 'range3', 'range4', 'range5'));   
+            return view('pages.admin', compact('conservador', 'moderado', 'agressivo', 'test', 'women', 'men', 'NI', 'range1', 'range2', 'range3', 'range4', 'range5', 'users'));   
         } 
         else 
         {
