@@ -1,4 +1,4 @@
-@import url(layout/app.css);
+@import url(../layout/app.css);
 
 .page-home {
     color: var(--primary-color);
