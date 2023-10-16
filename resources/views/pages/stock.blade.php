@@ -4,6 +4,16 @@
 
 <x-layout.app>
     <div class="body">
+    <div class="stock-hero">
+        <div class="stock-hero-text">
+            <h1 class="stock-hero-title">Ações</h1>
+            <p class="stock-hero-subtitle">Acompanhe o mercado de ações e a taxa SELIC</p>
+        </div>
+        <div class="stock-hero-below">
+            <div class="stock-hero-img"> <img src="assets/stockart.svg" alt="stockhero"></div>
+            <div class="stock-hero-content">Essa é a área que você irá ver os diversos gráficos da bolsa de valores, aprendendo seus significados.</div>
+        </div>
+    </div>
         <h2 class="sTitle">SELIC</h2>
         <div id="stockInfo">
             <svg id="stockImg" sodipodi:docname="mockup.svg" inkscape:export-filename="logowhite.svg"
