@@ -32,6 +32,11 @@ class FormController extends Controller
         $perfil_investidor = '';
 
         try {
+
+            DB::table('tests')->where('user_id', $userId)->update([
+                'deleted' => true,
+            ]);
+            
             $testId = DB::table('tests')->insertGetId([
                 'deleted' => false,
                 'grade' => 0,
@@ -84,6 +89,9 @@ class FormController extends Controller
             DB::table('tests')->where('id', $testId)->update([
                 'investor_id' => $investor_id,
             ]);
+
+            return redirect()->route('typeinvestor');
+            
         } catch (\Exception $e) {
             dd($e->getMessage());
             return redirect()->back()->withErrors(['error' => 'Erro no SQL']);

@@ -43,7 +43,13 @@
                 @endif
             </label><br>
 
+            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
 
+            @if ($perfil_investidor == 'Não possui perfil investidor')
+                 <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
+            @else
+                 <a href="/formulary" class="header-link nav-link">Recalcule seu perfil investidor!</a>
+            @endif     
         </div>
     </div>
 </x-layout.head>

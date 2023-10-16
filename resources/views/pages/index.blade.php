@@ -2,7 +2,7 @@
 
     @auth
     <script>
-        toastr.error('Você está logado!');
+    toastr.error('Você está logado!');
     </script>
     @endauth
     <div class="page-home">
