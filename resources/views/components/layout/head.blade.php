@@ -8,6 +8,9 @@
     <title>QInvest</title>
     @include('components.layout.css')
     @vite(['resources/js/theme.js'])
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>

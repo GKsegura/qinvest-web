@@ -1,4 +1,5 @@
 @vite(['resources/js/education.js'])
+
 <x-layout.app>
     <div class="page-variable">
         <div class="wrapper">

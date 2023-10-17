@@ -1,5 +1,6 @@
 @import url(../css/layout/app.css);
 
+
 .page {
     width: 100%;
     background-color: var(--primary-color);
@@ -43,15 +44,15 @@
 .card {
     width: 18em !important;
     height: 100%;
-    border-radius: 2em;
+    border-radius: 10px;
     padding: 2em 1em;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin: 2em !important;
+    margin: 3em !important;
     box-shadow: 0 0 0.45em var(--dark-purple);
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color) !important;
+    background-color: white !important;
+    color: black !important;
 }
 
 .card-image {
@@ -76,12 +77,13 @@
     margin: 0.2em;
     font-size: 1.25em;
     font-weight: 500;
+    padding-top: 10px;
 }
 
 .card-occupation {
     font-size: 1em;
     font-weight: 500;
-    margin: 0;
+    margin: 2px;
     color: var(--dark-purple);
     font-weight: 700;
 }
@@ -89,7 +91,7 @@
 .card-description {
     font-size: 0.9em;
     margin-top: 0.5em;
-    text-align: justify;
+    text-align: center;
 }
 #qinvestLogoSmall {
     width: 152px;
