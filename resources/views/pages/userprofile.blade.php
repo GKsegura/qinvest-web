@@ -13,7 +13,7 @@
 
     <div class="page">
         <div class="user-data">
-            <h1>Seu perfil:</h1>
+            <h1>Sua conta:</h1>
 
             <p>Perfil Investidor:</p>
 
@@ -21,7 +21,7 @@
 
 
             @if ($perfil_investidor === "Não possui perfil investidor")
-            <p>Para ter um perfil investidor, é necessário responder o <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>
+            <p>Para ter um perfil investidor, é necessário responder ao <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>
 
             @else
             <p>Acha que mudou? <a href="/formulary" class="header-link nav-link"><i>Refazer teste</i></a></p>
@@ -42,14 +42,6 @@
                 {{"Outro"}}
                 @endif
             </label><br>
-
-            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
-
-            @if ($perfil_investidor == 'Não possui perfil investidor')
-                 <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
-            @else
-                 <a href="/formulary" class="header-link nav-link">Recalcule seu perfil investidor!</a>
-            @endif     
         </div>
     </div>
 </x-layout.head>

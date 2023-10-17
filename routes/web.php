@@ -33,6 +33,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
+Route::get('/investment', [InvestmentController::class, 'createForm'])->name('investment');
+Route::post('/investment', [InvestmentController::class, 'auth'])->name('investment');
+
+
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
 Route::middleware(['auth'])->group(function () {
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
