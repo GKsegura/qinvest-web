@@ -1,6 +1,7 @@
 <x-layout.app>
 
     <div class="container about-page">
+
         <div class="header-page">
 
             <p class="h1">
@@ -31,7 +32,7 @@
         <div class="swiper-wrapper">
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/davi.jpg" alt="">
+                    <img src="assets/about-us/davi.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Davi Saito</p>
@@ -43,7 +44,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/deola.jpg" alt="">
+                    <img src="assets/about-us/deola.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Deolindo Neto</p>
@@ -55,7 +56,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/duda.jpg" alt="">
+                    <img src="assets/about-us/duda.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Eduarda Garbullio</p>
@@ -67,7 +68,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/enrico.jpg" alt="">
+                    <img src="assets/about-us/enrico.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Enrico Grossi</p>
@@ -79,7 +80,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/gui.jpg" alt="">
+                    <img src="assets/about-us/diorio.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Guilherme Diorio</p>
@@ -90,7 +91,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/isaac.jpg" alt="">
+                    <img src="assets/about-us/isaac.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">Isaac Levi</p>
@@ -101,7 +102,7 @@
             </div>
             <div class="card swiper-slide">
                 <div class="card-image">
-                    <img src="assets/jose.jpg" alt="">
+                    <img src="assets/about-us/jose.png" alt="">
                 </div>
                 <div class="card-content">
                     <p class="card-name">José Segura</p>
@@ -139,4 +140,5 @@
         <path
             d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z" />
     </svg>
+
 </x-layout.app>

@@ -99,9 +99,9 @@ class UserController extends Controller
         $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
         $investor = $latestTest->investor_id;
 
-        if ($investor == 2) {
+        if ($investor == 1) {
             $typeCamps = [
-                "id" => "2",
+                "id" => "1",
                 "type" => "conservador",
                 "description" => "Você é uma pessoa que valoriza a segurança e pretende preservar seu patrimônio.
                 Talvez não seja do seu interesse viver pelo risco e prefira opções que minimizem
@@ -115,9 +115,9 @@ class UserController extends Controller
                 "background" => "background-conservador",
                 "paragraph" => "paragraph-conservador"
             ];
-        } elseif ($investor == 3) {
+        } elseif ($investor == 2) {
             $typeCamps = [
-                "id" => "3",
+                "id" => "2",
                 "type" => "moderado",
                 "description" => "Você é uma pessoa equilibrada, que sabe de suas forças e fragilidades. Talvez, seus
                 investimentos sejam diversos, contemplando todas as cores e possibilidades do
@@ -130,9 +130,9 @@ class UserController extends Controller
                 "background" => "background-moderado",
                 "paragraph" => "paragraph-moderado"
             ];
-        } elseif ($investor == 4) {
+        } elseif ($investor == 3) {
             $typeCamps = [
-                "id" => "4",
+                "id" => "3",
                 "type" => "agressivo",
                 "description" => "Você é uma pessoa corajosa, que está disposta a avançar sem olhar para trás. Seus
                 investimentos, assim como você, confrontam o que muitos chamam de risco, pois a

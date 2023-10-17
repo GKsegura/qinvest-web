@@ -22,8 +22,7 @@ class FormController extends Controller
         $answers = Answer::all();
         $rating = Rating::all();
 
-        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6','answers'));
-       
+        return view('auth.page.viewformulary', compact('question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'answers'));
     }
 
     public function auth(Request $request)
@@ -72,13 +71,13 @@ class FormController extends Controller
 
             $total_rating = $rating1 + $rating2 + $rating4 + $rating5 + $rating6;
 
-            if ($total_rating >= 0 && $total_rating <= 90) {
+            if ($total_rating >= 0 && $total_rating <= 50) {
                 $perfil_investidor = 'CONSERVADOR';
                 $investor_id = 1;
-            } elseif ($total_rating >= 91 && $total_rating <= 150) {
+            } elseif ($total_rating >= 51 && $total_rating <= 100) {
                 $perfil_investidor = 'MODERADO';
                 $investor_id = 2;
-            } elseif ($total_rating >= 151) {
+            } elseif ($total_rating >= 101) {
                 $perfil_investidor = 'AGRESSIVO';
                 $investor_id = 3;
             }

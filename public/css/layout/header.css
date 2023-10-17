@@ -10,16 +10,13 @@ header {
     position: fixed;
     z-index: 3;
     top: 0;
-    box-shadow: 0 0.1vh 0.1vh;
 }
 
 .header-content {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    
 }
-
 
 .header-nav {
     display: flex;
@@ -33,7 +30,6 @@ header {
     justify-content: end;
     gap: 50px;
 }
-
 
 header a {
     text-decoration: none;
