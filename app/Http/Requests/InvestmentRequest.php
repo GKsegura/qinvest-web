@@ -22,9 +22,9 @@ class InvestmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'cod_investment' => 'required|string|max:5',
+            'cod_investment' => 'required|string|min:4|max:4',
             'name_investment' => 'required|string|max:255',
-            'investor_id' => 'required|bigint|max:1',
+            'investor_id' => 'required|int',
         ];
     }
 

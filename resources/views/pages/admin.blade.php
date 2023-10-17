@@ -38,6 +38,8 @@
             <label> Usuários que ganham 11 a 15 salários mínimos: {{ $range4 }}%</label><br>
 
             <label> Usuários que ganham mais de 15 salários mínimos: {{ $range5 }}%</label><br>
+                
+            <a href="/investment" class="header-link nav-link"><i>Cadastrar investimento</i></a>
         </div>
     </div>
 </x-layout.head>

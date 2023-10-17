@@ -1,4 +1,4 @@
-@vite(['resources/utils/alpine.js'])
+
     @if (session('success')) <div class="alert alert-success">
         {{ session('success') }}
     </div>
@@ -15,19 +15,19 @@
             <div class="user-data">
                 <div class="field">
                     <label for="email" class="label-form">Código do Investimento</label>
-                    <input id="email" class="field-input form-control" type="text" name="cod_investment">
+                    <input id="email" class="field-input form-control" type="text" name="cod_investment" required minlength=4 maxlength=4>
                     <div class="invalid-input"> @error('cod_investment'){{$message}}@enderror</div>
                 </div>
 
                 <div class="field">
                     <label for="email" class="label-form">Nome do Investimento</label>
-                    <input id="email" class="field-input form-control" type="text" name="name_investment">
+                    <input id="email" class="field-input form-control" type="text" name="name_investment" required>
                     <div class="invalid-input"> @error('name_investment'){{$message}}@enderror</div>
                 </div>
 
                 <div class="field">
                     <label for="email" class="label-form">Id do Investidor</label>
-                    <input id="email" class="field-input form-control" type="number" name="investor_id">
+                    <input id="email" class="field-input form-control" type="number" name="investor_id" required max=9>
                     <div class="invalid-input"> @error('investor_id'){{$message}}@enderror</div>
                 </div>
 
