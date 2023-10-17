@@ -10,27 +10,29 @@
     @vite(['resources/js/theme.js'])
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
 
-    @include('components.layout.header')
+    <div class="layout">
+        @include('components.layout.header')
 
-    @if(Route::currentRouteName() === 'index')
-    <div class="page page-home">
-        {{ $slot }}
+        <div class="page">
+            @if(Route::currentRouteName() === 'index')
+            <div class="page-home">
+                {{ $slot }}
 
+            </div>
+            @elseif(Route::currentRouteName() === 'education')
+            <div class="body-education-page">
+                {{ $slot }}
+            </div>
+            @else
+            {{ $slot }}
+            @endif
+        </div>
     </div>
-    @elseif(Route::currentRouteName() === 'education')
-    <div class="page body-education-page">
-        {{ $slot }}
-    </div>
-    @else
-    <div class="page">
-        {{ $slot }}
-    </div>
-    @endif
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
