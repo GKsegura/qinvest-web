@@ -1,12 +1,10 @@
 @import url(../css/layout/app.css);
 
 :root {
-    --conservador: rgb(125, 193, 255);
-    --agressivo: rgb(246, 46, 46);
-    --moderado: rgb(158, 99, 255);
+    --conservador: #7dc1ff;
+    --agressivo: #f62e2e;
+    --moderado: #9e63ff;
 }
-
-
 
 .page {
     width: 100%;
