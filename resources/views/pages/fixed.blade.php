@@ -224,8 +224,18 @@
                     <p>A seguir, confira alguns exemplos de investimentos no CDB quanto à rentabilidade.
                     </p>
                     <p><strong>Pré-fixado:</strong></p>
+                    <div class="box" id="box1"><p>
+                    Quer ver na prática?
+                    Um hipotético CDB pré-fixado que renda 10% ao ano oferece diariamente um rendimento que equivale ao suficiente para o pagamento de 10% no período de um ano.
+                    Por exemplo: se um investimento de R$2.000 em um CDB de 10% com prazo de 3 anos, qual seria o ganho?
+                    Vamos calcular: R$2.000 x (1+10%)^3 = R$2.662.
+                    O rendimento total será de 33,1% neste caso.
+                    O ganho obtido é calculado pela multiplicação do valor aplicado pelo rendimento (10%) somado a 1 elevado ao período (3 anos).
                     <p><strong>Pós-fixado:</strong></p>
+                    <div class="box" id="box2"><p></p></div>
+
                     <p><strong>Híbrido:</strong></p>
+                    <div class="box" id="box3"><p></p></div>
                     <!-- Inserir imagem se necessário -->
                 </div>
                 <div class="topic" id="topic17">

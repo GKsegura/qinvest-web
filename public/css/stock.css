@@ -1,6 +1,6 @@
 @import url(../css/layout/app.css);
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, label{
     margin: 0;
     padding: 0;
     width: auto;
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     margin-top: 20px;
 
-    background: rgba( 255, 255, 255, 0.1 );
+    background: rgba( 255, 255, 255, 0.008 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
@@ -106,16 +106,20 @@ h1, h2, h3, h4, h5 {
 }
 .label {
     font-weight: bold;
-    margin-left: 69px;
-    margin-bottom: 7px;
 }
 .sTitle {
     font-weight: bold;
     color: var(--secondary-color) !important;
     font-size: 36px;
-    margin-left: 14%;
     margin-top: 20px;
+    text-align: center;
 }
+.actions{
+    display: flex;
+    gap: 5px;
+}
+
+
 .input[type="text"],
 select {
     padding: 5px;
@@ -194,17 +198,28 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     margin: auto;
     width: 1116px;
 }
-
-#stockInfo {
-    width: 846px;
-    height: 227px;
-    border-radius: 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 20px;
-    background-color: var(--primary-color) !important;
+.stockbox
+{
+    width: 100%;
     display: flex;
-    margin-left: 17%;
-    margin-bottom: 20px;
+    justify-content: center;
+}
+#stockInfo {
+    margin: 20px 0;
+    width: 90%;
+    height: auto;
+    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba( 255, 255, 255, 0.008 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #stockInfotxt {
@@ -214,8 +229,10 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 }
 
 #selicInfotxt {
-    display: block;
-    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 35%;
 }
 .stockInfoPrice {
     display: flex;
@@ -238,7 +255,12 @@ input[type="text"]:-webkit-autofill::-ms-fill {
 }
 /* Seus estilos existentes... */
 #stockSearch {
-    margin-left: 42%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    margin: 2vh 0;
 }
 .recommendation-section {
     display: flex;
@@ -358,19 +380,25 @@ input[type="text"]:-webkit-autofill::-ms-fill {
     color: red;
 }
 
-svg {
+.svgstair {
     fill: var(--secondary-color);
+    width: 80%;
+    height: 80%;
+    max-width: 200px;
+    max-height: 200px;
+}
+@media screen and (max-width: 800px) {
+    .stockSearch {
+        flex-direction: column !important;
+    }
 }
 
+
 #stockImg {
-    width: 170px;
-    height: 169px;
+    width: auto;
     display: flex;
     flex-shrink: 0;
-    margin: 3%;
-    padding-top: 4px;
-    padding-left: 4px;
-    margin-left: 65px;
+
     /* margin-left: 10%; */
     /* border-radius: 10px;
     border: 1px solid var(--secondary-color); */
@@ -381,7 +409,8 @@ svg {
     transform: scale(0.7);
 }
 #stockSearchAc {
-    margin-left: 4%;
+    display: flex;
+    align-items: center;
 }
 
 /* CSS para fazer o svg ocupar todo o espaço da div */
