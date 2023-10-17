@@ -8,9 +8,6 @@ use App\Models\User;
 use App\Models\Test;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-
-
 
 class UserController extends Controller
 {
@@ -62,32 +59,6 @@ class UserController extends Controller
             'birth_time' => $request->input('newbirth_time'),
             'updated_at' => Carbon::now('America/Sao_Paulo'),
         ]);
-
-        $user = Auth::user();
-        $userId = $user->id;
-        $name = User::where('id', $userId)->value('username');
-        $email = User::where('id', $userId)->value('email');
-        $birthtime = User::where('id', $userId)->value('birth_time');
-        $gender = User::where('id', $userId)->value('gender');
-        $perfil_investidor = '';
-
-        $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
-        $investor = null;
-
-        if ($latestTest) {
-            $investor = $latestTest->investor_id;
-        }
-
-        if ($investor == 1) {
-            $perfil_investidor = 'Conservador';
-        } elseif ($investor == 2) {
-            $perfil_investidor = 'Moderado';
-        } elseif ($investor == 3) {
-            $perfil_investidor = 'Agressivo';
-        } else {
-            $perfil_investidor = 'Não possui perfil investidor';
-        }
-
         return redirect()->route('profile');
 
     }
@@ -148,5 +119,6 @@ class UserController extends Controller
         }
 
         return view('pages.typeinvestor', compact('typeCamps'));
+
     }
 }
