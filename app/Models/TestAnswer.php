@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TestAnswer extends Model
 {
     use HasFactory;
+    protected $table = 'tests_answers'; // Nome correto da tabela na migração
+
 }

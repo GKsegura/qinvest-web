@@ -74,7 +74,7 @@
                     </p>
                     <p class="p-space"> Acompanhar a economia é de extrema importância. Não é necessário ter um entendimento aprimorado sobre as oscilações de taxas, mas buscar entender o contexto atual da economia do país já é um grande começo!
                     </p>
-                    <p>Para saber mais sobre a escolha de um bom investimento, responda o questionário e descubra seu <a href="../perfil">perfil investidor</a>.</p>
+                    <p>Para saber mais sobre a escolha de um bom investimento, responda o questionário e descubra seu <a href="../formulary">perfil investidor</a>.</p>
                     <!-- Inserir imagem se necessário -->
                 </div>
 
