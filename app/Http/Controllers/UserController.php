@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Test;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class UserController extends Controller
@@ -27,17 +31,65 @@ class UserController extends Controller
             $investor = $latestTest->investor_id;
         }
 
-        if ($investor == 2) {
+        if ($investor == 1) {
             $perfil_investidor = 'Conservador';
-        } elseif ($investor == 3) {
+        } elseif ($investor == 2) {
             $perfil_investidor = 'Moderado';
-        } elseif ($investor == 4) {
+        } elseif ($investor == 3) {
             $perfil_investidor = 'Agressivo';
         } else {
             $perfil_investidor = 'Não possui perfil investidor';
         }
 
         return view('pages.userprofile', compact('user', 'latestTest', 'perfil_investidor'));
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'newemail' => 'required|email',
+            'newname' => 'required',
+            'newbirth_time' => 'required|date',
+            'newgender' => 'required|in:male,female,other',
+        ]);
+
+        DB::table('users')->where('id', $user->id)->update([
+            'username' => $request->input('newname'),
+            'email' => $request->input('newemail'),
+            'gender' => $request->input('newgender'),
+            'birth_time' => $request->input('newbirth_time'),
+            'updated_at' => Carbon::now('America/Sao_Paulo'),
+        ]);
+
+        $user = Auth::user();
+        $userId = $user->id;
+        $name = User::where('id', $userId)->value('username');
+        $email = User::where('id', $userId)->value('email');
+        $birthtime = User::where('id', $userId)->value('birth_time');
+        $gender = User::where('id', $userId)->value('gender');
+        $perfil_investidor = '';
+
+        $latestTest = Test::where('user_id', $userId)->latest('created_at')->first();
+        $investor = null;
+
+        if ($latestTest) {
+            $investor = $latestTest->investor_id;
+        }
+
+        if ($investor == 1) {
+            $perfil_investidor = 'Conservador';
+        } elseif ($investor == 2) {
+            $perfil_investidor = 'Moderado';
+        } elseif ($investor == 3) {
+            $perfil_investidor = 'Agressivo';
+        } else {
+            $perfil_investidor = 'Não possui perfil investidor';
+        }
+
+        return redirect()->route('profile');
+
     }
 
     public function viewProfileType()
