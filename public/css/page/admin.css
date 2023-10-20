@@ -1,0 +1,26 @@
+@import url(../layout/app.css);
+
+.user-data {
+    display: flex;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0 10vh 0;
+}
+
+.charts-two,
+.charts-one {
+    display: flex; /* Use flexbox para alinhar os gráficos em uma única linha */
+    justify-content: center;
+    padding: 0;
+    gap: 30%;
+}
+.chart {
+    max-width: 50vh;
+    max-height: 50vh;
+}
