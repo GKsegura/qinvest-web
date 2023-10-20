@@ -39,7 +39,11 @@
             </div>
         </div>
         <a href="#description"><i class="bi bi-arrow-up"></i></a>
-
-
+        <p>{{$typeCamps['recommended-1']}}</p>
+        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
+        <p>{{$typeCamps['recommended-2']}}</p>
+        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
+        <p>{{$typeCamps['recommended-3']}}</p>
+        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
     </div>
 </x-layout.head>
