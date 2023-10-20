@@ -67,7 +67,7 @@
 .button-div{
     width: 60%;
     margin-left: 20%;
-    bottom: 0;
+  
 }
 
 .menu{
@@ -78,7 +78,6 @@
 .button-container {
     justify-content: center;
     display: flex;
-    bottom: 0;/* Define a distância a partir da parte inferior da página */ 
     z-index: 1; 
     width: 100%;
 }

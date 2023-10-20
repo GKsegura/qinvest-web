@@ -28,21 +28,32 @@
                     Conseguir uma renda extra ou mudar completamente sua vida. </p>
                 </p>
                 <p class="h3" id="alter">
-                    Aprenda a investir com a QINVEST◢
+                    Confira os planos QINVEST◢:
                 </p>
-                <div class="icon-home">
 
+                <div class="plan-mother">
+                    <div class="plan" id="basic">
+                        <div class="plan-name" id="basic">
+                            <p>Basic◢</p>
+                        </div>
+                        <div class="plan-content" id="basic">
+                        </div>
+                    </div>
+                    <div class="plan" id="advanced">
+                        <div class="plan-name" id="advanced">
+                        <p>Advanced◢</p>
+                        </div>
+                        <div class="plan-content" id="advanced">
+                        </div>
+                    </div>
+                      <div class="plan" id="unlimited">
+                            <div class="plan-name" id="unlimited">
+                            <p>Unlimited◢</p>
+                            </div>
+                            <div class="plan-content" id="unlimited">
+                        </div>
+                    </div>
                 </div>
-                <div class="icon-home">
-
-                </div>
-                <div class="icon-home">
-
-                </div>
-                <div class="icon-home">
-
-                </div>
-
             </div>
 
         </div>
