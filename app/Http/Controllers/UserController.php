@@ -61,7 +61,13 @@ class UserController extends Controller
                 frutos do longo prazo. A sua paciência é a sua melhor qualidade, por isso o retorno deve
                 ser calculado desde o início.",
                 "background" => "background-conservador",
-                "paragraph" => "paragraph-conservador"
+                "paragraph" => "paragraph-conservador",
+                "recommended-1"=> "Certificado de Depósito Bancário (CDB)",
+                "recommended-1-url"=>"",
+                "recommended-2"=>"Tesouro Nacional",
+                "recommended-1-url"=>"",
+                "recommended-3"=>"LCI & LCA",
+                "recommended-3-url"=>""
             ];
         } elseif ($investor == 2) {
             $typeCamps = [
@@ -76,7 +82,13 @@ class UserController extends Controller
                 "info-paragraph-2" => "Assim como a borboleta, você aproveita as correntes e variações, analisando o melhor 
                 caminho para se suceder no mercado financeiro, seja ele de longo ou curto prazo.",
                 "background" => "background-moderado",
-                "paragraph" => "paragraph-moderado"
+                "paragraph" => "paragraph-moderado",
+                "recommended-1"=> "Debêntures",
+                "recommended-1-url"=>"",
+                "recommended-2"=>"Tesouro Nacional",
+                "recommended-1-url"=>"",
+                "recommended-3"=>"Certificado de Depósito Bancário (CDB)",
+                "recommended-3-url"=>""
             ];
         } elseif ($investor == 3) {
             $typeCamps = [
@@ -91,7 +103,13 @@ class UserController extends Controller
                 variáveis, focando seu escopo principalmente em empresas privadas, ações destas que
                 muitos consideram indomáveis.",
                 "background" => "background-agressivo",
-                "paragraph" => "paragraph-agressivo"
+                "paragraph" => "paragraph-agressivo",
+                "recommended-1"=> "Ações de Mid Caps",
+                "recommended-1-url"=>"",
+                "recommended-2"=>"Cripto moedas",
+                "recommended-1-url"=>"",
+                "recommended-3"=>"Commodities",
+                "recommended-3-url"=>""
             ];
         }
 
