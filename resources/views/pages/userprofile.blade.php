@@ -9,7 +9,7 @@
 
                 <p>Perfil Investidor:</p>
 
-                <a href="/typeinvestor" class="header-link nav-link"><i>{{ $perfil_investidor }}</i></a>
+                <a href="/typeinvestor" class="header-link nav-link">Mais informações: <i>{{ $perfil_investidor }}</i></a>
 
 
                 @if ($perfil_investidor === "Não possui perfil investidor")
