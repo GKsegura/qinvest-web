@@ -1,15 +1,15 @@
     @vite(['resources/lib/alpine.js'])
 
     <script>
-function validarFormulario() {
-    for (let i = 1; i <= 6; i++) {
-        if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
-            alert(`Por favor, responda à pergunta ${i}.`);
-            return false;
+        function validarFormulario() {
+            for (let i = 1; i <= 6; i++) {
+                if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
+                    alert(`Por favor, responda à pergunta ${i}.`);
+                    return false;
+                }
+            }
+            return true;
         }
-    }
-    return true;
-}
     </script>
 
     <div class="formulary-page">
@@ -41,8 +41,7 @@ function validarFormulario() {
                             @endforeach
                         </div>
 
-                        <button class="step-button" @click.prevent="question = 2 "><i
-                                class="bi bi-arrow-right"></i></button>
+                        <button class="step-button" @click.prevent="question = 2 "><i class="bi bi-arrow-right"></i></button>
 
                     </div>
                 </div>
@@ -59,8 +58,7 @@ function validarFormulario() {
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 1"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 3 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 3 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -77,8 +75,7 @@ function validarFormulario() {
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 2"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 4 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 4 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                         <!-- <button type="submit">Enviar</button> -->
                     </div>
@@ -96,8 +93,7 @@ function validarFormulario() {
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 3"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 5 "><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 5 "><i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -114,8 +110,7 @@ function validarFormulario() {
                         </div>
                         <div class="question-controller">
                             <button class="step-button" @click.prevent="question = 4"><i class="bi bi-arrow-left"></i>
-                                <button class="step-button" @click.prevent="question = 6"><i
-                                        class="bi bi-arrow-right"></i></button>
+                                <button class="step-button" @click.prevent="question = 6"><i class="bi bi-arrow-right"></i></button>
                         </div>
                         <!-- <button type="submit">Enviar</button> -->
                     </div>
@@ -133,10 +128,8 @@ function validarFormulario() {
                         </div>
                         <div class="question-controller">
 
-                            <button class="step-button" @click.prevent="question = 5"><i
-                                    class="bi bi-arrow-left"></i></button>
-                            <button class="step-button" @click.prevent="question = 7"><i
-                                    class="bi bi-arrow-right"></i></button>
+                            <button class="step-button" @click.prevent="question = 5"><i class="bi bi-arrow-left"></i></button>
+                            <button class="step-button" @click.prevent="question = 7"><i class="bi bi-arrow-right"></i></button>
 
                         </div>
                     </div>
@@ -146,8 +139,7 @@ function validarFormulario() {
                         <div class="label-question">Ok, chegamos a um resultado.</div>
                         <p>Visualizar resultado!</p>
                         <div class="question-controller">
-                            <button class="step-button" @click.prevent="question = 6"><i
-                                    class="bi bi-arrow-left"></i></button>
+                            <button class="step-button" @click.prevent="question = 6"><i class="bi bi-arrow-left"></i></button>
 
 
                             <input type="hidden" name="user_id" value="{{ Auth::id() }}">

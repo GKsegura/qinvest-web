@@ -10,7 +10,6 @@ use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-  
     public function showLoginForm()
     {
         return view('auth.page.login');
