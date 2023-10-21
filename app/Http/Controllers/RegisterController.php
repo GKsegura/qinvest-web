@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Carbon;
-use App\Notifications\RegistrationSuccessNotification;
 use App\Http\Requests\RegisterRequest;
+use Illuminate\Database\QueryException;
+
 
 
 
@@ -29,9 +27,6 @@ class RegisterController extends Controller
         $validated = $request->validated();
         $fullname = $validated['firstname'] . ' ' . $validated['surname'];
 
-        // if ($request->fails()) {
-        //     return Redirect::back()->withErrors($validated)->withInput();
-        // }        // Execute o INSERT na tabela de usuários
         try {
             DB::table('users')->insert([
                 'email' => $validated['email'],
@@ -45,10 +40,20 @@ class RegisterController extends Controller
                 'created_at' => Carbon::now('America/Sao_Paulo'),
                 'updated_at' => null
             ]);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-            echo "<script type = 'text/javascript'>alert ('Erro no SQL')</script>";
+        } catch (QueryException $e) {
+            $errorCode = $e->getMessage();
+            $errorRegex = "/SQLSTATE\[23505\]: Unique violation/";
+    
+            if (preg_match($errorRegex, $errorCode)) {
+                $errorMessage = 'O email já cadastrado.';
+            } else {
+                $errorMessage = 'Ocorreu um erro. Tente novamente mais tarde.';
+                dd($errorCode); // Handle other exceptions
+            }
+    
+            return view('auth.page.register')->with('errorMessage', $errorMessage);
         }
+
         // Redirecione para uma página de sucesso ou exiba uma mensagem
         return redirect()->route('index', 'Registro concluído com sucesso!');
     }

@@ -26,7 +26,7 @@ const createCharts = (data, tickers) => {
 
     const stockTitle = document.getElementById("stockTitle");
     stockTitle.textContent = `${tickers.toUpperCase()}`;
-
+    
     const historicalData = data.results[0].historicalDataPrice;
     const dates = historicalData.map((stock) => new Date(stock.date * 1000));
     const closePrices = historicalData.map((stock) => stock.close);
@@ -154,7 +154,6 @@ const createCharts = (data, tickers) => {
         labels: dates,
     };
 
-    var currentDate = new Date();
 
     new Chart(ctxStock, {
         type: "line",

@@ -1,55 +1,66 @@
+@vite(['resources/js/profile.js'])
 <x-layout.head>
-    @vite(['resources/utils/alpine.js'])
-    @if (session('success')) <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-    @endif
-
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-    @endif
-
-    <div class="page">
-        <div class="user-data">
+    <div class="content">
+        <div class="square">
             <h1>Seu perfil:</h1>
 
-            <p>Perfil Investidor:</p>
-
-            <a href="/typeinvestor" class="header-link nav-link"><i>{{ $perfil_investidor }}</i></a>
-
+            <p id="profile-label">Perfil Investidor:</p>
+            <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
 
             @if ($perfil_investidor === "Não possui perfil investidor")
-            <p>Para ter um perfil investidor, é necessário responder o <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>
-
+                <p>Sem acesso à área de investimentos.</p>
+                <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
             @else
-            <p>Acha que mudou? <a href="/formulary" class="header-link nav-link"><i>Refazer teste</i></a></p>
+                <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
             @endif
 
-            <p> Email: <br>{{ $user->email }}</p>
+            <div id="profile-display">
+                <label>Email:</label>
+                <p>{{ $user->email }}</p>
 
-            <p>Nome: <br> {{ $user->username }}</p>
+                <label>Nome:</label>
+                <p>{{ $user->username }}</p>
 
-            <label> Data de Nascimento: <br> {{ \Carbon\Carbon::parse($user->birth_time)->format('d/m/Y') }}</label><br>
+                <label>Data de Nascimento:</label>
+                <p>{{ $user->birth_time }}</p>
 
-            <label> Gênero:
-                @if ($user->gender=="male")
-                {{"Masculino"}}
-                @elseif($user->gender==="female")
-                {{"Feminino"}}
-                @else
-                {{"Outro"}}
-                @endif
-            </label><br>
+                <label>Gênero:</label>
+                <p>
+                    @if ($user->gender == "male")
+                        Masculino
+                    @elseif ($user->gender == "female")
+                        Feminino
+                    @else
+                        Outro
+                    @endif
+                </p>
 
-            <label> Perfil Investidor: {{ $perfil_investidor }}</label><br>
+                <button id="edit-button">Editar Informações</button>
+            </div>
 
-            @if ($perfil_investidor == 'Não possui perfil investidor')
-                 <a href="/formulary" class="header-link nav-link">Descubra seu perfil investidor!</a>
-            @else
-                 <a href="/formulary" class="header-link nav-link">Recalcule seu perfil investidor!</a>
-            @endif     
+            <div id="edit-form" style="display: none;">
+                <form action="{{ route('update') }}" method="POST">
+                    @csrf
+
+                    <label>Email:</label>
+                    <input type="email" name="newemail" value="{{ $user->email }}" required><br>
+
+                    <label>Nome:</label>
+                    <input type="text" name="newname" value="{{ $user->username }}" required><br><br>
+
+                    <label for="newbirth_time">Data de Nascimento:</label>
+                    <input type="date" name="newbirth_time" value="{{ $user->birth_time }}" required><br><br>
+
+                    <label>Gênero:</label>
+                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}> Masculino
+                    <input type="radio" name="newgender" value="female" {{ $user->gender === 'female' ? 'checked' : '' }}> Feminino
+                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}> Outro<br><br>
+
+                    <button type="submit">Atualizar Informações</button>
+                </form>
+            </div>
         </div>
     </div>
+
+>>>>>>> 2d4bc3e83b1dba52a2098d240231bf69892a6964
 </x-layout.head>

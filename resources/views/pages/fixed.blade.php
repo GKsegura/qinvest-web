@@ -42,6 +42,7 @@
                     <h2>O que é investir?</h2>
                     <br>
                     <p class="p-space">Ao aplicar seu dinheiro, o investidor “empresta” o valor a uma instituição - já escolhida por ele - a qual devolve um documento, envolvendo informações como a rentabilidade, liquidez, tributações e prazos. Em troca, o investidor recebe uma remuneração condizente ao valor de seu “empréstimo”. Portanto, previamente, faz-se necessário conhecimentos acerca da empresa escolhida e os possíveis riscos atrelados a ela: chances de falência e desvalorizações. </p>
+                    <img id="cicle" src="\assets\cicloinvest.png" alt="penes">                
                 </div>
 
                 <div class="topic" id="topic2">
