@@ -7,12 +7,12 @@
         </div>
         <div class="header-nav">
             <a href="/" class="header-link nav-link">Home</a>
-            <a href="/education" class="header-link nav-link">Education</a>
-            <a href="/stock" class="header-link nav-link">Stocks</a>
-            <a href="/about" class="header-link nav-link">About Us</a>
+            <a href="/education" class="header-link nav-link">Educação</a>
+            <a href="/stock" class="header-link nav-link">Investimentos</a>
+            <a href="/about" class="header-link nav-link">Sobre nós</a>
             @auth
             @if (Auth::user()->email=="admin@qinvest.com")
-            <a href="/admin" class="header-link nav-link">Admin</a>
+            <a href="/admin" class="header-link nav-link">Admininastrô</a>
             @endif
             @endauth
         </div>
