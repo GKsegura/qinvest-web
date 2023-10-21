@@ -1,10 +1,4 @@
 <x-layout.app>
-
-    @auth
-    <script>
-    toastr.error('Você está logado!');
-    </script>
-    @endauth
     <div class="page-home">
         <img class="wave-svg" src="assets/waveBg.svg" alt="">
         <div class="homebox">

@@ -11,7 +11,8 @@
             <div class="field">
                 <label for="email" class="label-form">Email</label>
                 <input id="email" class="field-input form-control" type="email" name="email">
-                @if(isset($errorMessage)) <!-- Check if errorMessage is set -->
+                @if(isset($errorMessage))
+                <!-- Check if errorMessage is set -->
                 <div class="invalid-input">{{ $errorMessage }}</div> <!-- Display error message -->
                 @endif
             </div>
@@ -39,14 +40,11 @@
                     <i id="eye-icon-confirm-password" class="input-group-text bi bi-eye"></i>
                 </div>
                 <div class="invalid-input"> @error('password_confirmation'){{$message}}@enderror</div>
-
             </div>
 
             <div class="form-actions">
                 <button class="step-button" @click.prevent="step = 2 "><i class="bi bi-arrow-right"></i>
                 </button>
-
-
                 <div class="form-redirect d-inline-flex justify-content-center w-100">
                     <p class="mb-0">Já possui conta? <a href="/login"> Entre aqui!</a></p>
                 </div>
@@ -54,11 +52,7 @@
                 </a>
                 <a id="home" href="/">Voltar ao início</a>
             </div>
-
-
-
         </div>
-
         <div x-show="step === 2" class="row justify-content-center gap-4" x-transition:enter.opacity.duration.600ms>
 
             <div class="field-group">

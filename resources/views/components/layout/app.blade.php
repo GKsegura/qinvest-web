@@ -46,8 +46,13 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{{asset('js/formulary.js')}}"></script>]
+
+    <script src="{{asset('js/stick-header.js')}}"></script>
+
+    @if(Route::currentRouteName() === 'index')
     <script src="{{asset('js/script.js')}}"></script>
-    <script src="{{asset('js/formulary.js')}}"></script>
+    @endif
 </body>
 
 </html>
