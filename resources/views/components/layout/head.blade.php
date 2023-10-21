@@ -15,23 +15,21 @@
 
 <body>
 
-    <div class="layout">
-        @include('components.layout.header')
+    @include('components.layout.header')
 
-        <div class="page">
-            @if(Route::currentRouteName() === 'index')
-            <div class="page-home">
-                {{ $slot }}
-
-            </div>
-            @elseif(Route::currentRouteName() === 'education')
-            <div class="body-education-page">
-                {{ $slot }}
-            </div>
-            @else
+    <div class="page">
+        @if(Route::currentRouteName() === 'index')
+        <div class="page-home">
             {{ $slot }}
-            @endif
+
         </div>
+        @elseif(Route::currentRouteName() === 'education')
+        <div class="body-education-page">
+            {{ $slot }}
+        </div>
+        @else
+        {{ $slot }}
+        @endif
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>

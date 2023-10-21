@@ -32,18 +32,34 @@
 
         <a href="#definition"><i class="bi bi-arrow-down"></i></a>
         <div class="text">
-
             <div class="paragraph {{$typeCamps['paragraph']}}" id="definition">
                 <p>{{$typeCamps["info-paragraph-1"]}}</p>
                 <p>{{$typeCamps["info-paragraph-2"]}}</p>
             </div>
         </div>
+
+
+        <div class="recomendations">
+
+            <div class="double-recommendation">
+                <div class="recommended-1 {{$typeCamps['paragraph']}}">
+                    <p>{{$typeCamps['recommended-1']}}</p>
+                    <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
+                </div>
+
+                <div class="recommended-2 {{$typeCamps['paragraph']}}">
+                    <p>{{$typeCamps['recommended-2']}}</p>
+                    <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-2-url']}}">Veja mais ></a>
+                </div>
+            </div>
+
+            <div class="recommended-3 {{$typeCamps['paragraph']}}">
+                <p>{{$typeCamps['recommended-3']}}</p>
+                <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-3-url']}}">Veja mais ></a>
+            </div>
+        </div>
+
         <a href="#description"><i class="bi bi-arrow-up"></i></a>
-        <p>{{$typeCamps['recommended-1']}}</p>
-        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
-        <p>{{$typeCamps['recommended-2']}}</p>
-        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
-        <p>{{$typeCamps['recommended-3']}}</p>
-        <a href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
+
     </div>
 </x-layout.head>
