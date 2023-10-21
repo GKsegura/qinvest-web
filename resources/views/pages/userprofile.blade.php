@@ -11,7 +11,7 @@
             <p>Sem acesso à área de investimentos.</p>
             <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a><br>
             @else
-            <p class="remake-label">Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
+            <p class="retake-label">Acha que mudou? <a class="retake-test" href="/formulary"><i>Refazer teste</i></a></p>
             @endif
 
             <div id="profile-display">

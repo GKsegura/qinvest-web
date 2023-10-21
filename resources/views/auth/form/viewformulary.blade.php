@@ -26,8 +26,9 @@
 
         <form action="{{ route('formulary') }}" method="POST" onsubmit="return validarFormulario();">
             @csrf
-            <div x-data="{ question: 7 }"> <!-- mudar para 1-->
-                <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms>
+            <div x-data="{ question: 1 }"> <!-- mudar para 1-->
+            <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms id="question1">
+ 
                     <div class="formulary-card">
                         <div class="label-question">
                             <label>{{ $question1->text_question }} </label>

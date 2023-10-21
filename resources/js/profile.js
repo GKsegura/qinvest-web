@@ -27,4 +27,3 @@ document.addEventListener('DOMContentLoaded', function () {
         profileType.style.color = '#55C2FF';
     }
 });
-
