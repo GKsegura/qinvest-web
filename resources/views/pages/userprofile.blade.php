@@ -1,24 +1,18 @@
 @vite(['resources/js/profile.js'])
 <x-layout.head>
+    <div class="content">
+        <div class="square">
+            <h1>Seu perfil:</h1>
 
-    <form action="{{ route('update') }}" method="POST">
-        @csrf
+            <p id="profile-label">Perfil Investidor:</p>
+            <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
 
-        <div class="page">
-            <div class="user-data">
-                <h1>Seu perfil:</h1>
-
-                <p>Perfil Investidor:</p>
-
-                <a href="/typeinvestor" class="header-link nav-link"><i>{{ $perfil_investidor }}</i></a>
-
-
-                @if ($perfil_investidor === "Não possui perfil investidor")
-                <p>Para ter um perfil investidor, é necessário responder o <a href="/formulary" class="header-link nav-link"><i>questionário</i></a></p>
-
-                @else
-                <p>Acha que mudou? <a href="/formulary" class="header-link nav-link"><i>Refazer teste</i></a></p>
-                @endif
+            @if ($perfil_investidor === "Não possui perfil investidor")
+                <p>Sem acesso à área de investimentos.</p>
+                <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
+            @else
+                <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
+            @endif
 
             <div id="profile-display">
                 <label>Email:</label>
