@@ -1,12 +1,81 @@
 @import url(../layout/app.css);
 
-.user-data {
-    display: flex;
+/* .page {
     width: 100%;
-    height: 100%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-size: cover;
+    text-align: justify;
     display: flex;
-    align-items: center;
-    text-align: center;
+    min-height: 100vh;
     justify-content: center;
-    flex-direction: column;
+} */
+.content {
+    display: block;
+    font-family: helvetica;
+    font-size: 17px;
+}
+
+.square {
+    text-align: justify;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    padding-top: 1%;
+    width: 30%;
+}
+
+#profile-label {
+    margin-bottom: 0;
+}
+
+.content h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.content p{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.profile-type {
+
+    color: #9E63FF;
+    text-decoration: none;
+
+}
+
+.profile-type:hover {
+    color: #9E63FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-discover {
+
+    color: #9E63FF;
+    text-decoration: none;
+
+}
+
+.profile-discover:hover {
+    color: #9E63FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+.remake-test {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.remake-test:hover {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
 }
