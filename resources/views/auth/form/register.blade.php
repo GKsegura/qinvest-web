@@ -11,9 +11,11 @@
             <div class="field">
                 <label for="email" class="label-form">Email</label>
                 <input id="email" class="field-input form-control" type="email" name="email">
-                <div class="invalid-input"> @error('email'){{$message}}@enderror</div>
-
+                @if(isset($errorMessage)) <!-- Check if errorMessage is set -->
+                <div class="invalid-input">{{ $errorMessage }}</div> <!-- Display error message -->
+                @endif
             </div>
+
 
             <div class="field">
                 <label for="password" class="label-form">Senha</label>

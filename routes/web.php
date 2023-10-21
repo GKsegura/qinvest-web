@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvestmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'createForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'auth'])->name('register');
 
+Route::get('/investment', [InvestmentController::class, 'createForm'])->name('investment');
+Route::post('/investment', [InvestmentController::class, 'auth'])->name('investment');
+
+
 // Rotas da EXIBIÇÃO DO FORMULÁRIO
 Route::middleware(['auth'])->group(function () {
     Route::get('/formulary', [FormController::class, 'viewFormulary'])->name('formulary');
@@ -41,7 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/education', [PageController::class, 'education'])->name('education');
     Route::get('/education/variable', [PageController::class, 'variable'])->name('variable');
     Route::get('/education/fixed', [PageController::class, 'fixed'])->name('fixed');
-    Route::get('/stock', [PageController::class, 'stock'])->name('stock');
+    Route::get('/stock', [InvestmentController::class, 'viewInvestment'])->name('stock');
 });
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
