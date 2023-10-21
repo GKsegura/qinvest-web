@@ -70,3 +70,8 @@
 @if (Route::currentRouteName() === 'profile')
 <link href="{{ asset('css/page/userprofile.css') }}" rel="stylesheet">
 @endif
+
+<!-- admin -->
+@if (Route::currentRouteName() === 'admin')
+<link href="{{ asset('css/page/admin.css') }}" rel="stylesheet">
+@endif
