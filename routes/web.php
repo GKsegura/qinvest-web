@@ -52,4 +52,6 @@ Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
 Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');
+Route::post('/update', [UserController::class, 'update'])->name('update');
+
 Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');

@@ -55,7 +55,7 @@
                     <option value="5y">5 anos</option>
                 </select>
             </div>
-            <label class="label" id="recommendationLabel">Ações recomendadas de Setembro:</label>
+            <label class="label" id="recommendationLabel"></label>
             <br>
             <div class="recommendation-section">
                 @foreach ($recommendedInvestments as $investment)

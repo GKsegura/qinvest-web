@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Test;
-
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -38,6 +39,28 @@ class UserController extends Controller
         }
 
         return view('pages.userprofile', compact('user', 'latestTest', 'perfil_investidor'));
+    }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'newemail' => 'required|email',
+            'newname' => 'required',
+            'newbirth_time' => 'required|date',
+            'newgender' => 'required|in:male,female,other',
+        ]);
+
+        DB::table('users')->where('id', $user->id)->update([
+            'username' => $request->input('newname'),
+            'email' => $request->input('newemail'),
+            'gender' => $request->input('newgender'),
+            'birth_time' => $request->input('newbirth_time'),
+            'updated_at' => Carbon::now('America/Sao_Paulo'),
+        ]);
+        return redirect()->route('profile');
+
     }
 
     public function viewProfileType()
@@ -96,5 +119,6 @@ class UserController extends Controller
         }
 
         return view('pages.typeinvestor', compact('typeCamps'));
+
     }
 }
