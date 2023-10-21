@@ -261,7 +261,7 @@
                 <div class="topic" id="topic19">
                     <h2>Deseja aprender mais sobre investimentos?</h2>
                     <br>
-                    <p>Acesse o nosso curso sobre <a href="../education/variable"> renda variável </a> compreender melhor o mercado de ações.
+                    <p>Acesse o nosso curso sobre <a href="../variable"> renda variável </a> compreender melhor o mercado de ações.
 </p>
                     <!-- Inserir imagem se necessário -->
                 </div>

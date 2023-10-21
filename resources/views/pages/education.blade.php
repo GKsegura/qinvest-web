@@ -26,7 +26,7 @@
                     <h1>Começando do zero</h1>
                     <p>Perfeito para quem está começando <br>
                         A coletânea desde o início.</p>
-                    <button id="letsgo" data-url="./education/fixed">Vamos lá!</button>
+                    <button id="letsgo" data-url="./fixed">Vamos lá!</button>
                 </div>
 
             </div>
@@ -37,7 +37,7 @@
                 <div class="courseCard">
                         <h2 class="courseTitle" id="course-fixed">Curso: Renda Fixa</h2>
                         <h4 class="courseSubtitle" id="course-fixed">> Invista de maneira segura</h4>
-                        <button data-url="./education/fixed" class="courseContent" id="course-fixed">
+                        <button data-url="./fixed" class="courseContent" id="course-fixed">
                             <h4 class="contentTitle">O que é Investir?</h4>
                             <h5 class="contentSubtitle" id="course-fixed">1° Aula - conceitos básicos</h5>
                             <p class="contentText">Ao aplicar seu dinheiro, o investidor “empresta” o valor a uma instituição – já escolhida por ele - a qual devolve um documento, envolvendo informações como a rentabilidade, liquidez, tributações e prazos. Em troca, o investidor recebe uma remuneração condizente ao valor de seu “empréstimo”. Portanto, previamente, faz-se necessário conhecimentos acerca da empresa escolhida e os possíveis riscos atrelados a ela: chances de falência e desvalorizações </p>
@@ -46,7 +46,7 @@
                 <div class="courseCard">
                         <h2 class="courseTitle" id="course-variable">Guia: Renda Variável</h2>
                         <h4 class="courseSubtitle" id="course-variable">> Entre no mercado de ações.</h4>
-                        <button data-url="./education/variable" class="courseContent" id="course-variable">
+                        <button data-url="./variable" class="courseContent" id="course-variable">
                             <h4 class="contentTitle">O que é renda variável?</h4>
                             <h5 class="contentSubtitle" id="course-variable">Parte 1 - Saiba por onde começar</h5>
                             <p class="contentText">Renda variável se define como investimentos no qual o retorno e o preço de compra de ativos variam, isto é, não é definido por uma taxa fixa como a SELIC. Devido a esta variabilidade e incerteza dos preços a renda variável tem maior risco de perda, portanto, o formato de renda variável mais importante e no qual recomendamos que iniciantes comecem baseia-se no mercado de ações da bolsa.</p>
