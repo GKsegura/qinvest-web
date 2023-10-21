@@ -1,3 +1,3 @@
-<x-layout.auth>
+<x-layout.app>
     @include('auth.form.investments')
-</x-layout.auth>
+</x-layout.app>

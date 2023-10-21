@@ -50,7 +50,7 @@ class InvestmentController extends Controller
     {
         $recommendedInvestments = Investment::where('recomended', true)
         ->select('cod_investment', 'name_investment')
-        ->take(5)
+        // ->take()
         ->get();
         return view('pages.stock', ['recommendedInvestments' => $recommendedInvestments]);
     }

@@ -8,10 +8,10 @@
             <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
 
             @if ($perfil_investidor === "Não possui perfil investidor")
-                <p>Sem acesso à área de investimentos.</p>
-                <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
+            <p>Sem acesso à área de investimentos.</p>
+            <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
             @else
-                <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
+            <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
             @endif
 
             <div id="profile-display">
@@ -27,11 +27,11 @@
                 <label>Gênero:</label>
                 <p>
                     @if ($user->gender == "male")
-                        Masculino
+                    Masculino
                     @elseif ($user->gender == "female")
-                        Feminino
+                    Feminino
                     @else
-                        Outro
+                    Outro
                     @endif
                 </p>
 
@@ -52,15 +52,16 @@
                     <input type="date" name="newbirth_time" value="{{ $user->birth_time }}" required><br><br>
 
                     <label>Gênero:</label>
-                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}> Masculino
-                    <input type="radio" name="newgender" value="female" {{ $user->gender === 'female' ? 'checked' : '' }}> Feminino
-                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}> Outro<br><br>
+                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
+                    Masculino
+                    <input type="radio" name="newgender" value="female"
+                        {{ $user->gender === 'female' ? 'checked' : '' }}> Feminino
+                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
+                    Outro<br><br>
 
                     <button type="submit">Atualizar Informações</button>
                 </form>
             </div>
         </div>
     </div>
-
->>>>>>> 2d4bc3e83b1dba52a2098d240231bf69892a6964
 </x-layout.head>
