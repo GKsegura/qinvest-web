@@ -2,10 +2,17 @@
 
 
 .page {
-    padding-top: 10vh;
     width: 100%;
     color: var(--secondary-color);
     background-color: var(--primary-color);
     background-size: cover;
     margin: 0;
+}
+
+#head-page {
+    min-height: 100vh;
+}
+
+#app-page {
+    padding-top: 10vh;
 }

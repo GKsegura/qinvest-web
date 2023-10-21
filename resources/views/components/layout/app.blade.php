@@ -18,7 +18,7 @@
 <body>
 
     @include('components.layout.header')
-    <div class="page">
+    <div class="page" id="app-page">
 
         @if(Route::currentRouteName() === 'index')
         <div class="page-home">

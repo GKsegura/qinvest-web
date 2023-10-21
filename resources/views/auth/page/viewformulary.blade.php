@@ -1,3 +1,3 @@
-<x-layout.app>
+<x-layout.head>
     @include('auth.form.viewformulary')
-</x-layout.app>
+</x-layout.head>

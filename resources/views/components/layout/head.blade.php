@@ -14,28 +14,26 @@
 </head>
 
 <body>
-
     @include('components.layout.header')
-
-    <div class="page">
-        @if(Route::currentRouteName() === 'index')
-        <div class="page-home">
-            {{ $slot }}
-
-        </div>
-        @elseif(Route::currentRouteName() === 'education')
+    <div class="page" id="head-page">
+        @if(Route::currentRouteName() === 'education')
         <div class="body-education-page">
             {{ $slot }}
         </div>
+        @elseif(Route::currentRouteName() === 'formulary')
+        <div class="page-formulary">
+            {{ $slot }}
+        </div>
         @else
-        {{ $slot }}
+        <div id="app-page">
+            {{ $slot }}
+        </div>
         @endif
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{asset('js/script.js')}}"></script>
-
 </body>
 
 </html>
