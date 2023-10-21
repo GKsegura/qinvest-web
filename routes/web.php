@@ -44,8 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/formulary', [FormController::class, 'auth'])->name('formulary');
     Route::get('/typeinvestor', [UserController::class, 'viewProfileType'])->name('typeinvestor');
     Route::get('/education', [PageController::class, 'education'])->name('education');
-    Route::get('/education/variable', [PageController::class, 'variable'])->name('variable');
-    Route::get('/education/fixed', [PageController::class, 'fixed'])->name('fixed');
+    Route::get('/variable', [PageController::class, 'variable'])->name('variable');
+    Route::get('/fixed', [PageController::class, 'fixed'])->name('fixed');
     Route::get('/stock', [InvestmentController::class, 'viewInvestment'])->name('stock');
 });
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);

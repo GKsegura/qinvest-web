@@ -33,7 +33,7 @@
                     <h2>O que é renda variável?</h2>
                     <br>
                     <p class="p-space">
-                            A renda variável se define como investimentos no qual o retorno e o preço de compra de ativos variam, isto é, não é definido por uma taxa fixa como a <a href="../education/fixed">SELIC</a>. Devido a esta variabilidade e incerteza dos preços a renda variável tem maior risco de perda, portanto, o formato de renda variável mais importante e no qual recomendamos que iniciantes comecem baseia-se no mercado de ações da bolsa.
+                            A renda variável se define como investimentos no qual o retorno e o preço de compra de ativos variam, isto é, não é definido por uma taxa fixa como a <a href="../fixed">SELIC</a>. Devido a esta variabilidade e incerteza dos preços a renda variável tem maior risco de perda, portanto, o formato de renda variável mais importante e no qual recomendamos que iniciantes comecem baseia-se no mercado de ações da bolsa.
                     </p>
                 </div>
                 <div class="topic" id="topic2">
@@ -311,7 +311,7 @@
                     <p class="p-space">
                         A chave para o sucesso no mercado de ações é a educação contínua. Esteja sempre disposto a aprender e a se manter informado sobre o mercado financeiro. Leia livros, acompanhe notícias financeiras, assista a vídeos educacionais e participe de fóruns de investimento para trocar experiências com outros investidores.
                     </p>
-                    <p class="p-space">Caso queira aprender sobre investimentos com menos risco entre em nossa seção de <a href="../education/fixed"> renda fixa. </a></p>
+                    <p class="p-space">Caso queira aprender sobre investimentos com menos risco entre em nossa seção de <a href="../fixed"> renda fixa. </a></p>
                 </div>
 
             </div>

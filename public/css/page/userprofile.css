@@ -1,31 +1,70 @@
 @import url(../layout/app.css);
 
-/* .page {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    background-size: cover;
-    text-align: justify;
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-} */
 .content {
     display: block;
     font-family: helvetica;
     font-size: 17px;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
 }
 
+#edit-form{
+    display: none;
+}
+.update label{
+    font-family: helvetica;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.update input[type="text"]{
+    font-family: helvetica;
+    font-size: 17px;
+    text-decoration: none;
+    padding-left: 4px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    border-radius: 7px;
+}
+.update input[type="email"]{
+    font-family: helvetica;
+    font-size: 17px;
+    text-decoration: none;
+    padding-left: 4px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    border-radius: 7px;
+}
+.update input[type="date"]{
+    font-family: helvetica;
+    font-size: 17px;
+    text-decoration: none;
+    padding-left: 4px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    color: var(--secondary-color);
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+}
 .square {
     text-align: justify;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid var(--secondary-color);
     display: block;
     align-items: center;
     justify-content: center;
     padding: 5%;
     padding-top: 1%;
+    padding-bottom: 3%;
     width: 30%;
 }
 
@@ -38,10 +77,23 @@
     font-weight: bold;
     margin-bottom: 2rem;
 }
-
-.content p{
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+#edit-button {
+    border: 1px solid var(--secondary-color);
+    border-radius: 7px;
+    width: 42%;
+    padding: 3px;
+    padding-top: 2px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 2rem;
+    margin-left: 29%;
+}
+.profile-info{
+    font-weight: bold;
 }
 
 .profile-type {
@@ -52,7 +104,6 @@
 }
 
 .profile-type:hover {
-    color: #9E63FF;
     text-decoration: none;
     font-weight: bold;
 }
@@ -69,13 +120,31 @@
     text-decoration: none;
     font-weight: bold;
 }
-.remake-test {
+.retake-test {
     text-decoration: none;
     color: var(--secondary-color);
 }
 
-.remake-test:hover {
+.retake-test:hover {
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: bold;
+}
+
+.retake-label{
+margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+#qinvestLogoSmall {
+    width: 152px;
+    height: 34px;
+    margin-top: 2%;
+    fill: var(--secondary-color);
+    margin-bottom: 1%;
+    margin-right: 9%;
+}
+
+#profile-display{
+    margin-top: 1rem;
 }
