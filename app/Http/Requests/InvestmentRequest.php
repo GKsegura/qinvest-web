@@ -22,9 +22,8 @@ class InvestmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'cod_investment' => 'required|string|min:4|max:4',
+            'cod_investment' => 'required|string|min:5|max:5',
             'name_investment' => 'required|string|max:255',
-            'investor_id' => 'required|int',
         ];
     }
 
@@ -35,9 +34,6 @@ class InvestmentRequest extends FormRequest
 
             'name_investment.required' => 'Nome é um campo obrigatório',
             //'firstname.string' => 'Insira um nome válido',
-
-            'investor_id.required' => 'ID do invesidor é um campo obrigatório',
-            //'surname.string' => 'Insira um nome válido',
         ];
     }
 }

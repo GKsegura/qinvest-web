@@ -46,12 +46,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/education', [PageController::class, 'education'])->name('education');
     Route::get('/education/variable', [PageController::class, 'variable'])->name('variable');
     Route::get('/education/fixed', [PageController::class, 'fixed'])->name('fixed');
-    Route::get('/stock', [PageController::class, 'stock'])->name('stock');
+    Route::get('/stock', [InvestmentController::class, 'viewInvestment'])->name('stock');
 });
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 Route::get('/profile', [UserController::class, 'viewUser'])->name('profile');
 Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');
-
-
 Route::get('/admin', [AdminController::class, 'Statistics'])->name('admin');

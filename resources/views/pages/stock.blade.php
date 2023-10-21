@@ -58,22 +58,12 @@
             <label class="label" id="recommendationLabel">Ações recomendadas de Setembro:</label>
             <br>
             <div class="recommendation-section">
-                <button class="recommendation-card" type="submit" data-ticker="EGIE3">
-                    <h4>Engie</h4>
-
-                </button>
-                <button class="recommendation-card" type="submit" data-ticker="VALE3">
-                    <h4>Vale</h4>
-                </button>
-                <button class="recommendation-card" type="submit" data-ticker="BBAS3">
-                    <h4>Banco do Brasil</h4>
-                </button>
-                <button class="recommendation-card" type="submit" data-ticker="CPFE3">
-                    <h4>CPFL</h4>
-                </button>
-                <button class="recommendation-card" type="submit" data-ticker="ITUB4">
-                    <h4>Banco Itaú</h4>
-                </button>
+                @foreach ($recommendedInvestments as $investment)
+                    </button>
+                    <button class="recommendation-card" type="submit" data-ticker="{{ $investment->cod_investment }}">
+                        <h4>{{ $investment->name_investment }}</h4>
+                    </button>
+                @endforeach    
             </div>
         </form>
         <div id="stockDiv">

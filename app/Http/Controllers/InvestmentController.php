@@ -32,7 +32,6 @@ class InvestmentController extends Controller
                 DB::table('investments')->insert([
                     'cod_investment' => $validated['cod_investment'],
                     'name_investment' => $validated['name_investment'],
-                    'investor_id' => $validated['investor_id'],
                     'recomended' => $request->input('recomended'),
                 ]);
             } catch (\Exception $e) {
@@ -47,16 +46,12 @@ class InvestmentController extends Controller
             return redirect()->route('index');
         }   
     }
-
     public function viewInvestment()
     {
-        if (Auth::check() && Auth::user()-> email == 'admin@qinvest.com')
-        {
-            $investment = Investment::all();
-        }
-        else 
-        {
-            return redirect()->route('index');
-        }  
+        $recommendedInvestments = Investment::where('recomended', true)
+        ->select('cod_investment', 'name_investment')
+        ->take(5)
+        ->get();
+        return view('pages.stock', ['recommendedInvestments' => $recommendedInvestments]);
     }
 }

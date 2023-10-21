@@ -15,7 +15,7 @@
             <div class="user-data">
                 <div class="field">
                     <label for="email" class="label-form">Código do Investimento</label>
-                    <input id="email" class="field-input form-control" type="text" name="cod_investment" required minlength=4 maxlength=4>
+                    <input id="email" class="field-input form-control" type="text" name="cod_investment" required minlength=5 maxlength=5>
                     <div class="invalid-input"> @error('cod_investment'){{$message}}@enderror</div>
                 </div>
 
@@ -23,12 +23,6 @@
                     <label for="email" class="label-form">Nome do Investimento</label>
                     <input id="email" class="field-input form-control" type="text" name="name_investment" required>
                     <div class="invalid-input"> @error('name_investment'){{$message}}@enderror</div>
-                </div>
-
-                <div class="field">
-                    <label for="email" class="label-form">Id do Investidor</label>
-                    <input id="email" class="field-input form-control" type="number" name="investor_id" required max=9>
-                    <div class="invalid-input"> @error('investor_id'){{$message}}@enderror</div>
                 </div>
 
                 <div class=" text-start">
