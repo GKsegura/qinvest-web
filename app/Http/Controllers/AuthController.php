@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\LoginRequest;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-  
+
     public function showLoginForm()
     {
         return view('auth.page.login');
@@ -32,19 +33,5 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect()->route('index');
-    }
-
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    public function handleGoogleCallback()
-    {
-        $user = Socialite::driver('google')->user();
-
-        Auth::login($user);
-
-        return redirect()->route('index', 'Logado com sucesso');
     }
 }
