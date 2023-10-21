@@ -1,6 +1,7 @@
 @import url(../layout/app.css);
 
 .page-home {
+    transition: var(--transition);
     color: var(--primary-color);
     display: flex;
     flex-direction: column;
@@ -68,11 +69,13 @@
     justify-content: center;
 }
 
-.stair img {
+.stair svg {
     width: 100%;
     height: auto;
     max-width: 70vh;
     max-height: 70vh;
+    transition: var(--transition);
+    color: var(--secondary-color);
 }
 p {
     text-align: center;
@@ -97,7 +100,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15vh 0 15vh 0;
+    margin: 15vh 0 5vh 0;
     width: 70%;
 }
 
@@ -120,7 +123,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 3vh 0 5vh 0;
+    margin: 3vh 0 0 0;
     width: 90%;
 }
 
@@ -131,16 +134,13 @@ p {
     align-items: center;
     margin: 0vh 2vh;
     width: 30%;
-    height: 40vh;
+    height: 60vh;
     border-radius: 10px;
 }
 
-#basic.plan
-{
-}
 #advanced.plan
 {
-    box-shadow: 0 8px 32px 0 rgba(85, 31, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 130, 0.37);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
 
@@ -148,7 +148,7 @@ p {
 }
 #unlimited.plan
 {
-    box-shadow: 0 8px 32px 0 rgba(214, 122, 16, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(135, 16, 214, 0.37);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
 
@@ -163,19 +163,29 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+    
+    
 }
-p.plan-name
+.plan-name p
 {
-    margin-bottom: 0 !important    ;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
 }
+
 .plan-content
 {
+
     width: 100%;
-    height: 80vh;
+    height: 120vh;
     border-radius: 0 0 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #basic.plan-content
 {
@@ -187,16 +197,111 @@ p.plan-name
 }
 #unlimited.plan-content
 {
-    border: 1px solid rgba(182, 103, 13, 0.397);
+    border: 1px solid rgba(129, 11, 197, 0.397);
 }
 
 #basic.plan-name{
-    background-color: #536ebd;
+    background-color: #6e7fb3;
 }
 
 #advanced.plan-name{
-    background-color: #861aea;
+    background-color: #ba1aea;
 }
 #unlimited.plan-name{
-    background-color: #d67a10;
+    background: rgb(70,10,189);
+    background: linear-gradient(35deg, rgba(70,10,189,1) 0%, rgba(119,0,255,1) 100%);
+}
+#benefits
+{
+
+    margin: 1vh 0 1vh 0;
+    font-size: 0.75em;
+    color: var(--secondary-color);
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+.svg-plan  
+{
+    height: 20%;
+    color: white;
+    margin-top: 10px;
+}
+#plan-items
+{
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--secondary-color);
+    font-size: 23px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.plan-list
+{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+.plan-subs
+{
+    margin: 0;
+    padding: 0;
+
+    height: 4vh;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-self: baseline;
+}
+.plan-subs p
+{
+
+    margin: 0;
+    padding: 0;
+    color: var(--secondary-color);
+    font-size: 20px;
+    height: 4vh;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 10px;
+}
+.plan-subs#unlimited p
+{
+    background-color: rgba(70,10,189,1);
+    color: white;
+}
+.plan-subs#advanced p
+{
+    background-color: #ba1aea;
+    color: white;
+}
+.plan-subs#basic p
+{
+    background-color: #6e7fb3;
+    color:white;
+}
+
+.plan-subs:hover p
+{
+    transition: var(--transition);
+    background-color: var(--secondary-color)!important;
+    color: var(--primary-color)!important;
+    cursor: pointer;
+}
+
+.svg-icon-stair
+{
+    color: var(--secondary-color) !important;
+    height: 5vh;
+    margin: 0 0 5vh 0;
 }
