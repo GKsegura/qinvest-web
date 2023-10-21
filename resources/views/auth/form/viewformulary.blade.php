@@ -25,7 +25,7 @@ function validarFormulario() {
 
     <form action="{{ route('formulary') }}" method="POST" onsubmit="return validarFormulario();">
         @csrf
-        <div x-data="{ question: 1 }">
+        <div x-data="{ question: 7 }">
             <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms>
                 <div class="formulary-card">
                     <div class="label-question">
@@ -204,18 +204,17 @@ function validarFormulario() {
                 </div>
             </div>
             <div x-show=" question === 7" x-transition:enter.opacity.duration.600ms>
-                <div class="formulary-card">
+                <div class="result-card">
                     <div class="label-question">Ok, chegamos a um resultado.</div>
-                    <p>Visualizar resultado!</p>
+
+
                     <div class="question-controller">
                         <button class="step-button" @click.prevent="question = 6"><i
                                 class="bi bi-arrow-left"></i></button>
 
-
                         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
 
-                        <button class="step-button" type="submit">Enviar</button>
-                        fazer toaster
+                        <button class="step-button" id="submit-formulary" type="submit">Visualizar!</button>
                     </div>
                 </div>
             </div>
