@@ -3,14 +3,11 @@
     <div class="content">
         <div class="square">
             <h1>Seu perfil:</h1>
-
-            <p id="profile-label">Perfil Investidor:</p>
-            <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
-
             @if ($perfil_investidor === "Não possui perfil investidor")
-            <p>Sem acesso à área de investimentos.</p>
             <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
             @else
+            <p id="profile-label">Perfil Investidor:</p>
+            <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
             <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
             @endif
 
