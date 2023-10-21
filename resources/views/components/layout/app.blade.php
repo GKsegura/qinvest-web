@@ -18,26 +18,26 @@
 <body>
 
     @include('components.layout.header')
+    <div class="page" id="app-page">
 
-    @if(Route::currentRouteName() === 'index')
-    <div class="page page-home">
-        {{ $slot }}
+        @if(Route::currentRouteName() === 'index')
+        <div class="page-home">
+            {{ $slot }}
 
-    </div>
-    @elseif(Route::currentRouteName() === 'education')
-    <div class="page page-education">
-        {{ $slot }}
-    </div>
+        </div>
+        @elseif(Route::currentRouteName() === 'education')
+        <div class="page-education">
+            {{ $slot }}
+        </div>
 
-    @elseif(Route::currentRouteName() === 'formulary')
-    <div class="page  formulary-page">
+        @elseif(Route::currentRouteName() === 'formulary')
+        <div class=" formulary-page">
+            {{ $slot }}
+        </div>
+        @else
         {{ $slot }}
+        @endif
     </div>
-    @else
-    <div class="page">
-        {{ $slot }}
-    </div>
-    @endif
 
 
     @include('components.layout.footer')

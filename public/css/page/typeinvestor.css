@@ -6,16 +6,7 @@
     --moderado: #9e63ff;
 }
 
-.page {
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+
 
 .type {
     width: 100%;
@@ -114,15 +105,43 @@ h1 span {
 }
 
 .description {
-    width: 40%;
     text-align: justify !important;
     padding: 2%;
 }
 
+ .paragraph, .description {
+    width: 700px;
+}
+
+.recomendations {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.recommended-1, .recommended-2 {
+    width: 50%;
+}
+
+.recommended-1, .recommended-2, .recommended-3 {
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+.double-recommendation{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
 .paragraph {
     padding: 2%;
-    width: 40%;
-    height: 10%;
     border-radius: 10px;
 }
 
@@ -135,7 +154,7 @@ h1 span {
 }
 
 .paragraph-conservador {
-    border: 1px solid var(--conservador);
+    border: 1px solid var(--conservador);    
 }
 
 .paragraph-moderado {
@@ -145,6 +164,21 @@ h1 span {
 .paragraph-agressivo {
     border: 1px solid var(--agressivo);
 }
+
+.link-conservador {
+   color: var(--conservador);
+   text-decoration: none;
+
+}
+
+.link-moderado {
+   color: var(--moderado);
+}
+
+.link-agressivo {
+   color: var(--agressivo);
+}
+
 
 .type h2 {
     font-family: Helvetica;

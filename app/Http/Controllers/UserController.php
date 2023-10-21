@@ -85,10 +85,11 @@ class UserController extends Controller
                 ser calculado desde o início.",
                 "background" => "background-conservador",
                 "paragraph" => "paragraph-conservador",
+                "link" => "link-conservador",
                 "recommended-1"=> "Certificado de Depósito Bancário (CDB)",
                 "recommended-1-url"=>"",
                 "recommended-2"=>"Tesouro Nacional",
-                "recommended-1-url"=>"",
+                "recommended-2-url"=>"",
                 "recommended-3"=>"LCI & LCA",
                 "recommended-3-url"=>""
             ];
@@ -106,10 +107,11 @@ class UserController extends Controller
                 caminho para se suceder no mercado financeiro, seja ele de longo ou curto prazo.",
                 "background" => "background-moderado",
                 "paragraph" => "paragraph-moderado",
+                "link" => "link-moderado",
                 "recommended-1"=> "Debêntures",
                 "recommended-1-url"=>"",
                 "recommended-2"=>"Tesouro Nacional",
-                "recommended-1-url"=>"",
+                "recommended-2-url"=>"",
                 "recommended-3"=>"Certificado de Depósito Bancário (CDB)",
                 "recommended-3-url"=>""
             ];
@@ -127,12 +129,13 @@ class UserController extends Controller
                 muitos consideram indomáveis.",
                 "background" => "background-agressivo",
                 "paragraph" => "paragraph-agressivo",
+                "link" => "link-agressivo",
                 "recommended-1"=> "Ações de Mid Caps",
-                "recommended-1-url"=>"",
+                "recommended-1-url"=>"/",
                 "recommended-2"=>"Cripto moedas",
-                "recommended-1-url"=>"",
+                "recommended-2-url"=>"/",
                 "recommended-3"=>"Commodities",
-                    "recommended-3-url"=>""
+                "recommended-3-url"=>"/"
             ];
         }
 

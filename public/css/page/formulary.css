@@ -13,9 +13,9 @@ form {
 .fieldgroup {
     width: 70%;
 }
-.formulary-page {
+.page-formulary {
     width: 100%;
-    height: 100%;
+    min-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +32,7 @@ form {
     border-radius: 10px;
     border: 1px solid var(--secondary-color);
     width: 1028px;
+    height: 480px;
 }
 
 .bi-arrow-right,
@@ -43,7 +44,6 @@ form {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
@@ -64,4 +64,12 @@ form {
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+
+.question-row {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
 }
