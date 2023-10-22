@@ -1,12 +1,24 @@
 <x-layout.app>
     <div class="page-home">
-        <img class="wave-svg" src="assets/waveBg.svg" alt="">
-        <div class="homebox">
-            <div class="text-image-ladder">
-                <p class="h1">Investimento simples e direto</p>
-                <p class="m-0 p-0">QINVEST◢ pode ser a solução para você mudar seu destino.</p>
-                <p>Crie sua conta gratuitamente e comece a participar dessa comunidade</p>
-            </div>
+
+        <svg class="wave-svg" viewBox="0 0 1425 737" preserveAspectRatio="none" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path id="wave-path" fill-rule="evenodd" clip-rule="evenodd" d="M-15 737C-15 737 293.277 
+        625.263 493.292 621.899C693.306 618.535 797.106 709.304 972.909 686.284C1148.71 
+        663.263 1426 533.038 1426 533.038V-100H-15V737Z" fill="url(#paint0_linear_4_1903)" />
+            <defs>
+                <linearGradient id="paint0_linear_4_1903" x1="705.5" y1="-100" x2="705.5" y2="737"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#DB33F7" />
+                    <stop offset="1" stop-color="#3860EC" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="section-header-page" id="section-header-page-text">
+            <h1 class="section-title">Investimento simples e direto</h1>
+            <p class="m-0 p-0">QINVEST◢ pode ser a solução para você mudar seu destino.</p>
+            <p>Crie sua conta gratuitamente e comece a participar dessa comunidade</p>
             <div class="buttons-home">
                 <button id="login">Entrar</button>
                 <button id="register">Criar Conta</button>
@@ -164,166 +176,150 @@
                 </svg>
 
             </div>
-            <div class="feature">
-                <p class="h3" id="alter">
-                    Do básico ao avançado:
-                </p>
-                <p class="h1" id="alter">
-                    Conseguir uma renda extra ou mudar completamente sua vida. </p>
-                </p>
-                <p class="h3" id="alter">
-                    Confira os planos QINVEST◢:
-                </p>
-                <div class="plan-mother">
-                    <div class="plan" id="basic">
-                        <div class="plan-name" id="basic"><svg class="svg-plan" width="199" height="38"
-                                viewBox="0 0 199 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
-                                    fill="currentColor" />
-                            </svg>
-                            <p> Basic◢</p>
-                        </div>
-                        <div class="plan-content" id="basic">
-                            <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
-                            <div class="plan-list">
-                                <p id="plan-items">> Descubra seu perfil investidor</p>
-                                <p id="plan-items">> Acesso limitado aos cursos e guias</p>
-                                <p id="plan-items">> 5 Tokens para área de investimentos.</p>
-                            </div>
-                            <div id="basic" class="plan-subs">
-                                <p>Inscreva-se</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plan" id="advanced">
-                        <div class="plan-name" id="advanced"><svg class="svg-plan" width="199" height="38"
-                                viewBox="0 0 199 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
-                                    fill="currentColor" />
-                            </svg>
-                            <p> Advanced◢</p>
-                        </div>
-                        <div class="plan-content" id="advanced">
-                            <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
-                            <div class="plan-list">
-                                <p id="plan-items">> Acesso a todos os cursos básicos, atuais e futuros.</p>
-                                <p id="plan-items">> 150 tokens mensais para área de investimentos.</p>
-                                <p id="plan-items">> Possibilidade de refazer o teste de perfil investidor.</p>
-                            </div>
-                            <div id="advanced" class="plan-subs">
-                                <p>Inscreva-se</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plan" id="unlimited">
-                        <div class="plan-name" id="unlimited"><svg class="svg-plan" width="199" height="38"
-                                viewBox="0 0 199 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
-                                    fill="currentColor" />
-                                <path
-                                    d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
-                                    fill="currentColor" />
-                            </svg>
-                            <p> Unlimited◢</p>
-                        </div>
-                        <div class="plan-content" id="unlimited">
-                            <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
-                            <div class="plan-list">
-                                <p id="plan-items">> Todos os benefícios anteriores.</p>
-                                <p id="plan-items">> Acesso total a área educacional.</p>
-                                <p id="plan-items">> Acesso a guias de análise de gráficos, análise de mercado e outros
-                                    cursos avançados</p>
-                                <p id="plan-items">> Tokens ilimitados para área de investimento.</p>
-                            </div>
-                            <div id="unlimited" class="plan-subs">
-                                <p>Inscreva-se</p>
-                            </div>
-                        </div>
-                    </div>
+        </div>
 
+        <div class="feature">
+            <p class="h3" id="alter">
+                Do básico ao avançado:
+            </p>
+            <p class="h1" id="alter">
+                Conseguir uma renda extra ou mudar completamente sua vida. </p>
+            </p>
+            <p class="h3" id="alter">
+                Confira os planos QINVEST◢:
+            </p>
+            <div class="plan-mother">
+                <div class="plan" id="basic">
+                    <div class="plan-name" id="basic"><svg class="svg-plan" width="199" height="38" viewBox="0 0 199 38"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
+                                fill="currentColor" />
+                            <path d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
+                                fill="currentColor" />
+                            <path
+                                d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
+                                fill="currentColor" />
+                            <path
+                                d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
+                                fill="currentColor" />
+                        </svg>
+                        <p> Basic◢</p>
+                    </div>
+                    <div class="plan-content" id="basic">
+                        <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
+                        <div class="plan-list">
+                            <p id="plan-items">> Descubra seu perfil investidor</p>
+                            <p id="plan-items">> Acesso limitado aos cursos e guias</p>
+                            <p id="plan-items">> 5 Tokens para área de investimentos.</p>
+                        </div>
+                        <div id="basic" class="plan-subs">
+                            <p>Inscreva-se</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="plan" id="advanced">
+                    <div class="plan-name" id="advanced"><svg class="svg-plan" width="199" height="38"
+                            viewBox="0 0 199 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
+                                fill="currentColor" />
+                            <path d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
+                                fill="currentColor" />
+                            <path
+                                d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
+                                fill="currentColor" />
+                            <path
+                                d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
+                                fill="currentColor" />
+                        </svg>
+                        <p> Advanced◢</p>
+                    </div>
+                    <div class="plan-content" id="advanced">
+                        <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
+                        <div class="plan-list">
+                            <p id="plan-items">> Acesso a todos os cursos básicos, atuais e futuros.</p>
+                            <p id="plan-items">> 150 tokens mensais para área de investimentos.</p>
+                            <p id="plan-items">> Possibilidade de refazer o teste de perfil investidor.</p>
+                        </div>
+                        <div id="advanced" class="plan-subs">
+                            <p>Inscreva-se</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan" id="unlimited">
+                    <div class="plan-name" id="unlimited"><svg class="svg-plan" width="199" height="38"
+                            viewBox="0 0 199 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.7471 27.8518H9.75066L6.84316 24.9609V9.48177C6.84316 7.88033 8.14059 6.58997 9.75066 6.58997H12.7471L15.6546 9.48177V24.9609C15.6546 26.5624 14.3572 27.8518 12.7471 27.8518ZM11.7636 34.2571L14.4351 37.8154H22.4088L19.3675 33.3677C21.2455 32.2555 22.4978 30.2097 22.4978 27.8961V6.54572L16.1022 0.184662H6.39647C2.86237 0.184662 0 3.03176 0 6.54572V27.8961L6.39647 34.2571H11.7636Z"
+                                fill="currentColor" />
+                            <path d="M29.3861 34.2571H34.3064V2.09741L32.3835 0.184662H27.4632V32.3444L29.3861 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M41.5524 34.2571H46.0251V13.8402L53.584 32.3444L56.7594 34.2571H61.6797V2.09741L59.7568 0.184662H55.2841V18.6448L48.4847 2.09741L45.8014 0.184662H39.6286V32.3444L41.5524 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M87.8016 0.184662H82.7464L77.3792 21.0465L72.5039 2.09741L70.0891 0.184662H65.0348L73.7562 32.3444L76.1718 34.2571H80.5106L89.2327 2.09741L87.8016 0.184662Z"
+                                fill="currentColor" />
+                            <path
+                                d="M95.3156 34.2571H112.044L114.012 32.3004V27.8518H100.236V20.6465H107.123L109.092 18.6888V14.2405H100.236V6.58997H111.597L113.565 4.6332V0.184662H93.3925V32.3444L95.3156 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M141.251 27.8961V20.4235L134.855 14.0633H128.504L125.596 11.1715V9.48177C125.596 7.88033 126.893 6.58997 128.504 6.58997H131.948L134.855 9.48177L141.699 6.54572L135.302 0.184662H125.149C121.615 0.184662 118.753 3.03176 118.753 6.54572V14.1073L125.149 20.4684H131.5L134.407 23.3595V24.9609C134.407 26.5624 133.111 27.8518 131.5 27.8518H127.161L124.255 24.9609L117.411 27.8961L123.807 34.2571H134.855C138.388 34.2571 141.251 31.41 141.251 27.8961Z"
+                                fill="currentColor" />
+                            <path
+                                d="M153.954 34.2571H158.874V6.58997H164.42L166.388 4.6332V0.184662H146.529L144.651 2.14232V6.58997H152.031V32.3444L153.954 34.2571Z"
+                                fill="currentColor" />
+                            <path
+                                d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z"
+                                fill="currentColor" />
+                        </svg>
+                        <p> Unlimited◢</p>
+                    </div>
+                    <div class="plan-content" id="unlimited">
+                        <p id="benefits">Esse plano te dá acesso aos seguintes benefícios:</p>
+                        <div class="plan-list">
+                            <p id="plan-items">> Todos os benefícios anteriores.</p>
+                            <p id="plan-items">> Acesso total a área educacional.</p>
+                            <p id="plan-items">> Acesso a guias de análise de gráficos, análise de mercado e outros
+                                cursos avançados</p>
+                            <p id="plan-items">> Tokens ilimitados para área de investimento.</p>
+                        </div>
+                        <div id="unlimited" class="plan-subs">
+                            <p>Inscreva-se</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <svg class="svg-icon-stair" viewBox="0 0 229.74008 226.87686" version="1.1" id="svg5"
-            sodipodi:docname="mockup.svg" inkscape:export-filename="logowhite.svg" inkscape:export-xdpi="96"
-            inkscape:export-ydpi="96" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
-            xmlns:svg="http://www.w3.org/2000/svg">
-            <sodipodi:namedview id="namedview721" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
-                inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
-                inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" showgrid="false" inkscape:lockguides="true" />
-            <defs id="defs2" />
-            <g id="layer1" transform="translate(-520.24433,-339.94151)">
-                <g id="g3390" transform="matrix(3.1038391,0,0,3.1038391,-193.60648,-820.64877)">
-                    <path fill="currentColor" id="path3454"
-                        d="m 271.05308,373.92089 v 20.53209 h -20.53137 v 20.53208 h -20.53208 v 20.53209 l 11.56296,11.4993 h 20.53207 20.53138 21.39163 v -61.59626 l -11.56296,-11.4993 z m 4.23842,2.17437 h 15.69597 l 7.92366,7.87558 h -15.69597 z m -2.06404,2.03151 7.93995,7.89254 v 15.72779 l -7.93995,-7.89254 z m 10.83793,8.74207 h 16.90977 v 57.11439 h -57.97322 v -16.05022 h 20.53207 v -20.53209 h 20.53138 v 0 z m -29.30598,9.75781 h 16.42029 l 7.92438,7.87629 h -16.4203 z m -2.06403,2.03221 7.94065,7.89183 v 15.7285 l -7.94065,-7.89254 z m -18.46805,18.49987 h 16.42028 l 7.92438,7.87628 h -16.42028 z m -2.06404,2.03221 7.94065,7.89184 v 15.00347 l -7.94065,-7.89183 z" />
-                </g>
-            </g>
+        <svg id="qinvestLogoSmall" viewBox="0 0 199 38" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z" />
         </svg>
     </div>
-    </div>
-
 </x-layout.app>
