@@ -24,6 +24,11 @@
         <div class="page-formulary">
             {{ $slot }}
         </div>
+
+        @elseif(Route::currentRouteName() === 'profile')
+        <div class="page-profile">
+            {{ $slot }}
+        </div>
         @else
         <div id="app-page">
             {{ $slot }}

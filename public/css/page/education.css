@@ -12,13 +12,8 @@ p, h1, h2, h3, h4, h5 {
 }
 
 #education-page {
-    /* 
-    background-image: url(../../assets/waveBgshort.svg);
-        height: 90vh;
-    */
     color: var(--primary-color);
     text-align: center;
-    padding-top: 15vh;
     background-size: cover;
 
     display: block;
@@ -36,12 +31,17 @@ p, h1, h2, h3, h4, h5 {
 
 .page-education {
         width: 100%;
-        display: block;
+        min-height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: var(--primary-color);
         color: var(--secondary-color);
         background-size: cover;
         margin: 0;
         padding: 0;
+        gap: 15vh;
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: transparent;
 
@@ -77,8 +77,6 @@ p, h1, h2, h3, h4, h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15vh;
-
 
 }
 .education-summary {
@@ -212,6 +210,11 @@ margin: 5%;
     flex-shrink: 0;
     margin-top: 30px;
     fill: var(--secondary-color);
+    margin-top: 2%;
+    fill: var(--secondary-color);
+    margin-bottom: 1%;
+    margin-right: 9%;
+}
 }
 .course {
     display: flex;
@@ -227,7 +230,7 @@ margin: 5%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 10vh;
+    gap: 10vh;
 }
 .courseCard {
 width: 80%;
@@ -269,7 +272,6 @@ width: 80%;
     gap: 22px;
     border-radius: 10px;
     color: var(--orange);
-    margin-bottom: 30px;
 }
 .courseContent#course-variable {
     background: rgba(191, 152, 255, 0.041);

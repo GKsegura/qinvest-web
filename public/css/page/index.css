@@ -10,9 +10,10 @@
 }
 
 #head-page {
-    min-height: 100vh;
+    min-height: 85vh;
+    padding-top: 15vh;
 }
 
 #app-page {
-    padding-top: 10vh;
+    padding-top: 15vh;
 }

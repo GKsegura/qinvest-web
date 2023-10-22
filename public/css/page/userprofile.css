@@ -1,13 +1,17 @@
 @import url(../layout/app.css);
 
-.content {
-    display: block;
+.page-profile{
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: helvetica;
     font-size: 17px;
-    align-items: center;
-    justify-content: center; 
-    text-align: center;
 }
+
+
 
 #edit-form{
     display: none;
