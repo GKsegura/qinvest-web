@@ -18,12 +18,12 @@
             </div>
 
             @auth
-                <div class="footer-link">
-                    <h5>Minha conta</h5>
-                    <p><a href="/profile">Área do usuário</a></p>
-                    <p><a href="/logout">Sair</a></p>
-                </div>
-            @endauth    
+            <div class="footer-link">
+                <h5>Minha conta</h5>
+                <p><a href="/profile">Área do usuário</a></p>
+                <p><a href="/logout">Sair</a></p>
+            </div>
+            @endauth
         </div>
 
         <div class="footer-logo">
