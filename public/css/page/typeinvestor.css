@@ -1,12 +1,13 @@
-@import url(../css/layout/app.css);
+@import url(../layout/app.css);
 
 :root {
     --conservador: #7dc1ff;
     --agressivo: #f62e2e;
     --moderado: #9e63ff;
 }
-
-
+#page-typeInvestor{
+    padding-top: 10vh;
+}
 
 .type {
     width: 100%;

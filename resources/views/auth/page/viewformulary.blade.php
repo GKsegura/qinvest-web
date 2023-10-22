@@ -1,3 +1,5 @@
 <x-layout.head>
-    @include('auth.form.viewformulary')
+    <div class="page-formulary">
+        @include('auth.form.viewformulary')
+    </div>
 </x-layout.head>

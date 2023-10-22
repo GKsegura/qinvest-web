@@ -24,7 +24,7 @@
         </div>
         <div class="text">
             <h1>seu perfil é <span class="{{$typeCamps['type']}}">{{$typeCamps["type"]}}</span></h1>
-            <h2>O quê isso significa?</h2>
+            <h2>O que isso significa?</h2>
             <div class="description">
                 <p>{{$typeCamps["description"]}}</p>
             </div>
