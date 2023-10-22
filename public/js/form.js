@@ -18,13 +18,17 @@ const showHide = (input, element) => {
     }
 };
 
-eyeIconPassword.addEventListener("click", () => {
-    showHide(password, eyeIconPassword);
-});
+if (eyeIconPassword) {
+    eyeIconPassword.addEventListener("click", () => {
+        showHide(password, eyeIconPassword);
+    });
+}
 
-eyeIconConfirmPassword.addEventListener("click", () => {
-    showHide(confirmPassword, eyeIconConfirmPassword);
-});
+if (eyeIconConfirmPassword) {
+    eyeIconConfirmPassword.addEventListener("click", () => {
+        showHide(confirmPassword, eyeIconConfirmPassword);
+    });
+}
 
 // força de senha
 const passwordStrengthBar = document.querySelector(".password-strength-bar");
@@ -64,9 +68,6 @@ const passwordValidator = () => {
                 }
             }
         }
-
-        console.log(validation, password.value.length);
-
         if (validation == 1) {
             activeClass(one, "active");
             disableClass(two, "active");
@@ -87,7 +88,6 @@ const passwordValidator = () => {
             textPassword.style.display = "block";
             textPassword.style.color = "#ffa500";
         }
-
         if (validation == 3) {
             activeClass(one, "active");
             activeClass(two, "active");

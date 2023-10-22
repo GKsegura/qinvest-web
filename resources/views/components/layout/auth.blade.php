@@ -7,25 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QInvest</title>
     @include('components.layout.css')
-    @vite(['resources/js/theme.js'])
 </head>
 
 <body class="body-auth">
-
     <div class="auth-page container">
-
         <div class="auth-card">
             <div class="auth-text">
                 <div class="auth-text-content">
                     <div class="square-form">
                         <div>
-                            <p class="text-card-left m-0">o próximo passo na sua </p>
-                            <p class="text-card-left highlighted m-0">jornada</p>
+                            <p class="text-card-left">o próximo passo na sua <span>jornada</span></p>
                         </div>
                         <div class="bottom-left-form m-0">
                             <p class="text-bottom-left">Faça o seu cadastro na QINVEST◢ e participe dessa
                                 comunidade</p>
-
                             <svg width="100" height="100" viewBox="0 0 130 129" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_b_106_1406)">
                                     <path d="M72.122 0V36.2363H36.0593V72.4726H0V108.706L20.3082 129H130V20.2945L109.692 0H72.122ZM94.9761 22.8502H124.675V123.646H22.8541V95.322H58.9134V59.0865H94.9761V22.8502Z" fill="white" fill-opacity="0.56" />
@@ -45,7 +40,6 @@
             </div>
             <div class="auth-form">
                 <div class="auth-form-content">
-
                     <div class="d-flex flex-column">
                         <div class="text-right-card">
                             <p class="m-0"> Olá!
@@ -56,17 +50,13 @@
                         </div>
                         <p class="m-0">Registre-se rapidamente preenchendo os campos.</p>
                     </div>
-
-
                     {{ $slot }}
-
-
-
                 </div>
 
             </div>
         </div>
     </div>
+    <script src="{{asset('js/form.js')}}"></script>
 </body>
 
 </html>

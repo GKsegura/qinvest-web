@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('investments', function (Blueprint $table) {
             $table->string('cod_investment')->primary();
             $table->string('name_investment');
-            $table->string('description');
-            $table->decimal('profitability', 10, 2);
+            $table->boolean('recomended');
             $table->foreignId('investor_id')->constrained();
         });
     }

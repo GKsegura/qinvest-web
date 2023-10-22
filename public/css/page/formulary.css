@@ -19,6 +19,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 2%;
 }
 
 .formulary-card {
@@ -82,16 +83,12 @@ form {
 .question-row {
     width: inherit;
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    flex-direction: row;
     gap: 30px;
 }
 
 #submit-formulary {
     width: 120px;
     color: var(--secondary-color);
-}
-
-#work {
-    fill: var(--secondary-color);
 }

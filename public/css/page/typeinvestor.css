@@ -17,7 +17,7 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    gap: 25px
+    gap: 25px;
 }
 
 .background-conservador {
@@ -82,7 +82,6 @@ h1 span {
     letter-spacing: 0.2px;
     text-align: center;
 }
-
 
 .text {
     width: 100%;

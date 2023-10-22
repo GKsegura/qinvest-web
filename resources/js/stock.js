@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const tickersInput = document.getElementById("tickers");
     const submitButton = document.querySelector(".button");
 
+    
+    const currentDate = new Date();
+    const currentMonth = currentDate.toLocaleString('default', { month: 'long' }).charAt(0).toUpperCase() + currentDate.toLocaleString('default', { month: 'long' }).slice(1);
+
+    const recommendationLabel = document.getElementById("recommendationLabel");
+    recommendationLabel.textContent = `Ações recomendadas de ${currentMonth}:`;
+
     // Adicione um evento de escuta à entrada de tickers
     tickersInput.addEventListener("input", () => {
         if (tickersInput.value.trim() !== "") {
@@ -80,6 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    
+
     const handleRecommendationButtonClick = async (event) => {
         const clickedButton = event.currentTarget;
         const tickerFromButton = clickedButton.getAttribute("data-ticker");
@@ -89,18 +98,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // const tickerInput = document.getElementById("tickers");
         const ticker = tickerFromButton;
         console.log(tickerFromButton);
+        stockDiv.style.visibility = "visible";
+
+        // Exibe o cursor de carregamento
+        const smoothLoader = document.querySelector(".smooth");
+        smoothLoader.style.visibility = "visible";
+
+        event.preventDefault();
 
         try {
-            // Chamar a função fetchStockData com o ticker e o período e aguardar a resposta
             const data = await fetchStockData(ticker, period);
-
-            // Depois que os dados forem obtidos, chamar a função createCharts
-
+            console.log(data);
             displayStockData(data, ticker);
-        } catch (error) {
-            console.error;
+        } catch (err) {
+            console.log(err);
+        } finally {
+            // Após a conclusão do carregamento (bem-sucedido ou com erro), oculta o cursor de carregamento
+            smoothLoader.style.visibility = "hidden";
         }
     };
+
 
     recommendationButtons.forEach((button) => {
         button.addEventListener("click", (event) => {

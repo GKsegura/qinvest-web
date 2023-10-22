@@ -1,15 +1,15 @@
     @vite(['resources/lib/alpine.js'])
 
     <script>
-function validarFormulario() {
-    for (let i = 1; i <= 6; i++) {
-        if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
-            alert(`Por favor, responda à pergunta ${i}.`);
-            return false;
+        function validarFormulario() {
+            for (let i = 1; i <= 6; i++) {
+                if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
+                    alert(`Por favor, responda à pergunta ${i}.`);
+                    return false;
+                }
+            }
+            return true;
         }
-    }
-    return true;
-}
     </script>
 
     @if (session('success'))
