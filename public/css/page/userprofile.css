@@ -14,7 +14,12 @@
 
 
 #edit-form{
+    margin-top: 1em;
     display: none;
+}
+
+#edit-form::after {
+    display: block;
 }
 .update label{
     font-family: helvetica;
@@ -59,17 +64,14 @@
     width: 100%;
 }
 .square {
-    text-align: justify;
     margin: auto;
     border-radius: 7px;
     border: 1px solid var(--secondary-color);
-    display: block;
-    align-items: center;
-    justify-content: center;
-    padding: 5%;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 600px;
+    height: 400px;
 }
 
 #profile-label {
@@ -140,15 +142,22 @@ margin-bottom: 2rem;
     margin-top: 1rem;
 }
 
-#qinvestLogoSmall {
+/* #qinvestLogoSmall {
     width: 152px;
     height: 34px;
     margin-top: 2%;
     fill: var(--secondary-color);
     margin-bottom: 1%;
     margin-right: 9%;
+} */
+
+#profile-display {
+    margin-top: 1rem;
+    display: block;
 }
 
-#profile-display{
-    margin-top: 1rem;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

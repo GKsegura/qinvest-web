@@ -2,30 +2,32 @@
 
     <div class="page-about">
 
-        <div class="container header-page">
+        <div class="section-header-page">
 
-            <p class="h1">
+            <h1 class="section-title">
                 Sobre nós
-            </p>
+            </h1>
 
-            <p>
-                O interesse pelo mercado financeiro tem se tornado crescente nos últimos anos. As
-                inúmeras possibilidades de investimentos fazem com que muitos tenham dúvidas sobre qual
-                opção escolher e, por contarem com baixo conhecimento na área, adiam suas atividades e
-                acumulação de patrimônio.
-            </p>
-            <p>
-                Em busca de facilitar o contato dos indivíduos, principalmente os jovens, com o universo
-                dos investimentos, nossa equipe de TCC - formada por sete alunos do terceiro ano de
-                informática do Colégio Técnico Industrial “Prof. Isaac Portal Roldán” - desenvolveu o software
-                QInvest.
-            </p>
-            <p>
-                Sendo assim, o QInvest é um sistema que oferece conteúdo educacional, além de identificar
-                perfis investidores e integrar a lucratividade das principais rendas fixas e variáveis em tempo
-                real. Ademais, focamos em desenvolver um site que apresenta uma fácil usabilidade e cores que
-                trazem um caráter jovial, incentivando no aprendizado e interação do usuário.
-            </p>
+            <div class="section-subtitle">
+                <p>
+                    O interesse pelo mercado financeiro tem se tornado crescente nos últimos anos. As
+                    inúmeras possibilidades de investimentos fazem com que muitos tenham dúvidas sobre qual
+                    opção escolher e, por contarem com baixo conhecimento na área, adiam suas atividades e
+                    acumulação de patrimônio.
+                </p>
+                <p>
+                    Em busca de facilitar o contato dos indivíduos, principalmente os jovens, com o universo
+                    dos investimentos, nossa equipe de TCC - formada por sete alunos do terceiro ano de
+                    informática do Colégio Técnico Industrial “Prof. Isaac Portal Roldán” - desenvolveu o software
+                    QInvest.
+                </p>
+                <p>
+                    Sendo assim, o QInvest é um sistema que oferece conteúdo educacional, além de identificar
+                    perfis investidores e integrar a lucratividade das principais rendas fixas e variáveis em tempo
+                    real. Ademais, focamos em desenvolver um site que apresenta uma fácil usabilidade e cores que
+                    trazem um caráter jovial, incentivando no aprendizado e interação do usuário.
+                </p>
+            </div>
         </div>
 
         <section class="swiper mySwiper">

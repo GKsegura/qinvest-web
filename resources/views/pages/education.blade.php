@@ -15,7 +15,7 @@
             </defs>
         </svg>
         <div id="education-page">
-            <h1 id="title-education-page" class="text-education-page">Aprenda a Investir</h1>
+            <h1 id="title-education-page" class="section-title">Aprenda a Investir</h1>
             <div id="education-guide">
                 <div class="education-summary">
                     <div class="left-summary">

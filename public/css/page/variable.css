@@ -11,12 +11,12 @@
     text-align: center;
 }
 
-#qinvestLogoSmall {
+/* #qinvestLogoSmall {
     width: 152px;
     height: 34px;
     margin-right: 9%;
     fill: var(--secondary-color);
-}
+} */
 .svg-container{
     width: 100%;
     text-align: center;

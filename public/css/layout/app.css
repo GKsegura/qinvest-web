@@ -57,3 +57,35 @@ body {
     padding: 0;
 }
 
+.section-header-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--secondary-color) !important;
+}
+
+.section-subtitle {
+    max-width: 900px;
+    width: inherit;
+    text-align: justify;
+}
+
+#qinvestLogoSmall {
+    width: 152px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-top: 30px;
+    fill: var(--secondary-color);
+    margin-right: 9%;
+    margin-bottom: 40px;
+}
+
+

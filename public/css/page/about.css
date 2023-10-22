@@ -90,7 +90,7 @@
     margin-top: 0.5em;
     text-align: center;
 }
-#qinvestLogoSmall {
+/* #qinvestLogoSmall {
     width: 152px;
     height: 34px;
     flex-shrink: 0;
@@ -98,4 +98,4 @@
     fill: var(--secondary-color);
     margin-right: 9%;
     margin-bottom: 40px;
-}
+} */

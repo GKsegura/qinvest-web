@@ -15,8 +15,9 @@ p, h1, h2, h3, h4, h5 {
     color: var(--primary-color);
     text-align: center;
     background-size: cover;
-
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 .wave-svg {
         position: absolute;
@@ -64,12 +65,9 @@ p, h1, h2, h3, h4, h5 {
 }
 
 #title-education-page {
-    font-size: 90px;
-    display: flex;
-    align-items: center;
     z-index: 0;
     position: relative;
-    height: 15vh;
+    color: #ffffff!important;
 }
 
 
@@ -204,7 +202,7 @@ margin: 5%;
     margin-top: 30px;
     margin-right: 27%;
 }
-#qinvestLogoSmall {
+/* #qinvestLogoSmall {
     width: 152px;
     height: 34px;
     flex-shrink: 0;
@@ -214,7 +212,7 @@ margin: 5%;
     fill: var(--secondary-color);
     margin-bottom: 1%;
     margin-right: 9%;
-}
+} */
 
 .course {
     display: flex;

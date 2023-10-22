@@ -70,6 +70,8 @@
 <!-- userprofile -->
 @if (Route::currentRouteName() === 'profile')
 <link href="{{ asset('css/page/userprofile.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
 @endif
 
 <!-- admin -->

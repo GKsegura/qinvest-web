@@ -2,36 +2,48 @@
 <x-layout.head>
     <div class="page-profile">
 
+        <h1 class="section-title">{{ Auth::user()->username }}</h1>
         <div class="square">
-            <h1>Seu perfil:</h1>
             @if ($perfil_investidor === "Não possui perfil investidor")
             <a href="/formulary" class="profile-discover"><i>Descubra qual seu perfil investidor!</i></a>
             @else
-            <p id="profile-label">Perfil Investidor:</p>
+            <p id="profile-label">Perfil Investidor</p>
             <a href="/typeinvestor" class="profile-type"><i>{{ $perfil_investidor }}</i></a>
             <p>Acha que mudou? <a class="remake-test" href="/formulary"><i>Refazer teste</i></a></p>
             @endif
 
             <div id="profile-display">
-                <label>Email:</label>
-                <p class="profile-info">{{ $user->email }}</p>
+                <div class="field-group">
+                    <div class="field">
+                        <label>Email</label>
+                        <p class="profile-info">{{ $user->email }}</p>
+                    </div>
 
-                <label>Nome:</label>
-                <p class="profile-info">{{ $user->username }}</p>
+                    <div class="field">
+                        <label>Nome</label>
+                        <p class="profile-info">{{ $user->username }}</p>
+                    </div>
+                </div>
 
-                <label>Data de Nascimento:</label>
-                <p class="profile-info">{{ $user->birth_time }}</p>
+                <div class="field-group">
+                    <div class="field">
+                        <label>Data de Nascimento</label>
+                        <p class="profile-info">{{ $user->birth_time }}</p>
+                    </div>
 
-                <label>Gênero:</label>
-                <p class="profile-info">
-                    @if ($user->gender == "male")
-                    Masculino
-                    @elseif ($user->gender == "female")
-                    Feminino
-                    @else
-                    Outro
-                    @endif
-                </p>
+                    <div class="field">
+                        <label>Gênero</label>
+                        <p class="profile-info">
+                            @if ($user->gender == "male")
+                            Masculino
+                            @elseif ($user->gender == "female")
+                            Feminino
+                            @else
+                            Outro
+                            @endif
+                        </p>
+                    </div>
+                </div>
 
                 <button id="edit-button">Editar Perfil</button>
             </div>
@@ -39,35 +51,51 @@
             <div id="edit-form">
                 <form class="update" action="{{ route('update') }}" method="POST">
                     @csrf
-                    <label>Email:</label>
-                    <br>
-                    <input type="email" name="newemail" value="{{ $user->email }}" required><br><br>
 
-                    <label>Nome:</label>
-                    <br>
-                    <input type="text" name="newname" value="{{ $user->username }}" required><br><br>
+                    <div class="field-group">
+                        <div class="field">
+                            <label>Email</label>
+                            <input type="email" name="newemail" value="{{ $user->email }}" required>
+                        </div>
 
-                    <label for="newbirth_time">Data de Nascimento:</label>
-                    <br>
-                    <input type="date" name="newbirth_time" value="{{ $user->birth_time }}" required><br><br>
+                        <div class="field">
+                            <label>Nome:</label>
+                            <input type="text" name="newname" value="{{ $user->username }}" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field">
+                            <label for="newbirth_time">Data de Nascimento:</label>
+                            <input type="date" name="newbirth_time" value="{{ $user->birth_time }}" required>
+                        </div>
 
+                        <div class="field">
+                            <label>Gênero</label>
+                            <div class="radio-input">
+                                <input type="radio" name="newgender" value="male" id="op-male"
+                                    {{ $user->gender === 'male' ? 'checked' : '' }}> <label
+                                    for="op-male">Masculino</label>
+
+                                <input type="radio" name="newgender" value="female" id="op-female"
+                                    {{ $user->gender === 'female' ? 'checked' : '' }}> <label
+                                    for="op-female">Feminino</label>
+
+                                <input type="radio" name="newgender" value="other" id="op-other"
+                                    {{ $user->gender === 'other' ? 'checked' : '' }}>
+                                <label for="op-other">Outro</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                     
                     <label>Gênero:</label>
-                    <br>
                     <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
                     Masculino
                     <input type="radio" name="newgender" value="female"
                         {{ $user->gender === 'female' ? 'checked' : '' }}>
                     Feminino
                     <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
-                    Outro<br><br>
-                    <label>Gênero:</label>
-                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
-                    Masculino
-                    <input type="radio" name="newgender" value="female"
-                        {{ $user->gender === 'female' ? 'checked' : '' }}>
-                    Feminino
-                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
-                    Outro<br><br>
+                    Outro<br><br> -->
 
                     <button id="edit-button" type="submit">Atualizar Informações</button>
 
