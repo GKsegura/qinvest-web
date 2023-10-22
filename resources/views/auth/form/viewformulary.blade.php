@@ -205,7 +205,7 @@ function validarFormulario() {
             </div>
             <div x-show=" question === 7" x-transition:enter.opacity.duration.600ms>
                 <div class="result-card">
-                    <div class="label-question">Ok, chegamos a um resultado.</div>
+                    <div class="label-question">Calcular resultados!</div>
 
 
                     <div class="question-controller">
@@ -213,8 +213,10 @@ function validarFormulario() {
                                 class="bi bi-arrow-left"></i></button>
 
                         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                        <button class="step-button" id="submit-formulary" type="submit">Enviar</button>
 
-                        <button class="step-button" id="submit-formulary" type="submit">Visualizar!</button>
+                        <!-- fazer o toaster -->
+
                     </div>
                 </div>
             </div>
