@@ -43,6 +43,8 @@
 <!-- stock -->
 @if (Route::currentRouteName() === 'stock')
 <link href="{{ asset('css/stock.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
 @endif
 
 <!-- stock -->
@@ -65,6 +67,8 @@
 <!-- fixed -->
 @if (Route::currentRouteName() === 'fixed')
 <link href="{{ asset('css/page/fixed.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
 @endif
 
 <!-- userprofile -->
@@ -77,4 +81,10 @@
 <!-- admin -->
 @if (Route::currentRouteName() === 'admin')
 <link href="{{ asset('css/page/admin.css') }}" rel="stylesheet">
+@endif
+
+@if (Route::currentRouteName() === 'investment')
+<link href="{{ asset('css/page/investment.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
 @endif

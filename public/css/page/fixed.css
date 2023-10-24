@@ -74,9 +74,7 @@
 .button-container {
     justify-content: center;
     display: flex;
-  
     z-index: 1;
-    width: 100%;
 }
 
 .content {
@@ -85,6 +83,8 @@
     width: 70%;
     align-self: flex-start;
     flex: 1;
+    display: flex;
+    flex-direction: column;
     /* Faz com que o conteúdo principal ocupe 2 vezes mais espaço */
 }
 

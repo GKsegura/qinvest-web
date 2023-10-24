@@ -5,12 +5,11 @@
     min-height: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-family: helvetica;
     font-size: 17px;
 }
-
 
 
 #edit-form{

@@ -94,7 +94,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
 }
 
 .h1#alter {
@@ -147,6 +147,13 @@ p {
 
 
 }
+.plan-price {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .plan-name
 {
     width: 100%;
@@ -171,7 +178,7 @@ p {
 
 .plan-content
 {
-
+    padding-bottom: 5vh;
     width: 100%;
     height: 120vh;
     border-radius: 0 0 10px 10px;
@@ -184,13 +191,27 @@ p {
 {
     border: 1px solid #4e79f071;
 }
+#basic.plan-price {
+    color: #6e7fb3;
+}
+
 #advanced.plan-content
 {
     border: 1px solid rgba(108, 7, 167, 0.384);
 }
+
+#advanced.plan-price {
+    color: #ba1aea;
+
+}
+
 #unlimited.plan-content
 {
     border: 1px solid rgba(129, 11, 197, 0.397);
+}
+
+#unlimited.plan-price {
+    color: rgba(70,10,189,1);
 }
 
 #basic.plan-name{

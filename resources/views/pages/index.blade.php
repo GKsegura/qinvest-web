@@ -225,6 +225,9 @@
                             <p id="plan-items">> Acesso limitado aos cursos e guias</p>
                             <p id="plan-items">> 5 Tokens para área de investimentos.</p>
                         </div>
+                        <div class="plan-price" id="basic">
+                            <h1>Gratuito</h1>
+                        </div>
                         <div id="basic" class="plan-subs">
                             <p>Inscreva-se</p>
                         </div>
@@ -265,6 +268,9 @@
                             <p id="plan-items">> Acesso a todos os cursos básicos, atuais e futuros.</p>
                             <p id="plan-items">> 150 tokens mensais para área de investimentos.</p>
                             <p id="plan-items">> Possibilidade de refazer o teste de perfil investidor.</p>
+                        </div>
+                        <div class="plan-price" id="advanced">
+                            <h1>R$14,90</h1>
                         </div>
                         <div id="advanced" class="plan-subs">
                             <p>Inscreva-se</p>
@@ -308,6 +314,9 @@
                             <p id="plan-items">> Acesso a guias de análise de gráficos, análise de mercado e outros
                                 cursos avançados</p>
                             <p id="plan-items">> Tokens ilimitados para área de investimento.</p>
+                        </div>
+                        <div class="plan-price" id="unlimited">
+                            <h1>R$28,90</h1>
                         </div>
                         <div id="unlimited" class="plan-subs">
                             <p>Inscreva-se</p>

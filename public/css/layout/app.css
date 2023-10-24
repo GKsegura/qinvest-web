@@ -80,7 +80,12 @@ body {
 
 #section-header-page-text {
     color: #ffffff!important;
+}
 
+.section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #qinvestLogoSmall {
