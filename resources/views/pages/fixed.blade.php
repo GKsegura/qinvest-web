@@ -97,8 +97,7 @@
                         entendimento aprimorado sobre as oscilações de taxas, mas buscar entender o contexto atual da
                         economia do país já é um grande começo!
                     </p>
-                    <p>Para saber mais sobre a escolha de um bom investimento, responda o questionário e descubra seu <a
-                            href="../formulary">perfil investidor</a>.</p>
+                    <p>Para saber mais sobre a escolha de um bom investimento, responda o questionário e descubra seu <a href="../formulary">perfil investidor</a>.</p>
                     <!-- Inserir imagem se necessário -->
                 </div>
 
@@ -330,98 +329,117 @@
                         <p>
                             Quer ver na prática?
                             Um hipotético CDB pré-fixado que renda 10% ao ano oferece diariamente um rendimento que
-                            equivale ao suficiente para o pagamento de 10% no período de um ano.
+                            equivale ao suficiente para o pagamento de 10% no período de um ano.</p>
+                        <p>
                             Por exemplo: se um investimento de R$2.000 em um CDB de 10% com prazo de 3 anos, qual seria
-                            o ganho?
-                            Vamos calcular: R$2.000 x (1+10%)^3 = R$2.662.
+                            o ganho?</p>
+                        <p>
+                            Vamos calcular: R$2.000 x (1+10%)^3 = R$2.662.</p>
+                        <p>
                             O rendimento total será de 33,1% neste caso.
+                        </p><br><p>
                             O ganho obtido é calculado pela multiplicação do valor aplicado pelo rendimento (10%) somado
                             a 1 elevado ao período (3 anos).
-                        <p><strong>Pós-fixado:</strong></p>
-                        <div class="box" id="box2">
-                            <p></p>
-                        </div>
+                        </p>
+                    </div>
+                    <p><strong>Pós-fixado:</strong></p>
+                    <div class="box" id="box2">
+                        <p>Ao investir em pós-fixado, é comum observar termos como CDB rendendo 112% do DI a.a, o que significa que o ativo rende 112% da taxa do CDI no ano. Por exemplo, se a DI for de 13% para um investimento de R$4.000, qual seria o rendimento real?
 
-                        <p><strong>Híbrido:</strong></p>
-                        <div class="box" id="box3">
-                            <p></p>
-                        </div>
-                        <!-- Inserir imagem se necessário -->
+                        </p>
+                        <p>O cálculo é realizado por uma regra de três, conforme a seguir:
+
+                            13 x 112/100 = 14,56%
+
+                        </p>
+                        <p> E o ganho a partir da multiplicação do valor investido pelo rendimento:
+
+                        </p>
+                        <p>$4.000 x (1+14,56%) = R$4.582,4</p>
                     </div>
 
-                </div>
+                    <p><strong>Híbrido:</strong></p>
+                    <div class="box" id="box3">
+                        <p>
 
-                <div class="topic" id="topic17">
-                    <h2>Caso tenha algum problema no investimento, como poderá recorrer?</h2>
-                    <br>
-                    <p class="p-space">Os ativos de renda fixa são registrados em algumas empresas, a fim de
-                        oferecer maior segurança para o investidor. Dessa forma, caso a empresa em que seu ativo
-                        esteja contido venha a falência ou algum outro problema, devido à custódia, é possível
-                        realizar a transferência para outra instituição.
-                    </p>
-                    <p class="p-space">Nesse caso, por exemplo, a SELIC é responsável pelo registro no mercado dos
-                        títulos públicos do governo, enquanto a CETIP (Central de Custódia e Liquidação Financeira
-                        de Títulos) assegura a custódia de algumas rendas fixas, como CDB, LCI e LCA.
+                            No caso do CDB híbrido, são mescladas taxas fixas e variáveis, por exemplo, IPCA (variação da inflação no ano) + 7% a.a, ou seja, o rendimento total será a inflação mais 7% fixos. Supondo que a inflação foi de 8% nos 12 meses de vigência para um investimento de R$6.000, o cálculo se dá por um mecanismo de juros compostos, conforme será demonstrado a seguir:
 
-                    </p>
+                        </p><p> 6.000 x (1+8%) x (1+7%) = 6.000 x 1,1556 = 6.933,6
+
+                           </p><p> O ganho final será de R$6.933,6.</p>
+                    </div>
                     <!-- Inserir imagem se necessário -->
                 </div>
 
-                <div class="topic" id="topic18">
-                    <h2>Cobertura FGC</h2>
-                    <br>
-                    <p class="p-space">O FGC (Fundo Garantidor de Créditos) funciona como um seguro sobre os
-                        investimentos, ou seja, tem como função proteger o patrimônio investido, caso alguns
-                        problemas com a instituição ocorram, como falências, intervenções ou liquidações.
-                    </p>
-                    <p>A cobertura é contemplada nos investimentos de renda fixa a seguir: CDB, recibos e depósitos
-                        bancários, LCI, LCA etc. Vale destacar que os títulos públicos, emitidos pelo Tesouro
-                        Central não possuem cobertura do FGC, pois, por estarem ligados ao governo, possuem uma
-                        grande segurança.
-                    </p class="p-space">
-                    <p class="p-space">Os recursos do FGC são advindos de depósitos de instituições financeiras,
-                        como bancos e a Caixa Econômica Federal, que correspondem a 0,01% do valor de todos os
-                        depósitos elegíveis no período de um mês.
-                    </p>
-                    <p class="p-space">Com isso, o FGC oferece uma garantia de R$ 250.000,00 por pessoa física (CPF)
-                        ou CNPJ, caso haja dinheiro investido em alguma instituição coberta pelo seguro. Além disso,
-                        se a pessoa possuir o dinheiro aplicado em seu CPF e no CNPJ de sua empresa na mesma
-                        instituição que sofrer uma quebra, conseguirá receber R$ 250.000,00 em ambas as contas, ou
-                        seja, duas vezes.
-                    </p>
-                    <br><br>
-                    <h2>Quantas vezes esse fundo pode ser utilizado?</h2>
-                    <br>
-                    <p class="p-space"> A cada quatro anos, o FGC pode ser utilizado pelo investidor, possuindo uma
-                        cobertura total de R$ 1.000.000,00. Então, poderá utilizar quatro vezes o seguro,
-                        equivalendo a R$ 250.000,00 em cada instituição. Porém, se toda a quantia for utilizada em
-                        quatro empresas e seja necessário o seguro em mais outra, isso não será possível. Passado o
-                        período de quatro anos, caso o valor total ou parte dele for utilizado, ele retornará a R$
-                        1.000.000,00, renovando-se a cada período. </p>
-                    <!-- Inserir imagem se necessário -->
 
-                </div>
-                <div class="topic" id="topic19">
-                    <h2>Deseja aprender mais sobre investimentos?</h2>
-                    <br>
-                    <p>Acesse o nosso curso sobre <a href="../variable"> renda variável </a> compreender melhor o
-                        mercado de ações.
-                    </p>
-                    <!-- Inserir imagem se necessário -->
-                </div>
-                <div class="button-container">
-                    <button type="button" class="button" onclick="changeTopic(-1)" id="prevButton" disabled><i
-                            class="fa-solid fa-arrow-left"></i></button>
-                    <button type="button" class="button" onclick="changeTopic(1)" id="nextButton"><i
-                            class="fa-solid fa-arrow-right"></i></button>
-                </div>
+            <div class="topic" id="topic17">
+                <h2>Caso tenha algum problema no investimento, como poderá recorrer?</h2>
+                <br>
+                <p class="p-space">Os ativos de renda fixa são registrados em algumas empresas, a fim de
+                    oferecer maior segurança para o investidor. Dessa forma, caso a empresa em que seu ativo
+                    esteja contido venha a falência ou algum outro problema, devido à custódia, é possível
+                    realizar a transferência para outra instituição.
+                </p>
+                <p class="p-space">Nesse caso, por exemplo, a SELIC é responsável pelo registro no mercado dos
+                    títulos públicos do governo, enquanto a CETIP (Central de Custódia e Liquidação Financeira
+                    de Títulos) assegura a custódia de algumas rendas fixas, como CDB, LCI e LCA.
+
+                </p>
+                <!-- Inserir imagem se necessário -->
             </div>
 
+            <div class="topic" id="topic18">
+                <h2>Cobertura FGC</h2>
+                <br>
+                <p class="p-space">O FGC (Fundo Garantidor de Créditos) funciona como um seguro sobre os
+                    investimentos, ou seja, tem como função proteger o patrimônio investido, caso alguns
+                    problemas com a instituição ocorram, como falências, intervenções ou liquidações.
+                </p>
+                <p>A cobertura é contemplada nos investimentos de renda fixa a seguir: CDB, recibos e depósitos
+                    bancários, LCI, LCA etc. Vale destacar que os títulos públicos, emitidos pelo Tesouro
+                    Central não possuem cobertura do FGC, pois, por estarem ligados ao governo, possuem uma
+                    grande segurança.
+                </p class="p-space">
+                <p class="p-space">Os recursos do FGC são advindos de depósitos de instituições financeiras,
+                    como bancos e a Caixa Econômica Federal, que correspondem a 0,01% do valor de todos os
+                    depósitos elegíveis no período de um mês.
+                </p>
+                <p class="p-space">Com isso, o FGC oferece uma garantia de R$ 250.000,00 por pessoa física (CPF)
+                    ou CNPJ, caso haja dinheiro investido em alguma instituição coberta pelo seguro. Além disso,
+                    se a pessoa possuir o dinheiro aplicado em seu CPF e no CNPJ de sua empresa na mesma
+                    instituição que sofrer uma quebra, conseguirá receber R$ 250.000,00 em ambas as contas, ou
+                    seja, duas vezes.
+                </p>
+                <br><br>
+                <h2>Quantas vezes esse fundo pode ser utilizado?</h2>
+                <br>
+                <p class="p-space"> A cada quatro anos, o FGC pode ser utilizado pelo investidor, possuindo uma
+                    cobertura total de R$ 1.000.000,00. Então, poderá utilizar quatro vezes o seguro,
+                    equivalendo a R$ 250.000,00 em cada instituição. Porém, se toda a quantia for utilizada em
+                    quatro empresas e seja necessário o seguro em mais outra, isso não será possível. Passado o
+                    período de quatro anos, caso o valor total ou parte dele for utilizado, ele retornará a R$
+                    1.000.000,00, renovando-se a cada período. </p>
+                <!-- Inserir imagem se necessário -->
+
+            </div>
+            <div class="topic" id="topic19">
+                <h2>Deseja aprender mais sobre investimentos?</h2>
+                <br>
+                <p>Acesse o nosso curso sobre <a href="../variable"> renda variável </a> compreender melhor o
+                    mercado de ações.
+                </p>
+                <!-- Inserir imagem se necessário -->
+            </div>
+            <div class="button-container">
+                <button type="button" class="button" onclick="changeTopic(-1)" id="prevButton" disabled><i class="fa-solid fa-arrow-left"></i></button>
+                <button type="button" class="button" onclick="changeTopic(1)" id="nextButton"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
         </div>
-        <div class="svg-container">
-            <svg id="qinvestLogoSmall" viewBox="0 0 199 38" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z" />
-            </svg>
-        </div>
+
+    </div>
+    <div class="svg-container">
+        <svg id="qinvestLogoSmall" viewBox="0 0 199 38" xmlns="http://www.w3.org/2000/svg">
+            <path d="M183.639 0.184662V9.75567H174.068V19.3267H164.498V28.8968L169.888 34.2571H199V5.545L193.61 0.184662H183.639ZM185.615 1.19846H192.931L196.624 4.86995H189.308L185.615 1.19846ZM184.652 2.14586L188.354 5.82421V13.1557L184.652 9.47668V2.14586ZM189.705 6.22004H197.587V32.8431H170.564V25.3618H180.134V15.791H189.705V6.22004ZM176.044 10.7686H183.698L187.392 14.4401H179.738L176.044 10.7686ZM175.082 11.716L178.783 15.3952V22.7258L175.082 19.0475V11.716ZM166.473 20.3396H174.127L177.821 24.0111H170.167L166.473 20.3396ZM165.511 21.2868L169.213 24.9651V31.959L165.511 28.2806V21.2868Z" />
+        </svg>
+    </div>
 </x-layout.app>
