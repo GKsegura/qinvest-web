@@ -62,6 +62,8 @@
 <!-- variable -->
 @if (Route::currentRouteName() === 'variable')
 <link href="{{ asset('css/page/variable.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+
 @endif
 
 <!-- fixed -->

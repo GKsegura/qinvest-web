@@ -3,61 +3,53 @@
 
 .page-variable {
     width: 100%;
+    min-height: 80vh;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     background-size: cover;
     margin: 0;
     padding: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+.topic h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-/* #qinvestLogoSmall {
-    width: 152px;
-    height: 34px;
-    margin-right: 9%;
-    fill: var(--secondary-color);
-} */
-.svg-container{
-    width: 100%;
-    text-align: center;
-    padding-bottom: 1%;
-    padding-top: 6%;
-    min-height: 76px;
-    height: 152px;
-}
-.p-space{
-    text-indent: 60px;
-}
+
 /* Estilo do conteúdo central */
 /* Estilos para a estrutura principal */
 .wrapper {
     display: flex;
     justify-content: flex-start;
     /* Alinha o índice à esquerda */
-    padding-left: 10px;
     width: 100%;
 }
 
 .index {
     color: var(--secondary-color);
     width: 250px;
-    margin-left: 16%;
     height: 100%;
     text-align: left;
     z-index: 2;
+    padding-left: 30px;
     position: relative;
+
 }
 
 .button {
-    padding: 7px 14px;
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color);
     border-color: var(--secondary-color) !important;
     cursor: pointer;
-    border-radius: 10px;
-    margin: 4px;
-    height: 5vh;
-    width: 5vh;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    border-radius: 5px;
 }
 
 .button-bars{
@@ -67,25 +59,40 @@
 }
 
 .menu{
-    display: block;
-    margin-top: -4vh;
-    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    position: absolute;
+    padding-left: 2%;
+
 }
 .button-container {
     justify-content: center;
     display: flex;
     z-index: 1;
+    gap: 10px
 }
 
+
+
 .content {
-    margin-left: 3%;
-    margin-right: 6%;
-    width: 70%;
-    align-self: flex-start;
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* Faz com que o conteúdo principal ocupe 2 vezes mais espaço */
+    align-items: center;  
+    width: inherit;
+    max-width: 900px;
+}
+
+.parent{
+    width: inherit;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    
 }
 
 /* Estilos para o índice */

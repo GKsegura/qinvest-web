@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const index = document.querySelector(".index");
     index.classList.add("open");
     const content = document.querySelector(".content");
+
     // Function to update the content based on the selected topic index
     function updateContent(index) {
         topics.forEach((topic, i) => {
@@ -66,29 +67,29 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(windowHeight);
 
         // Define o posicionamento vertical das setas
-        if (index.style.display === "none") {
-            if (contentHeight + 150 > windowHeight) {
-                buttonContainer.style.position = "relative";
-            } else {
-                buttonContainer.style.position = "absolute";
-            }
-        } else {
-            if (contentHeight + 150 > windowHeight) {
-                buttonContainer.style.position = "relative";
-            } else {
-                buttonContainer.style.position = "none";
-            }
-        }
-        if (currentTopicIndex === 0) {
-            prevButton.style.display = "none";
-        } else {
-            prevButton.style.display = "block";
-        }
-        if (currentTopicIndex === topics.length - 1) {
-            nextButton.style.display = "none";
-        } else {
-            nextButton.style.display = "block";
-        }
+        // if (index.style.display === "none") {
+        //     if (contentHeight + 150 > windowHeight) {
+        //         buttonContainer.style.position = "relative";
+        //     } else {
+        //         buttonContainer.style.position = "none";
+        //     }
+        // } else {
+        //     if (contentHeight + 150 > windowHeight) {
+        //         buttonContainer.style.position = "relative";
+        //     } else {
+        //         buttonContainer.style.position = "none";
+        //     }
+        // }
+        // if (currentTopicIndex === 0) {
+        //     prevButton.style.display = "none";
+        // } else {
+        //     prevButton.style.display = "block";
+        // }
+        // if (currentTopicIndex === topics.length - 1) {
+        //     nextButton.style.display = "none";
+        // } else {
+        //     nextButton.style.display = "block";
+        // }
     }
 
     function changeTopic(offset) {
@@ -108,13 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
         index.classList.toggle("open");
         if (index.style.display === "none") {
             index.style.display = "block";
-            content.style.width = "70%";
             const icon = buttonBars.querySelector("i"); // Seleciona o elemento <i> dentro de button-bars
             icon.classList.remove("fa-bars"); // Remove a classe "fa-bars" do ícone
             icon.classList.add("fa-xmark");
         } else {
             index.style.display = "none";
-            content.style.width = "100%";
             const icon = buttonBars.querySelector("i"); // Seleciona o elemento <i> dentro de button-bars
             icon.classList.remove("fa-xmark"); // Remove a classe "fa-xmark" do ícone
             icon.classList.add("fa-bars"); // Restaura a largura do conteúdo para 100%

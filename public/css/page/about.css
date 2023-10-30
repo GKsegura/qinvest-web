@@ -23,6 +23,9 @@
     text-align: justify;
 }
 
+.page-about p {
+    text-indent: 60px;}
+
 /* SLIDE */
 
 .swiper {
