@@ -45,16 +45,43 @@
                     </div>
                 </div>
                 <div class="card swiper-slide">
+                    @if (Auth::check()==true)
+                    @if (Auth::user()->email=="deolindo.scandolera@unesp.br")
+                    <div class="card-image">
+                        <img src="assets/about-us/diolindo.jpeg" alt="">
+                    </div>
+                    @else
                     <div class="card-image">
                         <img src="assets/about-us/deola.png" alt="">
                     </div>
+                    @endif
+                    @else
+                    <div class="card-image">
+                        <img src="assets/about-us/deola.png" alt="">
+                    </div>
+                    @endif
+
                     <div class="card-content">
                         <p class="card-name">Deolindo Neto</p>
+                        @if (Auth::check()==true)
+                        @if (Auth::user()->email=="deolindo.scandolera@unesp.br")
+                        <p class="card-occupation">Stripper</p>
+                        <p class="card-description">Roda bolsinha vários dias a noite para que possa comprar seu pau de
+                            cada dia.</p>
+                        @else
                         <p class="card-occupation"> Programador e suporte técnico</p>
                         <p class="card-description">Responsável por desenvolver as páginas do usuário
                             - como cadastros e login -, além de auxiliar em atividades de banco de dados e demais
                             membros
                             da equipe.</p>
+                        @endif
+                        @else
+                        <p class="card-occupation"> Programador e suporte técnico</p>
+                        <p class="card-description">Responsável por desenvolver as páginas do usuário
+                            - como cadastros e login -, além de auxiliar em atividades de banco de dados e demais
+                            membros
+                            da equipe.</p>
+                        @endif
                     </div>
                 </div>
                 <div class="card swiper-slide">
