@@ -298,10 +298,16 @@ p {
     color: var(--primary-color)!important;
     cursor: pointer;
 }
-
+.icon-stair-mother
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 .svg-icon-stair
 {
     color: var(--secondary-color) !important;
     height: 5vh;
-    margin: 0 0 5vh 0;
+    margin: 2vh 0 2vh 0;
 }
