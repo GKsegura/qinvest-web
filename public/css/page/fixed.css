@@ -36,7 +36,6 @@
     height: 100%;
     text-align: left;
     z-index: 2;
-    padding-left: 30px;
     position: relative;
 
 }
@@ -61,7 +60,7 @@
 .menu{
     display: flex;
     flex-direction: column;
-    gap: 2%;
+    gap: 20px;
     position: absolute;
     padding-left: 2%;
 
