@@ -19,7 +19,7 @@
                 <div class="auth-text-content">
                     <div class="square-form">
                         <div>
-                            <p class="text-card-left m-0">o próximo passo na sua </p>
+                            <p  class="text-card-left m-0 ">o próximo passo na sua </p>
                             <p class="text-card-left highlighted m-0">jornada</p>
                         </div>
                         <div class="bottom-left-form m-0">

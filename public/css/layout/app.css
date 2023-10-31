@@ -17,11 +17,37 @@
             var(--transition-timing-function);
 }
 
+::-webkit-scrollbar
+{
+    width: 10px;
+    
+}
+::-webkit-scrollbar-track
+{
+    background: var(--secondary-color);
+    
+}
+::-webkit-scrollbar-thumb
+{
+    background: var(--primary-color);
+    
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: var(--dark-purple);
+    
+}
+
 * {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif, Arial;
+    scrollbar-color: #eef1ff #472d8b;;
+    scrollbar-width: thin;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
 }
 
 /* BODY */
@@ -30,3 +56,4 @@ body {
     margin: 0;
     padding: 0;
 }
+
