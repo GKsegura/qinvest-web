@@ -1,15 +1,15 @@
     @vite(['resources/lib/alpine.js'])
 
     <script>
-        function validarFormulario() {
-            for (let i = 1; i <= 6; i++) {
-                if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
-                    alert(`Por favor, responda à pergunta ${i}.`);
-                    return false;
-                }
-            }
-            return true;
+function validarFormulario() {
+    for (let i = 1; i <= 6; i++) {
+        if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
+            alert(`Por favor, responda à pergunta ${i}.`);
+            return false;
         }
+    }
+    return true;
+}
     </script>
 
     @if (session('success'))
@@ -25,7 +25,7 @@
 
     <form action="{{ route('formulary') }}" method="POST" onsubmit="return validarFormulario();">
         @csrf
-        <div x-data="{ question: 7 }">
+        <div x-data="{ question: 1}">
             <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms>
                 <div class="formulary-card">
                     <div class="label-question">

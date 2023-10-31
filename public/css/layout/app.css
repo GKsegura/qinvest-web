@@ -88,13 +88,19 @@ body {
     justify-content: center;
 }
 
-#qinvestLogoSmall {
-    flex-shrink: 0;
-    height: fit-content;
+.icon-stair-mother
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100px;
-    fill: var(--secondary-color);
-
+    height: 10vh;
+}
+.svg-icon-stair
+{
+    color: var(--secondary-color) !important;
+    height: 5vh;
+    margin: 2vh 0 2vh 0;
 }
 
 .wave-svg {

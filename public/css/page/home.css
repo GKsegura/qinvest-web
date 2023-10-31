@@ -313,9 +313,3 @@ p {
     cursor: pointer;
 }
 
-.svg-icon-stair
-{
-    color: var(--secondary-color) !important;
-    height: 5vh;
-    margin: 0 0 5vh 0;
-}

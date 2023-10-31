@@ -78,6 +78,7 @@
     flex-direction: column;
     gap: 20px;
     position: absolute;
+    margin-bottom: -5vh;
     padding-left: 2%;
 }
 .button-container {
