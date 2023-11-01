@@ -39,6 +39,7 @@
                             perda, portanto, o formato de renda variável mais importante e no qual recomendamos que
                             iniciantes comecem baseia-se no mercado de ações da bolsa.
                         </p>
+                        <img id="cicle" src="\assets\investment.jpg" alt="">
                     </div>
                     <div class="topic" id="topic2">
                         <h2>O que são ações?</h2>
