@@ -48,10 +48,6 @@ form {
 
 }
 
-.bi-arrow-right,
-.bi-arrow-left {
-    color: var(--secondary-color);
-}
 
 .question-answers {
     max-width: 600px;

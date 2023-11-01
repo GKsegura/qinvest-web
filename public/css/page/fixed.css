@@ -3,7 +3,6 @@
 
 .page-variable {
     width: 100%;
-    min-height: 80vh;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     background-size: cover;
@@ -13,11 +12,25 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
+    height: 100%;
 }
 .topic h2 {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+p{ 
+    text-indent: 60px;
+}
+.fa-arrow-left,.fa-arrow-right {
+    color:  var(--secondary-color);
+}
+
+.p-space{ 
+    text-indent: 60px;
 }
 
 

@@ -67,9 +67,15 @@ body {
 }
 
 .section-title {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.bi-arrow-right,
+.bi-arrow-left {
+    color: var(--secondary-color);
 }
 
 .section-subtitle {
