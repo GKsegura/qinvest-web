@@ -241,23 +241,25 @@
                     <h2>Análise de gráficos:</h2>
                     <br>
                     <p>
-                        1. O primeiro fator a se analisar no gráfico é a tendência em que ele está, ou seja, ascendente ou descendente. É importante observar as quebras de estrutura, que são momentos que a tendência se quebra. Ela normalmente não modifica a direção da tendência, mas pode ser um forte indicativo.
-
-                        FOTOS
-
-                    </p>
+                        1. O primeiro fator a se analisar no gráfico é a tendência em que ele está, ou seja, ascendente ou descendente. </p>
+                        <img id="cicle" src="\assets\posicao.png" alt="">
+                        <p>É importante observar as quebras de estrutura, que são momentos que a tendência se quebra. Ela normalmente não modifica a direção da tendência, mas pode ser um forte indicativo.
+                        </p>
+                          <img id="cicle" src="\assets\quebra.png" alt="">
+                   
                     <p>2. Dentro da nossa seção de ações apresentamos a média móvel 200 - média de lucro dos 200 dias - que é um parâmetro para venda da ação. Se a quebra de estrutura for ascendente, ou seja, descer e voltar a subir e estiver em um valor acima da média móvel é interessante vender a ação. MAS NÃO VENDA IMEDIATAMENTE.
                     </p>
+                    <img id="cicle" src="\assets\recomendavel.png" alt="">
                     <p>3. Observe a queda máxima da quebra de estrutura e quando ela voltar a subir, divida-a em duas partes, a parte inferior a 50% destas partes é recomendável comprar as ações, e a parte acima de 50% é recomendável vender as ações. Na queda máxima é interessante estabelecer uma stop loss.
-                        FOTO
-
                     </p>
+                    <img id="cicle" src="\assets\50percent.png" alt="">
                     <p> É possível que as tendências sejam difíceis de se observar, nestes casos deve-se adotar outra estratégia.
                     </p>
                     <p> 1. Nos gráficos é possível observar a cotação mínima alcançada e a cotação máxima a cada 20 dias - chamado donchian channel - a partir destes conceitos em conjunto com a média móvel 200, devemos agir.
                     </p>
                     <p>2. No caso de o preço mínimo chamado canal inferior, estiver abaixo da média móvel, deve-se aguardar. No momento em que o canal inferior superar a média móvel é o momento de compra, visto que surge uma tendência de crescimento. É interessante determinar um stop loss no exato preço que define o canal inferior. É fundamental gerir o risco com as ferramentas e conhecimentos necessários. Para adquirir um lucro real não é preciso acertar 100% das vezes, é possível com apenas 50% ou menos de acerto, mas para isso não permita o risco de consumir suas chances, aja com calma e prudência.
                     </p>
+                    <img id="cicle" src="\assets\tudo.png" alt="">
                 </div>
                 <div class="topic" id="topic15">
                     <h2>Dicionário do investidor:</h2>
