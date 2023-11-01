@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = document.querySelector(".content");
     const headPage = document.querySelector("#head-page");
 
+    headPage.style.minHeight = "115vh";
+
     // Function to update the content based on the selected topic index
     function updateContent(index) {
         topics.forEach((topic, i) => {
@@ -93,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const icon = buttonBars.querySelector("i"); // Seleciona o elemento <i> dentro de button-bars
             icon.classList.remove("fa-xmark"); // Remove a classe "fa-xmark" do ícone
             icon.classList.add("fa-bars"); // Restaura a largura do conteúdo para 100%
-            headPage.style.minHeight = "115vh";
         }
         scrollToTop();
         updateButtonVisibility();
