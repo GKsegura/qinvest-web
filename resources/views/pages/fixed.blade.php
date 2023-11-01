@@ -51,7 +51,7 @@
                             empresa escolhida e os possíveis riscos atrelados a ela: chances de falência e
                             desvalorizações.
                         </p>
-                        <img id="cicle" src="\assets\cicloinvest.png" alt="penes">
+                        <img id="cicle" src="\assets\cicloinvest.png" alt="">
                     </div>
 
                     <div class="topic" id="topic2">
