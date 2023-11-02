@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <canvas id="stockChart" class="chart-canvas"></canvas>
-                <a class="stockLearn" href="./education">Aprenda mais sobre o gráfico</a>
+                <a class="stockLearn" href="./variable">Aprenda mais sobre o gráfico</a>
                 <br>
 
 
