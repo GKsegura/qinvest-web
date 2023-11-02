@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QInvest</title>
-    @include('components.layout.css')
+    @include('components.layout.style')
     @vite(['resources/js/theme.js'])
     <!-- Inclua o arquivo CSS do Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">

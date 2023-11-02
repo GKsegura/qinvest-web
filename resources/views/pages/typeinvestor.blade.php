@@ -44,18 +44,15 @@
             <div class="double-recommendation">
                 <div class="recommended-1 {{$typeCamps['paragraph']}}">
                     <p>{{$typeCamps['recommended-1']}}</p>
-                    <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-1-url']}}">Veja mais ></a>
                 </div>
 
                 <div class="recommended-2 {{$typeCamps['paragraph']}}">
                     <p>{{$typeCamps['recommended-2']}}</p>
-                    <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-2-url']}}">Veja mais ></a>
                 </div>
             </div>
 
             <div class="recommended-3 {{$typeCamps['paragraph']}}">
                 <p>{{$typeCamps['recommended-3']}}</p>
-                <a class="{{$typeCamps['link']}}" href="{{$typeCamps['recommended-3-url']}}">Veja mais ></a>
             </div>
         </div>
 

@@ -47,3 +47,11 @@
     transition: (--transition);
 }
 
+#submit-investment {
+    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+}

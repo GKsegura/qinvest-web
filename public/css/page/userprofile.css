@@ -97,6 +97,11 @@
     margin-top: 2rem;
     margin-left: 29%;
 }
+
+#edit-button:hover {
+    background-color: rgba(192,192,192,0.7);
+    transition: (--transition);
+}
 .profile-info{
     font-weight: bold;
 }
@@ -125,12 +130,12 @@
     text-decoration: none;
     font-weight: bold;
 }
-.retake-test {
+.remake-test {
     text-decoration: none;
     color: var(--secondary-color);
 }
 
-.retake-test:hover {
+.remake-test:hover {
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: bold;

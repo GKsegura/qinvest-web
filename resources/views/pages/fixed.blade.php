@@ -501,9 +501,9 @@
                     </div>
                 </div>
                 <div class="button-container">
-                    <button type="button" class="button" onclick="changeTopic(-1)" id="prevButton" disabled><i
-                            class="fa-solid fa-arrow-left"></i></button>
-                    <button type="button" class="button" onclick="changeTopic(1)" id="nextButton"><i
+                    <button type="button" class="button step-button" onclick="changeTopic(-1)" id="prevButton"
+                        disabled><i class="fa-solid fa-arrow-left"></i></button>
+                    <button type="button" class="button step-button" onclick="changeTopic(1)" id="nextButton"><i
                             class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>

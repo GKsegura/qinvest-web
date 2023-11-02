@@ -72,6 +72,13 @@
     background-color: transparent;
     border-radius: 5px;
 }
+
+.step-button:hover {
+    background-color: rgba(192,192,192,0.7);
+    transition: (--transition);
+
+}
+
 .form-actions {
     align-items: center;
     display: flex;

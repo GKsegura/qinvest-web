@@ -83,6 +83,7 @@
 <!-- admin -->
 @if (Route::currentRouteName() === 'admin')
 <link href="{{ asset('css/page/admin.css') }}" rel="stylesheet">
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
 @endif
 
 @if (Route::currentRouteName() === 'investment')

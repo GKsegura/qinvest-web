@@ -130,7 +130,7 @@ h1 span {
     height: 175px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     padding: 3%;
     border-radius: 10px;

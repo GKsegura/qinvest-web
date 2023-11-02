@@ -34,12 +34,13 @@
                         <h2>O que é renda variável?</h2>
                         <p class="p-space">
                             A renda variável se define como investimentos no qual o retorno e o preço de compra de
-                            ativos variam, isto é, não é definido por uma taxa fixa como a <a href="../fixed">SELIC</a>.
+                            ativos variam, isto é, não é definido por uma taxa fixa como a <a
+                                href="../fixed/#topic6">SELIC</a>.
                             Devido a esta variabilidade e incerteza dos preços a renda variável tem maior risco de
                             perda, portanto, o formato de renda variável mais importante e no qual recomendamos que
                             iniciantes comecem baseia-se no mercado de ações da bolsa.
                         </p>
-                        <img id="cicle" src="\assets\investment.jpg" alt="">
+                        <img id="invest" src="\assets\investment.jpg" alt="">
                     </div>
                     <div class="topic" id="topic2">
                         <h2>O que são ações?</h2>
@@ -297,25 +298,28 @@
                         <h2>Análise de gráficos</h2>
                         <p>
                             1. O primeiro fator a se analisar no gráfico é a tendência em que ele está, ou seja,
-                            ascendente ou descendente. É importante observar as quebras de estrutura, que são momentos
+                            ascendente ou descendente. </p> <img id="chart" src="\assets\posicao.png" alt="">
+                        <p>É importante observar as quebras de estrutura, que são momentos
                             que a tendência se quebra. Ela normalmente não modifica a direção da tendência, mas pode ser
                             um forte indicativo.
 
-                            FOTOS
+
 
                         </p>
+                        <img id="chart" src="\assets\quebra.png" alt="">
                         <p>2. Dentro da nossa seção de ações apresentamos a média móvel 200 - média de lucro dos 200
                             dias - que é um parâmetro para venda da ação. Se a quebra de estrutura for ascendente, ou
                             seja, descer e voltar a subir e estiver em um valor acima da média móvel é interessante
                             vender a ação. MAS NÃO VENDA IMEDIATAMENTE.
                         </p>
+                        <img id="chart" src="\assets\recomendavel.png" alt="">
                         <p>3. Observe a queda máxima da quebra de estrutura e quando ela voltar a subir, divida-a em
                             duas partes, a parte inferior a 50% destas partes é recomendável comprar as ações, e a parte
                             acima de 50% é recomendável vender as ações. Na queda máxima é interessante estabelecer uma
                             stop loss.
-                            FOTO
 
                         </p>
+                        <img id="chart" src="\assets\50percent.png" alt="">
                         <p> É possível que as tendências sejam difíceis de se observar, nestes casos deve-se adotar
                             outra estratégia.
                         </p>
@@ -331,6 +335,7 @@
                             é possível com apenas 50% ou menos de acerto, mas para isso não permita o risco de consumir
                             suas chances, aja com calma e prudência.
                         </p>
+                        <img id="chart" src="\assets\tudo.png" alt="">
                     </div>
                     <div class="topic" id="topic15">
                         <h2>Dicionário do investidor</h2>
@@ -407,9 +412,9 @@
                 </div>
 
                 <div class="button-container">
-                    <button type="button" class="button" onclick="changeTopic(-1)" id="prevButton" disabled><i
-                            class="fa-solid fa-arrow-left"></i></button>
-                    <button type="button" class="button" onclick="changeTopic(1)" id="nextButton"><i
+                    <button type="button" class="button step-button" onclick="changeTopic(-1)" id="prevButton"
+                        disabled><i class="fa-solid fa-arrow-left"></i></button>
+                    <button type="button" class="button step-button" onclick="changeTopic(1)" id="nextButton"><i
                             class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
