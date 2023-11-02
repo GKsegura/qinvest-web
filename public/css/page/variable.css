@@ -138,6 +138,18 @@
     color: #586d98;
 }
 
+.content a {
+    list-style: none;
+    padding: 0;
+    color: #586d98;
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: #586d98;
+    font-weight:bold ;
+}
+
 /* Estilos para o conteúdo principal */
 .content h1 {
     font-size: 24px;

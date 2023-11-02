@@ -187,3 +187,15 @@ border: 1px solid rgba(158, 142, 233, 0.3);
     border-radius: 10px;
 
 }
+
+.content a {
+    list-style: none;
+    padding: 0;
+    color: #586d98;
+    text-decoration: none;
+}
+
+.content a:hover {
+   
+    font-weight:bold ;
+}
