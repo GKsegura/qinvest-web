@@ -25,7 +25,7 @@ function validarFormulario() {
 
     <form action="{{ route('formulary') }}" method="POST" onsubmit="return validarFormulario();">
         @csrf
-        <div x-data="{ question: 1}">
+        <div x-data="{ question: 1 }">
             <div x-show=" question === 1" x-transition:enter.opacity.duration.600ms>
                 <div class="formulary-card">
                     <div class="label-question">
@@ -87,18 +87,12 @@ function validarFormulario() {
                             @endforeach
                         </div>
                     </div>
-                    <!-- @foreach ($answers->where('question_id', 3) as $answer)
-                    <label class="label-option">
-                        <input type="radio" class="checkmark" name="selected_answer3" value="{{ $answer->id }}">
-                        {{ $answer->text_answer }}
-                    </label>
-                    @endforeach -->
+
                     <div class="question-controller">
                         <button class="step-button" @click.prevent="question = 2"><i class="bi bi-arrow-left"></i>
                             <button class="step-button" @click.prevent="question = 4 "><i
                                     class="bi bi-arrow-right"></i></button>
                     </div>
-                    <!-- <button type="submit">Enviar</button> -->
                 </div>
             </div>
             <div x-show=" question === 4" x-transition:enter.opacity.duration.600ms>
@@ -114,8 +108,6 @@ function validarFormulario() {
                             </label>
                             @endforeach
                         </div>
-
-
                         <div class="question-answers">
                             @foreach ($answers->where('question_id', 4)->skip(3) as $answer)
                             <label class="label-option">
@@ -125,15 +117,6 @@ function validarFormulario() {
                             @endforeach
                         </div>
                     </div>
-
-                    <!-- <div class="question-answers">
-                        @foreach ($answers->where('question_id', 4) as $answer)
-                        <label class="label-option">
-                            <input type="radio" class="checkmark" name="selected_answer4" value="{{ $answer->id }}">
-                            {{ $answer->text_answer }}
-                        </label>
-                        @endforeach
-                    </div> -->
                     <div class="question-controller">
                         <button class="step-button" @click.prevent="question = 3"><i class="bi bi-arrow-left"></i>
                             <button class="step-button" @click.prevent="question = 5 "><i
@@ -166,20 +149,11 @@ function validarFormulario() {
                             @endforeach
                         </div>
                     </div>
-                    <!-- <div class="question-answers">
-                        @foreach ($answers->where('question_id', 5) as $answer)
-                        <label class="label-option">
-                            <input type="radio" class="checkmark" name="selected_answer5" value="{{ $answer->id }}">
-                            {{ $answer->text_answer }}
-                        </label>
-                        @endforeach
-                    </div> -->
                     <div class="question-controller">
                         <button class="step-button" @click.prevent="question = 4"><i class="bi bi-arrow-left"></i>
                             <button class="step-button" @click.prevent="question = 6"><i
                                     class="bi bi-arrow-right"></i></button>
                     </div>
-                    <!-- <button type="submit">Enviar</button> -->
                 </div>
             </div>
             <div x-show=" question === 6" x-transition:enter.opacity.duration.600ms>
@@ -206,19 +180,51 @@ function validarFormulario() {
             <div x-show=" question === 7" x-transition:enter.opacity.duration.600ms>
                 <div class="result-card">
                     <div class="label-question">Calcular resultados!</div>
-
-
                     <div class="question-controller">
                         <button class="step-button" @click.prevent="question = 6"><i
                                 class="bi bi-arrow-left"></i></button>
-
                         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                         <button class="step-button" id="submit-formulary" type="submit">Enviar</button>
-
-                        <!-- fazer o toaster -->
-
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded mr-2" alt="...">
+            <strong class="mr-auto">Bootstrap</strong>
+            <small class="text-muted">just now</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            See? Just like this.
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    </script>
+    <script>
+document.getElementById('submit-formulary').addEventListener('click', function(event) {
+    let formIsValid = true;
+    for (let i = 1; i <= 6; i++) {
+        if (!document.querySelector(`input[name="selected_answer${i}"]:checked`)) {
+            formIsValid = false;
+            break;
+        }
+    }
+
+    if (!formIsValid) {
+        // Mostra o toast indicando para responder todas as perguntas
+        const toast = document.querySelector('.toast');
+        toast.classList.add('show');
+
+        event.preventDefault();
+    }
+});
+    </script>

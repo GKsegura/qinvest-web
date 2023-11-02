@@ -86,17 +86,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!--                     
-                    <label>Gênero:</label>
-                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
-                    Masculino
-                    <input type="radio" name="newgender" value="female"
-                        {{ $user->gender === 'female' ? 'checked' : '' }}>
-                    Feminino
-                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
-                    Outro<br><br> -->
-
                     <button id="edit-button" type="submit">Atualizar Informações</button>
 
                 </form>

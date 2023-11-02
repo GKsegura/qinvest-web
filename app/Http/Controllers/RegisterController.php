@@ -7,11 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Database\QueryException;
-
-
-
-
-// $timestamp = Carbon::now();
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -23,12 +19,12 @@ class RegisterController extends Controller
 
     public function auth(RegisterRequest $request)
     {
-        // Valide os dados recebidos
         $validated = $request->validated();
         $fullname = $validated['firstname'] . ' ' . $validated['surname'];
 
         try {
-            DB::table('users')->insert([
+            // Insira o usuário no banco de dados
+            $userId = DB::table('users')->insertGetId([
                 'email' => $validated['email'],
                 'username' => $fullname,
                 'password' => Hash::make($validated['password']),
@@ -40,21 +36,24 @@ class RegisterController extends Controller
                 'created_at' => Carbon::now('America/Sao_Paulo'),
                 'updated_at' => null
             ]);
+
+            // Autentique o usuário após o cadastro
+            Auth::loginUsingId($userId);
         } catch (QueryException $e) {
             $errorCode = $e->getMessage();
             $errorRegex = "/SQLSTATE\[23505\]: Unique violation/";
-    
+
             if (preg_match($errorRegex, $errorCode)) {
                 $errorMessage = 'O email já cadastrado.';
             } else {
                 $errorMessage = 'Ocorreu um erro. Tente novamente mais tarde.';
-                dd($errorCode); // Handle other exceptions
+                dd($errorCode); // Lidar com outras exceções, se necessário
             }
-    
+
             return view('auth.page.register')->with('errorMessage', $errorMessage);
         }
 
         // Redirecione para uma página de sucesso ou exiba uma mensagem
-        return redirect()->route('index', 'Registro concluído com sucesso!');
+        return redirect()->route('index')->with('success', 'Registro concluído com sucesso!');
     }
 }
