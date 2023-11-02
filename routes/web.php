@@ -27,7 +27,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 
 // Rotas do LOGIN
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login.post'); // Change the route name
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas do CADASTRO

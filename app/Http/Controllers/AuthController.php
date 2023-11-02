@@ -17,17 +17,16 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
-
+    
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             $user_id = $user->id;
             return redirect()->route('index');
         } else {
-            $errorMessage = 'Credenciais inválidas. Revise seu email e senha.';
-            return view('auth.page.login')->with('errorMessage', $errorMessage);
-            //Autenticação falhou
+            return redirect()->route('login')->with('error', 'Credenciais inválidas. Revise seu email e senha.');
         }
     }
+    
     // Processa o logout
     public function logout()
     {

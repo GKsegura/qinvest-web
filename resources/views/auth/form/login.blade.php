@@ -5,10 +5,9 @@
 
     <div class="form-group justify-content-center gap-4">
         <div class="field">
-            @if(isset($errorMessage))
-            <!-- Check if errorMessage is set -->
-            <div class="invalid-input">{{ $errorMessage }}</div> <!-- Display error message -->
-            @endif
+        @if(session('error'))
+        <div class="invalid-input">{{ session('error') }}</div>
+        @endif
             <label for="email" class="label-form">Email</label>
             <input type=" email" class="field-input form-control" name="email" id="email" autofocus>
         </div>
