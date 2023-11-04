@@ -8,10 +8,10 @@ export default defineConfig({
                 "resources/sass/app.scss",
                 "resources/js/app.js",
                 "resources/js/theme.js",
-                "resources/utils/alpine.js",
+                "resources/lib/alpine.js",
                 "resources/js/selic.js",
                 "resources/js/api.js",
-                "resources/js/profile.js"
+                "resources/js/profile.js",
             ],
             refresh: true,
         }),
