@@ -325,26 +325,46 @@
                 </div>
 
             </div>
-            <div class="icon-stair-mother">
-                <svg class="svg-icon-stair" width="229.74008mm" height="226.87686mm" viewBox="0 0 229.74008 226.87686"
-                    version="1.1" id="svg5" sodipodi:docname="mockup.svg" inkscape:export-filename="logowhite.svg"
-                    inkscape:export-xdpi="96" inkscape:export-ydpi="96"
-                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                    <sodipodi:namedview id="namedview721" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
-                        inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
-                        inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" showgrid="false"
-                        inkscape:lockguides="true" />
-                    <defs id="defs2" />
-                    <g id="layer1" transform="translate(-520.24433,-339.94151)">
-                        <g id="g3390" transform="matrix(3.1038391,0,0,3.1038391,-193.60648,-820.64877)">
-                            <path fill="currentColor" id="path3454"
-                                d="m 271.05308,373.92089 v 20.53209 h -20.53137 v 20.53208 h -20.53208 v 20.53209 l 11.56296,11.4993 h 20.53207 20.53138 21.39163 v -61.59626 l -11.56296,-11.4993 z m 4.23842,2.17437 h 15.69597 l 7.92366,7.87558 h -15.69597 z m -2.06404,2.03151 7.93995,7.89254 v 15.72779 l -7.93995,-7.89254 z m 10.83793,8.74207 h 16.90977 v 57.11439 h -57.97322 v -16.05022 h 20.53207 v -20.53209 h 20.53138 v 0 z m -29.30598,9.75781 h 16.42029 l 7.92438,7.87629 h -16.4203 z m -2.06403,2.03221 7.94065,7.89183 v 15.7285 l -7.94065,-7.89254 z m -18.46805,18.49987 h 16.42028 l 7.92438,7.87628 h -16.42028 z m -2.06404,2.03221 7.94065,7.89184 v 15.00347 l -7.94065,-7.89183 z" />
-                        </g>
+        </div>
+
+        <div class="helper">
+            <h1 class="section-title">Necessita de ajuda? Acesse o <a target="_blank"
+                    href="{{URL::asset('/helpSistema_QInvest.pdf')}}" id="link-helper">Help</a>
+                da QINVEST◢!
+            </h1>
+            <h1 class="section-title">Ou faça o Download <a target="_blank"
+                    href="{{URL::asset('/helpSistema_QInvest.pdf')}}" download="Help do Sistema - Qinvest.pdf"
+                    id="link-helper">Aqui</a></h1>
+        </div>
+
+        <div class="installer">
+            <h1 class="section-title">Deseja instalar o sistema em sua máquina? Acesse o <a target="_blank"
+                    href="{{URL::asset('/Qinvest_installer.pdf')}}" id="link-installer">Guia</a>
+                de instalação da QINVEST◢!
+            </h1>
+            <h1 class="section-title">Ou faça o Download <a target="_blank"
+                    href="{{URL::asset('/Qinvest_installer.pdf')}}" download="Instalador do Sistema - Qinvest.pdf"
+                    id="link-installer">Aqui</a></h1>
+        </div>
+        <div class="icon-stair-mother">
+            <svg class="svg-icon-stair" width="229.74008mm" height="226.87686mm" viewBox="0 0 229.74008 226.87686"
+                version="1.1" id="svg5" sodipodi:docname="mockup.svg" inkscape:export-filename="logowhite.svg"
+                inkscape:export-xdpi="96" inkscape:export-ydpi="96"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+                xmlns:svg="http://www.w3.org/2000/svg">
+                <sodipodi:namedview id="namedview721" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+                    inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0"
+                    inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" showgrid="false"
+                    inkscape:lockguides="true" />
+                <defs id="defs2" />
+                <g id="layer1" transform="translate(-520.24433,-339.94151)">
+                    <g id="g3390" transform="matrix(3.1038391,0,0,3.1038391,-193.60648,-820.64877)">
+                        <path fill="currentColor" id="path3454"
+                            d="m 271.05308,373.92089 v 20.53209 h -20.53137 v 20.53208 h -20.53208 v 20.53209 l 11.56296,11.4993 h 20.53207 20.53138 21.39163 v -61.59626 l -11.56296,-11.4993 z m 4.23842,2.17437 h 15.69597 l 7.92366,7.87558 h -15.69597 z m -2.06404,2.03151 7.93995,7.89254 v 15.72779 l -7.93995,-7.89254 z m 10.83793,8.74207 h 16.90977 v 57.11439 h -57.97322 v -16.05022 h 20.53207 v -20.53209 h 20.53138 v 0 z m -29.30598,9.75781 h 16.42029 l 7.92438,7.87629 h -16.4203 z m -2.06403,2.03221 7.94065,7.89183 v 15.7285 l -7.94065,-7.89254 z m -18.46805,18.49987 h 16.42028 l 7.92438,7.87628 h -16.42028 z m -2.06404,2.03221 7.94065,7.89184 v 15.00347 l -7.94065,-7.89183 z" />
                     </g>
-                </svg>
-            </div>
+                </g>
+            </svg>
         </div>
 
     </div>

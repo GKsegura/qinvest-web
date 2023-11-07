@@ -313,3 +313,25 @@ p {
     cursor: pointer;
 }
 
+.helper, .installer{
+    color: var(--secondary-color);
+    margin-top: 40px;
+    max-width: 1300px;
+    text-align: center;
+}
+.helper .section-title {
+    margin-bottom: 10px;
+}
+
+#link-helper, #link-installer {
+    text-decoration: none;
+    color: rgba(186, 26, 234, 1)
+    
+}
+
+#link-helper:hover {
+    text-decoration: none;
+    color: rgba(70,10,189,1)
+    
+}
+
