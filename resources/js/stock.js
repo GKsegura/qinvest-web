@@ -12,9 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const tickersInput = document.getElementById("tickers");
     const submitButton = document.querySelector(".button");
 
-    
     const currentDate = new Date();
-    const currentMonth = currentDate.toLocaleString('default', { month: 'long' }).charAt(0).toUpperCase() + currentDate.toLocaleString('default', { month: 'long' }).slice(1);
+    const currentMonth =
+        currentDate
+            .toLocaleString("default", { month: "long" })
+            .charAt(0)
+            .toUpperCase() +
+        currentDate.toLocaleString("default", { month: "long" }).slice(1);
 
     const recommendationLabel = document.getElementById("recommendationLabel");
     recommendationLabel.textContent = `Ações recomendadas de ${currentMonth}:`;
@@ -87,8 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    
-
     const handleRecommendationButtonClick = async (event) => {
         const clickedButton = event.currentTarget;
         const tickerFromButton = clickedButton.getAttribute("data-ticker");
@@ -117,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
             smoothLoader.style.visibility = "hidden";
         }
     };
-
 
     recommendationButtons.forEach((button) => {
         button.addEventListener("click", (event) => {
