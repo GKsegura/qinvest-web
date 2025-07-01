@@ -5,9 +5,7 @@
 ## 🚀 Tecnologias Utilizadas
 
 - ⚙️ **Backend:** [Laravel](https://laravel.com/)
-- ⚡ **Frontend:** [Vite](https://vitejs.dev/)
-- 🗃️ **Banco de Dados:** MySQL (ou compatível)
-- 🎨 **CSS:** TailwindCSS (opcional, se utilizado com Vite)
+- 🗃️ **Banco de Dados:** PostgreSQL
 - 📦 **Gerenciador de Pacotes:** Composer & NPM
 
 ## 🧱 Estrutura do Projeto
