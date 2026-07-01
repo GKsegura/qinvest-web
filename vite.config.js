@@ -11,7 +11,9 @@ export default defineConfig({
                 "resources/lib/alpine.js",
                 "resources/js/selic.js",
                 "resources/js/api.js",
-                "resources/js/profile.js"
+                "resources/js/profile.js",
+                "resources/js/stock.js",
+                "resources/js/education.js"
             ],
             refresh: true,
         }),

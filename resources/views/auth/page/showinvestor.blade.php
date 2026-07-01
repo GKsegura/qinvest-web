@@ -1,4 +1,4 @@
-@vite(['resources/utils/alpine.js'])
+@vite(['resources/lib/alpine.js'])
 
 <!-- resources/views/auth/page/investor_profile.blade.php -->
 <!DOCTYPE html>

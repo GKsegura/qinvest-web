@@ -1,5 +1,5 @@
 <x-layout.head>
-    @vite(['resources/utils/alpine.js'])
+    @vite(['resources/lib/alpine.js'])
     @if (session('success')) <div class="alert alert-success">
         {{ session('success') }}
     </div>

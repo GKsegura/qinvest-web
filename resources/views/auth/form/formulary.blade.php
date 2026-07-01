@@ -1,4 +1,4 @@
-@vite(['resources/utils/alpine.js'])
+@vite(['resources/lib/alpine.js'])
 <form action="{{ route('formulary') }}" method="POST">
     @csrf
     
