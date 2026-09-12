@@ -53,6 +53,13 @@ php artisan key:generate
 # Depois, execute as migrations
 php artisan migrate
 
+# Compile os assets (CSS/JS via Vite)
+npm run build
+
 # Execute o servidor
-php artisan serve
+php -S 127.0.0.1:8000 -t public
 ```
+
+> **Nota (Windows):** se o caminho do projeto tiver acentos (ex: `C:\Users\José\...`), `php artisan serve` falha com erro de encoding ao tentar iniciar o processo interno. Use `php -S 127.0.0.1:8000 -t public` no lugar — funciona de forma equivalente.
+>
+> Depois de rodar, acesse **http://127.0.0.1:8000**.
