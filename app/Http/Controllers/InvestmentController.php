@@ -13,7 +13,7 @@ class InvestmentController extends Controller
 {
     public function createForm()
     {
-        if (Auth::check() && Auth::user()-> email == 'admin@qinvest.com')
+        if (Auth::check() && in_array(Auth::user()->email, ['admin@qinvest.com', 'josehsegura2004@gmail.com']))
         {
             return view('auth.page.investments');
         }
@@ -25,7 +25,7 @@ class InvestmentController extends Controller
     }
     public function auth(InvestmentRequest $request)
     {
-        if (Auth::check() && Auth::user()-> email == 'admin@qinvest.com')
+        if (Auth::check() && in_array(Auth::user()->email, ['admin@qinvest.com', 'josehsegura2004@gmail.com']))
         {
             $validated = $request->validated();
             try {

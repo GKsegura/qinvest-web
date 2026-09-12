@@ -16,8 +16,8 @@ class FormController extends Controller
         $question1 = Question::find(1);
         $question2 = Question::find(2);
         $question3 = Question::find(3);
-        $question4 = Question::find(5);
-        $question5 = Question::find(4);
+        $question4 = Question::find(4);
+        $question5 = Question::find(5);
         $question6 = Question::find(6);
         $answers = Answer::all();
         $rating = Rating::all();
@@ -65,11 +65,12 @@ class FormController extends Controller
 
             $rating1 = Answer::where('id', $selected_answer1)->value('rating');
             $rating2 = Answer::where('id', $selected_answer2)->value('rating');
+            $rating3 = Answer::where('id', $selected_answer3)->value('rating');
             $rating4 = Answer::where('id', $selected_answer4)->value('rating');
             $rating5 = Answer::where('id', $selected_answer5)->value('rating');
             $rating6 = Answer::where('id', $selected_answer6)->value('rating');
 
-            $total_rating = $rating1 + $rating2 + $rating4 + $rating5 + $rating6;
+            $total_rating = $rating1 + $rating2 + $rating3 + $rating4 + $rating5 + $rating6;
 
             if ($total_rating >= Rating::where('id', "conservador")->value('inferior_limit') && $total_rating <= Rating::where('id', "conservador")->value('upper_limit')) {
                 $perfil_investidor = 'CONSERVADOR';
@@ -93,8 +94,8 @@ class FormController extends Controller
             return redirect()->route('typeinvestor');
             
         } catch (\Exception $e) {
-            dd($e->getMessage());
-            return redirect()->back()->withErrors(['error' => 'Erro no SQL']);
+            report($e);
+            return redirect()->back()->withErrors(['error' => 'Erro ao salvar o teste. Tente novamente.']);
         }
     }
 }

@@ -18,7 +18,7 @@ class AdminController extends Controller
 {
     public function Statistics()
     {
-        if (Auth::check() && Auth::user()->email == 'admin@qinvest.com') {
+        if (Auth::check() && in_array(Auth::user()->email, ['admin@qinvest.com', 'josehsegura2004@gmail.com'])) {
             $testC = Test::where('deleted', false)->where('investor_id', 1);
             $testM = Test::where('deleted', false)->where('investor_id', 2);
             $testA = Test::where('deleted', false)->where('investor_id', 3);
@@ -59,11 +59,11 @@ class AdminController extends Controller
 
             $answersTotal = $answerA + $answerB + $answerC + $answerD + $answerE;
 
-            $range1 = round(($answerA / $answersTotal) * 100);
-            $range2 = round(($answerB / $answersTotal) * 100);
-            $range3 = round(($answerC / $answersTotal) * 100);
-            $range4 = round(($answerD / $answersTotal) * 100);
-            $range5 = round(($answerE / $answersTotal) * 100);
+            $range1 = $answersTotal ? round(($answerA / $answersTotal) * 100) : 0;
+            $range2 = $answersTotal ? round(($answerB / $answersTotal) * 100) : 0;
+            $range3 = $answersTotal ? round(($answerC / $answersTotal) * 100) : 0;
+            $range4 = $answersTotal ? round(($answerD / $answersTotal) * 100) : 0;
+            $range5 = $answersTotal ? round(($answerE / $answersTotal) * 100) : 0;
 
             $countC = $testC->count();
             $countM = $testM->count();
@@ -75,13 +75,13 @@ class AdminController extends Controller
             $countOther = $other->count();
             $users = $countFem + $countMale + $countOther;
 
-            $moderado = round(($countM / $test) * 100);
-            $conservador = round(($countC / $test) * 100);
-            $agressivo = round(($countA / $test) * 100);
+            $moderado = $test ? round(($countM / $test) * 100) : 0;
+            $conservador = $test ? round(($countC / $test) * 100) : 0;
+            $agressivo = $test ? round(($countA / $test) * 100) : 0;
 
-            $women = round(($countFem / $users) * 100);
-            $men = round(($countMale / $users) * 100);
-            $NI = round(($countOther / $users) * 100);
+            $women = $users ? round(($countFem / $users) * 100) : 0;
+            $men = $users ? round(($countMale / $users) * 100) : 0;
+            $NI = $users ? round(($countOther / $users) * 100) : 0;
 
             return view('pages.admin', compact('conservador', 'moderado', 'agressivo', 'test', 'women', 'men', 'NI', 'range1', 'range2', 'range3', 'range4', 'range5', 'users'));
         } else {
