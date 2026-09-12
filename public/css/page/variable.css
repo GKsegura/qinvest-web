@@ -1,7 +1,5 @@
-@import url(../layout/app.css);
-
-
 .page-variable {
+    position: relative;
     width: 100%;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -42,10 +40,19 @@
 .index {
     color: var(--secondary-color);
     width: 250px;
-    margin-left: 16%;
-    height: 100%;
+    margin-left: 3rem;
     text-align: left;
-    position: relative;
+    z-index: 2;
+    position: sticky;
+    top: 6.5rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    background-color: var(--primary-color);
+    border: 1px solid var(--dark-purple-low-opacity);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .button {
@@ -54,9 +61,15 @@
     color: var(--secondary-color);
     border-color: var(--secondary-color) !important;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     margin: 4px;
     height: 5vh;
+    transition: var(--transition), transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .button-bars{
@@ -72,14 +85,20 @@
 
 .menu{
     display: block;
-    margin-top: -4vh;
+    flex: 0 0 auto;
+    margin-top: 1rem;
     margin-left: 1%;
 }
 .button-container {
-    justify-content: center;
+    justify-content: flex-end;
     display: flex;
-    z-index: 1; 
+    gap: 0.5rem;
+    z-index: 1;
     width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem 6% 0 0;
+    top: 0;
+    right: 0;
 }
 
 .content {
@@ -87,30 +106,37 @@
     margin-right: 6%;
     width: 70%;
     align-self: flex-start;
-    flex: 1;
-    /* Faz com que o conteúdo principal ocupe 2 vezes mais espaço */
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 70%;
+    box-sizing: border-box;
 }
 
 /* Estilos para o índice */
 .index h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+    color: var(--dark-purple);
+    border-bottom: 1px solid var(--dark-purple-low-opacity);
 }
 
 .index li{
     list-style: auto;
-    margin-bottom: 7px;
+    margin-bottom: 0.6rem;
+    font-size: 14px;
 }
 .index a {
     list-style: none;
     padding: 0;
     color: var(--secondary-color);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .index a:hover {
-    color: #586d98;
+    color: var(--dark-purple);
 }
 
 /* Estilos para o conteúdo principal */
@@ -120,8 +146,44 @@
     text-align: left;
 }
 
+.content .topic h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+}
+
 .content p {
     font-size: 16px;
-    line-height: 1.5;
-    text-align: justify;
+    line-height: 1.7;
+    text-align: left;
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .index {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin-left: 0;
+        padding: 1.25rem 5%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 100%;
+        margin: 0;
+        padding: 0 5%;
+    }
+
+    .button-div {
+        width: 100%;
+        margin-left: 0;
+    }
 }

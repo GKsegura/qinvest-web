@@ -1,5 +1,3 @@
-@import url(../layout/app.css);
-
 .option {
     width: 100%;
     height: 100%;
@@ -29,9 +27,10 @@ form {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--secondary-color);
     width: 1028px;
+    max-width: 92vw;
     height: 480px;
 }
 
@@ -71,5 +70,26 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .formulary-card {
+        height: auto;
+        min-height: 420px;
+        padding: 1.5rem;
+    }
+
+    .fieldgroup {
+        width: 100%;
+    }
+
+    .label-question {
+        font-size: 1.75rem;
+    }
+
+    .question-controller {
+        gap: 1rem;
+    }
 }

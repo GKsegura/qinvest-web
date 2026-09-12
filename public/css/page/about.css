@@ -1,6 +1,3 @@
-@import url(../css/layout/app.css);
-
-
 .page-about {
     text-align: center;
     display: flex;
@@ -10,6 +7,8 @@
 
 .header-page {
     width: 900px!important;
+    max-width: 100%;
+    padding-top: 3rem;
     transition: var(--transition);
 }
 
@@ -18,77 +17,113 @@
     padding: 0 10% 0 10% !important;
 }
 
-.page-about h1,
+.page-about .h1 {
+    text-align: center;
+    color: var(--dark-purple);
+    margin-bottom: 1.5rem !important;
+    position: relative;
+}
+
+.page-about .h1::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background-color: var(--dark-purple);
+    margin: 0.9rem auto 0;
+}
+
 .page-about p {
-    text-align: justify;
+    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 1.25rem !important;
 }
 
-/* SLIDE */
+/* TEAM GRID */
 
-.swiper {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.swiper-wrapper {
-    width: 100%;
-    height: 35em;
+.team-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .card {
-    width: 18em !important;
-    height: 100%;
-    border-radius: 10px;
-    padding: 2em 1em;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 3em !important;
-    box-shadow: 0 0 0.45em var(--dark-purple);
-    background-color: white !important;
-    color: black !important;
+    flex: 0 1 260px;
+    max-width: 280px;
+    height: 31.5rem;
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--dark-purple-low-opacity);
+    box-shadow: var(--shadow-md);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
 
 .card-image {
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: 8em;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-    border-radius: 0.5em;
-    box-shadow: 0 0 0.45em var(--dark-purple);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--dark-purple-low-opacity);
 }
 
 .card-content {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .card-name {
-    margin: 0.2em;
-    font-size: 1.25em;
-    font-weight: 500;
-    padding-top: 10px;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-top: 1rem;
+    text-align: center;
 }
 
 .card-occupation {
-    font-size: 1em;
-    font-weight: 500;
-    margin: 2px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0.35rem 0 1rem 0;
+    min-height: 2.2em;
     color: var(--dark-purple);
-    font-weight: 700;
+    text-align: center;
 }
 
 .card-description {
-    font-size: 0.9em;
-    margin-top: 0.5em;
-    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.55;
+    text-align: left;
+    color: var(--secondary-color);
+    opacity: 0.95;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
 }
 #qinvestLogoSmall {
     width: 152px;
@@ -98,4 +133,15 @@
     fill: var(--secondary-color);
     margin-right: 9%;
     margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-page {
+        padding: 0 5% !important;
+    }
+
+    .team-grid {
+        width: 95%;
+        gap: 1.5rem;
+    }
 }

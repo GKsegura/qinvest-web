@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const handleFormSubmit = async (event) => {
-        stockDiv.style.visibility = "visible";
+        stockDiv.style.display = "block";
 
         // Exibe o cursor de carregamento
         const smoothLoader = document.querySelector(".smooth");
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // const tickerInput = document.getElementById("tickers");
         const ticker = tickerFromButton;
         console.log(tickerFromButton);
-        stockDiv.style.visibility = "visible";
+        stockDiv.style.display = "block";
 
         // Exibe o cursor de carregamento
         const smoothLoader = document.querySelector(".smooth");

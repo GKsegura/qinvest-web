@@ -1,7 +1,3 @@
-@import url(../layout/app.css);
-
-
-
 .page-home {
     transition: var(--transition);
     color: var(--primary-color);
@@ -36,11 +32,14 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    column-gap: 5vh;
+    column-gap: 1.5rem;
 }
 .buttons-home button {
     font-size: 1em;
-    padding: 1% 2%;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
 }
 
 #login,
@@ -54,7 +53,7 @@
 #register,
 #login:hover {
     background-color: var(--primary-color);
-    color: #794ef0;
+    color: var(--dark-purple);
     border: solid 0.1em;
     border-color: transparent;
 }
@@ -63,7 +62,13 @@
 #login,
 #register:hover,
 #login:hover {
-    transition: var(--transition);
+    transition: var(--transition), transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#register:hover,
+#login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--dark-purple-low-opacity);
 }
 
 .stair {
@@ -90,10 +95,10 @@ p {
 }
 
 .text-image-ladder {
-    margin: 2.5vh 0 2.5vh 0;
+    margin: 1.5rem 0;
 }
 .buttons-home {
-    margin: 2.5vh 0 2.5vh 0;
+    margin: 1.5rem 0;
 }
 #alter {
     color: var(--secondary-color);
@@ -102,7 +107,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15vh 0 5vh 0;
+    margin: 6rem 0 3rem 0;
     width: 70%;
 }
 
@@ -124,9 +129,10 @@ p {
 {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin: 3vh 0 0 0;
+    align-items: stretch;
+    margin: 1.5rem 0 0 0;
     width: 90%;
+    gap: 1.5rem;
 }
 
 .plan
@@ -134,19 +140,28 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0vh 2vh;
+    margin: 0;
     width: 30%;
-    height: 60vh;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.plan:hover
+{
+    transform: translateY(-4px);
+}
+
+#basic.plan
+{
+    box-shadow: 0 8px 32px 0 rgba(78, 121, 240, 0.28);
+}
 #advanced.plan
 {
     box-shadow: 0 8px 32px 0 rgba(135, 31, 130, 0.37);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
 
-   
+
 }
 #unlimited.plan
 {
@@ -160,7 +175,7 @@ p {
 {
     width: 100%;
     height: 20vh;
-    border-radius: 10px 10px 0 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,8 +197,9 @@ p {
 {
 
     width: 100%;
-    height: 120vh;
-    border-radius: 0 0 10px 10px;
+    flex: 1;
+    padding: 1.5rem 0 2rem 0;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 
     display: flex;
     flex-direction: column;
@@ -255,7 +271,7 @@ p {
 
     height: 4vh;
     width: 100%;
-    border-radius: 10px;
+    border-radius: var(--radius-md);
     display: flex;
     justify-content: center;
     align-self: baseline;
@@ -275,7 +291,7 @@ p {
     align-items: center;
 
 
-    border-radius: 10px;
+    border-radius: var(--radius-md);
 }
 .plan-subs#unlimited p
 {
@@ -306,4 +322,50 @@ p {
     color: var(--secondary-color) !important;
     height: 5vh;
     margin: 0 0 5vh 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .plan-mother {
+        flex-direction: column;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .plan {
+        width: 100%;
+    }
+
+    .feature {
+        width: 90%;
+        margin: 4rem 0 3rem 0;
+    }
+
+    .stair svg {
+        max-width: 50vh;
+        max-height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .buttons-home {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .buttons-home button {
+        width: 80%;
+    }
+
+    .h1#alter {
+        font-size: 1.5em;
+    }
+
+    .plan-name {
+        height: auto;
+        padding: 1.25rem 0;
+    }
+
+    #plan-items {
+        font-size: 1rem;
+    }
 }

@@ -20,9 +20,18 @@
             <p>Para cadastrar um novo investimento, clique no botão abaixo.</p>
 
             <div class="charts">
-                <canvas class="chart" id="chartTypeInvestor"></canvas>
-                <canvas class="chart" id="chartUserSalary"></canvas>
-                <canvas class="chart" id="chartUsers"></canvas>
+                <div class="chart-card">
+                    <h3 class="chart-title">Perfil investidor</h3>
+                    <canvas class="chart" id="chartTypeInvestor"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Faixa salarial</h3>
+                    <canvas class="chart" id="chartUserSalary"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-title">Usuários por gênero</h3>
+                    <canvas class="chart" id="chartUsers"></canvas>
+                </div>
             </div>
 
             <a href="/investment" class="btn-investment">Cadastrar investimento</a>

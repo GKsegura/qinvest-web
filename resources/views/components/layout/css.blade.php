@@ -1,4 +1,7 @@
 <!-- todos -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="{{ asset('css/layout/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/layout/header.css') }}" rel="stylesheet">
 <link href="{{ asset('css/layout/footer.css') }}" rel="stylesheet">
@@ -28,10 +31,7 @@
 
 <!-- about us -->
 @if(Route::currentRouteName() === 'about')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link href="{{ asset('css/page/about.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 @endif
 
 <!-- form -->

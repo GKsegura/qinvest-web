@@ -1,5 +1,3 @@
-@import url(../layout/app.css);
-
 :root {
     --orange: #FF9F5A;
     --purple: #BF98FF;
@@ -49,7 +47,6 @@ p, h1, h2, h3, h4, h5 {
 
 .text-education-page {
     color: #f5f5f5;
-    font-family: Helvetica;
     font-size: 44px;
     font-style: normal;
     font-weight: 700;
@@ -87,10 +84,10 @@ p, h1, h2, h3, h4, h5 {
     justify-content: center;
     flex-direction: row;
     background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: var(--shadow-lg);
     backdrop-filter: blur( 6.5px );
     -webkit-backdrop-filter: blur( 6.5px );
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
@@ -102,7 +99,7 @@ margin: 5%;
     margin-left: 3%;
     width: 100%;
     height: 100%;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
 
@@ -112,17 +109,16 @@ margin: 5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0.75rem;
 }
 
 .right-summary h2,
 .right-summary h1 {
     color: white;
     text-align: center;
-    font-family: Helvetica;
     font-style: normal;
     font-weight: 700;
-    line-height: 47px;
-    /* 146.875% */
+    line-height: 1.2;
     letter-spacing: -2.3px;
 }
 @media (max-width: 1000px) {
@@ -133,7 +129,13 @@ margin: 5%;
     #title-education-page {
         font-size: 65px;
     }
-    
+    .text-education-page {
+        font-size: 32px;
+        height: auto;
+    }
+    .courseTitle {
+        font-size: 36px;
+    }
 }
 @media (max-width: 500px) {
 
@@ -147,7 +149,21 @@ margin: 5%;
         object-fit: cover;
 
 }
-    
+    #title-education-page {
+        font-size: 42px;
+    }
+    .text-education-page {
+        font-size: 24px;
+    }
+    .courseTitle {
+        font-size: 28px;
+    }
+    .courseContent {
+        max-height: none;
+    }
+    #qinvestLogoSm {
+        margin-right: 0;
+    }
 }
 
 .right-summary h2 {
@@ -161,7 +177,6 @@ margin: 5%;
 .right-summary p {
     color: #E5D5FF;
     text-align: center;
-    font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -171,7 +186,6 @@ margin: 5%;
 .right-summary button {
     position: relative;
     text-align: center;
-    font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
@@ -183,6 +197,13 @@ margin: 5%;
     -webkit-text-fill-color: transparent;
     padding: 3% 5%;
     border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.right-summary button:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -250,7 +271,6 @@ width: 80%;
 }
 .courseSubtitle {
 
-    font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -261,22 +281,27 @@ width: 80%;
 .courseContent {
     display: flex;
     width: 100%;
-    max-height: 234px;
-    padding: 2%;
+    min-height: 200px;
+    padding: 2rem;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 22px;
-    border-radius: 10px;
+    gap: 1rem;
+    border-radius: var(--radius-lg);
     color: var(--orange);
     margin-bottom: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.courseContent:hover {
+    transform: translateY(-4px);
 }
 .courseContent#course-variable {
     background: rgba(191, 152, 255, 0.041);
     box-shadow: 0 8px 20px 0 rgba(121, 22, 160, 0.185);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
     border: 1px solid rgba(149, 11, 204, 0.363);
 }
 .courseContent#course-fixed {
@@ -284,43 +309,38 @@ width: 80%;
     box-shadow: 0 8px 20px 0 rgba(135, 99, 31, 0.356);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
     border: 1px solid rgba(255, 145, 0, 0.301);
 }
 
-.contentsubtitle
+.contentSubtitle
 {
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
+    display: inline-block;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.2px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-pill);
 }
-.contentSubtitle#course-variable {
+.contentSubtitle#course-fixed {
     color: var(--orange);
+    background: rgba(255, 145, 0, 0.12);
 }
 .contentSubtitle#course-variable {
-    font-weight: 600;
     color: var(--purple);
-}
-
-.course-content#course-variable
-{
-    border: 1px solid var(--orange);
-}
-.course-content#course-fixed
-{
-    border: 1px solid var(--purple);
+    background: rgba(149, 11, 204, 0.12);
 }
 
 .contentTitle {
     color: var(--secondary-color);
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 700;
     letter-spacing: 0.2px;
 }
 
 .contentText {
     color: var(--secondary-color);
     font-size: 16px;
-    text-align: justify;
+    text-align: left;
 }

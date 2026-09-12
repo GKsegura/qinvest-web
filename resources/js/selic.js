@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const year = currentDate.getFullYear();
             const formattedDate = `${day}/${month}/${year}`;
 
-            const apiUrl = `https://brapi.dev/api/v2/prime-rate?country=brazil&start=${formattedDate}&end=${formattedDate}`;
+            const apiUrl = `https://brapi.dev/api/v2/prime-rate?country=brazil&start=${formattedDate}&end=${formattedDate}&token=wF3GuTVktd3VnEZmbp1Ynh`;
 
             const response = await fetch(apiUrl);
             if (!response.ok) {

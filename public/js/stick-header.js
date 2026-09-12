@@ -15,7 +15,8 @@ window.addEventListener("scroll", () => {
     // Verifica se a posição atual do scroll é maior que a posição anterior
     if (scrollTop > lastScrollTop) {
         // Se a posição atual do scroll for maior, significa que o usuário está rolando para baixo
-        header.style.top = "-10vh";
+        // Usa a altura real do header (e não um valor fixo), já que ela varia no mobile
+        header.style.top = -header.offsetHeight + "px";
     } else {
         // Se a posição atual do scroll for menor ou igual à posição anterior, significa que o usuário está rolando para cima
         header.style.top = "0";

@@ -1,71 +1,82 @@
-@import url(../layout/app.css);
-
 .content {
     display: block;
-    font-family: helvetica;
     font-size: 17px;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     text-align: center;
+    padding: 3rem 5% 4rem;
+    box-sizing: border-box;
 }
 
 #edit-form{
     display: none;
 }
 .update label{
-    font-family: helvetica;
     font-size: 17px;
     text-decoration: none;
     font-weight: 500;
 }
-.update input[type="text"]{
-    font-family: helvetica;
-    font-size: 17px;
-    text-decoration: none;
-    padding-left: 4px;
-    font-weight: 500;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transition: background-color 0.3s, color 0.3s;
-    width: 100%;
-    border-radius: 7px;
-}
-.update input[type="email"]{
-    font-family: helvetica;
+.update input[type="text"],
+.update input[type="email"],
+.update input[type="date"] {
     font-size: 17px;
     text-decoration: none;
     padding-left: 4px;
     font-weight: 500;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid var(--dark-purple-low-opacity);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.2s ease;
     width: 100%;
-    border-radius: 7px;
+    border-radius: var(--radius-sm);
 }
-.update input[type="date"]{
-    font-family: helvetica;
-    font-size: 17px;
-    text-decoration: none;
-    padding-left: 4px;
+
+.update input[type="text"]:focus,
+.update input[type="email"]:focus,
+.update input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--dark-purple-low-opacity);
+}
+
+.update label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.gender-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.gender-option {
+    display: flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 !important;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dark-purple-low-opacity);
+    border-radius: var(--radius-pill);
     font-weight: 500;
-    background-color: var(--primary-color);
-    border-radius: 7px;
-    color: var(--secondary-color);
-    transition: background-color 0.3s, color 0.3s;
-    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
 }
+
 .square {
-    text-align: justify;
+    text-align: left;
     margin: auto;
-    border-radius: 7px;
-    border: 1px solid var(--secondary-color);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--dark-purple-low-opacity);
     display: block;
     align-items: center;
     justify-content: center;
-    padding: 5%;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    width: 30%;
+    padding: 2.5rem;
+    max-width: 440px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: var(--shadow-md);
 }
 
 #profile-label {
@@ -75,11 +86,25 @@
 .content h1 {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#profile-display label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    opacity: 0.6;
+    margin-top: 1.1rem;
+}
+
+#profile-display label:first-child {
+    margin-top: 0;
 }
 #edit-button {
     border: 1px solid var(--secondary-color);
-    border-radius: 7px;
+    border-radius: var(--radius-pill);
     width: 42%;
     padding: 3px;
     padding-top: 2px;
@@ -88,19 +113,25 @@
     font-size: 13px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
     margin-top: 2rem;
     margin-left: 29%;
 }
+
+#edit-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
 .profile-info{
     font-weight: bold;
+    margin: 0.15rem 0 0 0;
 }
 
 .profile-type {
-
     color: #9E63FF;
     text-decoration: none;
-
+    transition: opacity 0.2s ease;
 }
 
 .profile-type:hover {
@@ -109,17 +140,23 @@
 }
 
 .profile-discover {
-
+    display: inline-block;
     color: #9E63FF;
     text-decoration: none;
-
+    background: rgba(158, 99, 255, 0.1);
+    border: 1px solid rgba(158, 99, 255, 0.3);
+    border-radius: var(--radius-pill);
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .profile-discover:hover {
-    color: #9E63FF;
-    text-decoration: none;
+    transform: translateY(-2px);
+    background: rgba(158, 99, 255, 0.18);
     font-weight: bold;
 }
+
 .retake-test {
     text-decoration: none;
     color: var(--secondary-color);
@@ -147,4 +184,16 @@ margin-bottom: 2rem;
 
 #profile-display{
     margin-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .square {
+        width: 90%;
+        padding: 6% 5%;
+    }
+
+    #edit-button {
+        width: 70%;
+        margin-left: 15%;
+    }
 }

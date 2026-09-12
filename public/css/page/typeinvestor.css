@@ -1,5 +1,3 @@
-@import url(../css/layout/app.css);
-
 :root {
     --conservador: #7dc1ff;
     --agressivo: #f62e2e;
@@ -105,16 +103,18 @@ h1 span {
 }
 
 .description {
-    text-align: justify !important;
+    text-align: left !important;
     padding: 2%;
 }
 
  .paragraph, .description {
     width: 700px;
+    max-width: 92vw;
 }
 
 .recomendations {
     width: 400px;
+    max-width: 92vw;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -132,7 +132,13 @@ h1 span {
     justify-content: space-between;
     flex-direction: column;
     padding: 3%;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommended-1:hover, .recommended-2:hover, .recommended-3:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .double-recommendation{
@@ -142,11 +148,11 @@ h1 span {
 }
 .paragraph {
     padding: 2%;
-    border-radius: 10px;
+    border-radius: var(--radius-lg);
 }
 
 .paragraph p {
-    text-align: justify !important;
+    text-align: left !important;
 }
 
 .paragraph p + p {
@@ -165,10 +171,21 @@ h1 span {
     border: 1px solid var(--agressivo);
 }
 
+.link-conservador,
+.link-moderado,
+.link-agressivo {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.link-conservador:hover,
+.link-moderado:hover,
+.link-agressivo:hover {
+    opacity: 0.75;
+}
+
 .link-conservador {
    color: var(--conservador);
-   text-decoration: none;
-
 }
 
 .link-moderado {
@@ -181,7 +198,6 @@ h1 span {
 
 
 .type h2 {
-    font-family: Helvetica;
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -190,7 +206,6 @@ h1 span {
 }
 
 .type p {
-    font-family: Helvetica;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -202,4 +217,24 @@ h1 span {
 .bi-arrow-down,
 .bi-arrow-up {
     color: var(--secondary-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .type h1,
+    .type h1 span {
+        font-size: 2.5rem;
+    }
+
+    .double-recommendation {
+        flex-direction: column;
+    }
+
+    .recommended-1,
+    .recommended-2 {
+        width: 100%;
+    }
+
+    svg {
+        height: 20vh;
+    }
 }

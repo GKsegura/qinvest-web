@@ -11,7 +11,7 @@
             <a href="/stock" class="header-link nav-link">Ações</a>
             <a href="/about" class="header-link nav-link">Sobre nós</a>
             @auth
-            @if (Auth::user()->email=="admin@qinvest.com")
+            @if (in_array(Auth::user()->email, ['admin@qinvest.com', 'josehsegura2004@gmail.com']))
             <a href="/admin" class="header-link nav-link">Administrador</a>
             @endif
             @endauth

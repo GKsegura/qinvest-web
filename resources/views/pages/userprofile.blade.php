@@ -52,20 +52,11 @@
 
                     <label>Gênero:</label>
                     <br>
-                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
-                    Masculino
-                    <input type="radio" name="newgender" value="female"
-                        {{ $user->gender === 'female' ? 'checked' : '' }}> Feminino
-                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
-                    Outro<br><br>
-                    <label>Gênero:</label>
-                    <input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}>
-                    Masculino
-                    <input type="radio" name="newgender" value="female"
-                        {{ $user->gender === 'female' ? 'checked' : '' }}>
-                    Feminino
-                    <input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}>
-                    Outro<br><br>
+                    <div class="gender-options">
+                        <label class="gender-option"><input type="radio" name="newgender" value="male" {{ $user->gender === 'male' ? 'checked' : '' }}> Masculino</label>
+                        <label class="gender-option"><input type="radio" name="newgender" value="female" {{ $user->gender === 'female' ? 'checked' : '' }}> Feminino</label>
+                        <label class="gender-option"><input type="radio" name="newgender" value="other" {{ $user->gender === 'other' ? 'checked' : '' }}> Outro</label>
+                    </div>
 
                     <button id="edit-button" type="submit">Atualizar Informações</button>
 

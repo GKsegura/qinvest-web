@@ -1,10 +1,8 @@
-@import url(../css/layout/app.css);
-
 .active {
     display: block;
 }
 .disable {
-    display: hidden;
+    display: none;
 }
 
 .transition-enter {
@@ -25,12 +23,14 @@
     gap: 5px;
 }
 .field-input {
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     border: 1px solid #b8b8b8 !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .field-input:focus {
-    box-shadow: 0px 0px 5px 0px #6f00ff !important;
+    border-color: var(--dark-purple) !important;
+    box-shadow: 0 0 0 3px var(--dark-purple-low-opacity) !important;
 }
 
 .input-group-text {
@@ -55,13 +55,20 @@
 }
 .submit-button {
     padding: 5px;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     border: 1px solid #dee2e6;
     background: linear-gradient(220deg, #ec78ff 0%, #809bf9 100%);
     font-weight: 700;
     color: #ffffff;
     width: 100%;
     height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .step-button {
@@ -70,7 +77,9 @@
     flex-shrink: 0;
     border: 1px solid var(--secondary-color);
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
 }
 .form-actions {
     align-items: center;
@@ -162,22 +171,25 @@ form .text-password {
 }
 
 .google-input {
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     border: 1px solid #000000 !important;
     background-color: #ffffff;
     color: #000000;
     height: 40px;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 #home {
     border: 1px solid #8c46ff;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     background-color: #8c46ff;
     color: #ffffff;
     height: 40px;
     text-decoration: none;
-    padding: 2% 3%;
-    transition: (--transition);
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+    transition: var(--transition), transform 0.2s ease;
 }
 
 #home:hover {
@@ -185,6 +197,13 @@ form .text-password {
     background-color: #ffffff;
     color: #8c46ff;
     letter-spacing: 0.5px;
-    transition: (--transition);
-    top: -10px;
+    transition: var(--transition), transform 0.2s ease;
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 576px) {
+    .field-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
 }

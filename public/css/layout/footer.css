@@ -1,29 +1,28 @@
-@import url(app.css);
-
 /* FOOTER */
 
 footer {
     color: #ffffff;
     width: 100%;
-    height: 40vh;
     background: linear-gradient(to top, #3860ec, #6a31e2);
 }
 
 .footer-content {
-    padding: 50px;
-    gap: 50px;
+    padding: 3rem;
+    gap: 2rem;
     display: grid;
-    grid-template-rows: (2,1fr);
+    grid-template-rows: repeat(2, auto);
 }
 
 .footer-group-link {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .footer-logo {
     display: flex;
     justify-content: center;
+    padding-top: 0.5rem;
 }
 
 footer .nav-link,
@@ -90,7 +89,12 @@ footer li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.6rem;
     transition: width 0.3s linear;
+}
+
+.footer-link h5 {
+    margin-bottom: 0.4rem;
 }
 
 .footer-link p a::after{
@@ -130,4 +134,22 @@ footer li {
 
 footer svg path {
     fill: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .footer-group-link {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-logo svg {
+        width: 140px;
+        height: auto;
+    }
 }
