@@ -14,7 +14,8 @@ class StockController extends Controller
         $fundamental = $request->input('fundamental', false);
         $dividends = $request->input('dividends', false);
 
-        $response = Http::get("https://brapi.dev/api/quote/$tickers?token=hRKcq7tkVRHZL2QtNaxYeZ", [
+        $response = Http::get('https://brapi.dev/api/quote/' . rawurlencode($tickers), [
+            'token' => config('services.brapi.token'),
             'range' => $range,
             'interval' => $interval,
             'fundamental' => $fundamental,
